@@ -2,12 +2,24 @@
 <html lang="kn">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ - Enhanced</title>
+ <!-- Updated viewport meta tag for improved mobile compatibility -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Enable Apple web app capabilities -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Set status bar style for Apple devices -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Disable telephone detection in iOS -->
+  <meta name="format-detection" content="telephone=no">
+  <!-- Additional meta tags for Samsung HTML viewer and general mobile optimization -->
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="320">  <title>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ </title>
+  <!-- Include Kannada-friendly font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet">
   <style>
-    /* Basic body and header styles */
+    /* Global Styles: Use Noto Sans Kannada for Kannada text, with fallbacks for English */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Noto Sans Kannada', 'Helvetica Neue', Arial, sans-serif;
+      /* Karnataka flag colors: deep red to bright yellow */
       background: linear-gradient(to right, #B22222, #FFD700);
       margin: 0;
       padding: 20px;
@@ -16,7 +28,7 @@
       text-align: center;
       color: #fff;
     }
-    /* Top menu styling */
+    /* Top Menu Styling */
     #menu {
       text-align: center;
       margin-bottom: 20px;
@@ -31,7 +43,7 @@
       background-color: #4caf50;
       color: #fff;
     }
-    /* Game container styling */
+    /* Game Container Styling */
     #game-container {
       max-width: 800px;
       margin: auto;
@@ -65,10 +77,12 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      -webkit-transition: -webkit-transform 0.2s, background-color 0.2s;
       transition: transform 0.2s, background-color 0.2s;
       font-size: 18px;
     }
     .option:hover {
+      -webkit-transform: scale(1.1);
       transform: scale(1.1);
     }
     .hidden {
@@ -91,15 +105,22 @@
     }
     /* Animation for correct answer */
     .correct {
+      -webkit-animation: correctAnim 0.5s ease-out;
       animation: correctAnim 0.5s ease-out;
     }
+    @-webkit-keyframes correctAnim {
+      0% { -webkit-transform: scale(1); transform: scale(1); }
+      50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+      100% { -webkit-transform: scale(1); transform: scale(1); }
+    }
     @keyframes correctAnim {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+      0% { -webkit-transform: scale(1); transform: scale(1); }
+      50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+      100% { -webkit-transform: scale(1); transform: scale(1); }
     }
     .highlight-correct {
       background-color: darkgreen !important;
+      -webkit-transform: scale(1.3) !important;
       transform: scale(1.3) !important;
       font-weight: bold;
     }
@@ -119,18 +140,23 @@
       height: 10px;
       background-color: red;
       opacity: 0;
+      -webkit-animation: confettiFall 1000ms forwards;
       animation: confettiFall 1000ms forwards;
     }
+    @-webkit-keyframes confettiFall {
+      0% { -webkit-transform: translateY(0) rotate(0deg); transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { -webkit-transform: translateY(600px) rotate(360deg); transform: translateY(600px) rotate(360deg); opacity: 0; }
+    }
     @keyframes confettiFall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(600px) rotate(360deg); opacity: 0; }
+      0% { -webkit-transform: translateY(0) rotate(0deg); transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { -webkit-transform: translateY(600px) rotate(360deg); transform: translateY(600px) rotate(360deg); opacity: 0; }
     }
     /* Summary styling */
     #summary {
       text-align: left;
       margin-top: 20px;
     }
-    /* Settings page styling */
+    /* Settings Page Styling */
     #settings-page {
       max-width: 800px;
       margin: auto;
@@ -164,14 +190,12 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-	  
-
     }
   </style>
 </head>
 <body>
   <h1>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ</h1>
-  <!-- Top Menu -->
+  <!-- Top Menu: Navigation buttons for selecting categories and accessing settings -->
   <div id="menu">
     <button class="menu-button" onclick="selectCategory('ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ')">1. ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ</button>
     <button class="menu-button" onclick="selectCategory('ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ')">2. ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ</button>
@@ -191,7 +215,7 @@
     <button class="menu-button" onclick="openSettings()">Settings</button>
   </div>
 
-  <!-- Settings Page -->
+  <!-- Settings Page: Customize appearance, animation, translations, and grade -->
   <div id="settings-page" class="hidden">
     <h2>Settings</h2>
     <div class="settings-group">
@@ -262,7 +286,7 @@
     <button id="cancel-settings-btn" onclick="closeSettings()">Cancel</button>
   </div>
 
-  <!-- Game Container -->
+  <!-- Game Container: Main area for flashcards, options, and feedback -->
   <div id="game-container" class="hidden">
     <div id="score">Score: 0</div>
     <div id="high-score">High Score: 0</div>
@@ -272,10 +296,10 @@
     <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
     <div id="options" class="options"></div>
     <button id="next-btn" class="hidden" onclick="nextFlashcard()">Next</button>
-    <!-- Continue button on summary page -->
+    <!-- Additional controls -->
     <button id="exitGame-btn" class="hidden" onclick="exitGame()">Reset</button>
     <button id="continueGame-btn" onclick="endGame()">Continue</button> 
-    <button id="summary-btn" onclick="summaryGame()">Summary</button> 	
+    <button id="summary-btn" onclick="summaryGame()">Summary</button>     
     <div id="confetti-container"></div>
     <div id="summary" class="hidden"></div>
   </div>
@@ -294,12 +318,17 @@
     };
 
     /* 
-      The flashcards for each category are stored as arrays inside the “categories” object.
-      Each flashcard now includes an "english" property with the translated question.
+      Flashcards for each category are stored in the "categories" object.
+      Each flashcard contains:
+        - question: The question text (Kannada)
+        - english: English translation of the question
+        - correct: The correct answer string
+        - options: Array of possible answers
+      (Note: The grade property will be added automatically below.)
     */
     const categories = {
       "ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ": [
-        // ಪ್ರಥಮಾ ವಿಭಕ್ತಿ ('ಉ')
+        // Example flashcard for the first case (ಉ)
         { 
           question:"ಸ್ತ್ರೀಲಿಂಗ: 'ಗೌರಿ' + ಉ = ?", 
           english:"Feminine: 'Gauri' + 'u' = ?", 
@@ -1352,7 +1381,7 @@
         { 
           question:"ಒಂದು ವರ್ಷಕ್ಕೆ ಹನ್ನೆರಡು ತಿಂಗಳುಗಳು. ", 
           english:"There are twelve months in a year.", 
-          correct:"ಒಂದು, ಹನ್ನೆರಡು", 
+          correct:"ಒಂದು ಹನ್ನೆರಡು", 
           options: ["ವರ್ಷ","ತಿಂಗಳು","ಒಂದು ಹನ್ನೆರಡು","ಒಂದು"],
           topic:"ಸಂಖ್ಯಾವಾಚಕ"
         },
@@ -2147,20 +2176,20 @@
         { question:"ನಾನು =", correct:"ನಾವು", options: ["ನಾನುಗಳು","ನಾವು", "ಅವರು" , "ಅವಳು"], topic:"ವಚನ ಬದಲಾಯಿಸಿ"  , english:"I" },
         { question:"ಎಲೆ =", correct:"ಎಲೆಗಳು", options: ["ಎಲೆಯರು","ಎಲೆಗಳು" ,"ನಾವು", "ಅವರು"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Leaf" },
         { question:"ಅವನು =", correct:"ಅವರು", options: ["ಅವನು","ಅವರು" , "ಅವಳು" ,"ಅದು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"He" },
-        { question:"ಹುಡುಗಿ =", correct:"ಹುಡುಗಿಯರು", options: ["ಹುಡುಗಿವು","ಹುಡುಗಿಯರು" ,"ಹುಡುಗಿಗಳು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Girl" },
+        { question:"ಹುಡುಗಿ =", correct:"ಹುಡುಗಿಯರು", options: ["ಹುಡುಗಿವು","ಹುಡುಗಿಯರು" , "ಹುಡುಗಿಗಳು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Girl" },
 		{ question:"ಅದು=", correct:"ಅವು", options: ["ಅವು","ಅವರು" , "ಅವಳು" ,"ಅದುಗಳು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"That" },
-		{ question:"ಅಮ್ಮ=", correct:"ಅಮ್ಮಂದಿರು", options: ["ಅಮ್ಮಗಳು","ಅಮ್ಮರು" , "ಅಮ್ಮಂದಿರು",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Mother" },
-		{ question:"ತಾನು=", correct:"ತಾವು", options: ["ತಾನುಗಳು","ತಾನುಯರು" , "ತಾವು",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Himself" },
-		{ question:"ಮಗು=", correct:"ಮಕ್ಕಳು", options: ["ಮಗುಗಳು","ಮಗುಯರು" , "ಮಕ್ಕಳು", ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Child" },
-		{ question:"ಮುದುಕ=", correct:"ಮುದುಕರು", options: ["ಮುದುಕಗಳು","ಮುದುಕಯರು" , "ಮುದುಕರು",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Old man" },
-		{ question:" ನಾವು=", correct:"ನಾನು", options: ["ನಾವುಗಳು","ನಾವುಯರು","ನಾನು",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"We" },
-		{ question:" ಎಲೆಗಳು=", correct:"ಎಲೆ", options: ["ಎಲೆಗಳು","ಎಲೆಯರು","ಎಲೆ", ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Leaves" },
-		{ question:" ಅವರು=", correct:"ಅವನು", options: ["ಅವರುಗಳು","ಅವರುಯರು","ಅವನು", ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Them" },
-		{ question:" ಹುಡುಗಿಯರು=", correct:"ಹುಡುಗಿ ", options: ["ಹುಡುಗಿಗಳು","ಹುಡುಗಿಯರು","ಹುಡುಗಿ ",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Girls" },
-		{ question:" ಅಮ್ಮಂದಿರು=", correct:"ಅಮ್ಮ", options: ["ಅಮ್ಮಂದಿರುಗಳು","ಅಮ್ಮರು" ,,"ಅಮ್ಮ",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Mothers" },
-		{ question:" ತಾವು=", correct:"ತಾನು", options: ["ತಾವುಗಳು","ತಾವುಯರು" , "ತಾನು", ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Themselves" },
-		{ question:" ಮಕ್ಕಳು=", correct:"ಮಗು", options: ["ಮಕ್ಕಳುಗಳು","ಮಕ್ಕಳುಯರು","ಮಗು", ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Children" },
-		{ question:" ಮುದುಕರು=", correct:"ಮುದುಕ ", options: ["ಮುದುಕರುಗಳು","ಮುದುಕರುಯರು", "ಮುದುಕ ",], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Old men" }
+		{ question:"ಅಮ್ಮ=", correct:"ಅಮ್ಮಂದಿರು", options: ["ಅಮ್ಮಗಳು","ಅಮ್ಮರು" , "ಅಮ್ಮಂದಿರು"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Mother" },
+		{ question:"ತಾನು=", correct:"ತಾವು", options: ["ತಾನುಗಳು","ತಾನುಯರು" , "ತಾವು"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Himself" },
+		{ question:"ಮಗು=", correct:"ಮಕ್ಕಳು", options: ["ಮಗುಗಳು","ಮಗುಯರು" , "ಮಕ್ಕಳು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Child" },
+		{ question:"ಮುದುಕ=", correct:"ಮುದುಕರು", options: ["ಮುದುಕಗಳು","ಮುದುಕಯರು" , "ಮುದುಕರು"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Old man" },
+		{ question:" ನಾವು=", correct:"ನಾನು", options: ["ನಾವುಗಳು","ನಾವುಯರು","ನಾನು"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"We" },
+		{ question:" ಎಲೆಗಳು=", correct:"ಎಲೆ", options: ["ಎಲೆಗಳು","ಎಲೆಯರು","ಎಲೆ" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Leaves" },
+		{ question:" ಅವರು=", correct:"ಅವನು", options: ["ಅವರುಗಳು","ಅವರುಯರು","ಅವನು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Them" },
+		{ question:" ಹುಡುಗಿಯರು=", correct: "ಹುಡುಗಿ" , options: [ "ಹುಡುಗಿ"  , "ಹುಡುಗಿಗಳು" , "ಹುಡುಗಿಯರು"  ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Girls" },
+		{ question:" ಅಮ್ಮಂದಿರು=", correct:"ಅಮ್ಮ", options: ["ಅಮ್ಮಂದಿರುಗಳು","ಅಮ್ಮರು" ,"ಅಮ್ಮ"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Mothers" },
+		{ question:" ತಾವು=", correct:"ತಾನು", options: ["ತಾವುಗಳು","ತಾವುಯರು" , "ತಾನು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Themselves" },
+		{ question:" ಮಕ್ಕಳು=", correct:"ಮಗು", options: ["ಮಕ್ಕಳುಗಳು","ಮಕ್ಕಳುಯರು","ಮಗು" ], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Children" },
+		{ question:" ಮುದುಕರು=", correct:"ಮುದುಕ", options: ["ಮುದುಕರುಗಳು" , "ಮುದುಕರುಯರು", "ಮುದುಕ"], topic:"ವಚನ ಬದಲಾಯಿಸಿ" , english:"Old men" }
       ],
      "ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ": [
         { question:"ಸಾಲುಸಾಲು =", correct:"ದ್ವಿರುಕ್ತಿ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
@@ -2198,7 +2227,7 @@
 		{ question:"ವಿಲವಿಲ=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
 		{ question:"ಪಟಪಟ=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
 		{ question:"ಚುಕುಬುಕು=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
-		{ question:" ಗಡಗಡ=", correct:"ಅನುಕರಣಾವ್ಯಯ ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
+		{ question:" ಗಡಗಡ=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
 		{ question:" ಕರಕರ=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
 		{ question:" ವಟವಟ=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
 		{ question:" ಘಮಘಮ=", correct:"ಅನುಕರಣಾವ್ಯಯ", options: ["ದ್ವಿರುಕ್ತಿ","ಅನುಕರಣಾವ್ಯಯ","ಜೋಡಿನುಡಿ"], topic:"ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ" , english:"" },
@@ -2407,9 +2436,9 @@
       summaryDiv.innerHTML = "<h2>Game Summary ಸಾರಾಂಶ </h2>" +
                              (settings.showMistakes ? "<p>Mistakes: " + mistakes.length + "</p>" : "") +
 							 (mistakes.length ? "" : "<p>ಅದ್ಭುತ! ನೀವು ಎಲ್ಲಾ ಸರಿಯಾದ ಉತ್ತರಗಳನ್ನು ನೀಡಿದ್ದೀರಿ.!!!</p>") +
-                             "<p>Current Category: " + currentCategory + "</p>" +
-							 "<h2> ಪ್ರತಿಕ್ರಿಯೆಗಾಗಿ kannada.1up@gmail.com ಗೆ ಮೇಲ್ ಮಾಡಿ. </h2>"  + 
-							 "<h3> For feedback email: kannada.1up@gmail.com </h3>" ;
+                             "<p>Current Category: " + currentCategory + "</p>" +							
+							 "<h2> Email: kannada.1up@gmail.com </h2>" +
+							 "<p><a href=\"https://github.com/Surysingh/kannada.1up\">Contribute!!!</a></p>"							 ;
 							 
 							 
       summaryDiv.classList.remove("hidden");
