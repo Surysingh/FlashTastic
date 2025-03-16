@@ -2627,7 +2627,7 @@ window.categories = {
 },
 		{"question": "ಅಣ್ಣ - ಬಹುವಚನ ರೂಪ ಯಾವುದು?", "english": "What is the plural form of 'ಅಣ್ಣ' (elder brother)?", "correct": "ಅಣ್ಣಂದಿರು", "options": ["ಅಣ್ಣಗಳು", "ಅಣ್ಣಂದಿರು", "ಅಣ್ಣರು", "ಅಣ್ಣನಿಗೆ"], "topic": "ವಚನ ಬದಲಾಯಿಸಿ", "grades": 7, "difficulty": "Hard", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-		{"question": "ಹೆಣ್ಣು - ಬಹುವಚನ ರೂಪ ಬರೆಯಿರಿ.", "english": "Write the plural form of 'ಹೆಣ್ಣು' (girl).", "correct": "ಹೆಣ್ಣುಗಳು", "options": ["ಹೆಣ್ಣಿನ", "ಹೆಣ್ಣುಗಳು", "ಹೆಣ್ಣಿನಿಂದ", "ಹೆಣ್ಣಿರು"], "topic": "ವಚನ ಬದಲಾಯಿಸಿ", "grades": 8, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
+		{"question": "ಹೆಣ್ಣು - ಬಹುವಚನ ರೂಪ ಬರೆಯಿರಿ.", "english": "Write the plural form of 'ಹೆಣ್ಣು' (woman).", "correct": "ಹೆಂಗಸರು", "options": ["ಹೆಂಗಸರು", "ಹೆಣ್ಣುಗಳು", "ಹೆಣ್ಣಿನಿಂದ", "ಹೆಣ್ಣಿರು"], "topic": "ವಚನ ಬದಲಾಯಿಸಿ", "grades": 8, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 		{"question": "ಜನ - ಬಹುವಚನ ರೂಪ ತಿಳಿಸಿ.", "english": "State the plural form of 'ಜನ' (people).", "correct": "ಜನರು", "options": ["ಜನಗಳು", "ಜನರು", "ಜನದ", "ಜನಕ್ಕೆ"], "topic": "ವಚನ ಬದಲಾಯಿಸಿ", "grades": 9, "difficulty": "Hard", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
