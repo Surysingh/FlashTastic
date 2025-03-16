@@ -1,0 +1,175 @@
+/* Global Styles: Use Noto Sans Kannada for Kannada text, with fallbacks for English */
+body {
+  font-family: 'Noto Sans Kannada', 'Helvetica Neue', Arial, sans-serif;
+  /* Karnataka flag colors: deep red to bright yellow */
+  background: linear-gradient(to right, #B22222, #FFD700);
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: #fff;
+}
+/* Top Menu Styling */
+#menu {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.menu-button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+}
+/* Game Container Styling */
+#game-container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+#score, #high-score {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#flashcard {
+  font-size: 24px;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.option {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
+  font-size: 18px;
+}
+.option:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.hidden {
+  display: none;
+}
+#message {
+  font-size: 18px;
+  margin-bottom: 10px;
+  min-height: 24px;
+}
+#next-btn, #continueGame-btn, #exitGame-btn, #summary-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Animation for correct answer */
+.correct {
+  -webkit-animation: correctAnim 0.5s ease-out;
+  animation: correctAnim 0.5s ease-out;
+}
+@-webkit-keyframes correctAnim {
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@keyframes correctAnim {
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+.highlight-correct {
+  background-color: darkgreen !important;
+  -webkit-transform: scale(1.3) !important;
+  transform: scale(1.3) !important;
+  font-weight: bold;
+}
+/* Confetti effect */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  opacity: 0;
+  -webkit-animation: confettiFall 1000ms forwards;
+  animation: confettiFall 1000ms forwards;
+}
+@-webkit-keyframes confettiFall {
+  0% { -webkit-transform: translateY(0) rotate(0deg); transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { -webkit-transform: translateY(600px) rotate(360deg); transform: translateY(600px) rotate(360deg); opacity: 0; }
+}
+@keyframes confettiFall {
+  0% { -webkit-transform: translateY(0) rotate(0deg); transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { -webkit-transform: translateY(600px) rotate(360deg); transform: translateY(600px) rotate(360deg); opacity: 0; }
+}
+/* Summary styling */
+#summary {
+  text-align: left;
+  margin-top: 20px;
+}
+/* Settings Page Styling */
+#settings-page {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.settings-group {
+  margin-bottom: 15px;
+}
+.settings-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.settings-group input[type="range"],
+.settings-group input[type="color"],
+.settings-group select {
+  width: 100%;
+}
+.settings-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+#save-settings-btn, #cancel-settings-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
