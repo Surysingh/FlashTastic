@@ -120,11 +120,13 @@
     <!-- Translation text (hidden by default) -->
     <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
     <div id="options" class="options"></div>
-    <button id="next-btn" class="hidden" onclick="nextFlashcard()">Next</button>
+    <div style="display: flex; justify-content: space-between;">
+      <button id="summary-btn" onclick="summaryGame()">Summary</button>
+      <button id="next-btn" class="hidden" onclick="nextFlashcard()">Next -></button>
+    </div>
     <!-- Additional controls -->
     <button id="exitGame-btn" class="hidden" onclick="exitGame()">Reset</button>
     <button id="continueGame-btn" onclick="endGame()">Continue</button> 
-    <button id="summary-btn" onclick="summaryGame()">Summary</button>     
     <div id="confetti-container"></div>
     <div id="summary" class="hidden"></div>
   </div>
@@ -240,12 +242,16 @@
         triggerConfetti();
       } else {
         document.getElementById("message").innerText = "ತಪ್ಪು, ಸರಿಯಾದ ಉತ್ತರ: " + card.correct;
-		
+        
+        // Play mistake sound
+        let mistakeSound = new Audio('resources/mistake.mp3');
+        mistakeSound.play();
+        
         document.querySelectorAll('.option').forEach(btn => {
           btn.style.backgroundColor ="red";
           btn.style.color ="white";
         });
-		
+        
         mistakes.push({card: card, selected: selected});
       }
       updateScore();
@@ -332,6 +338,11 @@
     function triggerConfetti() {
       let container = document.getElementById("confetti-container");
       container.innerHTML = "";
+
+      // Play chime sound
+      let chime = new Audio('resources/chime.mp3');
+      chime.play();
+
       for(let i=0; i<30; i++){
         let confetti = document.createElement("div");
         confetti.className = "confetti-piece";
@@ -384,6 +395,6 @@
   </script>
 
   <!-- Add reference to data file -->
-  <script src="data_set.js"></script>
+  <script src="resources/data_set.js"></script>
 </body>
 </html>
