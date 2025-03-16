@@ -3375,7 +3375,7 @@ window.categories = {
 },
 		{"question": "'ಬೆನ್ನು ಹತ್ತು' ನುಡಿಗಟ್ಟನ್ನು ಹೇಗೆ ಗುರುತಿಸುತ್ತೀರಿ?", "english": "How do you identify the idiom 'ಬೆನ್ನು ಹತ್ತು'?", "correct": "ಹಿಂಬಾಲಿಸು", "options": ["ನೋವು", "ಸಂತೋಷ", "ಹಿಂಬಾಲಿಸು", "ತಿರಸ್ಕರಿಸು"], "topic": "ನುಡಿಗಟ್ಟು", "grades": 8, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-		{"question": "'ತಲೆಗೆ ಹುಳು ಬಿಡು' ಎಂದರೆ ಏನು?", "english": "What does 'ತಲೆಗೆ ಹುಳು ಬಿಡು' mean?", "correct": "ಹೆದರಿಸು", "options": ["ಸಹಾಯ ಮಾಡು", "ಹೆದರಿಸು", "ಸಂತೋಷ ನೀಡು", "ನೋವು ನೀಡು"], "topic": "ನುಡಿಗಟ್ಟು", "grades": 9, "difficulty": "Hard", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
+		{"question": "'ತಲೆಗೆ ಹುಳು ಬಿಡು' ಎಂದರೆ ಏನು?", "english": "What does 'ತಲೆಗೆ ಹುಳು ಬಿಡು' mean?", "correct": "ಗೊಂದಲ ಉಂಟುಮಾಡು", "options": ["ಸಹಾಯ ಮಾಡು", "ಗೊಂದಲ ಉಂಟುಮಾಡು", "ಸಂತೋಷ ನೀಡು", "ನೋವು ನೀಡು"], "topic": "ನುಡಿಗಟ್ಟು", "grades": 9, "difficulty": "Hard", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 		{"question": "'ಬೆವರ ಸುರಿಸು' ನುಡಿಗಟ್ಟಿನ ಅರ್ಥ ತಿಳಿಸಿ.", "english": "Explain the meaning of the idiom 'ಬೆವರ ಸುರಿಸು'.", "correct": "ಕಷ್ಟಪಟ್ಟು ಕೆಲಸ ಮಾಡು", "options": ["ತಿರಸ್ಕರಿಸು", "ಹೊಡೆ", "ಕಷ್ಟಪಟ್ಟು ಕೆಲಸ ಮಾಡು", "ನೋವು ನೀಡು"], "topic": "ನುಡಿಗಟ್ಟು", "grades": 10, "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1_%E0%B2%B5%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%95%E0%B2%B0%E0%B2%A3"
 },
