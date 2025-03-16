@@ -22,21 +22,43 @@
   <h1>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ</h1>
   <!-- Top Menu: Navigation buttons for selecting categories and accessing settings -->
   <div id="menu">
-    <button class="menu-button" onclick="selectCategory('ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ')">1. ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ</button>
-    <button class="menu-button" onclick="selectCategory('ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ')">2. ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ</button>
-    <button class="menu-button" onclick="selectCategory('ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ')">3. ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ</button>
-    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ')">4. ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ')">5. ಗುಣವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಸಂಖ್ಯಾವಾಚಕ')">6. ಸಂಖ್ಯಾವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಸರ್ವನಾಮ')">7. ಸರ್ವನಾಮ</button>
-    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ')">8. ಲಿಂಗ</button>
-    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ ಬದಲಾಯಿಸಿ')">9. ಲಿಂಗ ಬದಲಾಯಿಸಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಏಕವಚನ , ಬಹುವಚನ')">10. ಏಕವಚನ , ಬಹುವಚನ</button>
-    <button class="menu-button" onclick="selectCategory('ವಚನ ಬದಲಾಯಿಸಿ')">11. ವಚನ ಬದಲಾಯಿಸಿ</button>
-    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ')">12. ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ</button>
-    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ')">13. ದ್ವಿರುಕ್ತಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಅನುಕರಣಾವ್ಯಯ')">14. ಅನುಕರಣಾವ್ಯಯ</button>
-    <button class="menu-button" onclick="selectCategory('ಗಾದೆ')">15. ಗಾದೆ</button>
+    <button class="menu-button" onclick="selectCategory('ಸ್ವರಗಳು')">1. ಸ್ವರಗಳು</button>
+    <button class="menu-button" onclick="selectCategory('ವ್ಯಂಜನಗಳು')">2. ವ್ಯಂಜನಗಳು</button>	
+	<button class="menu-button" onclick="selectCategory('ಗುಣಿತಾಕ್ಷರ , ಒತ್ತಕ್ಷರ , ಸಂಯುಕ್ತಾಕ್ಷರ')">3. ಗುಣಿತಾಕ್ಷರ , ಒತ್ತಕ್ಷರ , ಸಂಯುಕ್ತಾಕ್ಷರ</button>	
+	
+    <button class="menu-button" onclick="selectCategory('ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ')">4. ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ</button>
+    <button class="menu-button" onclick="selectCategory('ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ')">5. ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ')">6. ಲಿಂಗ</button>
+    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ ಬದಲಾಯಿಸಿ')">7. ಲಿಂಗ ಬದಲಾಯಿಸಿ</button>
+    <button class="menu-button" onclick="selectCategory('ಏಕವಚನ , ಬಹುವಚನ')">8. ಏಕವಚನ , ಬಹುವಚನ</button>
+    <button class="menu-button" onclick="selectCategory('ವಚನ ಬದಲಾಯಿಸಿ')">9. ವಚನ ಬದಲಾಯಿಸಿ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ')">10. ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ</button>
+    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ')">11. ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ</button>
+    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ')">12. ಗುಣವಾಚಕ</button>
+    <button class="menu-button" onclick="selectCategory('ಸಂಖ್ಯಾವಾಚಕ')">13. ಸಂಖ್ಯಾವಾಚಕ</button>
+	<button class="menu-button" onclick="selectCategory('ದಿಗ್ವಾಚಕ')">14. ದಿಗ್ವಾಚಕ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ಸರ್ವನಾಮ')">15. ಸರ್ವನಾಮ</button>
+	<button class="menu-button" onclick="selectCategory('ಭಾವನಾಮ, ಕ್ರಿಯಾನಾಮ , ಕ್ರಿಯಾಪದ')">16. ಭಾವನಾಮ, ಕ್ರಿಯಾನಾಮ , ಕ್ರಿಯಾಪದ</button>
+	<button class="menu-button" onclick="selectCategory('ವಸ್ತುವಾಚಕ , ಪರಿಮಾಣವಾಚಕ , ಪ್ರಕಾರವಾಚಕ')">17. ವಸ್ತುವಾಚಕ , ಪರಿಮಾಣವಾಚಕ , ಪ್ರಕಾರವಾಚಕ</button>
+	
+
+    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ')">18. ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ</button>
+    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ')">19. ದ್ವಿರುಕ್ತಿ</button>
+    <button class="menu-button" onclick="selectCategory('ಅನುಕರಣಾವ್ಯಯ')">20. ಅನುಕರಣಾವ್ಯಯ</button>
+    <button class="menu-button" onclick="selectCategory('ಗಾದೆ')">21. ಗಾದೆ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ನುಡಿಗಟ್ಟು')">22. ನುಡಿಗಟ್ಟು</button>
+    <button class="menu-button" onclick="selectCategory('ಪ್ರಾಸ ಪದಗಳು')">23. ಪ್ರಾಸ ಪದಗಳು</button>
+    <button class="menu-button" onclick="selectCategory('ನಾನಾರ್ಥ')">24. ನಾನಾರ್ಥ</button>
+    <button class="menu-button" onclick="selectCategory('ಸಂಧಿ')">25. ಸಂಧಿ</button>
+    <button class="menu-button" onclick="selectCategory('ಕಾಲ')">26. ಕಾಲ</button>
+    <button class="menu-button" onclick="selectCategory('ಪುರುಷ')">27. ಪುರುಷ</button>
+	<button class="menu-button" onclick="selectCategory('ಲೇಖನ ಚಿಹ್ನೆ')">28. ಲೇಖನ ಚಿಹ್ನೆ</button>
+
+	
     <button class="menu-button" onclick="openSettings()">Settings</button>
   </div>
 
@@ -90,23 +112,7 @@
         Show Kannada to English Translations
       </label>
     </div>
-    <div class="settings-group">
-      <label for="grade-select">Select School Grade</label>
-      <select id="grade-select">
-        <option value="1">Grade 1</option>
-        <option value="2">Grade 2</option>
-        <option value="3">Grade 3</option>
-        <option value="4" selected>Grade 4</option>
-        <option value="5">Grade 5</option>
-        <option value="6">Grade 6</option>
-        <option value="7">Grade 7</option>
-        <option value="8">Grade 8</option>
-        <option value="9">Grade 9</option>
-        <option value="10">Grade 10</option>
-        <option value="11">Grade 11</option>
-        <option value="12">Grade 12</option>
-      </select>
-    </div>
+    
     <button id="save-settings-btn" onclick="saveSettings()">Save Settings</button>
     <button id="cancel-settings-btn" onclick="closeSettings()">Cancel</button>
   </div>
@@ -141,7 +147,7 @@
       showScores: true,
       showMistakes: true,
       showTranslation: false,
-      grade: 4
+      grade: 9
     };
 
     // Initialize categories
