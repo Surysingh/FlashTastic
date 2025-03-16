@@ -149,6 +149,8 @@
       showTranslation: false,
       grade: 9
     };
+	
+	let categoryProgress = {}; // categoryName: { correct: 0, total: 0 }
 
     // Initialize categories
     let categories = null;
@@ -169,26 +171,44 @@
 
     // Modify selectCategory to handle uninitialized data
     function selectCategory(categoryName) {
-      if (!categories) {
-        alert("Game data is not loaded yet. Please try again.");
-        return;
+	
+	  if (currentCategory != categoryName ) {
+		  if (!categories) {
+			alert("Game data is not loaded yet. Please try again.");
+			return;
+		  }
+		  
+		  let flashcards = categories[categoryName];
+		  if(!flashcards || flashcards.length === 0) {
+			alert("No flashcards available for this category.");
+			return;
       }
-      
-      let flashcards = categories[categoryName];
-      if(!flashcards || flashcards.length === 0) {
-        alert("No flashcards available for this category.");
-        return;
-      }
+
       
       currentCategory = categoryName;
       currentFlashcards = shuffle(flashcards.filter(card => !card.grade || card.grade == settings.grade) || flashcards);
       currentIndex = 0;
-      
+	  
       document.getElementById("menu").classList.add("hidden");
       document.getElementById("game-container").classList.remove("hidden");
       document.getElementById("summary").classList.add("hidden");
       document.getElementById("exitGame-btn").classList.add("hidden");
-      showFlashcard();
+	  
+	      showFlashcard();
+	  }
+	  else
+	  {
+	  
+      document.getElementById("menu").classList.add("hidden");
+      document.getElementById("game-container").classList.remove("hidden");
+      document.getElementById("summary").classList.add("hidden");
+      document.getElementById("exitGame-btn").classList.add("hidden");
+	  
+		nextFlashcard();
+	  }	  
+      
+
+  
     }
 
     // Current game state variables
@@ -242,7 +262,13 @@
     // Check user's answer
     function checkAnswer(selected) {
       let card = currentFlashcards[currentIndex];
+	  if (!categoryProgress[currentCategory]) {
+			categoryProgress[currentCategory] = { correct: 0, total: 0 };
+		}
+  categoryProgress[currentCategory].total++;
+  
       if(selected === card.correct) {
+	  categoryProgress[currentCategory].correct++;
         score += 10;
         document.getElementById("message").innerText = "ಸರಿಯಾದ ಉತ್ತರ!";
         triggerConfetti();
@@ -252,6 +278,8 @@
         // Play mistake sound
         let mistakeSound = new Audio('resources/mistake.mp3');
         mistakeSound.play();
+		
+		
         
         document.querySelectorAll('.option').forEach(btn => {
           btn.style.backgroundColor ="red";
@@ -295,14 +323,24 @@
 	
     // End game: show summary with mistakes and reference info if available
     function summaryGame() {
+	
       if(score > highScore) highScore = score;
+
+		let progress = categoryProgress[currentCategory];
+		let diff = currentFlashcards.length - currentIndex - 1;
+		let progressText = progress ? `Category Progress: ${progress.correct} / ${progress.total}` : 'No progress tracked for this category.';
+        let progressText2 = (currentIndex < currentFlashcards.length) ? `Remaining: ${diff}` : 'All questions tried for this category';
+		
+		
       let summaryDiv = document.getElementById("summary");
       summaryDiv.innerHTML = "<h2>Game Summary ಸಾರಾಂಶ </h2>" +
                              (settings.showMistakes ? "<p>Mistakes: " + mistakes.length + "</p>" : "") +
 							 (mistakes.length ? "" : "<p>ಅದ್ಭುತ! ನೀವು ಎಲ್ಲಾ ಸರಿಯಾದ ಉತ್ತರಗಳನ್ನು ನೀಡಿದ್ದೀರಿ.!!!</p>") +
-                             "<p>Current Category: " + currentCategory + "</p>" +							
+                             "<p>Current Category: " + currentCategory + "</p>" +	
+							 "<p>" + progressText + "</p>" + // Display progress
+								"<p>" + progressText2 + "</p>" + // Display progress							 
 							 "<h2> Email: kannada.1up@gmail.com </h2>" +
-							 "<p><a href=\"https://github.com/Surysingh/kannada.1up\">Contribute!!!</a></p>"							 ;
+							 "<p><a href=\"https://github.com/Surysingh/kannada.1up\">Collaborate to improve this game!!!</a></p>"							 ;
 							 
 							 
       summaryDiv.classList.remove("hidden");
@@ -335,6 +373,8 @@
     function exitGame() {
       score = 0;
 	  mistakes = [];
+	  currentCategory = null; 
+	  categoryProgress = {}; // categoryName: { correct: 0, total: 0 }
       updateScore();
       document.getElementById("game-container").classList.add("hidden");
       document.getElementById("menu").classList.remove("hidden");
