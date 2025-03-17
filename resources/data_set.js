@@ -2992,12 +2992,10 @@ window.categories = {
 },
 		{"question": "ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸಂಯುಕ್ತ ಸ್ವರ ಯಾವುದು?", "english": "Which of the following is a compound vowel?", "correct": "ಐ", "options": ["ಅ", "ಉ", "ಇ", "ಐ"], "topic": "ಸ್ವರ", "grades": 10, "difficulty": "Medium", "reference": "https://en.wikipedia.org/wiki/Kannada_grammar"
 },
-		{"question": "ವರ್ಣಮಾಲೆಯಲ್ಲಿ ಯಾವ ಸ್ವರ ‘ಸ್ವರ ಮತ್ತು ವ್ಯಂಜನ’ ಎರಡಕ್ಕೂ ಸೇರಿದೆ?", "english": "Which vowel in the alphabet belongs to both 'vowel and consonant'?", "correct": "ಋ", "options": ["ಅ", "ಇ", "ಋ", "ಉ"], "topic": "ಸ್ವರ", "grades": 10, "difficulty": "Hard", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1_%E0%B2%B5%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%95%E0%B2%B0%E0%B2%A3"
-},
+
 		{"question": "ಸ್ವರಗಳ ಸಹಾಯವಿಲ್ಲದೆ ಉಚ್ಚರಿಸಲಾಗದ ಅಕ್ಷರಗಳನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?", "english": "What are letters that cannot be pronounced without the help of vowels called?", "correct": "ವ್ಯಂಜನಗಳು", "options": ["ಸ್ವರಗಳು", "ವ್ಯಂಜನಗಳು", "ಯೋಗವಾಹಕಗಳು", "ಸಂಯುಕ್ತಾಕ್ಷರಗಳು"], "topic": "ಸ್ವರ", "grades": 8, "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-		{"question": "ಕನ್ನಡದಲ್ಲಿ ಸ್ವರಗಳ ಮೂಲ ಎಷ್ಟು?", "english": "What is the origin of vowels in Kannada?", "correct": "ಸಂಸ್ಕೃತ", "options": ["ಪ್ರಾಕೃತ", "ದ್ರಾವಿಡ", "ಸಂಸ್ಕೃತ", "ಪರ್ಷಿಯನ್"], "topic": "ಸ್ವರ", "grades": 9, "difficulty": "Hard", "reference": "https://en.wikipedia.org/wiki/Kannada_grammar"
-},
+
 		{"question": "ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಹ್ರಸ್ವ ಸ್ವರ ಯಾವುದು?", "english": "Which of the following is a short vowel?", "correct": "ಅ", "options": ["ಆ", "ಈ", "ಊ", "ಅ"], "topic": "ಸ್ವರ", "grades": 5, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 		{"question": "ಕನ್ನಡದಲ್ಲಿ ಎಷ್ಟು ಹ್ರಸ್ವ ಸ್ವರಗಳಿವೆ?", "english": "How many short vowels are there in Kannada?", "correct": "6", "options": ["4", "5", "6", "7"], "topic": "ಸ್ವರ", "grades": 6, "difficulty": "Medium", "reference": "https://en.wikipedia.org/wiki/Kannada_grammar"
@@ -3020,10 +3018,8 @@ window.categories = {
 },
 		{"question": "ಕೆಳಗಿನ ಯಾವ ಪದದಲ್ಲಿ ‘ಅ’ ಹ್ರಸ್ವ ಸ್ವರವಾಗಿದೆ?", "english": "In which word is 'ಅ' a short vowel?", "correct": "ಅದು", "options": ["ಆಡು", "ಆಕಾಶ", "ಅದು", "ಆನಂದ"], "topic": "ಸ್ವರ", "grades": 5, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-		{"question": "ಹ್ರಸ್ವ ಸ್ವರಗಳು ಪದದ ಅರ್ಥವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸಬಹುದು?", "english": "How can short vowels change the meaning of a word?", "correct": "ಉಚ್ಚಾರಣೆಯಲ್ಲಿ ವ್ಯತ್ಯಾಸದಿಂದ", "options": ["ಬರವಣಿಗೆಯಲ್ಲಿ ವ್ಯತ್ಯಾಸದಿಂದ", "ಉಚ್ಚಾರಣೆಯಲ್ಲಿ ವ್ಯತ್ಯಾಸದಿಂದ", "ವಾಕ್ಯದ ರಚನೆಯಿಂದ", "ಪದದ ಸ್ಥಾನದಿಂದ"], "topic": "ಸ್ವರ", "grades": 10, "difficulty": "Hard", "reference": "https://en.wikipedia.org/wiki/Kannada_grammar"
-},
-		{"question": "ಕೆಳಗಿನ ಯಾವ ಪದದಲ್ಲಿ ‘ಋ’ ಹ್ರಸ್ವ ಸ್ವರವಾಗಿ ಬರುತ್ತದೆ?", "english": "In which word does 'ಋ' occur as a short vowel?", "correct": "ಋಷಿ", "options": ["ಋಣ", "ಋತು", "ಋಷಿ", "ಋಗ್ವೇದ"], "topic": "ಸ್ವರ", "grades": 7, "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
-},
+
+
 		
 		{"question": "ಕೆಳಗಿನವುಗಳಲ್ಲಿ ದೀರ್ಘ ಸ್ವರ ಯಾವುದು?", "english": "Which of the following is a long vowel?", "correct": "ಆ", "options": ["ಅ", "ಇ", "ಉ", "ಆ"], "topic": "ಸ್ವರ", "grades": 5, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
@@ -3047,10 +3043,8 @@ window.categories = {
 },
 		{"question": "ಕೆಳಗಿನ ಯಾವ ಪದದಲ್ಲಿ ‘ಆ’ ದೀರ್ಘ ಸ್ವರವಾಗಿದೆ?", "english": "In which word is ‘ಆ’ a long vowel?", "correct": "ಆಡು", "options": ["ಅದು", "ಅವನು", "ಆಡು", "ಅರಳು"], "topic": "ಸ್ವರ", "grades": 5, "difficulty": "Easy", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-		{"question": "ದೀರ್ಘ ಸ್ವರಗಳು ಪದದ ಅರ್ಥವನ್ನು ಹೇಗೆ ಬದಲಾಯಿಸಬಹುದು?", "english": "How can long vowels change the meaning of a word?", "correct": "ಉಚ್ಚಾರಣೆಯಲ್ಲಿ ವ್ಯತ್ಯಾಸದಿಂದ", "options": ["ಬರವಣಿಗೆಯಲ್ಲಿ ವ್ಯತ್ಯಾಸದಿಂದ", "ಉಚ್ಚಾರಣೆಯಲ್ಲಿ ವ್ಯತ್ಯಾಸದಿಂದ", "ವಾಕ್ಯದ ರಚನೆಯಿಂದ", "ಪದದ ಸ್ಥಾನದಿಂದ"], "topic": "ಸ್ವರ", "grades": 10, "difficulty": "Hard", "reference": "https://en.wikipedia.org/wiki/Kannada_grammar"
-},
-		{"question": "ಕೆಳಗಿನ ಯಾವ ಪದದಲ್ಲಿ ‘ಋ’ ದೀರ್ಘ ಸ್ವರವಾಗಿ ಬರುತ್ತದೆ?", "english": "In which word does ‘ಋ’ occur as a long vowel?", "correct": "ಋಗ್ವೇದ", "options": ["ಋಷಿ", "ಋಣ", "ಋತು", "ಋಗ್ವೇದ"], "topic": "ಸ್ವರ", "grades": 7, "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
-},
+
+
 
 		{"question": "ಕನ್ನಡ ವರ್ಣಮಾಲೆಯಲ್ಲಿ ಎಷ್ಟು ಸ್ವರಗಳಿವೆ?", "english": "How many vowels are there in the Kannada alphabet?", "correct": "13", "options": ["10", "13", "15", "11"], "topic": "ಸ್ವರ", "grades": 5, "difficulty": "Easy", "reference": "https://en.wikipedia.org/wiki/Kannada_grammar"
 },
