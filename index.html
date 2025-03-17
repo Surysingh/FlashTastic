@@ -22,21 +22,43 @@
   <h1>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ</h1>
   <!-- Top Menu: Navigation buttons for selecting categories and accessing settings -->
   <div id="menu">
-    <button class="menu-button" onclick="selectCategory('ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ')">1. ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ</button>
-    <button class="menu-button" onclick="selectCategory('ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ')">2. ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ</button>
-    <button class="menu-button" onclick="selectCategory('ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ')">3. ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ</button>
-    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ')">4. ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ')">5. ಗುಣವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಸಂಖ್ಯಾವಾಚಕ')">6. ಸಂಖ್ಯಾವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಸರ್ವನಾಮ')">7. ಸರ್ವನಾಮ</button>
-    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ')">8. ಲಿಂಗ</button>
-    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ ಬದಲಾಯಿಸಿ')">9. ಲಿಂಗ ಬದಲಾಯಿಸಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಏಕವಚನ , ಬಹುವಚನ')">10. ಏಕವಚನ , ಬಹುವಚನ</button>
-    <button class="menu-button" onclick="selectCategory('ವಚನ ಬದಲಾಯಿಸಿ')">11. ವಚನ ಬದಲಾಯಿಸಿ</button>
-    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ')">12. ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ</button>
-    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ')">13. ದ್ವಿರುಕ್ತಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಅನುಕರಣಾವ್ಯಯ')">14. ಅನುಕರಣಾವ್ಯಯ</button>
-    <button class="menu-button" onclick="selectCategory('ಗಾದೆ')">15. ಗಾದೆ</button>
+    <button class="menu-button" onclick="selectCategory('ಸ್ವರಗಳು')">1. ಸ್ವರಗಳು</button>
+    <button class="menu-button" onclick="selectCategory('ವ್ಯಂಜನಗಳು')">2. ವ್ಯಂಜನಗಳು</button>	
+	<button class="menu-button" onclick="selectCategory('ಗುಣಿತಾಕ್ಷರ , ಒತ್ತಕ್ಷರ , ಸಂಯುಕ್ತಾಕ್ಷರ')">3. ಗುಣಿತಾಕ್ಷರ , ಒತ್ತಕ್ಷರ , ಸಂಯುಕ್ತಾಕ್ಷರ</button>	
+	
+    <button class="menu-button" onclick="selectCategory('ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ')">4. ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ</button>
+    <button class="menu-button" onclick="selectCategory('ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ')">5. ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ')">6. ಲಿಂಗ</button>
+    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ ಬದಲಾಯಿಸಿ')">7. ಲಿಂಗ ಬದಲಾಯಿಸಿ</button>
+    <button class="menu-button" onclick="selectCategory('ಏಕವಚನ , ಬಹುವಚನ')">8. ಏಕವಚನ , ಬಹುವಚನ</button>
+    <button class="menu-button" onclick="selectCategory('ವಚನ ಬದಲಾಯಿಸಿ')">9. ವಚನ ಬದಲಾಯಿಸಿ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ')">10. ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ</button>
+    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ')">11. ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ</button>
+    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ')">12. ಗುಣವಾಚಕ</button>
+    <button class="menu-button" onclick="selectCategory('ಸಂಖ್ಯಾವಾಚಕ')">13. ಸಂಖ್ಯಾವಾಚಕ</button>
+	<button class="menu-button" onclick="selectCategory('ದಿಗ್ವಾಚಕ')">14. ದಿಗ್ವಾಚಕ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ಸರ್ವನಾಮ')">15. ಸರ್ವನಾಮ</button>
+	<button class="menu-button" onclick="selectCategory('ಭಾವನಾಮ, ಕ್ರಿಯಾನಾಮ , ಕ್ರಿಯಾಪದ')">16. ಭಾವನಾಮ, ಕ್ರಿಯಾನಾಮ , ಕ್ರಿಯಾಪದ</button>
+	<button class="menu-button" onclick="selectCategory('ವಸ್ತುವಾಚಕ , ಪರಿಮಾಣವಾಚಕ , ಪ್ರಕಾರವಾಚಕ')">17. ವಸ್ತುವಾಚಕ , ಪರಿಮಾಣವಾಚಕ , ಪ್ರಕಾರವಾಚಕ</button>
+	
+
+    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ')">18. ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ</button>
+    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ')">19. ದ್ವಿರುಕ್ತಿ</button>
+    <button class="menu-button" onclick="selectCategory('ಅನುಕರಣಾವ್ಯಯ')">20. ಅನುಕರಣಾವ್ಯಯ</button>
+    <button class="menu-button" onclick="selectCategory('ಗಾದೆ')">21. ಗಾದೆ</button>
+	
+    <button class="menu-button" onclick="selectCategory('ನುಡಿಗಟ್ಟು')">22. ನುಡಿಗಟ್ಟು</button>
+    <button class="menu-button" onclick="selectCategory('ಪ್ರಾಸ ಪದಗಳು')">23. ಪ್ರಾಸ ಪದಗಳು</button>
+    <button class="menu-button" onclick="selectCategory('ನಾನಾರ್ಥ')">24. ನಾನಾರ್ಥ</button>
+    <button class="menu-button" onclick="selectCategory('ಸಂಧಿ')">25. ಸಂಧಿ</button>
+    <button class="menu-button" onclick="selectCategory('ಕಾಲ')">26. ಕಾಲ</button>
+    <button class="menu-button" onclick="selectCategory('ಪುರುಷ')">27. ಪುರುಷ</button>
+	<button class="menu-button" onclick="selectCategory('ಲೇಖನ ಚಿಹ್ನೆ')">28. ಲೇಖನ ಚಿಹ್ನೆ</button>
+
+	
     <button class="menu-button" onclick="openSettings()">Settings</button>
   </div>
 
@@ -90,23 +112,7 @@
         Show Kannada to English Translations
       </label>
     </div>
-    <div class="settings-group">
-      <label for="grade-select">Select School Grade</label>
-      <select id="grade-select">
-        <option value="1">Grade 1</option>
-        <option value="2">Grade 2</option>
-        <option value="3">Grade 3</option>
-        <option value="4" selected>Grade 4</option>
-        <option value="5">Grade 5</option>
-        <option value="6">Grade 6</option>
-        <option value="7">Grade 7</option>
-        <option value="8">Grade 8</option>
-        <option value="9">Grade 9</option>
-        <option value="10">Grade 10</option>
-        <option value="11">Grade 11</option>
-        <option value="12">Grade 12</option>
-      </select>
-    </div>
+    
     <button id="save-settings-btn" onclick="saveSettings()">Save Settings</button>
     <button id="cancel-settings-btn" onclick="closeSettings()">Cancel</button>
   </div>
@@ -141,8 +147,10 @@
       showScores: true,
       showMistakes: true,
       showTranslation: false,
-      grade: 4
+      grade: 9
     };
+	
+	let categoryProgress = {}; // categoryName: { correct: 0, total: 0 }
 
     // Initialize categories
     let categories = null;
@@ -163,26 +171,44 @@
 
     // Modify selectCategory to handle uninitialized data
     function selectCategory(categoryName) {
-      if (!categories) {
-        alert("Game data is not loaded yet. Please try again.");
-        return;
+	
+	  if (currentCategory != categoryName ) {
+		  if (!categories) {
+			alert("Game data is not loaded yet. Please try again.");
+			return;
+		  }
+		  
+		  let flashcards = categories[categoryName];
+		  if(!flashcards || flashcards.length === 0) {
+			alert("No flashcards available for this category.");
+			return;
       }
-      
-      let flashcards = categories[categoryName];
-      if(!flashcards || flashcards.length === 0) {
-        alert("No flashcards available for this category.");
-        return;
-      }
+
       
       currentCategory = categoryName;
       currentFlashcards = shuffle(flashcards.filter(card => !card.grade || card.grade == settings.grade) || flashcards);
       currentIndex = 0;
-      
+	  
       document.getElementById("menu").classList.add("hidden");
       document.getElementById("game-container").classList.remove("hidden");
       document.getElementById("summary").classList.add("hidden");
       document.getElementById("exitGame-btn").classList.add("hidden");
-      showFlashcard();
+	  
+	      showFlashcard();
+	  }
+	  else
+	  {
+	  
+      document.getElementById("menu").classList.add("hidden");
+      document.getElementById("game-container").classList.remove("hidden");
+      document.getElementById("summary").classList.add("hidden");
+      document.getElementById("exitGame-btn").classList.add("hidden");
+	  
+		nextFlashcard();
+	  }	  
+      
+
+  
     }
 
     // Current game state variables
@@ -236,7 +262,13 @@
     // Check user's answer
     function checkAnswer(selected) {
       let card = currentFlashcards[currentIndex];
+	  if (!categoryProgress[currentCategory]) {
+			categoryProgress[currentCategory] = { correct: 0, total: 0 };
+		}
+  categoryProgress[currentCategory].total++;
+  
       if(selected === card.correct) {
+	  categoryProgress[currentCategory].correct++;
         score += 10;
         document.getElementById("message").innerText = "ಸರಿಯಾದ ಉತ್ತರ!";
         triggerConfetti();
@@ -246,6 +278,8 @@
         // Play mistake sound
         let mistakeSound = new Audio('resources/mistake.mp3');
         mistakeSound.play();
+		
+		
         
         document.querySelectorAll('.option').forEach(btn => {
           btn.style.backgroundColor ="red";
@@ -289,14 +323,24 @@
 	
     // End game: show summary with mistakes and reference info if available
     function summaryGame() {
+	
       if(score > highScore) highScore = score;
+
+		let progress = categoryProgress[currentCategory];
+		let diff = currentFlashcards.length - currentIndex - 1;
+		let progressText = progress ? `Category Progress: ${progress.correct} / ${progress.total}` : 'No progress tracked for this category.';
+        let progressText2 = (currentIndex < currentFlashcards.length) ? `Remaining: ${diff}` : 'All questions tried for this category';
+		
+		
       let summaryDiv = document.getElementById("summary");
       summaryDiv.innerHTML = "<h2>Game Summary ಸಾರಾಂಶ </h2>" +
                              (settings.showMistakes ? "<p>Mistakes: " + mistakes.length + "</p>" : "") +
 							 (mistakes.length ? "" : "<p>ಅದ್ಭುತ! ನೀವು ಎಲ್ಲಾ ಸರಿಯಾದ ಉತ್ತರಗಳನ್ನು ನೀಡಿದ್ದೀರಿ.!!!</p>") +
-                             "<p>Current Category: " + currentCategory + "</p>" +							
+                             "<p>Current Category: " + currentCategory + "</p>" +	
+							 "<p>" + progressText + "</p>" + // Display progress
+								"<p>" + progressText2 + "</p>" + // Display progress							 
 							 "<h2> Email: kannada.1up@gmail.com </h2>" +
-							 "<p><a href=\"https://github.com/Surysingh/kannada.1up\">Contribute!!!</a></p>"							 ;
+							 "<p><a href=\"https://github.com/Surysingh/kannada.1up\">Collaborate to improve this game!!!</a></p>"							 ;
 							 
 							 
       summaryDiv.classList.remove("hidden");
@@ -329,6 +373,8 @@
     function exitGame() {
       score = 0;
 	  mistakes = [];
+	  currentCategory = null; 
+	  categoryProgress = {}; // categoryName: { correct: 0, total: 0 }
       updateScore();
       document.getElementById("game-container").classList.add("hidden");
       document.getElementById("menu").classList.remove("hidden");
@@ -380,7 +426,7 @@
       settings.showScores = document.getElementById("toggle-scores").checked;
       settings.showMistakes = document.getElementById("toggle-mistakes").checked;
       settings.showTranslation = document.getElementById("toggle-translation").checked;
-      settings.grade = parseInt(document.getElementById("grade-select").value);
+
       
       // Apply font size to flashcard display
       document.getElementById("flashcard").style.fontSize = settings.fontSize + "px";
