@@ -194,7 +194,7 @@
         let currentIndex = 0;
         let score = 0;
         let highScore = localStorage.getItem('highScore') || 0;
-        let mistakes = 0;
+        let mistakes = [];
 
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -257,15 +257,12 @@
                 let mistakeSound = new Audio('resources/mistake.mp3');
                 mistakeSound.play();
 
-                document.querySelectorAll('.option').forEach(btn => {
-                    btn.style.backgroundColor = "red";
-                    btn.style.color = "white";
-                });
-
-                mistakes.push({
-                    card: card,
-                    selected: selected
-                });
+        document.querySelectorAll('.option').forEach(btn => {
+          btn.style.backgroundColor ="red";
+          btn.style.color ="white";
+        });
+        
+        mistakes.push({card: card, selected: selected});
             }
             updateScore();
             let optionButtons = document.getElementsByClassName("option");
@@ -312,7 +309,7 @@
             let summaryDiv = document.getElementById("summary");
             summaryDiv.innerHTML = "<h2>Game Summary ಸಾರಾಂಶ </h2>" +
                 (settings.showMistakes ? "<p>Mistakes: " + mistakes.length + "</p>" : "") +
-                (mistakes.length ? "" : "<p>ಅದ್ಭುತ! ನೀವು ಎಲ್ಲಾ ಸರಿಯಾದ ಉತ್ತರಗಳನ್ನು ನೀಡಿದ್ದೀರಿ.!!!</p>") +
+                (mistakes.length ? "" : "<p>Amazing! You haven't made a mistake!!!</p>") +
                 "<p>Current Category: " + currentCategory + "</p>" +
                 "<p>" + progressText + "</p>" +
                 "<p>" + progressText2 + "</p>" +
