@@ -1,446 +1,84 @@
 <!DOCTYPE html>
-<html lang="kn">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
- <!-- Updated viewport meta tag for improved mobile compatibility -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <!-- Enable Apple web app capabilities -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- Set status bar style for Apple devices -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!-- Disable telephone detection in iOS -->
-  <meta name="format-detection" content="telephone=no">
-  <!-- Additional meta tags for Samsung HTML viewer and general mobile optimization -->
-  <meta name="HandheldFriendly" content="true">
-  <meta name="MobileOptimized" content="320">  <title>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ </title>
-  <!-- Include Kannada-friendly font from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap" rel="stylesheet">
-  <!-- Link to external CSS file -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>ಕನ್ನಡ ವ್ಯಾಕರಣ ಫ್ಲಾಶ್ ಆಟ</h1>
-  <!-- Top Menu: Navigation buttons for selecting categories and accessing settings -->
-  <div id="menu">
-    <button class="menu-button" onclick="selectCategory('ಸ್ವರಗಳು')">1. ಸ್ವರಗಳು</button>
-    <button class="menu-button" onclick="selectCategory('ವ್ಯಂಜನಗಳು')">2. ವ್ಯಂಜನಗಳು</button>	
-	<button class="menu-button" onclick="selectCategory('ಗುಣಿತಾಕ್ಷರ , ಒತ್ತಕ್ಷರ , ಸಂಯುಕ್ತಾಕ್ಷರ')">3. ಗುಣಿತಾಕ್ಷರ , ಒತ್ತಕ್ಷರ , ಸಂಯುಕ್ತಾಕ್ಷರ</button>	
-	
-    <button class="menu-button" onclick="selectCategory('ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ')">4. ವಿಭಕ್ತಿ ಪ್ರತ್ಯಯ</button>
-    <button class="menu-button" onclick="selectCategory('ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ')">5. ವ್ಯಕ್ತಿ , ವಸ್ತು , ಪ್ರಾಣಿ , ಪಕ್ಷಿ , ಸ್ಥಳ</button>
-	
-    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ')">6. ಲಿಂಗ</button>
-    <button class="menu-button" onclick="selectCategory('ಲಿಂಗ ಬದಲಾಯಿಸಿ')">7. ಲಿಂಗ ಬದಲಾಯಿಸಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಏಕವಚನ , ಬಹುವಚನ')">8. ಏಕವಚನ , ಬಹುವಚನ</button>
-    <button class="menu-button" onclick="selectCategory('ವಚನ ಬದಲಾಯಿಸಿ')">9. ವಚನ ಬದಲಾಯಿಸಿ</button>
-	
-    <button class="menu-button" onclick="selectCategory('ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ')">10. ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ</button>
-    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ')">11. ಗುಣವಾಚಕ , ಸಂಖ್ಯಾವಾಚಕ , ದಿಗ್ವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಗುಣವಾಚಕ')">12. ಗುಣವಾಚಕ</button>
-    <button class="menu-button" onclick="selectCategory('ಸಂಖ್ಯಾವಾಚಕ')">13. ಸಂಖ್ಯಾವಾಚಕ</button>
-	<button class="menu-button" onclick="selectCategory('ದಿಗ್ವಾಚಕ')">14. ದಿಗ್ವಾಚಕ</button>
-	
-    <button class="menu-button" onclick="selectCategory('ಸರ್ವನಾಮ')">15. ಸರ್ವನಾಮ</button>
-	<button class="menu-button" onclick="selectCategory('ಭಾವನಾಮ, ಕ್ರಿಯಾನಾಮ , ಕ್ರಿಯಾಪದ')">16. ಭಾವನಾಮ, ಕ್ರಿಯಾನಾಮ , ಕ್ರಿಯಾಪದ</button>
-	<button class="menu-button" onclick="selectCategory('ವಸ್ತುವಾಚಕ , ಪರಿಮಾಣವಾಚಕ , ಪ್ರಕಾರವಾಚಕ')">17. ವಸ್ತುವಾಚಕ , ಪರಿಮಾಣವಾಚಕ , ಪ್ರಕಾರವಾಚಕ</button>
-	
-
-    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ')">18. ದ್ವಿರುಕ್ತಿ , ಅನುಕರಣಾವ್ಯಯ , ಜೋಡಿನುಡಿ</button>
-    <button class="menu-button" onclick="selectCategory('ದ್ವಿರುಕ್ತಿ')">19. ದ್ವಿರುಕ್ತಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಅನುಕರಣಾವ್ಯಯ')">20. ಅನುಕರಣಾವ್ಯಯ</button>
-    <button class="menu-button" onclick="selectCategory('ಗಾದೆ')">21. ಗಾದೆ</button>
-	
-    <button class="menu-button" onclick="selectCategory('ನುಡಿಗಟ್ಟು')">22. ನುಡಿಗಟ್ಟು</button>
-    <button class="menu-button" onclick="selectCategory('ಪ್ರಾಸ ಪದಗಳು')">23. ಪ್ರಾಸ ಪದಗಳು</button>
-    <button class="menu-button" onclick="selectCategory('ನಾನಾರ್ಥ')">24. ನಾನಾರ್ಥ</button>
-    <button class="menu-button" onclick="selectCategory('ಸಂಧಿ')">25. ಸಂಧಿ</button>
-    <button class="menu-button" onclick="selectCategory('ಕಾಲ')">26. ಕಾಲ</button>
-    <button class="menu-button" onclick="selectCategory('ಪುರುಷ')">27. ಪುರುಷ</button>
-	<button class="menu-button" onclick="selectCategory('ಲೇಖನ ಚಿಹ್ನೆ')">28. ಲೇಖನ ಚಿಹ್ನೆ</button>
-
-	
-    <button class="menu-button" onclick="openSettings()">Settings</button>
-  </div>
-
-  <!-- Settings Page: Customize appearance, animation, translations, and grade -->
-  <div id="settings-page" class="hidden">
-    <h2>Settings</h2>
-    <div class="settings-group">
-      <label for="confetti-select">Confetti Variety</label>
-      <select id="confetti-select">
-        <option value="default">Default</option>
-        <option value="sparkle">Sparkle</option>
-        <option value="rainbow">Rainbow</option>
-        <option value="stars">Stars</option>
-      </select>
-    </div>
-    <div class="settings-group">
-      <label for="font-size-range">Font Size (px)</label>
-      <input type="range" id="font-size-range" min="12" max="36" value="24">
-    </div>
-    <div class="settings-group">
-      <label for="button-size-range">Button Size (px)</label>
-      <input type="range" id="button-size-range" min="12" max="36" value="18">
-    </div>
-    <div class="settings-group">
-      <label for="animation-speed-range">Animation Speed (Multiplier)</label>
-      <input type="range" id="animation-speed-range" min="0.5" max="2" step="0.1" value="1">
-    </div>
-    <div class="settings-group">
-      <label>
-        <input type="checkbox" id="toggle-scores" checked>
-        Show Scores and High Scores
-      </label>
-    </div>
-    <div class="settings-group">
-      <label>
-        <input type="checkbox" id="toggle-mistakes" checked>
-        Show Mistakes in End Game
-      </label>
-    </div>
-    <div class="settings-group">
-      <label for="background-color-picker">Background Color</label>
-      <input type="color" id="background-color-picker" value="#B22222">
-    </div>
-    <div class="settings-group">
-      <label for="button-color-picker">Button Color</label>
-      <input type="color" id="button-color-picker" value="#4caf50">
-    </div>
-    <div class="settings-group">
-      <label>
-        <input type="checkbox" id="toggle-translation">
-        Show Kannada to English Translations
-      </label>
-    </div>
-    
-    <button id="save-settings-btn" onclick="saveSettings()">Save Settings</button>
-    <button id="cancel-settings-btn" onclick="closeSettings()">Cancel</button>
-  </div>
-
-  <!-- Game Container: Main area for flashcards, options, and feedback -->
-  <div id="game-container" class="hidden">
-    <div id="score">Score: 0</div>
-    <div id="high-score">High Score: 0</div>
-    <div id="message"></div>
-    <div id="flashcard"></div>
-    <!-- Translation text (hidden by default) -->
-    <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
-    <div id="options" class="options"></div>
-    <div style="display: flex; justify-content: space-between;">
-      <button id="summary-btn" onclick="summaryGame()">Summary</button>
-      <button id="next-btn" class="hidden" onclick="nextFlashcard()">Next -></button>
-    </div>
-    <!-- Additional controls -->
-    <button id="exitGame-btn" class="hidden" onclick="exitGame()">Reset</button>
-    <button id="continueGame-btn" onclick="endGame()">Continue</button> 
-    <div id="confetti-container"></div>
-    <div id="summary" class="hidden"></div>
-  </div>
-
-  <script>
-    // Global settings object – updated via settings page
-    let settings = {
-      confettiType: 'default',
-      fontSize: 24,
-      buttonSize: 18,
-      animationSpeed: 1,
-      showScores: true,
-      showMistakes: true,
-      showTranslation: false,
-      grade: 9
-    };
-	
-	let categoryProgress = {}; // categoryName: { correct: 0, total: 0 }
-
-    // Initialize categories
-    let categories = null;
-    
-    // Initialize game after data is loaded
-    function initGame() {
-      if (typeof window.categories === 'undefined') {
-        console.error('Categories data not loaded');
-        return;
-      }
-      categories = window.categories;
-      console.log(categories)
-      console.log('Categories loaded successfully');
-    }
-
-    // Load game when document is ready
-    document.addEventListener('DOMContentLoaded', initGame);
-
-    // Modify selectCategory to handle uninitialized data
-    function selectCategory(categoryName) {
-	
-	  if (currentCategory != categoryName ) {
-		  if (!categories) {
-			alert("Game data is not loaded yet. Please try again.");
-			return;
-		  }
-		  
-		  let flashcards = categories[categoryName];
-		  if(!flashcards || flashcards.length === 0) {
-			alert("No flashcards available for this category.");
-			return;
-      }
-
-      
-      currentCategory = categoryName;
-      currentFlashcards = shuffle(flashcards.filter(card => !card.grade || card.grade == settings.grade) || flashcards);
-      currentIndex = 0;
-	  
-      document.getElementById("menu").classList.add("hidden");
-      document.getElementById("game-container").classList.remove("hidden");
-      document.getElementById("summary").classList.add("hidden");
-      document.getElementById("exitGame-btn").classList.add("hidden");
-	  
-	      showFlashcard();
-	  }
-	  else
-	  {
-	  
-      document.getElementById("menu").classList.add("hidden");
-      document.getElementById("game-container").classList.remove("hidden");
-      document.getElementById("summary").classList.add("hidden");
-      document.getElementById("exitGame-btn").classList.add("hidden");
-	  
-		nextFlashcard();
-	  }	  
-      
-
-  
-    }
-
-    // Current game state variables
-    let currentCategory = null;
-    let currentFlashcards = [];
-    let currentIndex = 0;
-    let score = 0;
-    let highScore = localStorage.getItem('highScore') || 0;
-    let mistakes = [];
-	
-    // Shuffle array using Fisher-Yates algorithm.
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }	
-
-    // Display the current flashcard
-    function showFlashcard() {
-      let card = currentFlashcards[currentIndex];
-      document.getElementById("flashcard").innerText = card.question;
-      // Show translation if enabled and available
-      if(settings.showTranslation && card.english) {
-        document.getElementById("translation").innerText = card.english;
-        document.getElementById("translation").classList.remove("hidden");
-      } else {
-        document.getElementById("translation").classList.add("hidden");
-      }
-      let optionsDiv = document.getElementById("options");
-      optionsDiv.innerHTML = "";
-	  const shuffledOptions = shuffle([...card.options]);
-      shuffledOptions.forEach(opt => {
-        let btn = document.createElement("button");
-        btn.className = "option";
-        btn.style.fontSize = settings.buttonSize + "px";
-        btn.innerText = opt;
-        btn.onclick = function() { checkAnswer(opt); };
-        optionsDiv.appendChild(btn);
-      });
-      document.getElementById("message").innerText = "";
-      document.getElementById("next-btn").classList.add("hidden");
-	  document.getElementById("continueGame-btn").classList.add("hidden");
-	  document.getElementById("summary-btn").classList.remove("hidden");
-      // Ensure flashcard and options are visible
-      document.getElementById("flashcard").classList.remove("hidden");
-      document.getElementById("options").classList.remove("hidden");
-    }
-
-    // Check user's answer
-    function checkAnswer(selected) {
-      let card = currentFlashcards[currentIndex];
-	  if (!categoryProgress[currentCategory]) {
-			categoryProgress[currentCategory] = { correct: 0, total: 0 };
-		}
-  categoryProgress[currentCategory].total++;
-  
-      if(selected === card.correct) {
-	  categoryProgress[currentCategory].correct++;
-        score += 10;
-        document.getElementById("message").innerText = "ಸರಿಯಾದ ಉತ್ತರ!";
-        triggerConfetti();
-      } else {
-        document.getElementById("message").innerText = "ತಪ್ಪು, ಸರಿಯಾದ ಉತ್ತರ: " + card.correct;
-        
-        // Play mistake sound
-        let mistakeSound = new Audio('resources/mistake.mp3');
-        mistakeSound.play();
-		
-		
-        
-        document.querySelectorAll('.option').forEach(btn => {
-          btn.style.backgroundColor ="red";
-          btn.style.color ="white";
-        });
-        
-        mistakes.push({card: card, selected: selected});
-      }
-      updateScore();
-      // Disable buttons and highlight correct answer
-      let optionButtons = document.getElementsByClassName("option");
-      for(let btn of optionButtons) {
-        btn.disabled = true;
-        if(btn.innerText === card.correct) {
-          btn.classList.add("highlight-correct");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School 1UP Flashcard App</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-      }
-      document.getElementById("next-btn").classList.remove("hidden");
-    }
 
-    // Update score and high score display
-    function updateScore() {
-      if(settings.showScores) {
-        document.getElementById("score").innerText = "Score: " + score;
-        document.getElementById("high-score").innerText = "High Score: " + highScore;
-      } else {
-        document.getElementById("score").innerText = "";
-        document.getElementById("high-score").innerText = "";
-      }
-    }
+        #language-select {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
 
-    // Move to the next flashcard or end game if finished
-    function nextFlashcard() {
-      currentIndex++;
-      if(currentIndex < currentFlashcards.length) {
-        showFlashcard();
-      } else {
-        summaryGame();
-      }
-    }
+        #flashcard-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #flashcard-container iframe {
+            width: 80%; /* Adjust as needed */
+            height: 500px; /* Adjust as needed */
+            border: none;
+        }
+
+        #links {
+            margin-top: 20px;
+        }
+
+        #links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the School 1UP Flashcard App</h1>
+
+    <label for="language-select">Choose a category:</label>
+	<select id="language-select" onchange="openPage(this)">
+		<option value="">Select a category</option>
+		<option value="index_kan.html">Kannada</option>
+		<option value="index_en.html">English</option>
+	</select>
+
+
+    <div id="flashcard-container">
+        <iframe id="flashcard-frame"></iframe> 
+    </div>
 	
-    // End game: show summary with mistakes and reference info if available
-    function summaryGame() {
 	
-      if(score > highScore) highScore = score;
 
-		let progress = categoryProgress[currentCategory];
-		let diff = currentFlashcards.length - currentIndex - 1;
-		let progressText = progress ? `Category Progress: ${progress.correct} / ${progress.total}` : 'No progress tracked for this category.';
-        let progressText2 = (currentIndex < currentFlashcards.length) ? `Remaining: ${diff}` : 'All questions tried for this category';
-		
-		
-      let summaryDiv = document.getElementById("summary");
-      summaryDiv.innerHTML = "<h2>Game Summary ಸಾರಾಂಶ </h2>" +
-                             (settings.showMistakes ? "<p>Mistakes: " + mistakes.length + "</p>" : "") +
-							 (mistakes.length ? "" : "<p>ಅದ್ಭುತ! ನೀವು ಎಲ್ಲಾ ಸರಿಯಾದ ಉತ್ತರಗಳನ್ನು ನೀಡಿದ್ದೀರಿ.!!!</p>") +
-                             "<p>Current Category: " + currentCategory + "</p>" +	
-							 "<p>" + progressText + "</p>" + // Display progress
-								"<p>" + progressText2 + "</p>" + // Display progress							 
-							 "<h2> Email: kannada.1up@gmail.com </h2>" +
-							 "<p><a href=\"https://github.com/Surysingh/kannada.1up\">Collaborate to improve this game!!!</a></p>"							 ;
-							 
-							 
-      summaryDiv.classList.remove("hidden");
-      document.getElementById("continueGame-btn").classList.remove("hidden");
-	  
-	  document.getElementById("exitGame-btn").classList.remove("hidden");
-      document.getElementById("next-btn").classList.add("hidden");
-	  
-	  document.getElementById("summary-btn").classList.add("hidden");	  
-      // Hide game elements
-      document.getElementById("flashcard").classList.add("hidden");
-      document.getElementById("options").classList.add("hidden");
-      
-    }	
+    <div id="links">
+        <a href="#">About</a> |
+        <a href="https://abhi-kannada.replit.app/">Main URL</a> |
+        <a href="https://github.com/Surysingh/kannada.1up/tree/dev">GitHub (Github)</a> |
+		<a href="https://raw.githack.com/Surysingh/kannada.1up/refs/heads/main/index.html">Dev URL</a> |
+        <a href="https://raw.githack.com/Surysingh/kannada.1up/refs/heads/main/index.html">Main URL</a>
+    </div>
 
-    // End game: show summary with mistakes and reference info if available
-    function endGame() {
-      updateScore();
-      document.getElementById("game-container").classList.add("hidden");
-      document.getElementById("menu").classList.remove("hidden");
+<script>
+function openPage(selectElement) {
+    var selectedValue = selectElement.value;
+    if (selectedValue) {
+        window.location.href = selectedValue; //  This line will open the selected page in the same tab
+        //window.open(selectedValue, "_blank"); // This line will open the selected page in new tab
     }
-
-    // Continue: go back to main menu without resetting score
-    function continueGame() {
-      document.getElementById("game-container").classList.add("hidden");
-      document.getElementById("menu").classList.remove("hidden");
-    }
-
-    // Exit game: reset score and go to main menu
-    function exitGame() {
-      score = 0;
-	  mistakes = [];
-	  currentCategory = null; 
-	  categoryProgress = {}; // categoryName: { correct: 0, total: 0 }
-      updateScore();
-      document.getElementById("game-container").classList.add("hidden");
-      document.getElementById("menu").classList.remove("hidden");
-    }
-
-    // Trigger confetti effect based on settings
-    function triggerConfetti() {
-      let container = document.getElementById("confetti-container");
-      container.innerHTML = "";
-
-      // Play chime sound
-      let chime = new Audio('resources/chime.mp3');
-      chime.play();
-
-      for(let i=0; i<30; i++){
-        let confetti = document.createElement("div");
-        confetti.className = "confetti-piece";
-        confetti.style.backgroundColor = (settings.confettiType === "rainbow") ? getRandomColor() :
-                                         (settings.confettiType === "sparkle") ? "#fff" : "#ff0000";
-        confetti.style.left = Math.random()*100 + "%";
-        confetti.style.animationDuration = (1000 / settings.animationSpeed) + "ms";
-        container.appendChild(confetti);
-      }
-      setTimeout(() => { container.innerHTML = ""; }, 1500);
-    }
-    function getRandomColor() {
-      let letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i=0; i<6; i++){
-        color += letters[Math.floor(Math.random()*16)];
-      }
-      return color;
-    }
-
-    // Settings page functions
-    function openSettings() {
-      document.getElementById("settings-page").classList.remove("hidden");
-      document.getElementById("menu").classList.add("hidden");
-    }
-    function closeSettings() {
-      document.getElementById("settings-page").classList.add("hidden");
-      document.getElementById("menu").classList.remove("hidden");
-    }
-    function saveSettings() {
-      settings.confettiType = document.getElementById("confetti-select").value;
-      settings.fontSize = document.getElementById("font-size-range").value;
-      settings.buttonSize = document.getElementById("button-size-range").value;
-      settings.animationSpeed = parseFloat(document.getElementById("animation-speed-range").value);
-      settings.showScores = document.getElementById("toggle-scores").checked;
-      settings.showMistakes = document.getElementById("toggle-mistakes").checked;
-      settings.showTranslation = document.getElementById("toggle-translation").checked;
-
-      
-      // Apply font size to flashcard display
-      document.getElementById("flashcard").style.fontSize = settings.fontSize + "px";
-      // Update background and menu button colors
-      document.body.style.background = document.getElementById("background-color-picker").value;
-      let btns = document.getElementsByClassName("menu-button");
-      for(let btn of btns){
-        btn.style.backgroundColor = document.getElementById("button-color-picker").value;
-      }
-      closeSettings();
-    }
-  </script>
-
-  <!-- Add reference to data file -->
-  <script src="resources/data_set.js"></script>
+}
+</script>
 </body>
+
 </html>
