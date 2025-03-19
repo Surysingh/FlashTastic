@@ -91,7 +91,7 @@
     </div>
 	
 <div id="flashcard-container">
-    
+    <div id="flashcard"></div>
     <button id="report-issue-btn" onclick="openReportIssueModal()">Report Issue</button>
      <button id="suggest-flashcard-btn" onclick="openSuggestFlashcardModal()">+</button>
 </div>	
