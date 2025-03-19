@@ -1,7 +1,7 @@
 # Kannada Grammar Game
 
 ## Introduction
-This is an interactive **Kannada Grammar Flashcard Game** designed to help users practice and learn Kannada grammar concepts through a fun and engaging multiple-choice quiz. It includes various grammar topics such as **vibhakti pratyaya (case suffixes), nouns, pronouns, adjectives, numbers, and gender classification**.
+This is an interactive **English & Kannada Grammar Flashcard Game** designed to help users practice and learn English & Kannada grammar concepts through a fun and engaging multiple-choice quiz. It includes various grammar topics.
 
 https://abhi-kannada.replit.app/
 
