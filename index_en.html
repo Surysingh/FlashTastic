@@ -89,6 +89,57 @@
         <div id="confetti-container"></div>
         <div id="summary" class="hidden"></div>
     </div>
+	
+<div id="flashcard-container">
+    <div id="flashcard"></div>
+    <button id="report-issue-btn" onclick="openReportIssueModal()">Report Issue</button>
+     <button id="suggest-flashcard-btn" onclick="openSuggestFlashcardModal()">+</button>
+</div>	
+
+<div id="report-issue-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="closeReportIssueModal()">&times;</span>
+        <h2>Report a Flashcard Issue</h2>
+        <p id="report-issue-question"></p>
+        <form id="report-issue-form" action="" method="get" enctype="text/plain">
+            <label for="issue-description">Describe the issue:</label>
+            <textarea id="issue-description" name="issue-description" rows="4" required></textarea>
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+</div>
+
+<div id="suggest-flashcard-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="closeSuggestFlashcardModal()">&times;</span>
+        <h2>Suggest a Flashcard</h2>
+        <form id="suggest-flashcard-form" action="" method="get" enctype="text/plain">
+            <label for="suggest-question">Question:</label>
+            <input type="text" id="suggest-question" name="suggest-question" required>
+            <label for="suggest-translation">Translation:</label>
+            <input type="text" id="suggest-translation" name="suggest-translation">
+            <label for="suggest-correct">Correct Answer:</label>
+            <input type="text" id="suggest-correct" name="suggest-correct" required>
+            <label for="suggest-options">Options (comma-separated):</label>
+            <input type="text" id="suggest-options" name="suggest-options" required>
+            <label for="suggest-grade">Grade:</label>
+            <select id="suggest-grade" name="suggest-grade">
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+</div>
+   
+</div>
+
+
 
     <script>
         // Global settings object – updated via settings page
@@ -195,6 +246,8 @@
         let score = 0;
         let highScore = localStorage.getItem('highScore') || 0;
         let mistakes = [];
+		let currentCard = null; // Store the current flashcard
+
 
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -208,7 +261,12 @@
 		    
 			
             let card = currentFlashcards[currentIndex];
+			
+			currentCard = card; // Store the card
+			
             document.getElementById("flashcard").innerText = card.question;
+			
+			
             if (settings.showTranslation && card.Translation) {
                 document.getElementById("translation").innerText = card.Translation;
                 document.getElementById("translation").classList.remove("hidden");
@@ -235,6 +293,120 @@
             document.getElementById("flashcard").classList.remove("hidden");
             document.getElementById("options").classList.remove("hidden");
         }
+		
+    function openReportIssueModal() {
+        if (!currentCard) return;  // Exit if no card
+
+        document.getElementById("report-issue-question").innerText = currentCard.question;
+        document.getElementById("report-issue-modal").style.display = "block";
+    }
+
+    function closeReportIssueModal() {
+        document.getElementById("report-issue-modal").style.display = "none";
+    }
+
+    document.getElementById('report-issue-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page reload
+
+        const issueDescription = document.getElementById('issue-description').value;
+        const issueTitle = `Issue with flashcard: ${currentCard.question}`; // Create a descriptive title
+
+    // Sanitize input (basic example)
+    const sanitizedDescription = issueDescription.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    const question = currentCard.question;
+    const translation = currentCard.Translation;
+    const correct = currentCard.correct;
+    const options = `${currentCard.options}`;
+    const grade = currentCard.grade;
+    const category =currentCategory;
+    const recipient = "Kannada.1up@gmail.com";  // Replace with your email address
+
+    // Basic input sanitization (consider more robust methods)
+    const sanitizedQuestion = question.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const sanitizedTranslation = translation.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const sanitizedCorrect = correct.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const sanitizedOptions = options.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+	
+
+    const emailTitle = `Flashcard Issue Report: ${question}`;
+    const emailBody = `Issue Flashcard\n\n` +
+                      `Question: ${sanitizedQuestion}\n` +
+                      `Translation: ${sanitizedTranslation}\n` +
+                      `Correct Answer: ${sanitizedCorrect}\n` +
+                      `Options: ${sanitizedOptions}\n` +
+                      `Grade: ${grade}\n` +
+                      `Category: ${category}\n`+
+                      `Description: ${sanitizedDescription}\n`;
+
+    // Construct the mailto: link
+   this.action = `mailto:${recipient}?subject=${emailTitle}&body=${encodeURIComponent(emailBody)}`;
+//	    this.action = `mailto:${recipient}?subject={encodeURIComponent(emailTitle)}&body=${encodeURIComponent(emailBody)}`;
+
+
+	
+
+     // Programmatically trigger the <a> link
+     window.location.href = this.action;
+	 
+
+    closeReportIssueModal();
+       
+    });
+
+    function openSuggestFlashcardModal() {
+	
+        console.log( openSuggestFlashcardModal )
+		if (!currentCard) return;  // Exit if no card
+
+        
+        document.getElementById("suggest-flashcard-modal").style.display = "block";
+        
+    }
+
+    function closeSuggestFlashcardModal() {
+	console.log( closeSuggestFlashcardModal )
+        document.getElementById("suggest-flashcard-modal").style.display = "none";
+    }
+
+  document.getElementById('suggest-flashcard-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+	
+	
+
+    const question = document.getElementById('suggest-question').value;
+    const translation = document.getElementById('suggest-translation').value;
+    const correct = document.getElementById('suggest-correct').value;
+    const options = document.getElementById('suggest-options').value;
+    const grade = document.getElementById('suggest-grade').value;
+    const category =currentCategory;
+    const recipient = "Kannada.1up@gmail.com";  // Replace with your email address
+
+    // Basic input sanitization (consider more robust methods)
+    const sanitizedQuestion = question.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const sanitizedTranslation = translation.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const sanitizedCorrect = correct.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const sanitizedOptions = options.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    const emailTitle = `Flashcard Suggestion: ${question}`;
+    const emailBody = `Suggested Flashcard\n\n` +
+                      `Question: ${sanitizedQuestion}\n` +
+                      `Translation: ${sanitizedTranslation}\n` +
+                      `Correct Answer: ${sanitizedCorrect}\n` +
+                      `Options: ${sanitizedOptions}\n` +
+                      `Grade: ${grade}\n` +
+                      `Category: ${category}`;
+
+    // Construct the mailto: link
+//    this.action = `mailto:<span class="math-inline">\{recipient\}?subject\=</span>{encodeURIComponent(emailTitle)}&body=${encodeURIComponent(emailBody)}`;
+this.action = `mailto:${recipient}?subject=${emailTitle}&body=${encodeURIComponent(emailBody)}`;
+
+console.log( this.action )
+     // Programmatically trigger the <a> link
+     window.location.href = this.action;
+	 console.log( this.action )
+    closeSuggestFlashcardModal();
+});
 
         function checkAnswer(selected) {
             let card = currentFlashcards[currentIndex];
@@ -313,8 +485,8 @@
                 "<p>Current Category: " + currentCategory + "</p>" +
                 "<p>" + progressText + "</p>" +
                 "<p>" + progressText2 + "</p>" +
-                "<h2> Email: English.1up@gmail.com </h2>" +
-                "<p><a href=\"https://github.com/Surysingh/English.1up\">Collaborate to improve this game!!!</a></p>";
+                "<h2> Email: Kannada.1up@gmail.com </h2>" +
+                "<p><a href=\"https://github.com/Surysingh/Kannada.1up\">Collaborate to improve this game!!!</a></p>";
 
             summaryDiv.classList.remove("hidden");
             document.getElementById("continueGame-btn").classList.remove("hidden");
