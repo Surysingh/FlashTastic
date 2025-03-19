@@ -77,8 +77,16 @@
         <div id="score">Score: 0</div>
         <div id="high-score">High Score: 0</div>
         <div id="message"></div>
-        <div id="flashcard"></div>
-        <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
+ <div id="flashcard">
+    <div id="question-text"></div>
+    <div class="translation-toggle">
+        <label class="switch">
+            <input type="checkbox" id="translation-toggle-btn" onclick="toggleTranslation()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+<div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
         <div id="options" class="options"></div>
         <div style="display: flex; justify-content: space-between;">
             <button id="summary-btn" onclick="summaryGame()">Summary</button>
@@ -264,7 +272,30 @@
 			
 			currentCard = card; // Store the card
 			
-            document.getElementById("flashcard").innerText = card.question;
+            document.getElementById("question-text").innerText = card.question;
+			
+			// Set initial state of the translation and switch
+			const translationDiv = document.getElementById("translation");
+			const toggleSwitch = document.getElementById("translation-toggle-btn");
+
+			if (settings.showTranslation && currentCard.Translation) {
+				translationDiv.innerText = currentCard.Translation;
+				translationDiv.classList.remove("hidden");
+				toggleSwitch.checked = true;
+				toggleSwitch.disabled = false;
+			} else if (currentCard.Translation) {
+				translationDiv.innerText = currentCard.Translation;
+				translationDiv.classList.add("hidden");
+				toggleSwitch.checked = false;
+				toggleSwitch.disabled = false;
+			}
+			else {
+				  translationDiv.innerText = "";
+				translationDiv.classList.add("hidden");
+				toggleSwitch.checked = false;
+				toggleSwitch.disabled = true;
+				
+			}		
 			
 			
             if (settings.showTranslation && card.Translation) {
@@ -293,6 +324,13 @@
             document.getElementById("flashcard").classList.remove("hidden");
             document.getElementById("options").classList.remove("hidden");
         }
+		
+function toggleTranslation() {
+    const translationDiv = document.getElementById("translation");
+    const toggleSwitch = document.getElementById("translation-toggle-btn");
+
+    translationDiv.classList.toggle("hidden");
+}		
 		
     function openReportIssueModal() {
         if (!currentCard) return;  // Exit if no card
@@ -562,6 +600,8 @@ console.log( this.action )
         }
 
         function saveSettings() {
+
+
             settings.confettiType = document.getElementById("confetti-select").value;
             settings.fontSize = document.getElementById("font-size-range").value;
             settings.buttonSize = document.getElementById("button-size-range").value;
