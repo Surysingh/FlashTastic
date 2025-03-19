@@ -421,10 +421,10 @@ console.log( this.action )
             if (selected === card.correct) {
                 categoryProgress[currentCategory].correct++;
                 score += 10;
-                document.getElementById("message").innerText = "ಸರಿಯಾದ ಉತ್ತರ!";
+                document.getElementById("message").innerText = "Correct!!!";
                 triggerConfetti();
             } else {
-                document.getElementById("message").innerText = "ತಪ್ಪು, ಸರಿಯಾದ ಉತ್ತರ: " + card.correct;
+                document.getElementById("message").innerText = "Wrong! Correct Answer: " + card.correct;
 
                 let mistakeSound = new Audio('resources/mistake.mp3');
                 mistakeSound.play();
@@ -479,7 +479,7 @@ console.log( this.action )
                 'All questions tried for this category';
 
             let summaryDiv = document.getElementById("summary");
-            summaryDiv.innerHTML = "<h2>Game Summary ಸಾರಾಂಶ </h2>" +
+            summaryDiv.innerHTML = "<h2>Game Summary </h2>" +
                 (settings.showMistakes ? "<p>Mistakes: " + mistakes.length + "</p>" : "") +
                 (mistakes.length ? "" : "<p>Amazing! You haven't made a mistake!!!</p>") +
                 "<p>Current Category: " + currentCategory + "</p>" +
