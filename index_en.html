@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kn">
+<html lang="hi">
 
 <head>
     <meta charset="UTF-8">
@@ -356,7 +356,7 @@
 
     function openSuggestFlashcardModal() {
 	
-        console.log( openSuggestFlashcardModal )
+        //console.log( openSuggestFlashcardModal )
 		if (!currentCard) return;  // Exit if no card
 
         
@@ -365,7 +365,7 @@
     }
 
     function closeSuggestFlashcardModal() {
-	console.log( closeSuggestFlashcardModal )
+	//console.log( closeSuggestFlashcardModal )
         document.getElementById("suggest-flashcard-modal").style.display = "none";
     }
 
@@ -404,7 +404,7 @@ this.action = `mailto:${recipient}?subject=${emailTitle}&body=${encodeURICompone
 console.log( this.action )
      // Programmatically trigger the <a> link
      window.location.href = this.action;
-	 console.log( this.action )
+	 //console.log( this.action )
     closeSuggestFlashcardModal();
 });
 
