@@ -330,3 +330,10 @@ input:checked + .slider:before {
 	align-items: center;
 	margin-bottom: 10px; /* Add some space below the buttons */
 }
+
+#second-buttons-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px; /* Add some space below the buttons */
+}
