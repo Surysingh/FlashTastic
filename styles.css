@@ -312,3 +312,29 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+#search-bar {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+}
+
+#search-button {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #007bff; /* A blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+

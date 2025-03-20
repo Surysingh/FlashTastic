@@ -10,14 +10,16 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="320">
     <title>English Grammar Flash game </title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+English&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <h1>English Grammar Flash game</h1>
-    <div id="menu">
-        </div>
+<div id="menu">
+    <input type="text" id="search-bar" placeholder="Search...">
+    <button id="search-button">Search</button>
+</div>
 
     <div id="settings-page" class="hidden">
         <h2>Settings</h2>
@@ -165,6 +167,8 @@
 
         let categoryProgress = {};
         let categories = null;
+		
+		
 		
        // Function to dynamically create category buttons
         function createCategoryButtons() {
@@ -618,6 +622,176 @@ console.log( this.action )
             }
             closeSettings();
         }
+		
+
+
+const searchBar = document.getElementById("search-bar");
+const searchButton = document.getElementById("search-button");
+
+searchButton.addEventListener("click", performSearch);
+searchBar.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        performSearch();
+    }
+});
+
+function performSearch() {
+    const searchTerm = searchBar.value.trim().toLowerCase();
+    if (!searchTerm) {
+        return; // Don't search if the input is empty
+    }
+
+    let results =[];
+	
+  // Clear previous search results if any
+    let resultsContainer = document.getElementById("results-container");
+    if (resultsContainer) {
+        resultsContainer.remove();
+    }	
+
+    // Search through all categories and flashcards
+    for (const category in categories) {
+        for (const card of categories[category]) {
+            if (
+                card.question.toLowerCase().includes(searchTerm) ||
+                card.correct.toLowerCase().includes(searchTerm) ||
+                card.topic.toLowerCase().includes(searchTerm)
+            ) {
+                results.push({ card: card, category: category });
+            }
+        }
+    }
+
+    if (results.length === 0) {
+        // No exact matches, try "nearby" matching (levenshtein distance)
+        let nearbyResults = findNearbyMatches(searchTerm);
+        if (nearbyResults.length > 0) {
+            displaySearchResults(nearbyResults, "Nearby Matches");
+        } else {
+            alert("No matching flashcards found.");
+        }
+    } else {
+        displaySearchResults(results, "Search Results");
+    }
+}
+
+function findNearbyMatches(searchTerm) {
+    const threshold = 2; // Adjust this threshold as needed
+    let nearbyResults = [];
+
+    for (const category in categories) {
+        for (const card of categories[category]) {
+            if (
+                levenshteinDistance(card.question.toLowerCase(), searchTerm) <= threshold ||
+                levenshteinDistance(card.correct.toLowerCase(), searchTerm) <= threshold ||
+                levenshteinDistance(card.topic.toLowerCase(), searchTerm) <= threshold
+            ) {
+                nearbyResults.push({ card: card, category: category });
+            }
+        }
+    }
+    return nearbyResults;
+}
+
+// Levenshtein Distance Algorithm (for "nearby" matching)
+function levenshteinDistance(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+    let matrix = [];
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1, // Substitution
+                    matrix[i][j - 1] + 1, // Insertion
+                    matrix[i - 1][j] + 1
+                ); // Deletion
+            }
+        }
+    }
+    return matrix[b.length][a.length];
+}
+
+function displaySearchResults(results, title) {
+    let menuDiv = document.getElementById("menu");
+    let searchDiv = document.createElement("div"); // Create a temporary div
+    searchDiv.id = "search-container"; // Give it an ID
+    searchDiv.innerHTML = `
+        <input type="text" id="search-bar" placeholder="Search...">
+        <button id="search-button">Search</button>
+    `;
+
+    // Keep a reference to the search container
+    let existingSearchContainer = menuDiv.querySelector("#search-container");
+    if (existingSearchContainer) {
+        menuDiv.removeChild(existingSearchContainer); // Remove old container
+    }
+    //menuDiv.appendChild(searchDiv); // Add the search bar back
+
+    // Add event listeners again
+    const searchBar = document.getElementById("search-bar");
+    const searchButton = document.getElementById("search-button");
+    searchButton.addEventListener("click", performSearch);
+    searchBar.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            performSearch();
+        }
+    });
+
+    let resultsDiv = document.createElement("div"); // Create a div for results
+    resultsDiv.id = "results-container";
+
+    resultsDiv.innerHTML = `<h2>${title}</h2>`; // Add title to results div
+
+    if (results.length === 0) {
+        resultsDiv.innerHTML = "No results found.";
+        menuDiv.appendChild(resultsDiv);
+        return;
+    }
+
+    results.forEach((result) => {
+        let button = document.createElement("button");
+        button.className = "menu-button";
+        button.textContent = `Category: ${result.category} - Question: ${result.card.question}`;
+        button.onclick = function() {
+            // Logic to start the game with the selected flashcard
+            selectCategory(result.category); // Assuming selectCategory handles this
+            // You might need to adjust currentIndex to start with the specific card
+            currentFlashcards = categories[result.category];
+            currentIndex = currentFlashcards.indexOf(result.card);
+            showFlashcard();
+        };
+        resultsDiv.appendChild(button);
+    });
+
+    // Add a "Back to Menu" button
+    let backButton = document.createElement("button");
+    backButton.textContent = "Back to Menu";
+    backButton.className = "menu-button";
+    backButton.onclick = function() {
+	
+	  // Clear previous search results if any
+    let resultsContainer = document.getElementById("results-container");
+    if (resultsContainer) {
+        resultsContainer.remove();
+    }
+	
+	
+        document.getElementById("results-container").remove(); // Clear results
+        createCategoryButtons(); // Redisplay category buttons
+    };
+    resultsDiv.appendChild(backButton);
+    menuDiv.appendChild(resultsDiv);
+}		
+		
     </script>
 
     <script src="resources/data_set_en.js"></script>
