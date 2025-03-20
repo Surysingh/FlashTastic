@@ -43,12 +43,12 @@
                menuDiv.appendChild(button);
            });
 
-           //  Corrected settings button creation
+           /*  Corrected settings button creation
            const settingsButton = document.createElement("button");
            settingsButton.className = "menu-button";
            settingsButton.textContent = "Settings";
            settingsButton.onclick = openSettings;  
-           menuDiv.appendChild(settingsButton);
+           menuDiv.appendChild(settingsButton); */ 
        } else {
            console.error("Categories data is not available.");
        }
@@ -242,6 +242,23 @@
 	   document.getElementById("show-btn").classList.add("hidden");
 }	   
 		
+		
+function clear() {
+
+            document.getElementById("message").innerText = "";
+            document.getElementById("next-btn").classList.add("hidden");
+			document.getElementById("show-btn").classList.add("hidden");
+            document.getElementById("continueGame-btn").classList.add("hidden");
+            document.getElementById("summary-btn").classList.add("hidden");
+            document.getElementById("flashcard").classList.add("hidden");
+            document.getElementById("options").classList.add("hidden");	   
+	   
+	   document.getElementById("show-btn").classList.add("hidden");
+	   
+	              document.getElementById("game-container").classList.add("hidden");
+            document.getElementById("menu").classList.remove("hidden");
+			
+}
 function toggleTranslation() {
     const translationDiv = document.getElementById("translation");
     const toggleSwitch = document.getElementById("translation-toggle-btn");
@@ -522,6 +539,8 @@ console.log( this.action )
 
             document.getElementById("settings-page").classList.add("hidden");
             document.getElementById("menu").classList.remove("hidden");
+			
+			clear();
         }
 		
 
@@ -603,7 +622,8 @@ function performSearch() {
     let resultsContainer = document.getElementById("results-container");
     if (resultsContainer) {
         resultsContainer.remove();
-    }	
+    }
+	clear()	;
 
     // Search through all categories and flashcards
     for (const category in categories) {
