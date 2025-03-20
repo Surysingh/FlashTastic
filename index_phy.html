@@ -56,20 +56,62 @@
                 Show Mistakes in End Game
             </label>
         </div>
-        <div class="settings-group">
-            <label for="background-color-picker">Background Color</label>
-            <input type="color" id="background-color-picker" value="#B22222">
-        </div>
-        <div class="settings-group">
+ 
+		
+<div class="settings-group">
+    <label>Background</label>
+    <div class="radio-group">
+		<label for="bg-gradient-radio">
+        <input type="radio" id="bg-gradient-radio" name="bg-type" value="gradient" checked>
+        Gradient Color</label>
+    </div>
+		<label for="bg-color-radio">
+		<input type="radio" id="bg-color-radio" name="bg-type" value="color" >
+        Single Color</label>
+
+
+    <div id="bg-color-input-group">
+        <label for="background-color-picker">Background Color</label>
+        <input type="color" id="background-color-picker" value="#B22222">
+    </div>
+
+    <div id="bg-gradient-input-group" class="hidden">
+        <label for="background-gradient-start">Gradient Start Color</label>
+        <input type="color" id="background-gradient-start" value="#B22222">
+
+        <label for="background-gradient-end">Gradient End Color</label>
+        <input type="color" id="background-gradient-end" value="#FFD700">
+
+        <label for="background-gradient-direction">Gradient Direction</label>
+        <select id="background-gradient-direction">
+            <option value="to right">To Right</option>
+            <option value="to left">To Left</option>
+            <option value="to bottom">To Bottom</option>
+            <option value="to top">To Top</option>
+            <option value="to bottom right">To Bottom Right</option>
+            <option value="to bottom left">To Bottom Left</option>
+            <option value="to top right">To Top Right</option>
+            <option value="to top left">To Top Left</option>
+            <option value="90deg">90deg</option>
+            <option value="-90deg">-90deg</option>
+            <option value="45deg">45deg</option>
+            <option value="-45deg">-45deg</option>
+        </select>
+    </div>
+</div>
+	
+	
+       <div class="settings-group">
             <label for="button-color-picker">Button Color</label>
             <input type="color" id="button-color-picker" value="#4caf50">
-        </div>
+        </div>        
         <div class="settings-group">
             <label>
                 <input type="checkbox" id="toggle-translation">
                 Show English to Hindi Translations
             </label>
         </div>
+		
 
         <button id="save-settings-btn" onclick="saveSettings()">Save Settings</button>
         <button id="cancel-settings-btn" onclick="closeSettings()">Cancel</button>
@@ -168,36 +210,43 @@
         let categoryProgress = {};
         let categories = null;
 		
-       // Function to dynamically create category buttons
-        function createCategoryButtons() {
-            const menuDiv = document.getElementById("menu");
-            if (categories) {
-                // Get the category names directly from the 'categories' object's keys
-                const categoryNames = Object.keys(categories);
+		
+   const bgColorRadio = document.getElementById("bg-color-radio");
+   const bgGradientRadio = document.getElementById("bg-gradient-radio");
+   const bgColorPicker = document.getElementById("background-color-picker");
+   const bgGradientStart = document.getElementById("background-gradient-start");
+   const bgGradientEnd = document.getElementById("background-gradient-end");
+   const bgGradientDirection = document.getElementById("background-gradient-direction");
+		
+		
+		
+// Function to dynamically create category buttons		
+ function createCategoryButtons() {
+       const menuDiv = document.getElementById("menu");
+       if (categories) {
+           // Get the category names directly from the 'categories' object's keys
+           const categoryNames = Object.keys(categories);
 
-                categoryNames.forEach((categoryName, index) => {
-                    const button = document.createElement("button");
-                    button.className = "menu-button";
-                    button.textContent = `${index + 1}. ${categoryName}`;
-                    button.onclick = function() {
-                        selectCategory(categoryName);
-                    };
-                    menuDiv.appendChild(button);
-                });
-				                  const button = document.createElement("button");
-                    button.className = "menu-button";
-                    button.textContent = "Settings";
-                    button.onclick = openSettings();
-                    
-                    menuDiv.appendChild(button);
-					//document.getElementById("settings-page").classList.add("hidden");
-					//document.getElementById("menu").classList.remove("hidden");
-            } else {
-                console.error("Categories data is not available.");
-            }
-			
-  			
-        }		
+           categoryNames.forEach((categoryName, index) => {
+               const button = document.createElement("button");
+               button.className = "menu-button";
+               button.textContent = `${index + 1}. ${categoryName}`;
+               button.onclick = function() {
+                   selectCategory(categoryName);
+               };
+               menuDiv.appendChild(button);
+           });
+
+           //  Corrected settings button creation
+           const settingsButton = document.createElement("button");
+           settingsButton.className = "menu-button";
+           settingsButton.textContent = "Settings";
+           settingsButton.onclick = openSettings;  
+           menuDiv.appendChild(settingsButton);
+       } else {
+           console.error("Categories data is not available.");
+       }
+   }	
 
         // Initialize game after data is loaded
         function initGame() {
@@ -589,17 +638,37 @@ console.log( this.action )
             }
             return color;
         }
+		
+	
 
         // Settings page functions
         function openSettings() {
             document.getElementById("settings-page").classList.remove("hidden");
             document.getElementById("menu").classList.add("hidden");
+			toggleBackgroundInputs();
         }
 
         function closeSettings() {
+
+
+
             document.getElementById("settings-page").classList.add("hidden");
             document.getElementById("menu").classList.remove("hidden");
         }
+		
+
+function toggleBackgroundInputs() {
+    const bgColorInputGroup = document.getElementById("bg-color-input-group");
+    const bgGradientInputGroup = document.getElementById("bg-gradient-input-group");
+
+    if (bgColorRadio.checked) {
+        bgColorInputGroup.classList.remove("hidden");
+        bgGradientInputGroup.classList.add("hidden");
+    } else if (bgGradientRadio.checked) {
+        bgColorInputGroup.classList.add("hidden");
+        bgGradientInputGroup.classList.remove("hidden");
+    }
+}
 
         function saveSettings() {
 
@@ -611,15 +680,36 @@ console.log( this.action )
             settings.showScores = document.getElementById("toggle-scores").checked;
             settings.showMistakes = document.getElementById("toggle-mistakes").checked;
             settings.showTranslation = document.getElementById("toggle-translation").checked;
+			
+			
+
+    const bgColorRadio = document.getElementById("bg-color-radio");
+    const bgGradientRadio = document.getElementById("bg-gradient-radio");
+    const bgColorPicker = document.getElementById("background-color-picker");
+    const bgGradientStart = document.getElementById("background-gradient-start");
+    const bgGradientEnd = document.getElementById("background-gradient-end");
+    const bgGradientDirection = document.getElementById("background-gradient-direction");
+
+    if (bgColorRadio.checked) {
+        document.body.style.background = bgColorPicker.value;
+    } else if (bgGradientRadio.checked) {
+        let gradientString = `linear-gradient(${bgGradientDirection.value}, ${bgGradientStart.value}, ${bgGradientEnd.value})`;
+        //console.log("Gradient CSS:", gradientString); // Debugging
+        document.body.style.background = gradientString;
+    }			
 
             document.getElementById("flashcard").style.fontSize = settings.fontSize + "px";
-            document.body.style.background = document.getElementById("background-color-picker").value;
+            //document.body.style.background = document.getElementById("background-color-picker").value;
             let btns = document.getElementsByClassName("menu-button");
             for (let btn of btns) {
                 btn.style.backgroundColor = document.getElementById("button-color-picker").value;
             }
             closeSettings();
         }
+		
+   bgColorRadio.addEventListener("change", toggleBackgroundInputs);
+   bgGradientRadio.addEventListener("change", toggleBackgroundInputs);
+		
 
 
 const searchBar = document.getElementById("search-bar");
