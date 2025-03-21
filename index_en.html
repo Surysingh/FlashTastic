@@ -9,21 +9,43 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="320">
-   <link rel="stylesheet" href="styles.css">
-   <title>FlashTastic English Grammar</title>
-   
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    <link rel="stylesheet" href="styles.css">
+    <title>FlashTastic English Grammar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
- 
-   
+
 </head>
 
 <body>
     <h1>FlashTastic English Grammar Game</h1>
-    
-    
+
+
+    <div id="grade-select-container">
+        <label for="grade-select">Select Grade:</label>
+        <select id="grade-select">
+			<option value="0">All</option>
+            <option value="5">Grade 5</option>
+            <option value="6">Grade 6</option>
+            <option value="7">Grade 7</option>
+            <option value="8">Grade 8</option>
+            <option value="9">Grade 9</option>
+            <option value="10">Grade 10</option>
+            <option value="11">Grade 11</option>
+            <option value="12">Grade 12</option>
+			
+        </select>
+        <button onclick="initGame()">Submit</button>
+    </div>
+
+    <div id="social-media-container">
+        <a href="#" id="share-whatsapp" class="social-button whatsapp" onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" id="share-x" class="social-button x" onclick="share('twitter')"><i class="fab fa-twitter"></i></a>
+        <a href="#" id="share-reddit" class="social-button reddit" onclick="share('reddit')"><i class="fab fa-reddit"></i></a>
+        <a href="#" id="share-instagram" class="social-button instagram" onclick="share('instagram')"><i class="fab fa-instagram"></i></a>
+        <a href="#" id="share-facebook" class="social-button facebook" onclick="share('facebook')"><i class="fab fa-facebook"></i></a>
+    </div>
 
     <div id="top-buttons-container">
   <input type="text" id="search-bar" placeholder="Search...">

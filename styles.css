@@ -87,22 +87,32 @@ h1 {
   
 }
 
-#next-btn, #continueGame-btn, #exitGame-btn, #summary-btn , #show-btn, #settings-btn , #search-button  {
+#next-btn, #continueGame-btn, #exitGame-btn, #summary-btn , #show-btn  {
   margin: 10px;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #2196f3;
+  background-color: #1877F2;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-
-#suggest-flashcard-btn {
+#settings-btn , #search-button, #share-facebook  {
   margin: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #1877F2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#suggest-flashcard-btn, #share-whatsapp   , #share-x  {
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
   background-color: #4caf50;
   color: #fff;
   border: none;
@@ -110,11 +120,23 @@ h1 {
   cursor: pointer;
 }
 
-#report-issue-btn {
+
+#share-instagram {
   margin: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #cf1010;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #d62976;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#report-issue-btn, #share-reddit {
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #FF5700;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -324,7 +346,7 @@ input:checked + .slider:before {
 
 
 /* Style adjustments for top buttons */
-#top-buttons-container {
+#top-buttons-container, #grade-select-container, #social-media-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;

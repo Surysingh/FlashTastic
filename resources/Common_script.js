@@ -9,7 +9,7 @@
             showMistakes: true,
             showTranslation: true,
 			showOptionsImmediately: true,
-            grade: 1
+            grade: 0
         };
 		
 
@@ -24,16 +24,87 @@
    const bgGradientEnd = document.getElementById("background-gradient-end");
    const bgGradientDirection = document.getElementById("background-gradient-direction");
 		
-		
+        const appUrl =  "https://surysingh.github.io/FlashTastic/" ; //window.location.href; // Gets the current URL
+
+        function share(platform) {
+            const shareData = {
+                title: "FlashTastic",
+                text: "Check out this awesome FlashTastic Educational Game!",
+                url: appUrl
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch((error) => {
+                        console.error('Error sharing:', error);
+                        // Fallback to URL-based sharing if Web Share API fails
+                        fallbackShare(platform);
+                    });
+            } else {
+                // If Web Share API is not supported, use fallback
+                fallbackShare(platform);
+            }
+        }
+
+        function fallbackShare(platform) {
+            let shareUrl = "";
+            let text = encodeURIComponent("Check out this awesome FlashTastic Educational Game!");
+            let title = encodeURIComponent("FlashTastic");
+            let url = encodeURIComponent(appUrl);
+
+            switch (platform) {
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${encodeURIComponent(text + " " + appUrl)}`;
+                    break;
+                case 'x':
+                    shareUrl = `https://x.com/intent/tweet?text=${text}&url=${url}`;
+                    break;
+                case 'reddit':
+                    shareUrl = `https://www.reddit.com/submit?title=${title}&url=${url}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'instagram':
+                     shareUrl = `https://www.instagram.com/?url=${url}`;
+                    break;
+            }
+            if (shareUrl) {
+                window.open(shareUrl, '_blank');
+            }
+        }		
 		
 // Function to dynamically create category buttons		
  function createCategoryButtons() {
        const menuDiv = document.getElementById("menu");
+	    settings.grade = document.getElementById("grade-select").value;
+
+		   // remove old menu if it exists
+			let existingcategoryName = menuDiv.querySelectorAll("button");
+			
+			if (existingcategoryName) {
+			existingcategoryName.forEach(child => {
+				
+				menuDiv.removeChild(child); // Remove old container
+
+				});
+			}
+			
+			
+			
        if (categories) {
            // Get the category names directly from the 'categories' object's keys
            const categoryNames = Object.keys(categories);
+		   
 
            categoryNames.forEach((categoryName, index) => {
+   
+            const filteredQuestions = categories[categoryName].filter(q => !q.grade || settings.grade == 0 || q.grade === settings.grade);
+
+
+	
+            if (filteredQuestions.length > 0) {
                const button = document.createElement("button");
                button.className = "menu-button";
                button.textContent = `${index + 1}. ${categoryName}`;
@@ -41,7 +112,8 @@
                    selectCategory(categoryName);
                };
                menuDiv.appendChild(button);
-           });
+            }
+        })          
 
            /*  Corrected settings button creation
            const settingsButton = document.createElement("button");
@@ -95,7 +167,7 @@
                 }
 
                 currentCategory = categoryName;
-                currentFlashcards = shuffle( /* flashcards.filter(card => !card.grade || card.grade == settings.grade) || */ flashcards);
+                currentFlashcards = shuffle(  flashcards.filter(card => !card.grade || settings.grade == 0 || card.grade == settings.grade) ||  flashcards);
                 currentIndex = 0;
 
                 document.getElementById("menu").classList.add("hidden");
@@ -292,7 +364,7 @@ function toggleTranslation() {
     const options = `${currentCard.options}`;
     const grade = currentCard.grade;
     const category =currentCategory;
-    const recipient = "Kannada.1up@gmail.com";  // Replace with your email address
+    const recipient = "FlashTasticApp@gmail.com";  // Replace with your email address
 
     // Basic input sanitization (consider more robust methods)
     const sanitizedQuestion = question.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -352,7 +424,7 @@ function toggleTranslation() {
     const options = document.getElementById('suggest-options').value;
     const grade = document.getElementById('suggest-grade').value;
     const category =currentCategory;
-    const recipient = "Kannada.1up@gmail.com";  // Replace with your email address
+    const recipient = "FlashTasticApp@gmail.com";  // Replace with your email address
 
     // Basic input sanitization (consider more robust methods)
     const sanitizedQuestion = question.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -458,8 +530,8 @@ console.log( this.action )
                 "<p>Current Category: " + currentCategory + "</p>" +
                 "<p>" + progressText + "</p>" +
                 "<p>" + progressText2 + "</p>" +
-                "<h2> Email: Kannada.1up@gmail.com </h2>" +
-                "<p><a href=\"https://github.com/Surysingh/Kannada.1up\">Collaborate to improve this game!!!</a></p>";
+                "<h2> Email: FlashTasticApp@gmail.com </h2>" +
+                "<p><a href=\"https://github.com/Surysingh/FlashTastic\">Collaborate to improve this game!!!</a></p>";
 
             summaryDiv.classList.remove("hidden");
             document.getElementById("continueGame-btn").classList.remove("hidden");
