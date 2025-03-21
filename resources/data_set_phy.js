@@ -20441,7 +20441,7 @@ options: ["Yes", "No", "Only heavy objects", "Only light objects"],
     "question": "What is the Shapiro delay?",
     "Translation": "शापिरो विलंब क्या है?",
     "correct": "The delay of light passing through a gravitational field.",
-    "options": ["The delay of light passing through a gravitational field."],
+    "options": ["The delay of light passing through a gravitational field." , "They describe the force of gravity.", "They describe the speed of light.", "They describe the mass of the universe."],
     "topic": "General Relativity",
     "grade": "12"
   }
