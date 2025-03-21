@@ -13,6 +13,15 @@
         };
 		
 
+        // Current game state variables
+        let currentCategory = null;
+        let currentFlashcards = null;
+        let currentIndex = 0;
+        let score = 0;
+        let highScore = localStorage.getItem('highScore') || 0;
+        let mistakes = [];
+		let currentCard = null; // Store the current flashcard
+
         let categoryProgress = {};
         let categories = null;
 		
@@ -134,6 +143,7 @@
             }
             categories = window.categories;
             console.log(categories);
+			currentCategory = null;
             console.log('Categories loaded successfully');
             createCategoryButtons();
         }
@@ -188,14 +198,6 @@
             }
         }
 
-        // Current game state variables
-        let currentCategory = null;
-        let currentFlashcards = null;
-        let currentIndex = 0;
-        let score = 0;
-        let highScore = localStorage.getItem('highScore') || 0;
-        let mistakes = [];
-		let currentCard = null; // Store the current flashcard
 
 
         function shuffle(array) {
