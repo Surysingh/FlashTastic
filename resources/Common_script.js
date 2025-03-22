@@ -9,7 +9,7 @@
             showMistakes: true,
             showTranslation: true,
 			showOptionsImmediately: true,
-			voice: true,
+			voice: false,
             grade: 0
         };
 		
