@@ -9,6 +9,7 @@
             showMistakes: true,
             showTranslation: true,
 			showOptionsImmediately: true,
+			voice: true,
             grade: 0
         };
 		
@@ -44,6 +45,10 @@
 			if (currentCard.question) {
 				extraText = `\n\nQuestion: ${currentCard.question}\n` +                  
                       `Options: ${currentCard.options}\n` ;
+			}
+			else
+			{
+				extraText = " "; //prevent null print
 			}
 			}
 			
@@ -162,6 +167,8 @@
 			currentCategory = null;
             console.log('Categories loaded successfully');
             createCategoryButtons();
+			
+			speakText(" "); //init voice, atleast once
         }
 
         // Load game when document is ready
@@ -230,8 +237,13 @@
 			
             let card = currentFlashcards[currentIndex];
 			
+			if (settings.voice){
+				speakText(card.question)
+			}
+			
 			currentCard = card; // Store the card
 			
+
             document.getElementById("question-text").innerText = card.question;
 			
 			// Set initial state of the translation and switch
@@ -652,6 +664,8 @@ function toggleBackgroundInputs() {
         function saveSettings() {
 
 			settings.showOptionsImmediately = document.getElementById("show-options-immediately").checked;
+			settings.voice = document.getElementById("text-to-voice").checked;
+			
 
             settings.confettiType = document.getElementById("confetti-select").value;
             settings.fontSize = document.getElementById("font-size-range").value;
@@ -858,6 +872,47 @@ function displaySearchResults(results, title) {
     };
     resultsDiv.appendChild(backButton);
     menuDiv.appendChild(resultsDiv);
-}		
+} 
 
+
+
+
+
+		
+function speakText(text) {
+            
+			const sanitizedtext = text.replace(/=/g, '');
+			
+            // Create a new SpeechSynthesisUtterance object
+            var utterance = new SpeechSynthesisUtterance( sanitizedtext);
+
+            // Set properties for the speech (optional)
+            utterance.pitch = 1; // Set pitch (range: 0 to 2)
+            utterance.rate = 1;  // Set rate (range: 0.1 to 10)
+            utterance.volume = 1; // Set volume (range: 0 to 1)
+
+            // Check if the browser supports Kannada
+            if ('speechSynthesis' in window) {
+                let voices = speechSynthesis.getVoices();
+                // Try to set an appropriate voice for India, if available
+				
+				
+                let IndiaVoice = voices.find(voice => voice.lang == 'hi-IN'); // Searching for Kannada voice
+                if (IndiaVoice) {
+                    utterance.voice = IndiaVoice; // Set India voice if found
+                }
+				else
+				{
+					let AltVoice = voices.find(voice => voice.lang == '-IN');
+					
+					if (AltVoice) {
+						utterance.voice = AltVoice; // Set India voice if found
+					}
+				
+				}
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Speech Synthesis not supported in this browser.");
+            }
+        }
 
