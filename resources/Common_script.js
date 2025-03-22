@@ -881,7 +881,9 @@ function displaySearchResults(results, title) {
 		
 function speakText(text) {
             
-			const sanitizedtext = text.replace(/=/g, '');
+			//console.log(text);
+			const sanitizedtext = text.replace(/=/g, '').replace(/_/g, '');
+			
 			
             // Create a new SpeechSynthesisUtterance object
             var utterance = new SpeechSynthesisUtterance( sanitizedtext);
