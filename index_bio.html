@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+     <link rel="stylesheet" href="styles.css">        
+    <title>FlashTastic Biology</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+
+<body>
+    <h1>FlashTastic Biology Game</h1>
+
+
+    <div id="grade-select-container">
+        <label for="grade-select">Select Grade:</label>
+        <select id="grade-select">		
+			<option value="0">All</option>
+            <option value="5">Grade 5</option>
+            <option value="6">Grade 6</option>
+            <option value="7">Grade 7</option>
+            <option value="8">Grade 8</option>
+            <option value="9">Grade 9</option>
+            <option value="10">Grade 10</option>
+            <option value="11">Grade 11</option>
+			<option value="12">Grade 12</option>  
+        </select>
+        <button onclick="initGame()">Submit</button>
+    </div>
+
+    <div id="social-media-container">
+        <a href="#" id="share-whatsapp" class="social-button whatsapp" onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" id="share-x" class="social-button x" onclick="share('twitter')"><i class="fab fa-twitter"></i></a>
+        <a href="#" id="share-reddit" class="social-button reddit" onclick="share('reddit')"><i class="fab fa-reddit"></i></a>
+        <a href="#" id="share-instagram" class="social-button instagram" onclick="share('instagram')"><i class="fab fa-instagram"></i></a>
+        <a href="#" id="share-facebook" class="social-button facebook" onclick="share('facebook')"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <div id="top-buttons-container">
+  <input type="text" id="search-bar" placeholder="Search...">
+
+</div>
+<div id="second-buttons-container">
+
+        <button id="search-button">
+		<i class="fas fa-search"></i>
+		</button>
+		
+        <button id="settings-btn" onclick="openSettings()">
+		<i class="fas fa-cog"></i>		
+		</button>
+        <button id="report-issue-btn" onclick="openReportIssueModal()">
+		<i class="fas fa-exclamation-triangle"></i>
+		</button>
+        <button id="suggest-flashcard-btn" onclick="openSuggestFlashcardModal()">
+		<i class="fas fa-plus"></i>
+		</button>
+			
+
+
+    
+      
+    </div>
+	
+   <div id="menu">
+      
+    </div>	
+	
+
+    <div id="settings-page" class="hidden">
+        <h2>Settings</h2>
+
+        <div class="settings-group">
+            <label>
+                <input type="checkbox" id="show-options-immediately" checked>
+                Show Options Immediately
+            </label>
+        </div>
+
+        <div class="settings-group">
+            <label>
+                <input type="checkbox" id="toggle-translation" checked>
+                Show English to Hindi Translations
+            </label>
+        </div>
+
+        <div class="settings-group">
+            <label>
+                <input type="checkbox" id="toggle-scores" checked>
+                Show Scores and High Scores
+            </label>
+        </div>
+        <div class="settings-group">
+            <label>
+                <input type="checkbox" id="toggle-mistakes" checked>
+                Show Mistakes in Summary
+            </label>
+        </div>
+
+
+
+        <div class="settings-group">
+            <label for="confetti-select">Confetti Variety</label>
+            <select id="confetti-select">
+                <option value="default">Default</option>
+                <option value="sparkle">Sparkle</option>
+                <option value="rainbow">Rainbow</option>
+                <option value="stars">Stars</option>
+            </select>
+        </div>
+        <div class="settings-group">
+            <label for="font-size-range">Font Size (px)</label>
+            <input type="range" id="font-size-range" min="12" max="36" value="24">
+        </div>
+        <div class="settings-group">
+            <label for="button-size-range">Button Size (px)</label>
+            <input type="range" id="button-size-range" min="12" max="36" value="18">
+        </div>
+        <div class="settings-group">
+            <label for="animation-speed-range">Animation Speed (Multiplier)</label>
+            <input type="range" id="animation-speed-range" min="0.5" max="2" step="0.1" value="1">
+        </div>
+
+
+
+        <div class="settings-group">
+            <label>Background</label>
+            <div class="radio-group">
+                <label for="bg-gradient-radio">
+                    <input type="radio" id="bg-gradient-radio" name="bg-type" value="gradient" checked>
+                    Gradient Color</label>
+            </div>
+            <label for="bg-color-radio">
+                <input type="radio" id="bg-color-radio" name="bg-type" value="color">
+                Single Color</label>
+
+
+            <div id="bg-color-input-group">
+                <label for="background-color-picker">Background Color</label>
+                <input type="color" id="background-color-picker" value="#B22222">
+            </div>
+
+            <div id="bg-gradient-input-group" class="hidden">
+                <label for="background-gradient-start">Gradient Start Color</label>
+                <input type="color" id="background-gradient-start" value="#B22222">
+
+                <label for="background-gradient-end">Gradient End Color</label>
+                <input type="color" id="background-gradient-end" value="#FFD700">
+
+                <label for="background-gradient-direction">Gradient Direction</label>
+                <select id="background-gradient-direction">
+                    <option value="to right">To Right</option>
+                    <option value="to left">To Left</option>
+                    <option value="to bottom">To Bottom</option>
+                    <option value="to top">To Top</option>
+                    <option value="to bottom right">To Bottom Right</option>
+                    <option value="to bottom left">To Bottom Left</option>
+                    <option value="to top right">To Top Right</option>
+                    <option value="to top left">To Top Left</option>
+                    <option value="90deg">90deg</option>
+                    <option value="-90deg">-90deg</option>
+                    <option value="45deg">45deg</option>
+                    <option value="-45deg"></option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="settings-group">
+            <label for="button-color-picker">Button Color</label>
+            <input type="color" id="button-color-picker" value="#4caf50">
+        </div>
+
+
+        <button id="save-settings-btn" onclick="saveSettings()">Save Settings</button>
+        <button id="cancel-settings-btn" onclick="closeSettings()">Cancel</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <div id="score">Score: 0</div>
+        <div id="high-score">High Score: 0</div>
+        <div id="message"></div>
+        <div id="flashcard">
+            <div id="question-text"></div>
+            <div class="translation-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="translation-toggle-btn" onclick="toggleTranslation()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
+        <div id="options" class="options"></div>
+        <div style="display: flex; justify-content: space-between;">
+            <button id="summary-btn" onclick="summaryGame()">Summary</button>
+            <button id="next-btn" class="hidden" onclick="nextFlashcard()">Next -></button>
+            <button id="show-btn" class="hidden" onclick="showFlashcardOptions()">Show -></button>
+
+
+        </div>
+        <button id="exitGame-btn" class="hidden" onclick="exitGame()">Reset</button>
+        <button id="continueGame-btn" onclick="endGame()">Continue</button>
+        <div id="confetti-container"></div>
+        <div id="summary" class="hidden"></div>
+    </div>
+
+    <div id="flashcard-container">
+        <div id="flashcard">
+            <div class="card-side front">
+                <div id="question-container">
+                    <div id="question-text"></div>
+
+                </div>
+
+            </div>
+            <div class="card-side back">
+                <div id="options" class="options"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="report-issue-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeReportIssueModal()">&times;</span>
+            <h2>Report a Flashcard Issue in Current Question</h2>
+            <p id="report-issue-question"></p>
+            <form id="report-issue-form" action="" method="get" enctype="text/plain">
+                <label for="issue-description">Describe the issue:</label><br>
+                <textarea id="issue-description" name="issue-description" rows="6" required></textarea><br>
+                <button type="submit">Send Email</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="suggest-flashcard-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeSuggestFlashcardModal()">&times;</span>
+            <h2>Suggest a Flashcard <br>to add in Current Category</h2>
+            <form id="suggest-flashcard-form" action="" method="get" enctype="text/plain">
+                <label for="suggest-question">Question:</label><br>
+                <input type="text" id="suggest-question" name="suggest-question" required><br>
+                <label for="suggest-translation">Translation:</label><br>
+                <input type="text" id="suggest-translation" name="suggest-translation"><br>
+                <label for="suggest-correct">Correct Answer:</label><br>
+                <input type="text" id="suggest-correct" name="suggest-correct" required><br>
+                <label for="suggest-options">Options (comma-separated):</label><br>
+                <input type="text" id="suggest-options" name="suggest-options" required><br>
+                <label for="suggest-grade">Grade:</label><br>
+                <select id="suggest-grade" name="suggest-grade">
+				    <option value="4">Lower</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+					<option value="11">Higher</option>
+                </select>
+
+                <button type="submit">Send Email</button>
+            </form>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script src="resources/Common_script.js" defer></script>  
+	
+    <script src="resources/data_set_bio.js"></script>
+</body>
+
+</html>

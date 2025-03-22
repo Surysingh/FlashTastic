@@ -24,7 +24,8 @@
 
         let categoryProgress = {};
         let categories = null;
-		
+		const chime = new Audio('resources/chime.mp3');
+		const mistakeSound = new Audio('resources/mistake.mp3');
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
@@ -36,9 +37,20 @@
         const appUrl =  "https://surysingh.github.io/FlashTastic/" ; //window.location.href; // Gets the current URL
 
         function share(platform) {
+			
+			let extraText =null;
+			
+			if(currentCategory){
+			if (currentCard.question) {
+				extraText = `\n\nQuestion: ${currentCard.question}\n` +                  
+                      `Options: ${currentCard.options}\n` ;
+			}
+			}
+			
             const shareData = {
                 title: "FlashTastic",
-                text: "Check out this awesome FlashTastic Educational Game!",
+                text: "Check out this awesome FlashTastic Educational Game!" + `${extraText}`
+                      ,
                 url: appUrl
             };
 
@@ -58,7 +70,7 @@
 
         function fallbackShare(platform) {
             let shareUrl = "";
-            let text = encodeURIComponent("Check out this awesome FlashTastic Educational Game!");
+            let text = encodeURIComponent("Check out this awesome FlashTastic Educational Game!" + `${extraText}`);
             let title = encodeURIComponent("FlashTastic");
             let url = encodeURIComponent(appUrl);
 
@@ -87,8 +99,8 @@
 // Function to dynamically create category buttons		
  function createCategoryButtons() {
        const menuDiv = document.getElementById("menu");
-	    settings.grade = document.getElementById("grade-select").value;
-
+	    settings.grade = Number(document.getElementById("grade-select").value);
+		console.log(settings.grade);
 		   // remove old menu if it exists
 			let existingcategoryName = menuDiv.querySelectorAll("button");
 			
@@ -108,10 +120,14 @@
 		   
 
            categoryNames.forEach((categoryName, index) => {
-   
-            const filteredQuestions = categories[categoryName].filter(q => !q.grade || settings.grade == 0 || q.grade === settings.grade);
-
-
+			   
+			   //console.log(categoryName);
+			   //console.log(categories[categoryName]);
+			   //console.log(categories[categoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) - 2)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ));
+			   
+			
+   //current
+            const filteredQuestions = categories[categoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ); // || Number(question.grade) + 2  == settings.grade || Number(question.grade) - 2  == settings.grade);
 	
             if (filteredQuestions.length > 0) {
                const button = document.createElement("button");
@@ -177,7 +193,8 @@
                 }
 
                 currentCategory = categoryName;
-                currentFlashcards = shuffle(  flashcards.filter(card => !card.grade || settings.grade == 0 || card.grade == settings.grade) ||  flashcards);
+                currentFlashcards = shuffle(  flashcards.filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade  ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade )); 
+				
                 currentIndex = 0;
 
                 document.getElementById("menu").classList.add("hidden");
@@ -364,7 +381,7 @@ function toggleTranslation() {
     const translation = currentCard.Translation;
     const correct = currentCard.correct;
     const options = `${currentCard.options}`;
-    const grade = currentCard.grade;
+    const grade = Number(currentCard.grade);
     const category =currentCategory;
     const recipient = "FlashTasticApp@gmail.com";  // Replace with your email address
 
@@ -472,7 +489,7 @@ console.log( this.action )
             } else {
                 document.getElementById("message").innerText = "Wrong! Correct Answer: " + card.correct;
 
-                let mistakeSound = new Audio('resources/mistake.mp3');
+                
                 mistakeSound.play();
 
         document.querySelectorAll('.option').forEach(btn => {
@@ -495,6 +512,7 @@ console.log( this.action )
         }
 
         function updateScore() {
+			if (score > highScore) highScore = score;
             if (settings.showScores) {
                 document.getElementById("score").innerText = "Score: " + score;
                 document.getElementById("high-score").innerText = "High Score: " + highScore;
@@ -570,7 +588,7 @@ console.log( this.action )
             let container = document.getElementById("confetti-container");
             container.innerHTML = "";
 
-            let chime = new Audio('resources/chime.mp3');
+            
             chime.play();
 
             for (let i = 0; i < 30; i++) {
