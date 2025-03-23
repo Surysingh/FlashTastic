@@ -5,91 +5,418 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlashTastic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Basic styling for the page */
+        /* Modern color scheme with CSS variables */
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Enhanced basic styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.5;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevent scrolling */
         }
 
-        #language-select {
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 16px;
+        h1 {
+            font-size: 2.5rem; /* Increase font size */
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            animation: fadeInDown 0.8s ease;
         }
 
-        #flashcard-container {
-            margin-top: 20px;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 0;
+            flex: 1; /* Allow the container to take up available space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between; /* Distribute content evenly */
+        }
+
+        /* Header section */
+        .select-container {
+            margin: 0.5rem 0;
+            position: relative;
+            animation: fadeIn 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
             text-align: center;
         }
 
-        #flashcard-container iframe {
-            width: 80%; /* Adjust as needed */
-            height: 500px; /* Adjust as needed */
-            border: none;
+        #language-select {
+            appearance: none;
+            background-color: white;
+            border: 2px solid var(--primary-light);
+            border-radius: 8px;
+            padding: 8px 40px 8px 15px; /* Smaller padding */
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
         }
 
+        #language-select:hover {
+            border-color: var(--primary);
+        }
+
+        #language-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Logo styling */
+        #logo-container {
+            height: 60%; /* Increase height to occupy a major portion of the screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: pulseScale 1.2s ease;
+        }
+
+        #logo {
+            max-width: 300px; /* Increase size of the logo */
+            max-height: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        #logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer styling (previously links) */
         #links {
-            margin-top: 20px;
+            margin-top: auto; /* Push the footer to the bottom */
+            padding: 0.5rem 0.5rem;
+            background-color: var(--dark);
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            box-shadow: 0 -2px 4px -1px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
         }
 
         #links a {
-            margin: 0 10px;
+            display: inline-flex;
+            align-items: center;
+            margin: 0.2rem;
+            padding: 0.3rem 0.5rem;
             text-decoration: none;
-            color: blue;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            font-size: 0.8rem; /* Reduce font size */
+        }
+
+        #links a i {
+            margin-right: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        #links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Main content layout */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Flashcard container */
+        #flashcard-container {
+            margin: 2rem 0;
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            animation: fadeIn 1.3s ease;
+        }
+
+        #flashcard-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseScale {
+            0% { transform: scale(0.9); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Responsive height adjustments */
+        @media screen and (max-height: 600px) {
+            h1 {
+                font-size: 1.8rem;
+                margin-top: 0.5rem;
+                margin-bottom: 0.3rem;
+            }
+
+            #logo {
+                max-width: 220px; /* Increased from 150px */
+            }
+
+            #logo-container {
+                height: 50vh; /* Increased from 25vh */
+            }
+
+            #links a {
+                padding: 0.2rem 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            #links a i {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Responsive design - width */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            #language-select {
+                width: 100%;
+            }
+
+            #links {
+                padding: 1rem 0.5rem;
+            }
+
+            #links a {
+                margin: 0.3rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            #logo {
+                max-width: 200px;
+            }
+
+            #flashcard-container iframe {
+                height: 400px;
+            }
+        }
+
+        #main-header {
+            position: relative;
+            top: 0;
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow);
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem; /* Increase padding for left and right */
+            transition: height 0.3s ease, top 0.3s ease;
+            z-index: 1000;
+        }
+
+        #main-header.expanded {
+            height: 70px;
+        }
+
+        #logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem; /* Add padding on the left for the logo */
+        }
+
+        #logo img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #youtube-button {
+            background: linear-gradient(to right, #FF0000, #cc0000);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-main);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            margin-right: 1rem; /* Add padding on the right for the YouTube button */
+        }
+
+        #youtube-button:hover {
+            background: linear-gradient(to right, #cc0000, #FF0000);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
 
 <body>
-    <h1>Play, Learn, Level Up!</h1>
+    <header id="main-header">
+        <a id="logo" href="index.html">
+            <img src="resources/images/dummy-logo.png" alt="Logo"> FlashTastic
+        </a>
+        <button id="youtube-button">
+            <i class="fab fa-youtube"></i> Watch on YouTube
+        </button>
+    </header>
+    <div class="container">
+        <h1>Play, Learn, Level Up!</h1>
 
-    <label for="language-select">Choose a category:</label>
-	<select id="language-select" onchange="openPage(this)">
-		<option value="">Select a category</option>
-		<option value="index_kan.html">ಕನ್ನಡ Kannada</option>
-		<option value="index_sans.html">संस्कृत Sanskrit</option>
-		<option value="index_hin.html">हिन्दी Hindi</option>
-		<option value="index_en.html">English</option>
-		<option value="index_phy.html">Physics</option>
-		<option value="index_chem.html">Chemistry</option>
-		<option value="index_bio.html">Biology</option>
-	</select>
+        <div class="select-container">
+            <label for="language-select">What do you want to learn?</label>
+            <select id="language-select" onchange="openPage(this)">
+                <option value="">Select a category</option>
+                <option value="index_kan.html">ಕನ್ನಡ Kannada</option>
+                <option value="index_sans.html">संस्कृत Sanskrit</option>
+                <option value="index_hin.html">हिन्दी Hindi</option>
+                <option value="index_en.html">English</option>
+                <option value="index_phy.html">Physics</option>
+                <option value="index_chem.html">Chemistry</option>
+                <option value="index_bio.html">Biology</option>
+            </select>
+        </div>
 
-    <div id="logo-container">
-        <img id="logo" src="resources/images/flashTasticLogo.png" alt="FlashTastic Logo">
-    </div>	
-
-
-	
-
-
-    <div id="links">
-        <a href="#">About</a> |        
-		<a href="https://flashtastic.netlify.app/">Main URL in Netlify</a> |        
-		<a href="https://surysingh.github.io/FlashTastic/">Dev URL in github</a> |
-        <a href="https://raw.githack.com/Surysingh/FlashTastic/refs/heads/main/index.html">Main URL in github</a> |
-		<a href="https://github.com/Surysingh/FlashTastic/tree/dev">GitHub</a> |
-		<a href="https://abhi-kannada.replit.app/">Main URL in Replit</a> 
+        <div class="main-content">
+            <div id="logo-container">
+                <img id="logo" src="resources/images/flashTasticLogo.png" alt="FlashTastic Logo">
+            </div>
+        </div>
     </div>
-	
-    <div id="flashcard-container">
-        <iframe id="flashcard-frame"></iframe> 
-    </div>	
 
-<script>
-function openPage(selectElement) {
-    var selectedValue = selectElement.value;
-    if (selectedValue) {
-        window.location.href = selectedValue; //  This line will open the selected page in the same tab
-        //window.open(selectedValue, "_blank"); // This line will open the selected page in new tab
-    }
-}
-</script>
+    <!-- Footer -->
+    <div id="links">
+        <a href="#"><i class="fas fa-info-circle"></i>About</a>
+        <a href="https://flashtastic.netlify.app/"><i class="fas fa-cloud"></i>Netlify</a>
+        <a href="https://surysingh.github.io/FlashTastic/"><i class="fab fa-github-alt"></i>GitHub Pages</a>
+        <a href="https://raw.githack.com/Surysingh/FlashTastic/refs/heads/main/index.html"><i class="fas fa-code"></i>Raw GitHack</a>
+        <a href="https://github.com/Surysingh/FlashTastic/tree/dev"><i class="fab fa-github"></i>GitHub Repo</a>
+        <a href="https://abhi-kannada.replit.app/"><i class="fas fa-terminal"></i>Replit</a>
+    </div>
+
+    <script>
+        function openPage(selectElement) {
+            var selectedValue = selectElement.value;
+            if (selectedValue) {
+                window.location.href = selectedValue;
+            }
+        }
+
+        // Keep header visible while the mouse is in range
+        const header = document.getElementById('main-header');
+        let isMouseInHeader = false;
+
+        header.addEventListener('mouseenter', () => {
+            isMouseInHeader = true;
+            header.classList.add('expanded');
+        });
+
+        header.addEventListener('mouseleave', () => {
+            isMouseInHeader = false;
+            setTimeout(() => {
+                if (!isMouseInHeader) {
+                    header.classList.remove('expanded');
+                }
+            }, 300);
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY <= 70) {
+                header.classList.add('expanded');
+            } else if (!isMouseInHeader) {
+                header.classList.remove('expanded');
+            }
+        });
+    </script>
 </body>
 
 </html>

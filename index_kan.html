@@ -9,82 +9,633 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="320">
-    <link rel="stylesheet" href="styles.css">
-	 
     <title>FlashTastic ಕನ್ನಡ ವ್ಯಾಕರಣ</title>
     
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Original stylesheet reference -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Updated color scheme */
+        :root {
+            --primary: #2563eb; /* Brighter blue for better contrast */
+            --primary-light: #60a5fa;
+            --primary-dark: #1e40af;
+            --secondary: #10b981; /* Green for accents */
+            --secondary-light: #6ee7b7;
+            --accent: #f59e0b; /* Amber for highlights */
+            --dark: #334155; /* Darker gray for text */
+            --light: #f8fafc; /* Slightly lighter background */
+            --light-accent: #e2e8f0; /* Subtle light accent */
+            --gray: #94a3b8;
+            --gray-dark: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        /* Base Styling */
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 700;
+            color: white; /* Change color to white */
+            font-size: 2.5rem; /* Slightly larger font size */
+            text-align: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center child elements horizontally */
+            padding-top: 1rem; /* Add padding to create spacing */
+            transition: padding-top 0.3s ease; /* Smooth transition for padding */
+        }
+
+        /* Grade Select Container */
+        #grade-select-container {
+            position: static; /* Remove absolute positioning */
+            margin: 0; /* Reset margin */
+            padding: 0.3rem; /* Reduce padding */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Reduce spacing between elements */
+            background: linear-gradient(to bottom right, var(--light), var(--light-accent));
+            border: 2px solid var(--primary-light);
+        }
+
+        #grade-select {
+            appearance: none;
+            background-color: white;
+            border: 2px solid var(--primary-light);
+            border-radius: 8px;
+            padding: 5px 10px; /* Reduce padding inside the select box */
+            font-size: 0.9rem; /* Slightly smaller font size */
+            font-family: var(--font-main);
+            color: var(--dark);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        #grade-select:hover, #grade-select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px; /* Reduce button padding */
+            font-family: var(--font-main);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        button:hover {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -2px rgba(0,0,0,0.15);
+        }
+
+        /* Social Media Container */
+        #social-media-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 0.5rem 0;
+            animation: fadeIn 1s ease;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 12px -2px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp { background-color: rgba(37, 211, 102, 0.8); }
+        .x, .twitter { background-color: rgba(29, 161, 242, 0.8); }
+        .reddit { background-color: rgba(255, 87, 0, 0.8); }
+        .instagram { background-color: rgba(225, 48, 108, 0.8); }
+        .facebook { background-color: rgba(24, 119, 242, 0.8); }
+
+        /* Top and Second Button Containers */
+        #top-buttons-container, #second-buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 0.5rem auto;
+            flex-wrap: wrap;
+        }
+
+        #search-bar {
+            padding: 8px 15px;
+            border: 2px solid var(--primary-light);
+            border-radius: 8px;
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            width: 200px;
+            transition: all 0.3s ease;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        #search-bar:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Game Container */
+        #game-container {
+            position: relative; /* Ensure positioning for child elements */
+            margin: 1rem auto;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--light), var(--light-accent));
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 90%;
+            max-width: 800px;
+            animation: fadeIn 1.2s ease;
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-accent);
+        }
+
+        #flashcard {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-accent);
+        }
+
+        #question-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .options button {
+            width: 100%;
+            text-align: left;
+            padding: 10px 15px;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            border-left: 4px solid var(--primary-dark);
+        }
+
+        .options button:hover {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        /* Settings and Modal Styling */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        /* Settings Page */
+        #settings-page {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            width: 90%;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .settings-group {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        /* YouTube Button */
+        #yt-container {
+            display: flex;
+            justify-content: center;
+            margin: 1rem auto;
+        }
+
+        #youtube-button {
+            margin-left: auto; /* Push to the extreme right */
+            background: linear-gradient(to right, #FF0000, #cc0000);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            margin-right: 1rem; /* Add padding on the right for the YouTube button */
+        }
+
+        #youtube-button:hover {
+            background: linear-gradient(to right, #cc0000, #FF0000);
+        }
+
+        /* Other UI Elements */
+        #score, #high-score {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer (can be added if needed) */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1rem;
+            }
+
+            #grade-select-container {
+                flex-direction: column;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer styling with social media integration */
+        #links, .footer {
+            margin-top: auto;
+            margin-bottom: 0;
+            padding: 1rem 0.5rem;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            width: 100%; /* Ensure the footer spans the entire width of the screen */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 -2px 4px -1px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        
+        #links a, .footer a {
+            display: inline-flex;
+            align-items: center;
+            margin: 0.2rem;
+            padding: 0.3rem 0.7rem;
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+        
+        #links a i, .footer a i {
+            margin-right: 0.3rem;
+            font-size: 0.95rem;
+        }
+        
+        #links a:hover, .footer a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Social Media Container in footer */
+        #social-media-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 0.5rem 0;
+            animation: fadeIn 1s ease;
+        }
+        
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-button:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 12px -2px rgba(0,0,0,0.3);
+        }
+        
+        .whatsapp { background-color: rgba(37, 211, 102, 0.8); }
+        .x, .twitter { background-color: rgba(29, 161, 242, 0.8); }
+        .reddit { background-color: rgba(255, 87, 0, 0.8); }
+        .instagram { background-color: rgba(225, 48, 108, 0.8); }
+        .facebook { background-color: rgba(24, 119, 242, 0.8); }
+
+        #main-header {
+            position: relative; /* Keep relative positioning */
+            top: 0; /* Default position */
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow);
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem; /* Increase padding for left and right */
+            transition: height 0.3s ease, top 0.3s ease; /* Smooth transition for height and top */
+            z-index: 1000;
+        }
+
+        #main-header.expanded {
+            height: 70px; /* Expand height when hovered or cursor is in range */
+        }
+
+        #home-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            font-family: var(--font-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-left: 1rem; /* Add padding on the left for the logo */
+        }
+
+        #home-button i {
+            font-size: 1.2rem;
+        }
+
+        #home-button:hover {
+            text-decoration: underline;
+        }
+
+        #header-buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #top-buttons-container, #second-buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #search-bar {
+            /* ...existing code... */
+        }
+
+        #search-button, #settings-btn, #report-issue-btn, #suggest-flashcard-btn {
+            /* ...existing code... */
+        }
+
+        .translation-toggle {
+            position: absolute;
+            top: 10px; /* Adjust to position at the top-right */
+            right: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .translation-toggle label {
+            font-weight: 500;
+        }
+
+        .header-row {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center-align h1 horizontally */
+            width: 100%;
+            margin: 1rem 0 0; /* Add margin at the top */
+        }
+
+        .footer {
+            position: static; /* Remove fixed positioning */
+            width: 100%; /* Full width */
+            display: flex;
+            justify-content: space-between; /* Align items to left and right */
+            align-items: center;
+            padding: 1rem; /* Keep original padding */
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: var(--light);
+            box-shadow: 0 -2px 4px -1px rgba(0, 0, 0, 0.1);
+            z-index: 1000; /* Ensure it stays above other elements */
+        }
+
+        #social-media-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        #links a, .footer a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        #links a:hover, .footer a:hover {
+            text-decoration: underline;
+        }
+
+        #logo-container {
+            height: 60%; /* Increase height to occupy a major portion of the screen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: pulseScale 1.2s ease;
+        }
+
+        #logo {
+            max-width: 300px; /* Increase size of the logo */
+            max-height: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>FlashTastic ಕನ್ನಡ ವ್ಯಾಕರಣ ಆಟ</h1>
-    
-    <div id="grade-select-container">
-        <label for="grade-select">Select Grade:</label>
-        <select id="grade-select">
-			<option value="0">All</option>
-            <option value="5">Grade 5</option>
-            <option value="6">Grade 6</option>
-            <option value="7">Grade 7</option>
-            <option value="8">Grade 8</option>
-            <option value="9">Grade 9</option>
-            <option value="10">Grade 10</option>
-            <option value="11">Grade 11</option>
-            <option value="12">Grade 12</option>
-			
-        </select>
-        <button onclick="initGame()">Submit</button>
-    </div>
-
-    <div id="social-media-container">
-        <a href="#" id="share-whatsapp" class="social-button whatsapp" onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" id="share-x" class="social-button x" onclick="share('twitter')"><i class="fab fa-twitter"></i></a>
-        <a href="#" id="share-reddit" class="social-button reddit" onclick="share('reddit')"><i class="fab fa-reddit"></i></a>
-        <a href="#" id="share-instagram" class="social-button instagram" onclick="share('instagram')"><i class="fab fa-instagram"></i></a>
-        <a href="#" id="share-facebook" class="social-button facebook" onclick="share('facebook')"><i class="fab fa-facebook"></i></a>
-    </div>
-	
-	<div id="yt-container">
-    <button id="youtube-button">
-        <i class="fab fa-youtube"></i> Watch on YouTube
-    </button>	
-	 </div>
-
-    <div id="top-buttons-container">
-  <input type="text" id="search-bar" placeholder="Search...">
-
-</div>
-<div id="second-buttons-container">
-
-        <button id="search-button">
-		<i class="fas fa-search"></i>
-		</button>
-		
-        <button id="settings-btn" onclick="openSettings()">
-		<i class="fas fa-cog"></i>		
-		</button>
-        <button id="report-issue-btn" onclick="openReportIssueModal()">
-		<i class="fas fa-exclamation-triangle"></i>
-		</button>
-        <button id="suggest-flashcard-btn" onclick="openSuggestFlashcardModal()">
-		<i class="fas fa-plus"></i>
-		</button>
-			
-    
-
-    
-      
-    </div>
-	
-   <div id="menu">
-      
-    </div>	
-	
-
-    <div id="settings-page" class="hidden">
+    <header id="main-header">
+        <button id="home-button" onclick="location.href='index.html'">
+            <i class="fas fa-home"></i> Home
+        </button>
+        <div id="header-buttons-container">
+            <div id="top-buttons-container">
+                <input type="text" id="search-bar" placeholder="Search...">
+            </div>
+            <div id="second-buttons-container">
+                <button id="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button id="settings-btn" onclick="openSettings()">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button id="report-issue-btn" onclick="openReportIssueModal()">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </button>
+                <button id="suggest-flashcard-btn" onclick="openSuggestFlashcardModal()">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="header-row">
+            <h1>FlashTastic ಕನ್ನಡ ವ್ಯಾಕರಣ ಆಟ</h1>
+            <div id="grade-select-container">
+                <label for="grade-select">Select Grade:</label>
+                <select id="grade-select" onchange="initGame()">
+                    <option value="0">All</option>
+                    <option value="5">Grade 5</option>
+                    <option value="6">Grade 6</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+                <div id="yt-container">
+                    <button id="youtube-button">
+                        <i class="fab fa-youtube"></i> Watch on YouTube
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="menu"></div>
+        
+        <!-- Game container and other elements remain mostly unchanged -->
+        <div id="settings-page" class="hidden">
         <h2>Settings</h2>
 
         <div class="settings-group">
@@ -201,17 +752,18 @@
     </div>
 
     <div id="game-container" class="hidden">
+        <div class="translation-toggle">
+            <label for="translation-toggle-btn">Language translation switch</label>
+            <label class="switch">
+                <input type="checkbox" id="translation-toggle-btn" onclick="toggleTranslation()">
+                <span class="slider round"></span>
+            </label>
+        </div>
         <div id="score">Score: 0</div>
         <div id="high-score">High Score: 0</div>
         <div id="message"></div>
         <div id="flashcard">
             <div id="question-text"></div>
-            <div class="translation-toggle">
-                <label class="switch">
-                    <input type="checkbox" id="translation-toggle-btn" onclick="toggleTranslation()">
-                    <span class="slider round"></span>
-                </label>
-            </div>
         </div>
         <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>
         <div id="options" class="options"></div>
@@ -227,22 +779,6 @@
         <div id="confetti-container"></div>
         <div id="summary" class="hidden"></div>
     </div>
-
-    <div id="flashcard-container">
-        <div id="flashcard">
-            <div class="card-side front">
-                <div id="question-container">
-                    <div id="question-text"></div>
-
-                </div>
-
-            </div>
-            <div class="card-side back">
-                <div id="options" class="options"></div>
-            </div>
-        </div>
-    </div>
-
 
     <div id="report-issue-modal" class="modal hidden">
         <div class="modal-content">
@@ -287,13 +823,51 @@
         </div>
     </div>
 
+    <!-- Footer with integrated social media -->
+    <div id="links" class="footer">
+        <div id="social-media-container">
+            <a href="#" id="share-whatsapp" class="social-button whatsapp" onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="share-x" class="social-button x" onclick="share('twitter')"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="share-reddit" class="social-button reddit" onclick="share('reddit')"><i class="fab fa-reddit"></i></a>
+            <a href="#" id="share-instagram" class="social-button instagram" onclick="share('instagram')"><i class="fab fa-instagram"></i></a>
+            <a href="#" id="share-facebook" class="social-button facebook" onclick="share('facebook')"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="../index.html"><i class="fas fa-home"></i>Home</a>
+            <a href="#"><i class="fas fa-info-circle"></i>About</a>
+            <a href="https://github.com/Surysingh/FlashTastic/tree/dev"><i class="fab fa-github"></i>GitHub</a>
+        </div>
     </div>
 
-
-
+    <!-- Scripts -->
     <script src="resources/Common_script.js" defer></script>  
-	
     <script src="resources/data_set_kan.js"></script>
-</body>
+    <script>
+        // Keep header visible while the mouse is in range
+        const header = document.getElementById('main-header');
+        let isMouseInHeader = false;
 
+        header.addEventListener('mouseenter', () => {
+            isMouseInHeader = true;
+            header.classList.add('expanded');
+        });
+
+        header.addEventListener('mouseleave', () => {
+            isMouseInHeader = false;
+            setTimeout(() => {
+                if (!isMouseInHeader) {
+                    header.classList.remove('expanded');
+                }
+            }, 300); // Delay to ensure smooth disappearance
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY <= 70) {
+                header.classList.add('expanded');
+            } else if (!isMouseInHeader) {
+                header.classList.remove('expanded');
+            }
+        });
+    </script>
+</body>
 </html>
