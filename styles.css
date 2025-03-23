@@ -343,10 +343,28 @@ input:checked + .slider:before {
 }
 
 
-
+        /* Style for the YouTube Button */
+        #youtube-button {
+            background-color: #FF0000; /* YouTube Red */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 16px;
+            margin-top: 10px; /* Adjust spacing */
+            cursor: pointer;
+            border-radius: 5px;
+        }
+		
+		#youtube-button i {
+            margin-right: 8px; /* Spacing between icon and text */
+        }
 
 /* Style adjustments for top buttons */
-#top-buttons-container, #grade-select-container, #social-media-container {
+#top-buttons-container, #grade-select-container, #social-media-container, #yt-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -359,3 +377,7 @@ input:checked + .slider:before {
 	align-items: center;
 	margin-bottom: 10px; /* Add some space below the buttons */
 }
+
+
+
+    

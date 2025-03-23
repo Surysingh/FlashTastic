@@ -918,3 +918,12 @@ function speakText(text) {
             }
         }
 
+
+       // Get the YouTube button element
+        const youtubeButton = document.getElementById('youtube-button');
+
+        // Add a click event listener to the button
+        youtubeButton.addEventListener('click', function() {
+            // Open the specified URL in a new tab when the button is clicked
+            window.open('https://www.youtube.com/@flashtasticapp', '_blank');
+        });
