@@ -1,4 +1,3 @@
-
         // Global settings object – updated via settings page
         let settings = {
             confettiType: 'default',
