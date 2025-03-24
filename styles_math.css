@@ -1,0 +1,412 @@
+/* Global Styles: Use Noto Sans Kannada for Kannada text, with fallbacks for English */
+body {
+  font-family: 'Noto Sans Kannada', 'Helvetica Neue', Arial, sans-serif;
+  /* Karnataka flag colors: deep red to bright yellow */
+  background: linear-gradient(to right, #B22222, #FFD700);
+  margin: 0;
+  padding: 20px;
+    /* Ensure gradient covers the entire body */
+    min-height: 100vh;  
+}
+h1 {
+  text-align: center;
+  color: #fff;
+}
+/* Top Menu Styling */
+#menu {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.menu-button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+}
+/* Game Container Styling */
+#game-container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+#score, #high-score {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+#flashcard {
+  font-size: 24px;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.option {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
+  font-size: 18px;
+}
+.option:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.hidden {
+  display: none;
+}
+#message {
+  font-size: 18px;
+  margin-bottom: 10px;
+  min-height: 24px;
+}
+
+#search-bar {
+    padding: 8px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 5px;	  
+    width: 200px; /* Adjust width as needed */
+  
+}
+
+#next-btn, #continueGame-btn, #exitGame-btn, #summary-btn , #show-btn  {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #1877F2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#settings-btn , #search-button, #share-facebook  {
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #1877F2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#suggest-flashcard-btn, #share-whatsapp   , #share-x  {
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#share-instagram {
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #d62976;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#report-issue-btn, #share-reddit {
+  margin: 10px;
+  padding: 5px;
+  font-size: 25px;
+  background-color: #FF5700;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Animation for correct answer */
+.correct {
+  -webkit-animation: correctAnim 0.5s ease-out;
+  animation: correctAnim 0.5s ease-out;
+}
+@-webkit-keyframes correctAnim {
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+@keyframes correctAnim {
+  0% { -webkit-transform: scale(1); transform: scale(1); }
+  50% { -webkit-transform: scale(1.2); transform: scale(1.2); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+.highlight-correct {
+  background-color: darkgreen !important;
+  -webkit-transform: scale(1.3) !important;
+  transform: scale(1.3) !important;
+  font-weight: bold;
+}
+/* Confetti effect */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  opacity: 0;
+  -webkit-animation: confettiFall 1000ms forwards;
+  animation: confettiFall 1000ms forwards;
+}
+@-webkit-keyframes confettiFall {
+  0% { -webkit-transform: translateY(0) rotate(0deg); transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { -webkit-transform: translateY(600px) rotate(360deg); transform: translateY(600px) rotate(360deg); opacity: 0; }
+}
+@keyframes confettiFall {
+  0% { -webkit-transform: translateY(0) rotate(0deg); transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { -webkit-transform: translateY(600px) rotate(360deg); transform: translateY(600px) rotate(360deg); opacity: 0; }
+}
+/* Summary styling */
+#summary {
+  text-align: left;
+  margin-top: 20px;
+}
+/* Settings Page Styling */
+#settings-page {
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.settings-group {
+  margin-bottom: 15px;
+}
+.settings-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.settings-group input[type="range"],
+.settings-group input[type="color"],
+.settings-group select {
+  width: 100%;
+}
+.settings-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+#save-settings-btn, #cancel-settings-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 10px;
+  border: 2px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+* Styles for the translation toggle switch */
+
+.translation-toggle {
+    display: flex;
+    justify-content: center; /* Center the switch horizontally */
+    margin-top: 10px; /* Add some space above the switch */
+    margin-bottom: 10px; /* Add some space below the switch */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Adjust size as needed */
+    height: 34px; /* Adjust size as needed */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Adjust size as needed */
+    width: 26px; /* Adjust size as needed */
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3; /* Color when on */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+        /* Style for the YouTube Button */
+        #youtube-button {
+            background-color: #FF0000; /* YouTube Red */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 16px;
+            margin-top: 10px; /* Adjust spacing */
+            cursor: pointer;
+            border-radius: 5px;
+        }
+		
+		#youtube-button i {
+            margin-right: 8px; /* Spacing between icon and text */
+        }
+
+/* Style adjustments for top buttons */
+#top-buttons-container, #grade-select-container, #social-media-container, #yt-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#second-buttons-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px; /* Add some space below the buttons */
+}
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+		
+ .highlight {
+            background-color: yellow;
+        }
+
+        .correct {
+            background-color: lightgreen;
+        }
+		
+        .table_head {
+            background-color: lightblue;
+        }		
+
+        .wrong {
+            background-color: lightcoral;
+        }
+
+
+
+    
