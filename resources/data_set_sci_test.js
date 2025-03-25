@@ -2211,19 +2211,7 @@ window.categories = {
         "topic": "Air Water Weather",
         "grade": "4"
     },
-{
-    "question": "What are cooled water droplets?",
-    "Translation": "ठंडी पानी की बूंदें क्या हैं?",
-    "correct": "Dew",
-    "options": [
-      "Fog",
-      "Rain",
-      "Snow",
-      "Dew"
-    ],
-    "topic": "Force, Work, and Energy",
-    "grade": "4"
-  },	
+
  
 
    
