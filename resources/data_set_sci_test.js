@@ -321,7 +321,7 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "What do vehicles use for energy?",
+    "question": "What do vehicles use for fuel?",
     "Translation": "वाहनों को ऊर्जा के लिए किसका उपयोग करते हैं?",
     "correct": "Petrol",
     "options": ["Petrol", "Electricity", "Wind", "Food"],
