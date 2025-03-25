@@ -1405,19 +1405,7 @@ window.categories = {
     "topic": "Our Green World",
     "grade": "4"
   },
-  {
-    "question": "What is added to soil to make it fertile?",
-    "Translation": "मिट्टी को उपजाऊ बनाने के लिए उसमें क्या मिलाया जाता है?",
-    "correct": "Manure",
-    "options": [
-      "Chemicals",
-      "Fertilizers",
-      "Pesticides",
-      "Manure"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
+  
   {
     "question": "What is soil used for?",
     "Translation": "मिट्टी का उपयोग किस लिए किया जाता है?",
@@ -1451,8 +1439,8 @@ window.categories = {
     "correct": "Plants, animals, forests, rivers, lakes, oceans, sunlight and air",
     "options": [
       "Plastics, glass, cement",
-      "Petrol, diesel, coal",
-      "Metals, sand, crude oil",
+      "Petrol, diesel",
+      "complex machines",
       "Plants, animals, forests, rivers, lakes, oceans, sunlight and air"
     ],
     "topic": "Our Green World",
@@ -1666,19 +1654,7 @@ window.categories = {
     "topic": "Our Green World",
     "grade": "4"
   },
-  {
-    "question": "What does waste do to our environment?",
-    "Translation": "कचरा हमारे पर्यावरण को क्या करता है?",
-    "correct": "Pollutes",
-    "options": [
-      "Cleans",
-      "Protects",
-      "Pollutes",
-      "Preserves"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
+  
   {
     "question": "What does 'pollute' mean?",
     "Translation": "'प्रदूषित' का क्या अर्थ है?",
@@ -1816,8 +1792,8 @@ window.categories = {
     "Translation": "मिट्टी को उपजाऊ बनाने के लिए उसमें क्या मिलाया जाता है?",
     "correct": "Manure",
     "options": [
-      "Fertilizers",
-      "Pesticides",
+      "Rocks",
+      "Insects",
       "Chemicals",
       "Manure"
     ],
