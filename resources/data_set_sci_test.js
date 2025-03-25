@@ -192,10 +192,10 @@ window.categories = {
   {
     "question": "What hatches from a butterfly egg?",
     "Translation": "तितली के अंडे से क्या निकलता है?",
-    "correct": "Pupa or Caterpillar",
+    "correct": "Caterpillar",
     "options": [
-      "Pupa or Caterpillar",
-      "Larva",
+      "Caterpillar",
+      "Pupa",
       "Adult butterfly",
       "Butterflies dont lay eggs"
     ],
