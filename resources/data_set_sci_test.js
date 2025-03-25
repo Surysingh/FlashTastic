@@ -1655,19 +1655,7 @@ window.categories = {
     "grade": "4"
   },
   
-  {
-    "question": "What does 'pollute' mean?",
-    "Translation": "'प्रदूषित' का क्या अर्थ है?",
-    "correct": "To harm the quality of air, water and soil",
-    "options": [
-      "To clean air, water and soil",
-      "To improve air, water and soil",
-      "To protect air, water and soil",
-      "To harm the quality of air, water and soil"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
+  
   {
     "question": "What pollutes water and soil?",
     "Translation": "पानी और मिट्टी को क्या प्रदूषित करता है?",
