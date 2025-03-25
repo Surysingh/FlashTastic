@@ -783,7 +783,7 @@ window.categories = {
     "question": "What energy do boats use to move?",
     "Translation": "नावें किस ऊर्जा का उपयोग करके चलती हैं?",
     "correct": "Energy of flowing water",
-    "options": ["Energy of flowing water", "Wind energy", "Heat energy", "Electrical energy"],
+    "options": ["Energy of flowing water", "Solar energy", "Heat energy", "Electrical energy"],
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },
@@ -962,7 +962,7 @@ window.categories = {
     "correct": "Wind energy",
     "options": [
       "Solar energy",
-      "Hydel energy",
+      "Electrical energy",
       "Wind energy",
       "Heat energy"
     ],
