@@ -88,6 +88,9 @@
       
     </div>	
 	
+	
+ 
+	
 
     <div id="settings-page" class="hidden">
         <h2>Settings</h2>
@@ -209,10 +212,40 @@
         <div id="score">Score: 0</div>
         <div id="high-score">High Score: 0</div>
         <div id="message"></div>
-        <div id="flashcard">
+        <div id="flashcard">	
+	
             <div id="question-text"></div>
 				<div id="myTableContainer"></div>
 				 <div class="chart-container" id="charts"></div>
+	 <div id="game-chart-container" class="hidden">			 
+<div class="chart-container">
+        <div class="chart-wrapper">
+            <canvas id="chart1"></canvas>
+            <div id="fraction1" class="fraction-display"></div>
+            <label>Numerator: <input type="range" id="numerator1" min="0" max="10" value="1"></label>
+            <label>Denominator: <input type="range" id="denominator1" min="2" max="10" value="4"></label>
+        </div>
+
+        <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+        </select>
+
+        <div class="chart-wrapper">
+            <canvas id="chart2"></canvas>
+            <div id="fraction2" class="fraction-display"></div>
+            <label>Numerator: <input type="range" id="numerator2" min="0" max="10" value="1"></label>
+            <label>Denominator: <input type="range" id="denominator2" min="2" max="10" value="4"></label>
+        </div>
+		
+		 <div class="chart-wrapper">
+        <canvas id="resultChart"></canvas>
+        <div id="resultFraction" class="fraction-display"></div>
+    </div>
+    </div>	
+</div>	
 				
         </div>
         <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>

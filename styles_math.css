@@ -416,4 +416,30 @@ max-height: 150px;
 display: block; 
 }
 
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .chart-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+        }
+
+        .fraction-display {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
     

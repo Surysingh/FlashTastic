@@ -1,5 +1,28 @@
 window.categories = {
 	
+"Visual Fraction": {
+	
+	"One": [
+      {
+		"question": "1",
+		"options": ["Done"] ,
+		"correct": "Done"
+	  }
+	  ] , 
+	  
+	"Operation": [
+      {
+		"question": "2",
+		"options": ["Done"] ,
+		"correct": "Done"
+	  }
+	  ] ,	  
+	  
+
+},
+	  
+
+
 "Multiplcation": {
 	
 	 "6 x 7": [

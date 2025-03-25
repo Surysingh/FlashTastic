@@ -33,7 +33,7 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
@@ -611,164 +611,12 @@ Dark Green
             chartInstances.push(chart);
         }
 
-       
-  let charts = {};
-
-        function createPieChart(canvasId) {
-			
-			//console.log(canvasId);
-			//console.log(document.getElementById(canvasId));
-            let ctx = document.getElementById(canvasId).getContext("2d");
-            return new Chart(ctx, {
-                type: "pie",
-                data: {
-                    labels: [],
-                    datasets: [{
-                        data: [],
-                        backgroundColor: []
-                    }]
-                },
-                options: {
-                    responsive: false,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: ''
-                        }
-                    }
-                }
-            });
-        }
-
-        function updatePieChart(chart, numerator, denominator, displayId) {
-            const backgroundColors = Array(denominator).fill("#ddd");
-            for (let i = 0; i < numerator; i++) {
-                backgroundColors[i] = "#4CAF50";
-            }
-
-            chart.data.labels = Array(denominator).fill("");
-            chart.data.datasets[0].data = Array(denominator).fill(1);
-            chart.data.datasets[0].backgroundColor = backgroundColors;
-
-            chart.options.plugins.title.display = true;
-            chart.options.plugins.title.text = `${numerator}/${denominator}`;
-
-            chart.update();
-            document.getElementById(displayId).innerText = `${numerator}/${denominator}`;
-        }
-
-        function calculateResult() {
-            let num1 = parseInt(document.getElementById("numerator1").value);
-            let den1 = parseInt(document.getElementById("denominator1").value);
-            let num2 = parseInt(document.getElementById("numerator2").value);
-            let den2 = parseInt(document.getElementById("denominator2").value);
-            let operation = document.getElementById("operation").value;
-
-            let resultNum, resultDen;
-            if (operation === "+") {
-                resultNum = num1 * den2 + num2 * den1;
-                resultDen = den1 * den2;
-            } else if (operation === "-") {
-                resultNum = num1 * den2 - num2 * den1;
-                resultDen = den1 * den2;
-            } else if (operation === "*") {
-                resultNum = num1 * num2;
-                resultDen = den1 * den2;
-            } else {
-                resultNum = num1 * den2;
-                resultDen = num2 * den1;
-            }
-
-            updatePieChart(charts.result, resultNum, resultDen, "resultFraction");
-        }
-function displayVisualFraction(card){
-	
-	OngoingOp = 3;
-	  document.getElementById("game-chart-container").classList.remove("hidden");
- 
-			if(card.question == "1"){
-				
-				charts.chart1 = createPieChart("chart1");
-				
-				// Initialize charts with default values
-            updatePieChart(charts.chart1, 1, 4, "fraction1");
-			
-// Add event listeners for input changes
-            document.getElementById("numerator1").addEventListener("input", function () {
-                let numerator = parseInt(this.value);
-                let denominator = parseInt(document.getElementById("denominator1").value);
-                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
-                //calculateResult();
-            });
-
-            document.getElementById("denominator1").addEventListener("input", function () {
-                let numerator = parseInt(document.getElementById("numerator1").value);
-                let denominator = parseInt(this.value);
-                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
-                //calculateResult();
-            });			
-			
-			}
-			else{
-				
-			charts.chart1 = createPieChart("chart1");
-            charts.chart2 = createPieChart("chart2");
-            charts.result = createPieChart("resultChart");
-
-            // Initialize charts with default values
-            updatePieChart(charts.chart1, 1, 4, "fraction1");
-            updatePieChart(charts.chart2, 1, 4, "fraction2");
-            calculateResult();
-
-            // Add event listeners for input changes
-            document.getElementById("numerator1").addEventListener("input", function () {
-                let numerator = parseInt(this.value);
-                let denominator = parseInt(document.getElementById("denominator1").value);
-                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
-                calculateResult();
-            });
-
-            document.getElementById("denominator1").addEventListener("input", function () {
-                let numerator = parseInt(document.getElementById("numerator1").value);
-                let denominator = parseInt(this.value);
-                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
-                calculateResult();
-            });
-
-            document.getElementById("numerator2").addEventListener("input", function () {
-                let numerator = parseInt(this.value);
-                let denominator = parseInt(document.getElementById("denominator2").value);
-                updatePieChart(charts.chart2, numerator, denominator, "fraction2");
-                calculateResult();
-            });
-
-            document.getElementById("denominator2").addEventListener("input", function () {
-                let numerator = parseInt(document.getElementById("numerator2").value);
-                let denominator = parseInt(this.value);
-                updatePieChart(charts.chart2, numerator, denominator, "fraction2");
-                calculateResult();
-            });
-
-            document.getElementById("operation").addEventListener("change", calculateResult);
-        				
-			}
-				
-				
-            
- 
-           
-}
 		
 function displayFraction(card){
 	
 	OngoingOp = 2;
 	
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
-	document.getElementById("game-chart-container").classList.add("hidden");
 	
     if (card.denominator2)	{
 		drawCharts(card.num1, card.num2, card.denominator , card.denominator2);	
@@ -783,7 +631,6 @@ function displayMultiplication(card){
 	OngoingOp = 0;
 	
             document.getElementById('charts').innerHTML = "";	 // clear any chart
-			document.getElementById("game-chart-container").classList.add("hidden");
 			
 			if (table_init == 0){
 			let myTableHTML = makeTable(card.num1, card.num2);
@@ -800,7 +647,6 @@ function displayDivision(card) {
 	
 	//drawCharts(card.num1, 0, card.num2 , 0);	
 	document.getElementById('charts').innerHTML = "";	 // clear any chart
-	document.getElementById("game-chart-container").classList.add("hidden");
 	
 			if (table_init == 0){
 			let myTableHTML = makeTable_div(card.num1, card.num2);
@@ -861,9 +707,7 @@ function displayDivision(card) {
 					displayDivision(card); // Use displayDivision for division
 			}else if ((currenttopLevelCategoryName == "Fraction 1") || (currenttopLevelCategoryName == "Fraction 2")) {
 					displayFraction(card); // Use displayDivision for division
-			}else if (currenttopLevelCategoryName == "Visual Fraction"){
-				displayVisualFraction(card); 
-			}				
+			}			
 			else {
 				displayMultiplication(card); // Use displayMultiplication for multiplication
 			}
