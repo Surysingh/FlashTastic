@@ -331,8 +331,8 @@ window.categories = {
   {
     "question": "What energy does a magnet possess?",
     "Translation": "चुंबक में कौन सी ऊर्जा होती है?",
-    "correct": "Energy to move things",
-    "options": ["Energy to move things", "Heat energy", "Light energy", "Electrical energy"],
+    "correct": "Energy to move Iron",
+    "options": ["Energy to move Iron", "Heat energy", "Light energy", "Electrical energy"],
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },
@@ -393,7 +393,7 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "What is used to produce electricity in those plants?",
+    "question": "What is used to produce electricity in thermal plants?",
     "Translation": "उन संयंत्रों में बिजली का उत्पादन करने के लिए किसका उपयोग किया जाता है?",
     "correct": "Burning coal",
     "options": ["Burning coal", "Wind turbines", "Water turbines", "Solar panels"],
@@ -699,14 +699,7 @@ window.categories = {
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },
-  {
-    "question": "What is moving air called?",
-    "Translation": "गतिमान वायु क्या कहलाती है?",
-    "correct": "Wind",
-    "options": ["Wind", "Breeze", "Gust", "Storm"],
-    "topic": "Force, Work, and Energy",
-    "grade": "4"
-  },
+
   {
     "question": "What do wind turbines use to produce electricity?",
     "Translation": "विंड टर्बाइन बिजली का उत्पादन करने के लिए किसका उपयोग करते हैं?",
@@ -784,14 +777,6 @@ window.categories = {
     "Translation": "नावें किस ऊर्जा का उपयोग करके चलती हैं?",
     "correct": "Energy of flowing water",
     "options": ["Energy of flowing water", "Solar energy", "Heat energy", "Electrical energy"],
-    "topic": "Force, Work, and Energy",
-    "grade": "4"
-  },
-  {
-    "question": "What machine is used to produce electricity?",
-    "Translation": "बिजली का उत्पादन करने के लिए किस मशीन का उपयोग किया जाता है?",
-    "correct": "Turbine",
-    "options": ["Turbine", "Generator", "Motor", "Engine"],
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },
@@ -982,19 +967,7 @@ window.categories = {
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },
-  {
-    "question": "What is moving air called?",
-    "Translation": "चलती हवा को क्या कहते हैं?",
-    "correct": "Wind",
-    "options": [
-      "Breeze",
-      "Air",
-      "Wind",
-      "Vapor"
-    ],
-    "topic": "Force, Work, and Energy",
-    "grade": "4"
-  },
+
   
   
   
@@ -1031,14 +1004,7 @@ window.categories = {
         "topic": "Force, Work and Energy",
         "grade": "4"
     },
-    {
-        "question": "A machine used to produce electricity",
-        "Translation": "बिजली पैदा करने के लिए इस्तेमाल की जाने वाली मशीन",
-        "correct": "Turbine",
-        "options": ["Generator", "Motor", "Turbine", "Transformer"],
-        "topic": "Force, Work and Energy",
-        "grade": "4"
-    }
+
 	
 	],
 	
@@ -1081,7 +1047,7 @@ window.categories = {
     "correct": "Slanted rays",
     "options": [
       "Direct rays",
-      "Longer nights",
+      "Sea breeze",
       "Slanted rays",
       "More wind"
     ],
@@ -1132,7 +1098,7 @@ window.categories = {
         "question": "What season comes after winter?",
         "Translation": "सर्दी के बाद कौन सा मौसम आता है?",
         "correct": "Summer",
-        "options": ["Monsoon", "Autumn", "Summer", "Spring"],
+        "options": ["Monsoon", "Autumn", "Summer", "Rainy"],
         "topic": "Air Water Weather",
         "grade": "4"
     },
@@ -1304,7 +1270,7 @@ window.categories = {
       "Plants, animals, forests, air, water",
       "Wood, flowers, fruits, seeds",
       "Rocks, sand, soil",
-      "Petrol, diesel, coal"
+      "Petrol, diesel, coal, metals"
     ],
     "topic": "Our Green World",
     "grade": "4"
