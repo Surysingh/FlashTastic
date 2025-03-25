@@ -951,9 +951,9 @@ window.categories = {
 	  
 	
 	  
-	  "345 ÷ 5": [
+	  "345 / 5": [
       {
-        "question": "345 ÷ 5 = ?",
+        "question": "345 / 5 = ?",
         "num1": "345",
         "num2": "5",
         "correct": "34 / 5",
@@ -990,9 +990,9 @@ window.categories = {
       }
     ],
     
- "346 ÷ 5": [
+ "346 / 5": [
       {
-        "question": "346 ÷ 5 = ?",
+        "question": "346 / 5 = ?",
         "num1": "346",
         "num2": "5",
         "correct": "34 / 5",
@@ -1029,9 +1029,9 @@ window.categories = {
       }
     ],
     	
-	"576 ÷ 16": [
+	"576 / 16": [
       {
-        "question": "576 ÷ 16 = ?",
+        "question": "576 / 16 = ?",
         "num1": "576",
         "num2": "16",
         "correct": "57 / 16",
@@ -1067,9 +1067,9 @@ window.categories = {
         "remainder": "0"
       }
     ],
-"577 ÷ 16": [
+"577 / 16": [
       {
-        "question": "577 ÷ 16 = ?",
+        "question": "577 / 16 = ?",
         "num1": "577",
         "num2": "16",
         "correct": "57 / 16",
@@ -1106,9 +1106,9 @@ window.categories = {
       }
     ],	
 	
-    "918 ÷ 17": [
+    "918 / 17": [
       {
-        "question": "918 ÷ 17 = ?",
+        "question": "918 / 17 = ?",
         "num1": "918",
         "num2": "17",
         "correct": "91 / 17",
@@ -1144,9 +1144,9 @@ window.categories = {
         "remainder": "0"
       }
     ],
- "920 ÷ 17": [
+ "920 / 17": [
       {
-        "question": "920 ÷ 17 = ?",
+        "question": "920 / 17 = ?",
         "num1": "920",
         "num2": "17",
         "correct": "92 / 17",
@@ -1183,9 +1183,9 @@ window.categories = {
       }
     ],
 	
-    "624 ÷ 26": [
+    "624 / 26": [
       {
-        "question": "624 ÷ 26 = ?",
+        "question": "624 / 26 = ?",
         "num1": "624",
         "num2": "26",
         "correct": "62 / 26",
@@ -1223,14 +1223,14 @@ window.categories = {
     ]
 	,
 	
-	"432 ÷ 12": [
+	"432 / 12": [
       {
-        "question": "432 ÷ 12 = ?",
+        "question": "432 / 12 = ?",
         "num1": "432",
         "num2": "12",		
-        "correct": "43 ÷ 12",
+        "correct": "43 / 12",
         "ans_english": "First, divide the first two digits of 432 (43) by 12.",
-        "options": ["4 ÷ 12", "43 ÷ 12", "432 ÷ 12", "32 ÷ 12"],
+        "options": ["4 / 12", "43 / 12", "432 / 12", "32 / 12"],
         "stepValue": "3",
         "stepText": "12 x 3 = 36",
         "sub": "36"		,
@@ -1244,7 +1244,7 @@ window.categories = {
         "num2": "12",		
         "correct": "Bring Down 2",
         "ans_english": "Next, bring down the next digit (2)",
-        "options": ["Bring Down 2", "7 ÷ 12", "432 ÷ 12", "32 ÷ 12"],
+        "options": ["Bring Down 2", "7 / 12", "432 / 12", "32 / 12"],
         "stepValue": "",
         "stepText": "Bring Down 2",
         "sub": ""	,	
@@ -1257,9 +1257,9 @@ window.categories = {
         "question": "432 / 12 = ?",
         "num1": "432",
         "num2": "12",
-        "correct": "72 ÷ 12",
+        "correct": "72 / 12",
         "ans_english": "divide 72 by 12",
-        "options": ["7 ÷ 12", "72 ÷ 12", "43 ÷ 12", "2 ÷ 12"],		
+        "options": ["7 / 12", "72 / 12", "43 / 12", "2 / 12"],		
         "stepValue": "6",
         "stepText": "12 x 6 = 72",
         "sub": "072"	,	
@@ -1268,14 +1268,14 @@ window.categories = {
       }
     ]
   ,
- "756 ÷ 21": [
+ "756 / 21": [
       {
-        "question": "756 ÷ 21 = ?",
+        "question": "756 / 21 = ?",
         "num1": "756",
         "num2": "21",
-        "correct": "75 ÷ 21",
+        "correct": "75 / 21",
         "ans_english": "First, divide the first two digits of 756 (75) by 21.",
-        "options": ["7 ÷ 21", "75 ÷ 21", "756 ÷ 21", "56 ÷ 21"],
+        "options": ["7 / 21", "75 / 21", "756 / 21", "56 / 21"],
         "stepValue": "3",
         "stepText": "21 x 3 = 63",
         "sub": "63",
@@ -1287,7 +1287,7 @@ window.categories = {
         "num2": "21",
         "correct": "Bring Down 6",
         "ans_english": "Next, bring down the next digit (6).",
-        "options": ["Bring Down 6", "12 ÷ 21", "756 ÷ 21", "56 ÷ 21"],
+        "options": ["Bring Down 6", "12 / 21", "756 / 21", "56 / 21"],
         "stepValue": "",
         "stepText": "Bring Down 6",
         "sub": "",
@@ -1297,9 +1297,9 @@ window.categories = {
         "question": "756 / 21 = ?",
         "num1": "756",
         "num2": "21",
-        "correct": "126 ÷ 21",
+        "correct": "126 / 21",
         "ans_english": "Then, divide 126 by 21.",
-        "options": ["12 ÷ 21", "126 ÷ 21", "75 ÷ 21", "6 ÷ 21"],
+        "options": ["12 / 21", "126 / 21", "75 / 21", "6 / 21"],
         "stepValue": "6",
         "stepText": "21 x 6 = 126",
         "sub": "126",
@@ -1307,14 +1307,14 @@ window.categories = {
       }
     ]
   ,
-  "945 ÷ 15": [
+  "945 / 15": [
     {
-      "question": "945 ÷ 15 = ?",
+      "question": "945 / 15 = ?",
       "num1": "945",
       "num2": "15",
-      "correct": "94 ÷ 15",
+      "correct": "94 / 15",
       "ans_english": "First, divide the first two digits of 945 (94) by 15.",
-      "options": ["9 ÷ 15", "94 ÷ 15", "945 ÷ 15", "45 ÷ 15"],
+      "options": ["9 / 15", "94 / 15", "945 / 15", "45 / 15"],
       "stepValue": "6",
       "stepText": "15 x 6 = 90",
       "sub": "90",
@@ -1326,28 +1326,28 @@ window.categories = {
       "num2": "15",
       "correct": "Bring Down 5",
       "ans_english": "Next, bring down the next digit (5).",
-      "options": ["Bring Down 5", "4 ÷ 15", "945 ÷ 15", "45 ÷ 15"],
+      "options": ["Bring Down 5", "4 / 15", "945 / 15", "45 / 15"],
       "stepValue": "",
       "stepText": "Bring Down 5",
       "sub": "",
       "remainder": "045"
     },
     {
-      "question": "945 ÷ 15 = ?",
+      "question": "945 / 15 = ?",
       "num1": "945",
       "num2": "15",	  
-      "correct": "45 ÷ 15",
+      "correct": "45 / 15",
       "ans_english": "Then, divide 45 by 15.",
-      "options": ["4 ÷ 15", "45 ÷ 15", "94 ÷ 15", "5 ÷ 15"],
+      "options": ["4 / 15", "45 / 15", "94 / 15", "5 / 15"],
       "stepValue": "3",
       "stepText": "15 x 3 = 45",
       "sub": "045",
       "remainder": "000"
     }
   ],
-   "864 ÷ 24": [
+   "864 / 24": [
       {
-        "question": "864 ÷ 24 = ?",
+        "question": "864 / 24 = ?",
         "num1": "864",
         "num2": "24",
         "correct": "86 / 24",
@@ -1383,9 +1383,9 @@ window.categories = {
         "remainder": "000"
       }
     ],
-    "522 ÷ 18": [
+    "522 / 18": [
       {
-        "question": "522 ÷ 18 = ?",
+        "question": "522 / 18 = ?",
         "num1": "522",
         "num2": "18",
         "correct": "52 / 18",
@@ -1421,9 +1421,9 @@ window.categories = {
         "remainder": "000"
       }
     ],
-    "693 ÷ 33": [
+    "693 / 33": [
       {
-        "question": "693 ÷ 33 = ?",
+        "question": "693 / 33 = ?",
         "num1": "693",
         "num2": "33",
         "correct": "69 / 33",
@@ -1460,9 +1460,9 @@ window.categories = {
       }
     ],
 	
-    "583 ÷ 8": [
+    "583 / 8": [
       {
-        "question": "583 ÷ 8 = ?",
+        "question": "583 / 8 = ?",
         "num1": "583",
         "num2": "8",
         "correct": "58 / 8",
@@ -1498,9 +1498,9 @@ window.categories = {
         "remainder": "7"
       }
     ],
-    "749 ÷ 15": [
+    "749 / 15": [
       {
-        "question": "749 ÷ 15 = ?",
+        "question": "749 / 15 = ?",
         "num1": "749",
         "num2": "15",
         "correct": "74 / 15",
@@ -1539,6 +1539,712 @@ window.categories = {
 	
   }
   
+,   
+  "Fraction 1": {
+ "1": [
+	{ question: "What does this represent?", correct: "1", options: ["1", "4", "9", "8"], num1: 1, num2: 0, denominator: 1 },
+],
+
+ "-1": [
+	{ question: "What does this represent?", correct: "-1", options: ["-1", "1", "-9", "-8"], num1: -1, num2: 0, denominator: 1 },
+],
+
+
+	  
+ "4": [
+	{ question: "What does this represent?", correct: "4", options: ["10", "4", "9", "8"], num1: 4, num2: 0, denominator: 1 },
+],
+
+ "3": [
+	{ question: "What does this represent?", correct: "3", options: ["10", "3", "9", "8"], num1: 3, num2: 0, denominator: 1 },
+],
+
+
+
+
+ "4+3": [
+	{ question: "What does this represent?", correct: "7", options: ["10", "7", "9", "8"], num1: 4, num2: 3, denominator: 1 },
+],
+
+ "4-3": [
+	{ question: "What does this represent?", correct: "1", options: ["10", "1", "9", "8"], num1: 4, num2: -3, denominator: 1 },
+],
+
+
+ "-4-3": [
+	{ question: "What does this represent?", correct: "-7", options: ["1", "-7", "=1", "8"], num1: -4, num2: -3, denominator: 1 },
+],
+"5+2": [
+    { question: "What does 5 + 2 represent?", correct: "7", options: ["6", "7", "8", "9"], num1: 5, num2: 2, denominator: 1 },
+  ],
+  "5-2": [
+    { question: "What does 5 - 2 represent?", correct: "3", options: ["2", "3", "4", "5"], num1: 5, num2: -2, denominator: 1 },
+  ],
+  "-5-2": [
+    { question: "What does -5 - 2 represent?", correct: "-7", options: ["-3", "-7", "-8", "-9"], num1: -5, num2: -2, denominator: 1 },
+  ],
+  "6+1": [
+    { question: "What does 6 + 1 represent?", correct: "7", options: ["5", "6", "7", "8"], num1: 6, num2: 1, denominator: 1 },
+  ],
+  "6-1": [
+    { question: "What does 6 - 1 represent?", correct: "5", options: ["4", "5", "6", "7"], num1: 6, num2: -1, denominator: 1 },
+  ],
+  "-6-1": [
+    { question: "What does -6 - 1 represent?", correct: "-7", options: ["-5", "-6", "-7", "-8"], num1: -6, num2: -1, denominator: 1 },
+  ],
+  "7+0": [
+    { question: "What does 7 + 0 represent?", correct: "7", options: ["6", "7", "8", "0"], num1: 7, num2: 0, denominator: 1 },
+  ],
+  "7-0": [
+    { question: "What does 7 - 0 represent?", correct: "7", options: ["6", "7", "8", "0"], num1: 7, num2: 0, denominator: 1 },
+  ],
+  "-7-0": [
+    { question: "What does -7 - 0 represent?", correct: "-7", options: ["-6", "-7", "-8", "0"], num1: -7, num2: 0, denominator: 1 },
+  ],
+  "8+ (-2)": [
+    { question: "What does 8 + (-2) represent?", correct: "6", options: ["10", "6", "8", "-10"], num1: 8, num2: -2, denominator: 1 },
+  ],
+  "8- (-2)": [
+    { question: "What does 8 - (-2) represent?", correct: "10", options: ["6", "10", "8", "-6"], num1: 8, num2: 2, denominator: 1 },
+  ],
+  "-8 + 2": [
+    { question: "What does -8 + 2 represent?", correct: "-6", options: ["-10", "-6", "6", "10"], num1: -8, num2: 2, denominator: 1 },
+  ],
+  "-8 - (-2)": [
+    { question: "What does -8 - (-2) represent?", correct: "-6", options: ["-10", "-6", "6", "-10"], num1: -8, num2: 2, denominator: 1 },
+  ],
+  "9+ (-5)": [
+    { question: "What does 9 + (-5) represent?", correct: "4", options: ["14", "4", "9", "-14"], num1: 9, num2: -5, denominator: 1 },
+  ],
+  "9- (-5)": [
+    { question: "What does 9 - (-5) represent?", correct: "14", options: ["4", "14", "9", "-4"], num1: 9, num2: 5, denominator: 1 },
+  ],
+  "-9 + 5": [
+    { question: "What does -9 + 5 represent?", correct: "-4", options: ["-14", "-4", "4", "14"], num1: -9, num2: 5, denominator: 1 },
+  ],
+  "-9 - (-5)": [
+    { question: "What does -9 - (-5) represent?", correct: "-4", options: ["-14", "-4", "4", "-14"], num1: -9, num2: 5, denominator: 1 },
+  ],
+  "10 + (-3)": [
+    { question: "What does 10 + (-3) represent?", correct: "7", options: ["13", "7", "10", "-13"], num1: 10, num2: -3, denominator: 1 },
+  ],
+  "10 - (-3)": [
+    { question: "What does 10 - (-3) represent?", correct: "13", options: ["7", "13", "10", "-7"], num1: 10, num2: 3, denominator: 1 },
+  ],
+  "-10 + 3": [
+    { question: "What does -10 + 3 represent?", correct: "-7", options: ["-13", "-7", "7", "13"], num1: -10, num2: 3, denominator: 1 },
+  ],
+  "-10 - (-3)": [
+    { question: "What does -10 - (-3) represent?", correct: "-7", options: ["-13", "-7", "7", "-13"], num1: -10, num2: 3, denominator: 1 },
+  ],
+  "1 + 8": [
+    { question: "What does 1 + 8 represent?", correct: "9", options: ["7", "8", "9", "10"], num1: 1, num2: 8, denominator: 1 },
+  ],
+  "1 - 8": [
+    { question: "What does 1 - 8 represent?", correct: "-7", options: ["7", "-7", "9", "-9"], num1: 1, num2: -8, denominator: 1 },
+  ],
+  "-1 + 8": [
+    { question: "What does -1 + 8 represent?", correct: "7", options: ["-7", "7", "-9", "9"], num1: -1, num2: 8, denominator: 1 },
+  ],
+  "-1 - 8": [
+    { question: "What does -1 - 8 represent?", correct: "-9", options: ["-7", "-9", "7", "9"], num1: -1, num2: -8, denominator: 1 },
+  ],
+  "2 + 7": [
+    { question: "What does 2 + 7 represent?", correct: "9", options: ["8", "9", "10", "11"], num1: 2, num2: 7, denominator: 1 },
+  ],
+  "2 - 7": [
+    { question: "What does 2 - 7 represent?", correct: "-5", options: ["5", "-5", "9", "-9"], num1: 2, num2: -7, denominator: 1 },
+  ],
+  "-2 + 7": [
+    { question: "What does -2 + 7 represent?", correct: "5", options: ["-5", "5", "-9", "9"], num1: -2, num2: 7, denominator: 1 },
+  ],
+  "-2 - 7": [
+    { question: "What does -2 - 7 represent?", correct: "-9", options: ["-5", "-9", "5", "9"], num1: -2, num2: -7, denominator: 1 },
+  ],
+
+ "1/1": [
+	{ question: "What does this represent?", correct: "1", options: ["1", "4", "9", "8"], num1: 1, num2: 0, denominator: 1 },
+],
+	  
+ "1/2": [
+	{ question: "What does this represent?", correct: "1/2", options: ["1/2", "2", "1-2", "3"], num1: 1, num2: 0, denominator: 2 },
+],	 
+
+ "1/3": [
+	{ question: "What does this represent?", correct: "1/3", options: ["1/3", "3", "1-3", "4"], num1: 1, num2: 0, denominator: 3 },
+],	 
+
+ "1/4": [
+	{ question: "What does this represent?", correct: "1/4", options: ["1/4", "4", "1-4", "5"], num1: 1, num2: 0, denominator: 4 },
+],
+
+ "1/5": [
+	{ question: "What does this represent?", correct: "1/5", options: ["1/5", "5", "1-5", "6"], num1: 1, num2: 0, denominator: 5 },
+],
+
+ "Which is Bigger 4 or 3": [
+	{ question: "What does this represent?", correct: "4", options: ["3", "4", "7", "1"], num1: 4, num2: 3, denominator: 1 },
+],
+
+  "Which is Bigger 3/6 or 2/4": [
+    { question: "Which is bigger, 3/6 or 2/4?", correct: "Equal", options: ["3/6", "2/4", "Bigger", "Equal"], num1: 3, num2: 2, denominator: 6, denominator2: 4 },
+  ],
+
+ "Which is Bigger 1/4 or 1/3": [
+	{ question: "What does this represent?", correct: "1/3", options: ["1/3", "1/4", "1/7", "1/1"], num1: 1, num2: 1, denominator: 4 , denominator2: 3 },
+],
+"Which is Bigger 4 or 3": [
+    { question: "Which is bigger, 4 or 3?", correct: "4", options: ["3", "4", "7", "1"], num1: 4, num2: 3, denominator: 1 },
+  ],
+  "Which is Bigger 1/4 or 1/3": [
+    { question: "Which is bigger, 1/4 or 1/3?", correct: "1/3", options: ["1/3", "1/4", "1/7", "1/1"], num1: 1, num2: 1, denominator: 4, denominator2: 3 },
+  ],
+  "Which is Bigger -2 or 1": [
+    { question: "Which is bigger, -2 or 1?", correct: "1", options: ["-2", "1", "-3", "3"], num1: -2, num2: 1, denominator: 1 },
+  ],
+  "Which is Bigger -1/2 or -1/4": [
+    { question: "Which is bigger, -1/2 or -1/4?", correct: "-1/4", options: ["-1/2", "-1/4", "-3/4", "0"], num1: -1, num2: -1, denominator: 2, denominator2: 4 },
+  ],
+  "Which is Bigger 0 or -5": [
+    { question: "Which is bigger, 0 or -5?", correct: "0", options: ["0", "-5", "5", "-1"], num1: 0, num2: -5, denominator: 1 },
+  ],
+  
+  "Which is Bigger 3/6 or 12/24": [
+    { question: "Which is bigger, 3/6 or 12/24?", correct: "Equal", options: ["3/6", "12/24", "Bigger", "Equal"], num1: 3, num2: 12, denominator: 6, denominator2: 24 },
+  ],  
+  
+  "Which is Bigger 2/5 or 3/5": [
+    { question: "Which is bigger, 2/5 or 3/5?", correct: "3/5", options: ["2/5", "3/5", "5/5", "1/5"], num1: 2, num2: 3, denominator: 5,  },
+  ],
+  "Which is Bigger -3 or -7": [
+    { question: "Which is bigger, -3 or -7?", correct: "-3", options: ["-7", "-3", "-10", "4"], num1: -3, num2: -7, denominator: 1 },
+  ],
+  "Which is Bigger -2/3 or -1/3": [
+    { question: "Which is bigger, -2/3 or -1/3?", correct: "-1/3", options: ["-2/3", "-1/3", "-3/3", "0"], num1: -2, num2: -1, denominator: 3, },
+  ],
+    "Which is Bigger 3/8 or 1/8": [
+    { question: "Which is bigger, 3/8 or 1/8?", correct: "3/8", options: ["1/8", "3/8", "4/8", "2/8"], num1: 3, num2: 1, denominator: 8 },
+  ],
+  "Which is Bigger -1 or -6": [
+    { question: "Which is bigger, -1 or -6?", correct: "-1", options: ["-6", "-1", "-7", "5"], num1: -1, num2: -6, denominator: 1 },
+  ],
+  "Which is Bigger -3/5 or -4/5": [
+    { question: "Which is bigger, -3/5 or -4/5?", correct: "-3/5", options: ["-4/5", "-3/5", "-7/5", "0"], num1: -3, num2: -4,  denominator: 5},
+  ],
+  "Which is Bigger 7 or -2": [
+    { question: "Which is bigger, 7 or -2?", correct: "7", options: ["-2", "7", "5", "-9"], num1: 7, num2: -2, denominator: 1 },
+  ],
+  "Which is Bigger 1/2 or 2/4": [
+    { question: "Which is bigger, 1/2 or 2/4?", correct: "Equal", options: ["1/2", "2/4", "Bigger", "Equal"], num1: 1, num2: 2, denominator: 2, denominator2: 4 },
+  ],
+  "Which is Bigger -8 or -3": [
+    { question: "Which is bigger, -8 or -3?", correct: "-3", options: ["-8", "-3", "-11", "5"], num1: -8, num2: -3, denominator: 1 },
+  ],
+  "Which is Bigger -1/8 or -3/8": [
+    { question: "Which is bigger, -1/8 or -3/8?", correct: "-1/8", options: ["-3/8", "-1/8", "-4/8", "0"], num1: -1,  num2: -3, denominator: 8 },
+  ],
+  "Which is Bigger 9 or 0": [
+    { question: "Which is bigger, 9 or 0?", correct: "9", options: ["0", "9", "9", "-9"], num1: 9, num2: 0, denominator: 1 },
+  ],
+  "Which is Bigger 4/7 or 2/7": [
+    { question: "Which is bigger, 4/7 or 2/7?", correct: "4/7", options: ["2/7", "4/7", "6/7", "2/7"], num1: 4,  num2: 2, denominator: 7 },
+  ],
+  "Which is Bigger -5 or -1": [
+    { question: "Which is bigger, -5 or -1?", correct: "-1", options: ["-5", "-1", "-6", "4"], num1: -5, num2: -1, denominator: 1 },
+  ],
+  "Which is Bigger -2/5 or -1/5": [
+    { question: "Which is bigger, -2/5 or -1/5?", correct: "-1/5", options: ["-2/5", "-1/5", "-3/5", "0"], num1: -2,  num2: -1, denominator: 5 },
+  ],
+  "Which is Bigger 1 or -4": [
+    { question: "Which is bigger, 1 or -4?", correct: "1", options: ["-4", "1", "-3", "5"], num1: 1, num2: -4, denominator: 1 },
+  ],
+  "Which is Bigger 3/4 or 2/4": [
+    { question: "Which is bigger, 3/4 or 2/4?", correct: "3/4", options: ["2/4", "3/4", "5/4", "1/4"], num1: 3,  num2: 2, denominator: 4},
+  ],
+  "Which is Bigger -6 or -2": [
+    { question: "Which is bigger, -6 or -2?", correct: "-2", options: ["-6", "-2", "-8", "4"], num1: -6, num2: -2, denominator: 1 },
+  ],
+  "Which is Bigger -1/6 or -5/6": [
+    { question: "Which is bigger, -1/6 or -5/6?", correct: "-1/6", options: ["-5/6", "-1/6", "-6/6", "0"], num1: -1,  num2: -5, denominator: 6 },
+  ],
+	  
+  "7": [
+	{ question: "What does this represent?", correct: "7", options: ["10", "7", "9", "8"], num1: 7, num2: 0, denominator: 1 },
+],
+
+  "7/1": [
+	{ question: "What does this represent?", correct: "7", options: ["10", "7", "9", "8"], num1: 7, num2: 0, denominator: 1 },
+],	  
+
+  "7/2": [
+	{ question: "What does this represent?", correct: "3 1/2", options: ["3 1/2", "2 1/2", "3", "1/2"], num1: 7, num2: 0, denominator: 2 },
+],
+
+ "7/3": [
+	{ question: "What does this represent?", correct: "2 1/3", options: ["2 1/3", "1 2/3", "2", "1/3"], num1: 7, num2: 0, denominator: 3 },
+],
+
+"5/4": [
+    { question: "Convert 5/4 to a mixed number.", correct: "1 1/4", options: ["1 1/4", "2 1/4", "1", "1/4"], num1: 5, denominator: 4 },
+  ],
+  "11/3": [
+    { question: "Convert 11/3 to a mixed number.", correct: "3 2/3", options: ["3 2/3", "2 2/3", "3", "2/3"], num1: 11, denominator: 3 },
+  ],
+  "10/4": [
+    { question: "Convert 10/4 to a mixed number.", correct: "2 2/4", options: ["2 2/4", "1 2/4", "2", "2/4"], num1: 10, denominator: 4 },
+  ],
+  "13/5": [
+    { question: "Convert 13/5 to a mixed number.", correct: "2 3/5", options: ["2 3/5", "1 3/5", "2", "3/5"], num1: 13, denominator: 5 },
+  ],
+  "17/6": [
+    { question: "Convert 17/6 to a mixed number.", correct: "2 5/6", options: ["2 5/6", "3 5/6", "2", "5/6"], num1: 17, denominator: 6 },
+  ],
+  "8/5": [
+    { question: "Convert 8/5 to a mixed number.", correct: "1 3/5", options: ["1 3/5", "2 3/5", "1", "3/5"], num1: 8, denominator: 5 },
+  ],
+  "9/4": [
+    { question: "Convert 9/4 to a mixed number.", correct: "2 1/4", options: ["2 1/4", "1 1/4", "2", "1/4"], num1: 9, denominator: 4 },
+  ],
+  "14/3": [
+    { question: "Convert 14/3 to a mixed number.", correct: "4 2/3", options: ["4 2/3", "3 2/3", "4", "2/3"], num1: 14, denominator: 3 },
+  ],
+  "3 1/2": [
+    { question: "Convert 3 1/2 to an improper fraction.", correct: "7/2", options: ["7/2", "6/2", "5/2", "8/2"], whole: 3, num1: 7, denominator: 2 },
+  ],
+  "2 1/3": [
+    { question: "Convert 2 1/3 to an improper fraction.", correct: "7/3", options: ["7/3", "6/3", "5/3", "8/3"], whole: 2, num1: 7, denominator: 3 },
+  ],
+  "1 1/4": [
+    { question: "Convert 1 1/4 to an improper fraction.", correct: "5/4", options: ["5/4", "4/4", "3/4", "6/4"], whole: 1, num1: 5, denominator: 4 },
+  ],
+  "3 2/3": [
+    { question: "Convert 3 2/3 to an improper fraction.", correct: "11/3", options: ["11/3", "9/3", "10/3", "12/3"], whole: 3, num1: 11, denominator: 3 },
+  ],
+  "2 2/4": [
+    { question: "Convert 2 2/4 to an improper fraction.", correct: "10/4", options: ["10/4", "8/4", "9/4", "11/4"], whole: 2, num1: 10, denominator: 4 },
+  ],
+  "2 3/5": [
+    { question: "Convert 2 3/5 to an improper fraction.", correct: "13/5", options: ["13/5", "10/5", "12/5", "14/5"], whole: 2, num1: 13, denominator: 5 },
+  ],
+  "2 5/6": [
+    { question: "Convert 2 5/6 to an improper fraction.", correct: "17/6", options: ["17/6", "12/6", "16/6", "18/6"], whole: 2, num1: 17, denominator: 6 },
+  ],
+  "1 3/5": [
+    { question: "Convert 1 3/5 to an improper fraction.", correct: "8/5", options: ["8/5", "5/5", "7/5", "9/5"], whole: 1, num1: 8, denominator: 5 },
+  ],
+  "2 1/4": [
+    { question: "Convert 2 1/4 to an improper fraction.", correct: "9/4", options: ["9/4", "8/4", "7/4", "10/4"], whole: 2, num1: 9, denominator: 4 },
+  ],
+  "4 2/3": [
+    { question: "Convert 4 2/3 to an improper fraction.", correct: "14/3", options: ["14/3", "12/3", "13/3", "15/3"], whole: 4, num1: 14, denominator: 3 },
+  ],
+"-5/2": [
+    { question: "Convert -5/2 to a mixed number.", correct: "-2 1/2", options: ["-2 1/2", "-3 1/2", "-2", "-1/2"], num1: -5, denominator: 2 },
+  ],
+  "-8/3": [
+    { question: "Convert -8/3 to a mixed number.", correct: "-2 2/3", options: ["-2 2/3", "-1 2/3", "-2", "-2/3"], num1: -8, denominator: 3 },
+  ],
+  "-7/4": [
+    { question: "Convert -7/4 to a mixed number.", correct: "-1 3/4", options: ["-1 3/4", "-2 3/4", "-1", "-3/4"], num1: -7, denominator: 4 },
+  ],
+  "-10/3": [
+    { question: "Convert -10/3 to a mixed number.", correct: "-3 1/3", options: ["-3 1/3", "-2 1/3", "-3", "-1/3"], num1: -10, denominator: 3 },
+  ],
+  "-9/5": [
+    { question: "Convert -9/5 to a mixed number.", correct: "-1 4/5", options: ["-1 4/5", "-2 4/5", "-1", "-4/5"], num1: -9, denominator: 5 },
+  ],
+  "-11/4": [
+    { question: "Convert -11/4 to a mixed number.", correct: "-2 3/4", options: ["-2 3/4", "-3 3/4", "-2", "-3/4"], num1: -11, denominator: 4 },
+  ],
+  "-13/6": [
+    { question: "Convert -13/6 to a mixed number.", correct: "-2 1/6", options: ["-2 1/6", "-3 1/6", "-2", "-1/6"], num1: -13, denominator: 6 },
+  ],
+  "-4 1/2": [
+    { question: "Convert -4 1/2 to an improper fraction.", correct: "-9/2", options: ["-9/2", "-8/2", "-7/2", "-10/2"], whole: -4, num1: -9, denominator: 2 },
+  ],
+  "-3 1/3": [
+    { question: "Convert -3 1/3 to an improper fraction.", correct: "-10/3", options: ["-10/3", "-9/3", "-8/3", "-11/3"], whole: -3, num1: -10, denominator: 3 },
+  ],
+  "-2 3/4": [
+    { question: "Convert -2 3/4 to an improper fraction.", correct: "-11/4", options: ["-11/4", "-8/4", "-10/4", "-12/4"], whole: -2, num1: -11, denominator: 4 },
+  ],
+  "-1 2/5": [
+    { question: "Convert -1 2/5 to an improper fraction.", correct: "-7/5", options: ["-7/5", "-5/5", "-6/5", "-8/5"], whole: -1, num1: -7, denominator: 5 },
+  ],
+  "-2 1/6": [
+    { question: "Convert -2 1/6 to an improper fraction.", correct: "-13/6", options: ["-13/6", "-12/6", "-11/6", "-14/6"], whole: -2, num1: -13, denominator: 6 },
+  ],  
+ 
+	  
+  },
   
   
+  
+  "Fraction 2": 
+  { 
+  "1/3 + 1/3": [
+    { question: "What is 1/3 + 1/3?", correct: "2/3", options: ["3/3", "1/3", "2/3", "7/3"], num1: 1, num2: 1, denominator: 3 },
+  ],
+  "1/3 - 1/3": [
+    { question: "What is 1/3 - 1/3?", correct: "0", options: ["3/3", "1/3", "2/3", "0"], num1: 1, num2: -1, denominator: 3 },
+  ],
+  "-1/3 - 1/3": [
+    { question: "What is -1/3 - 1/3?", correct: "-2/3", options: ["3/3", "-1/3", "-2/3", "0"], num1: -1, num2: -1, denominator: 3 },
+  ],
+  "2/3 + 1/3": [
+    { question: "What is 2/3 + 1/3?", correct: "3/3", options: ["3/3", "1/3", "2/3", "7/3"], num1: 2, num2: 1, denominator: 3 },
+  ],
+  "2/3 - 1/3": [
+    { question: "What is 2/3 - 1/3?", correct: "1/3", options: ["3/3", "1/3", "2/3", "7/3"], num1: 2, num2: -1, denominator: 3 },
+  ],
+  "7/4 + 5/4": [
+    { question: "What is 7/4 + 5/4?", correct: "12/4", options: ["10/4", "12/4", "9/4", "8/4"], num1: 7, num2: 5, denominator: 4 },
+  ],
+  "9/3 - 4/3": [
+    { question: "What is 9/3 - 4/3?", correct: "5/3", options: ["4/3", "5/3", "6/3", "7/3"], num1: 9, num2: -4, denominator: 3 },
+  ],
+  "11/5 + 4/5": [
+    { question: "What is 11/5 + 4/5?", correct: "15/5", options: ["12/5", "13/5", "15/5", "14/5"], num1: 11, num2: 4, denominator: 5 },
+  ],
+  "3/5 + 1/5": [
+    { question: "What is 3/5 + 1/5?", correct: "4/5", options: ["2/5", "3/5", "4/5", "5/5"], num1: 3, num2: 1, denominator: 5 },
+  ],
+  "4/5 - 2/5": [
+    { question: "What is 4/5 - 2/5?", correct: "2/5", options: ["1/5", "2/5", "3/5", "4/5"], num1: 4, num2: -2, denominator: 5 },
+  ],
+  "-1/8 + 5/8": [
+    { question: "What is -1/8 + 5/8?", correct: "4/8", options: ["-6/8", "4/8", "6/8", "-4/8"], num1: -1, num2: 5, denominator: 8 },
+  ],
+  "-3/7 - 2/7": [
+    { question: "What is -3/7 - 2/7?", correct: "-5/7", options: ["-1/7", "-5/7", "1/7", "5/7"], num1: -3, num2: -2, denominator: 7 },
+  ],
+  "6/10 + (-1/10)": [
+    { question: "What is 6/10 + (-1/10)?", correct: "5/10", options: ["7/10", "5/10", "4/10", "-7/10"], num1: 6, num2: -1, denominator: 10 },
+  ],
+  "2/9 - (-4/9)": [
+    { question: "What is 2/9 - (-4/9)?", correct: "6/9", options: ["-2/9", "2/9", "6/9", "-6/9"], num1: 2, num2: 4, denominator: 9 },
+  ],
+  "-5/6 + 5/6": [
+    { question: "What is -5/6 + 5/6?", correct: "0", options: ["-10/6", "0", "10/6", "5/6"], num1: -5, num2: 5, denominator: 6 },
+  ],
+  "-2/3 - 1/3": [
+    { question: "What is -2/3 - 1/3?", correct: "-3/3", options: ["-1/3", "-3/3", "1/3", "3/3"], num1: -2, num2: -1, denominator: 3 },
+  ],
+  "4/11 + (-7/11)": [
+    { question: "What is 4/11 + (-7/11)?", correct: "-3/11", options: ["-11/11", "3/11", "-3/11", "11/11"], num1: 4, num2: -7, denominator: 11 },
+  ],
+  "-1/2 - (-3/2)": [
+    { question: "What is -1/2 - (-3/2)?", correct: "2/2", options: ["-4/2", "-2/2", "2/2", "4/2"], num1: -1, num2: 3, denominator: 2 },
+  ],
+  "-8/12 + 2/12": [
+    { question: "What is -8/12 + 2/12?", correct: "-6/12", options: ["-10/12", "-6/12", "6/12", "10/12"], num1: -8, num2: 2, denominator: 12 },
+  ],
+  "-1/5 - 4/5": [
+    { question: "What is -1/5 - 4/5?", correct: "-5/5", options: ["-3/5", "-5/5", "3/5", "5/5"], num1: -1, num2: -4, denominator: 5 },
+  ],
+ "3/5 + 1/5": [
+    { question: "What is 3/5 + 1/5?", correct: "4/5", options: ["2/5", "3/5", "4/5", "5/5"], num1: 3, num2: 1, denominator: 5 },
+  ],
+  "4/5 - 2/5": [
+    { question: "What is 4/5 - 2/5?", correct: "2/5", options: ["1/5", "2/5", "3/5", "4/5"], num1: 4, num2: -2, denominator: 5 },
+  ],
+  "-1/8 + 5/8": [
+    { question: "What is -1/8 + 5/8?", correct: "4/8", options: ["-6/8", "4/8", "6/8", "-4/8"], num1: -1, num2: 5, denominator: 8 },
+  ],
+  "-3/7 - 2/7": [
+    { question: "What is -3/7 - 2/7?", correct: "-5/7", options: ["-1/7", "-5/7", "1/7", "5/7"], num1: -3, num2: -2, denominator: 7 },
+  ],
+  "6/10 + (-1/10)": [
+    { question: "What is 6/10 + (-1/10)?", correct: "5/10", options: ["7/10", "5/10", "4/10", "-7/10"], num1: 6, num2: -1, denominator: 10 },
+  ],
+  "2/9 - (-4/9)": [
+    { question: "What is 2/9 - (-4/9)?", correct: "6/9", options: ["-2/9", "2/9", "6/9", "-6/9"], num1: 2, num2: 4, denominator: 9 },
+  ],
+  "-5/6 + 5/6": [
+    { question: "What is -5/6 + 5/6?", correct: "0", options: ["-10/6", "0", "10/6", "5/6"], num1: -5, num2: 5, denominator: 6 },
+  ],
+  "-2/3 - 1/3": [
+    { question: "What is -2/3 - 1/3?", correct: "-3/3", options: ["-1/3", "-3/3", "1/3", "3/3"], num1: -2, num2: -1, denominator: 3 },
+  ],
+  "4/11 + (-7/11)": [
+    { question: "What is 4/11 + (-7/11)?", correct: "-3/11", options: ["-11/11", "3/11", "-3/11", "11/11"], num1: 4, num2: -7, denominator: 11 },
+  ],
+  "-1/2 - (-3/2)": [
+    { question: "What is -1/2 - (-3/2)?", correct: "2/2", options: ["-4/2", "-2/2", "2/2", "4/2"], num1: -1, num2: 3, denominator: 2 },
+  ],
+  "-8/12 + 2/12": [
+    { question: "What is -8/12 + 2/12?", correct: "-6/12", options: ["-10/12", "-6/12", "6/12", "10/12"], num1: -8, num2: 2, denominator: 12 },
+  ],
+  "-1/5 - 4/5": [
+    { question: "What is -1/5 - 4/5?", correct: "-5/5", options: ["-3/5", "-5/5", "3/5", "5/5"], num1: -1, num2: -4, denominator: 5 },
+  ],
+  "3/8 + 2/8": [
+    { question: "What is 3/8 + 2/8?", correct: "5/8", options: ["1/8", "4/8", "5/8", "6/8"], num1: 3, num2: 2, denominator: 8 },
+  ],
+  "7/10 - 3/10": [
+    { question: "What is 7/10 - 3/10?", correct: "4/10", options: ["10/10", "3/10", "4/10", "6/10"], num1: 7, num2: -3, denominator: 10 },
+  ],
+  "-2/6 + 4/6": [
+    { question: "What is -2/6 + 4/6?", correct: "2/6", options: ["-6/6", "2/6", "6/6", "-2/6"], num1: -2, num2: 4, denominator: 6 },
+  ],
+  "-5/9 - 1/9": [
+    { question: "What is -5/9 - 1/9?", correct: "-6/9", options: ["-4/9", "-6/9", "4/9", "6/9"], num1: -5, num2: -1, denominator: 9 },
+  ],
+  "1/7 + (-6/7)": [
+    { question: "What is 1/7 + (-6/7)?", correct: "-5/7", options: ["7/7", "-5/7", "5/7", "-7/7"], num1: 1, num2: -6, denominator: 7 },
+  ],
+  "8/11 - (-2/11)": [
+    { question: "What is 8/11 - (-2/11)?", correct: "10/11", options: ["6/11", "8/11", "10/11", "-6/11"], num1: 8, num2: 2, denominator: 11 },
+  ],
+  "-4/5 + (-1/5)": [
+    { question: "What is -4/5 + (-1/5)?", correct: "-5/5", options: ["-3/5", "-5/5", "3/5", "5/5"], num1: -4, num2: -1, denominator: 5 },
+  ],
+  "-2/4 - (-3/4)": [
+    { question: "What is -2/4 - (-3/4)?", correct: "1/4", options: ["-5/4", "-1/4", "1/4", "5/4"], num1: -2, num2: 3, denominator: 4 },
+  ],
+  "5/12 + 7/12": [
+    { question: "What is 5/12 + 7/12?", correct: "12/12", options: ["2/12", "11/12", "12/12", "13/12"], num1: 5, num2: 7, denominator: 12 },
+  ],
+  "9/10 - 5/10": [
+    { question: "What is 9/10 - 5/10?", correct: "4/10", options: ["14/10", "4/10", "5/10", "6/10"], num1: 9, num2: -5, denominator: 10 },
+  ],
+  "-3/8 + 7/8": [
+    { question: "What is -3/8 + 7/8?", correct: "4/8", options: ["-10/8", "4/8", "10/8", "-4/8"], num1: -3, num2: 7, denominator: 8 },
+  ],
+  "-1/6 - 5/6": [
+    { question: "What is -1/6 - 5/6?", correct: "-6/6", options: ["-4/6", "-6/6", "4/6", "6/6"], num1: -1, num2: -5, denominator: 6 },
+  ],
+  "2/7 + (-4/7)": [
+    { question: "What is 2/7 + (-4/7)?", correct: "-2/7", options: ["6/7", "-2/7", "2/7", "-6/7"], num1: 2, num2: -4, denominator: 7 },
+  ],
+  "6/11 - (-3/11)": [
+    { question: "What is 6/11 - (-3/11)?", correct: "9/11", options: ["3/11", "6/11", "9/11", "-3/11"], num1: 6, num2: 3, denominator: 11 },
+  ],
+  "-2/5 + (-3/5)": [
+    { question: "What is -2/5 + (-3/5)?", correct: "-5/5", options: ["-1/5", "-5/5", "1/5", "5/5"], num1: -2, num2: -3, denominator: 5 },
+  ],
+  "-1/4 - (-2/4)": [
+    { question: "What is -1/4 - (-2/4)?", correct: "1/4", options: ["-3/4", "-1/4", "1/4", "3/4"], num1: -1, num2: 2, denominator: 4 },
+  ],
+  "7/12 + 1/12": [
+    { question: "What is 7/12 + 1/12?", correct: "8/12", options: ["6/12", "7/12", "8/12", "9/12"], num1: 7, num2: 1, denominator: 12 },
+  ],
+  "8/10 - 2/10": [
+    { question: "What is 8/10 - 2/10?", correct: "6/10", options: ["10/10", "6/10", "2/10", "4/10"], num1: 8, num2: -2, denominator: 10 },
+  ],
+  "-4/8 + 1/8": [
+    { question: "What is -4/8 + 1/8?", correct: "-3/8", options: ["-5/8", "-3/8", "3/8", "5/8"], num1: -4, num2: 1, denominator: 8 },
+  ],
+  "-3/6 - 2/6": [
+    { question: "What is -3/6 - 2/6?", correct: "-5/6", options: ["-1/6", "-5/6", "1/6", "5/6"], num1: -3, num2: -2, denominator: 6 },
+  ],
+  "3/7 + (-5/7)": [
+    { question: "What is 3/7 + (-5/7)?", correct: "-2/7", options: ["8/7", "-2/7", "2/7", "-8/7"], num1: 3, num2: -5, denominator: 7 },
+  ],
+  "5/11 - (-4/11)": [
+    { question: "What is 5/11 - (-4/11)?", correct: "9/11", options: ["1/11", "5/11", "9/11", "-1/11"], num1: 5, num2: 4, denominator: 11 },
+  ],
+  "-1/5 + (-2/5)": [
+    { question: "What is -1/5 + (-2/5)?", correct: "-3/5", options: ["-4/5", "-3/5", "3/5", "4/5"], num1: -1, num2: -2, denominator: 5 },
+  ],
+  "-3/4 - (-1/4)": [
+    { question: "What is -3/4 - (-1/4)?", correct: "-2/4", options: ["-4/4", "-2/4", "2/4", "4/4"], num1: -3, num2: 1, denominator: 4 },
+  ],  
+"1/2 + 1/2": [
+    { question: "What is 1/2 + 1/2?", correct: "2/2", options: ["3/2", "1/2", "2/2", "0/2"], num1: 1, num2: 1, denominator: 2 },
+  ],
+  "3/4 - 1/4": [
+    { question: "What is 3/4 - 1/4?", correct: "2/4", options: ["4/4", "1/4", "2/4", "3/4"], num1: 3, num2: -1, denominator: 4 },
+  ],
+  "-2/5 + 1/5": [
+    { question: "What is -2/5 + 1/5?", correct: "-1/5", options: ["-3/5", "-1/5", "1/5", "3/5"], num1: -2, num2: 1, denominator: 5 },
+  ],
+  "-7/8 - 1/8": [
+    { question: "What is -7/8 - 1/8?", correct: "-8/8", options: ["-6/8", "-8/8", "6/8", "8/8"], num1: -7, num2: -1, denominator: 8 },
+  ],  
+"1 2/3 + 1 1/3": [
+    { question: "What is 1 2/3 + 1 1/3?", correct: "3", options: ["8/3", "3/3", "3", "10/3"], num1: 5, num2: 4, denominator: 3 },
+  ],
+  "2 1/4 + 1 2/4": [
+    { question: "What is 2 1/4 + 1 2/4?", correct: "3 3/4", options: ["3 3/4", "3 1/4", "4 3/4", "2 3/4"], num1: 9, num2: 6, denominator: 4 },
+  ],
+  "1/2 + 2 1/2": [
+    { question: "What is 1/2 + 2 1/2?", correct: "3", options: ["2", "2 1/2", "3", "3 1/2"], num1: 1, num2: 5, denominator: 2 },
+  ],
+  "4/3 + 2/3": [
+    { question: "What is 4/3 + 2/3?", correct: "2", options: ["1", "2", "8/3", "6/3"], num1: 4, num2: 2, denominator: 3 },
+  ],
+  "1 1/4 + 3/4": [
+    { question: "What is 1 1/4 + 3/4?", correct: "2", options: ["1", "1 1/2", "2", "2 1/4"], num1: 5, num2: 3, denominator: 4 },
+  ],
+  "2/5 + 1 3/5": [
+    { question: "What is 2/5 + 1 3/5?", correct: "2", options: ["1", "1 1/5", "2", "2 3/5"], num1: 2, num2: 8, denominator: 5 },
+  ],
+  "1 1/2 + 1/2": [
+    { question: "What is 1 1/2 + 1/2?", correct: "2", options: ["1", "1 1/2", "2", "2 1/2"], num1: 3, num2: 1, denominator: 2 },
+  ],
+  "3/4 + 2 3/4": [
+    { question: "What is 3/4 + 2 3/4?", correct: "3 1/2", options: ["2", "3", "3 1/2", "4"], num1: 3, num2: 11, denominator: 4 },
+  ],
+  "1 2/5 + 2/5": [
+    { question: "What is 1 2/5 + 2/5?", correct: "1 4/5", options: ["1", "1 2/5", "1 4/5", "2"], num1: 7, num2: 2, denominator: 5 },
+  ],
+  "2/3 + 1 1/3": [
+    { question: "What is 2/3 + 1 1/3?", correct: "2", options: ["1", "1 2/3", "2", "2 1/3"], num1: 2, num2: 4, denominator: 3 },
+  ],
+  "1 3/4 + 1/4": [
+    { question: "What is 1 3/4 + 1/4?", correct: "2", options: ["1", "1 1/2", "2", "2 1/4"], num1: 7, num2: 1, denominator: 4 },
+  ],
+  "1/5 + 2 4/5": [
+    { question: "What is 1/5 + 2 4/5?", correct: "3", options: ["2", "2 4/5", "3", "3 1/5"], num1: 1, num2: 14, denominator: 5 },
+  ],
+  "2 1/2 + 1 1/2": [
+    { question: "What is 2 1/2 + 1 1/2?", correct: "4", options: ["3", "3 1/2", "4", "4 1/2"], num1: 5, num2: 3, denominator: 2 },
+  ],
+  "1/3 + 1 2/3": [
+    { question: "What is 1/3 + 1 2/3?", correct: "2", options: ["1", "1 2/3", "2", "2 1/3"], num1: 1, num2: 5, denominator: 3 },
+  ],
+  "3/4 + 1 1/4": [
+    { question: "What is 3/4 + 1 1/4?", correct: "2", options: ["1", "1 1/2", "2", "2 1/4"], num1: 3, num2: 5, denominator: 4 },
+  ],
+  "2 2/5 + 1/5": [
+    { question: "What is 2 2/5 + 1/5?", correct: "2 3/5", options: ["2", "2 1/5", "2 3/5", "3"], num1: 12, num2: 1, denominator: 5 },
+  ],
+  "1 1/2 + 2/2": [
+    { question: "What is 1 1/2 + 2/2?", correct: "2 1/2", options: ["1", "2", "2 1/2", "3"], num1: 3, num2: 2, denominator: 2 },
+  ],
+  "1/4 + 2 3/4": [
+    { question: "What is 1/4 + 2 3/4?", correct: "3", options: ["2", "2 3/4", "3", "3 1/4"], num1: 1, num2: 11, denominator: 4 },
+  ],
+  "1 3/5 + 1/5": [
+    { question: "What is 1 3/5 + 1/5?", correct: "1 4/5", options: ["1", "1 3/5", "1 4/5", "2"], num1: 8, num2: 1, denominator: 5 },
+  ],
+  "2/3 + 2 2/3": [
+    { question: "What is 2/3 + 2 2/3?", correct: "3 1/3", options: ["2", "3", "3 1/3", "4"], num1: 2, num2: 8, denominator: 3 },
+  ],  
+  "1 2/3 - 1 1/3": [
+    { question: "What is 1 2/3 - 1 1/3?", correct: "1/3", options: ["1/3", "1", "2/3", "1 1/3"], num1: 5, num2: -4, denominator: 3 },
+  ],
+  "2 1/4 - 1 2/4": [
+    { question: "What is 2 1/4 - 1 2/4?", correct: "3/4", options: ["3/4", "1/4", "1 3/4", "1"], num1: 9, num2: -6, denominator: 4 },
+  ],
+  "2 1/2 - 1/2": [
+    { question: "What is 2 1/2 - 1/2?", correct: "2", options: ["1", "1 1/2", "2", "2 1/2"], num1: 5, num2: -1, denominator: 2 },
+  ],
+  "4/3 - 2/3": [
+    { question: "What is 4/3 - 2/3?", correct: "2/3", options: ["1", "2/3", "1 1/3", "6/3"], num1: 4, num2: -2, denominator: 3 },
+  ],
+  "1 1/4 - 3/4": [
+    { question: "What is 1 1/4 - 3/4?", correct: "1/2", options: ["1/2", "1", "3/4", "1 1/4"], num1: 5, num2: -3, denominator: 4 },
+  ],
+  "1 3/5 - 2/5": [
+    { question: "What is 1 3/5 - 2/5?", correct: "1 1/5", options: ["1", "1 1/5", "3/5", "1 3/5"], num1: 8, num2: -2, denominator: 5 },
+  ],
+  "1 1/2 - 1/2": [
+    { question: "What is 1 1/2 - 1/2?", correct: "1", options: ["1", "1/2", "2", "1 1/2"], num1: 3, num2: -1, denominator: 2 },
+  ],
+  "2 3/4 - 3/4": [
+    { question: "What is 2 3/4 - 3/4?", correct: "2", options: ["1", "1 1/2", "2", "2 3/4"], num1: 11, num2: -3, denominator: 4 },
+  ],
+  "1 2/5 - 1/5": [
+    { question: "What is 1 2/5 - 1/5?", correct: "1 1/5", options: ["1", "1 1/5", "3/5", "1 2/5"], num1: 7, num2: -1, denominator: 5 },
+  ],
+  "2 1/3 - 2/3": [
+    { question: "What is 2 1/3 - 2/3?", correct: "1 2/3", options: ["1", "1 1/3", "1 2/3", "2"], num1: 7, num2: -2, denominator: 3 },
+  ],
+  "1 3/4 - 1/4": [
+    { question: "What is 1 3/4 - 1/4?", correct: "1 1/2", options: ["1", "1 1/2", "2", "1 3/4"], num1: 7, num2: -1, denominator: 4 },
+  ],
+  "2 4/5 - 1/5": [
+    { question: "What is 2 4/5 - 1/5?", correct: "2 3/5", options: ["2", "2 3/5", "3/5", "2 4/5"], num1: 14, num2: -1, denominator: 5 },
+  ],
+  "2 1/2 - 1 1/2": [
+    { question: "What is 2 1/2 - 1 1/2?", correct: "1", options: ["0", "1", "1/2", "3/2"], num1: 5, num2: -3, denominator: 2 },
+  ],
+  "1 2/3 - 1/3": [
+    { question: "What is 1 2/3 - 1/3?", correct: "1 1/3", options: ["1", "1 1/3", "2/3", "1 2/3"], num1: 5, num2: -1, denominator: 3 },
+  ],
+  "3/4 - 1/4": [
+    { question: "What is 3/4 - 1/4?", correct: "1/2", options: ["1/2", "1", "2/4", "1/4"], num1: 3, num2: -1, denominator: 4 },
+  ],
+  "2 2/5 - 1/5": [
+    { question: "What is 2 2/5 - 1/5?", correct: "2 1/5", options: ["2", "2 1/5", "1/5", "2 2/5"], num1: 12, num2: -1, denominator: 5 },
+  ],
+  "1 1/2 - 2/2": [
+    { question: "What is 1 1/2 - 2/2?", correct: "1/2", options: ["-1/2", "0", "1/2", "1"], num1: 3, num2: -2, denominator: 2 },
+  ],
+  "2 3/4 - 1/4": [
+    { question: "What is 2 3/4 - 1/4?", correct: "2 1/2", options: ["2", "2 1/2", "1/2", "2 3/4"], num1: 11, num2: -1, denominator: 4 },
+  ],
+  "1 3/5 - 1/5": [
+    { question: "What is 1 3/5 - 1/5?", correct: "1 2/5", options: ["1", "1 2/5", "2/5", "1 3/5"], num1: 8, num2: -1, denominator: 5 },
+  ],
+  "2 2/3 - 2/3": [
+    { question: "What is 2 2/3 - 2/3?", correct: "2", options: ["1", "1 2/3", "2", "2 2/3"], num1: 8, num2: -2, denominator: 3 },
+  ],
+ "2 3/4 - 1/4": [
+    { question: "What is 2 3/4 - 1/4?", correct: "2 1/2", options: ["2", "2 1/2", "1/2", "2 3/4"], num1: 11, num2: -1, denominator: 4 },
+  ],
+  "1 3/5 - 1/5": [
+    { question: "What is 1 3/5 - 1/5?", correct: "1 2/5", options: ["1", "1 2/5", "2/5", "1 3/5"], num1: 8, num2: -1, denominator: 5 },
+  ],
+  "2 2/3 - 2/3": [
+    { question: "What is 2 2/3 - 2/3?", correct: "2", options: ["1", "1 2/3", "2", "2 2/3"], num1: 8, num2: -2, denominator: 3 },
+  ],
+  "-1 1/2 + 1/2": [
+    { question: "What is -1 1/2 + 1/2?", correct: "-1", options: ["-2", "-1", "0", "-1/2"], num1: -3, num2: 1, denominator: 2 },
+  ],
+  "-2 2/3 + 1/3": [
+    { question: "What is -2 2/3 + 1/3?", correct: "-2 1/3", options: ["-2", "-2 1/3", "-1 1/3", "-1"], num1: -8, num2: 1, denominator: 3 },
+  ],
+  "-1/4 + 1 3/4": [
+    { question: "What is -1/4 + 1 3/4?", correct: "1 1/2", options: ["1", "1 1/2", "1 1/4", "2"], num1: -1, num2: 7, denominator: 4 },
+  ],
+  "-1 2/5 - 1/5": [
+    { question: "What is -1 2/5 - 1/5?", correct: "-1 3/5", options: ["-1", "-1 3/5", "-1 1/5", "-2"], num1: -7, num2: -1, denominator: 5 },
+  ],
+  "-2 1/2 - 1/2": [
+    { question: "What is -2 1/2 - 1/2?", correct: "-3", options: ["-2", "-2 1/2", "-3", "-3 1/2"], num1: -5, num2: -1, denominator: 2 },
+  ],
+  "-1/3 - 1 2/3": [
+    { question: "What is -1/3 - 1 2/3?", correct: "-2", options: ["-1", "-1 2/3", "-2", "-2 1/3"], num1: -1, num2: -5, denominator: 3 },
+  ],
+  "-3/4 - 1 1/4": [
+    { question: "What is -3/4 - 1 1/4?", correct: "-2", options: ["-1", "-1 1/2", "-2", "-2 1/4"], num1: -3, num2: -5, denominator: 4 },
+  ],
+  "-2 2/5 - 1/5": [
+    { question: "What is -2 2/5 - 1/5?", correct: "-2 3/5", options: ["-2", "-2 1/5", "-2 3/5", "-3"], num1: -12, num2: -1, denominator: 5 },
+  ],
+  "-1 1/2 + 2/2": [
+    { question: "What is -1 1/2 + 2/2?", correct: "1/2", options: ["-1/2", "0", "1/2", "1"], num1: -3, num2: 2, denominator: 2 },
+  ],
+  "-1/4 - 2 3/4": [
+    { question: "What is -1/4 - 2 3/4?", correct: "-3", options: ["-2", "-2 3/4", "-3", "-3 1/4"], num1: -1, num2: -11, denominator: 4 },
+  ],
+  "-1 3/5 + 1/5": [
+    { question: "What is -1 3/5 + 1/5?", correct: "-1 2/5", options: ["-1", "-1 3/5", "-1 2/5", "-2"], num1: -8, num2: 1, denominator: 5 },
+  ],
+  "-2/3 - 2 2/3": [
+    { question: "What is -2/3 - 2 2/3?", correct: "-3 1/3", options: ["-2", "-3", "-3 1/3", "-4"], num1: -2, num2: -8, denominator: 3 },
+  ],
+  "1/2 - 1 1/2": [
+    { question: "What is 1/2 - 1 1/2?", correct: "-1", options: ["-1/2", "0", "-1", "-2"], num1: 1, num2: -3, denominator: 2 },
+  ],
+  "1/3 - 2 2/3": [
+    { question: "What is 1/3 - 2 2/3?", correct: "-2 1/3", options: ["-1", "-2", "-2 1/3", "-3"], num1: 1, num2: -8, denominator: 3 },
+  ],
+  "1/4 - 1 3/4": [
+    { question: "What is 1/4 - 1 3/4?", correct: "-1 1/2", options: ["-1", "-1 1/2", "-2", "-2 1/4"], num1: 1, num2: -7, denominator: 4 },
+  ],
+  "1/5 - 1 2/5": [
+    { question: "What is 1/5 - 1 2/5?", correct: "-1 1/5", options: ["-1", "-1 1/5", "-2", "-1 3/5"], num1: 1, num2: -7, denominator: 5 },
+  ],
+  "2/3 - 1 1/3": [
+    { question: "What is 2/3 - 1 1/3?", correct: "-2/3", options: ["-1", "-2/3", "-1 1/3", "-1"], num1: 2, num2: -4, denominator: 3 },
+  ],  
+  
+	
+},
+  
+ 
 }

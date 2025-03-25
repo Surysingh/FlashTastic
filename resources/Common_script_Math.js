@@ -33,7 +33,7 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
@@ -434,14 +434,17 @@ function createCategoryButtons() {
                     return;
                 }
 
-                //currentCategory = categoryName;
+                
 				
 				currenttopLevelCategoryName = topLevelCategoryName;
 				currentsubCategoryName = subCategoryName;
 				
+				currentCategory = subCategoryName;
+				
                 currentFlashcards = flashcards ; //shuffle(  flashcards.filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade  ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade )); 
 				
                 currentIndex = 0;
+				console.log("currentIndex:", currentIndex);
 
                 document.getElementById("menu").classList.add("hidden");
                 document.getElementById("game-container").classList.remove("hidden");
@@ -503,9 +506,131 @@ function displayFormattedQuestion() {
             return array;
         }
 		
+		
+let chartInstances = [];
+function drawCharts(num1, num2, denominator, denominator2) {
+	
+	
+	
+            let chartContainer = document.getElementById('charts');
+            chartContainer.innerHTML = "";
+            chartInstances.forEach(chart => chart.destroy());
+            chartInstances = [];
+
+/*			
+Light Red
+#FF0000
+Dark Red
+#8B0000
+
+Light Green
+#90EE90
+Dark Green
+#006400	
+*/	
+
+/* halloween
+
+#ff6500	(255,101,0)
+#e69138	(230,145,56)
+#30913f	(48,145,63)
+#5800ac	(88,0,172)
+#6a329f	(106,50,159)
+
+*/
+
+
+/* miso
+
+#fec3ca	(254,195,202)
+#ffdbe0	(255,219,224)
+#c6d998	(198,217,152)
+#d6e8b5	(214,232,181)
+*/	
+
+            createFractionCharts(chartContainer, Math.abs(num1), denominator, `[${num1}÷${denominator}]`, num1 > 0 ? '#5800ac' : '#e69138' ); //'#4CAF50');
+            
+			if (num2 != 0) 
+			{
+				
+			if(denominator2 != 0) {
+			createFractionCharts(chartContainer, Math.abs(num2), denominator2, `[${num2}÷${denominator2}]`, num2 > 0 ? '#6a329f' : '#ff6500'); //FFA500 orange //#FF6347 red
+			}else
+			{
+					createFractionCharts(chartContainer, Math.abs(num2), denominator, `[${num2}÷${denominator}]`, num2 > 0 ? '#6a329f' : '#ff6500');
+			}
+			}
+        }
+
+        function createFractionCharts(container, fraction, denominator, label, color) {
+            let fullCircles = Math.floor(fraction / denominator);
+            let remainingParts = fraction % denominator;
+
+            for (let i = 0; i < fullCircles; i++) {
+                createChart(container, denominator, denominator, `${label} ${i + 1} Whole`, color);
+            }
+            if (remainingParts > 0) {
+                createChart(container, remainingParts, denominator, `${label} Fraction`, color);
+            }
+        }
+
+        function createChart(container, filled, total, label, color) {
+            let wrapper = document.createElement("div");
+            wrapper.className = "chart-wrapper";
+            let title = document.createElement("p");
+            title.innerText = "" ; // label;
+            let canvas = document.createElement("canvas");
+            //wrapper.appendChild(title);
+            wrapper.appendChild(canvas);
+            container.appendChild(wrapper);
+            let ctx = canvas.getContext('2d');
+            
+            let backgroundColors = Array(total).fill('#ddd');
+            for (let i = 0; i < filled; i++) {
+                backgroundColors[i] = color;
+            }
+            
+            let chart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Array(total).fill(''),
+                    datasets: [{
+                        data: Array(total).fill(1),
+                        backgroundColor: backgroundColors
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: label }
+                    }
+                }
+            });
+            chartInstances.push(chart);
+        }
+
+		
+function displayFraction(card){
+	
+	OngoingOp = 2;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	
+    if (card.denominator2)	{
+		drawCharts(card.num1, card.num2, card.denominator , card.denominator2);	
+	}
+	else {
+	drawCharts(card.num1, card.num2, card.denominator , 0);	
+	}	
+}
+		
 function displayMultiplication(card){
 	
 	OngoingOp = 0;
+	
+            document.getElementById('charts').innerHTML = "";	 // clear any chart
 			
 			if (table_init == 0){
 			let myTableHTML = makeTable(card.num1, card.num2);
@@ -520,6 +645,9 @@ function displayDivision(card) {
 	
 	OngoingOp = 1;
 	
+	//drawCharts(card.num1, 0, card.num2 , 0);	
+	document.getElementById('charts').innerHTML = "";	 // clear any chart
+	
 			if (table_init == 0){
 			let myTableHTML = makeTable_div(card.num1, card.num2);
 			document.getElementById('myTableContainer').innerHTML = myTableHTML;
@@ -532,6 +660,7 @@ function displayDivision(card) {
 
         function showFlashcard() {
 		    
+			
 			
             let card = currentFlashcards[currentIndex];
 			
@@ -575,10 +704,13 @@ function displayDivision(card) {
 			
 			
 			 if (currenttopLevelCategoryName === "Division") {
-    displayDivision(card); // Use displayDivision for division
-  } else {
-    displayMultiplication(card); // Use displayMultiplication for multiplication
-  }
+					displayDivision(card); // Use displayDivision for division
+			}else if ((currenttopLevelCategoryName == "Fraction 1") || (currenttopLevelCategoryName == "Fraction 2")) {
+					displayFraction(card); // Use displayDivision for division
+			}			
+			else {
+				displayMultiplication(card); // Use displayMultiplication for multiplication
+			}
 			
 
 			
@@ -788,6 +920,10 @@ console.log( this.action )
     closeSuggestFlashcardModal();
 });
 
+
+function ans_fraction(selected){
+}
+
 function ans_div(selected){
 	
 	let card = currentFlashcards[currentIndex];
@@ -896,10 +1032,12 @@ function ans_mult(selected){
 				
 				if (OngoingOp == 0){
 					ans_mult(selected);
-				}
-				else{
+				} else if (OngoingOp == 1){
 					ans_div(selected);
 				}
+				else if (OngoingOp == 2){
+					ans_fraction(selected);
+				}				
 				
                 
 				
@@ -918,7 +1056,10 @@ function ans_mult(selected){
         
         mistakes.push({card: card, selected: selected});
 		
-		currentIndex = currentIndex - 1;
+		
+		currentIndex =  - 1; //repeat
+		console.log("currentIndex:", currentIndex);
+		
             }
 			
             updateScore();
@@ -944,25 +1085,84 @@ function ans_mult(selected){
             }
         }
 
-        function nextFlashcard() {
+function clear_flashcard_for_math(){
+				table_init = 0;
+			totalSum = 0;
+			Quot = 0;
+			extra_shift = '';
 			
-            currentIndex++;
-            if (currentIndex < currentFlashcards.length) {
-                showFlashcard();
-            } else {
-				//table_init = 0;
-				//totalSum = 0;
-				//Quot = 0;
-				//extra_shift = '';
-				
-	
+document.getElementById('charts').innerHTML = "";
+document.getElementById('myTableContainer').innerHTML = "";
 			
-                summaryGame();
-            }
-        }
+			currentIndex = 0;	
+			console.log("currentIndex:", currentIndex);			
+}
 
+
+function nextFlashcard() {
+	
+
+	
+	console.log("Cuurent Subcategory:", currentsubCategoryName);
+	console.log("flashcard:", currentFlashcards);
+	console.log("currentIndex:", currentIndex);
+	
+	if(currentIndex == -1) //repeat same currentsubCategoryName
+	{
+		clear_flashcard_for_math();
+		showFlashcard();
+		return;
+	}
+	currentIndex++;
+	if (currentIndex < currentFlashcards.length) {
+                showFlashcard();
+				return;
+	}
+	clear_flashcard_for_math();
+	
+	//else all NEXT in  currentsubCategoryName done. pick next subCategoryName
+	
+	
+    const subCategories = Object.keys(categories[currenttopLevelCategoryName]); // Get all subcategories
+
+    // Find the current index of the subcategory
+    currentIndex = subCategories.indexOf(currentsubCategoryName); 
+	console.log("currentIndex:", currentIndex);
+ 
+		//last item in subcategory?
+	    if ((currentIndex + 1) === subCategories.length) {
+			summaryGame();
+			return
+		}
+		
+   // Move to the next subcategory, or loop back to the first one
+    let nextIndex = (currentIndex + 1); // % subCategories.length;		
+
+    // Update to the new subcategory
+    currentsubCategoryName = subCategories[nextIndex];
+
+    console.log("Next Subcategory:", currentsubCategoryName);
+
+    // Reset flashcard index
+    currentIndex = 0;
+	console.log("currentIndex:", currentIndex);
+
+    // Get the flashcards for the new subcategory 
+    currentFlashcards = categories[currenttopLevelCategoryName][currentsubCategoryName];
+	console.log("flashcard:", currentFlashcards);
+    // If no flashcards found, show the summary
+    if (!currentFlashcards || currentFlashcards.length === 0) {
+        summaryGame();
+    } else {
+		currentCategory = currentsubCategoryName;
+        showFlashcard();
+    }
+}
+
+       
         function summaryGame() {
 			
+			clear_flashcard_for_math();
 		
 			
             if (score > highScore) highScore = score;
@@ -996,11 +1196,7 @@ function ans_mult(selected){
             document.getElementById("options").classList.add("hidden");
 			
 			
-			table_init = 0;
-			totalSum = 0;
-			Quot = 0;
-			extra_shift = '';
-			currentIndex = 0;		
+	
 			
         }
 
