@@ -821,14 +821,7 @@ window.categories = {
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },
-  {
-    "question": "Can wind cause weather conditions?",
-    "Translation": "क्या हवा मौसम की स्थिति पैदा कर सकती है?",
-    "correct": "Yes",
-    "options": ["Yes", "No"],
-    "topic": "Force, Work, and Energy",
-    "grade": "4"
-  },
+ 
   {
     "question": "Does food give us energy?",
     "Translation": "क्या भोजन हमें ऊर्जा देता है?",
@@ -2146,6 +2139,14 @@ window.categories = {
         "topic": "Air, Water and Weather",
         "grade": "4"
     },
+ {
+    "question": "Can wind cause weather conditions?",
+    "Translation": "क्या हवा मौसम की स्थिति पैदा कर सकती है?",
+    "correct": "Yes",
+    "options": ["Yes", "No"],
+    "topic": "Force, Work, and Energy",
+    "grade": "4"
+  },	
 
     {
         "question": "What is the measure of how hot or cold a place is?",
