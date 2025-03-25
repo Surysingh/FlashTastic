@@ -1205,14 +1205,7 @@ window.categories = {
         "topic": "Our Green World",
         "grade": "4"
     },
-    {
-        "question": "Main water source on Earth",
-        "Translation": "पृथ्वी पर पानी का मुख्य स्रोत",
-        "correct": "Rain",
-        "options": ["Rivers", "Oceans", "Rain", "Lakes"],
-        "topic": "Our Green World",
-        "grade": "4"
-    },
+    
   
     {
         "question": "Keeps soil from damage",
@@ -2128,14 +2121,7 @@ window.categories = {
         "topic": "Air Water Weather",
         "grade": "4"
     },
-	{
-        "question": "The layer of air around the Earth",
-        "Translation": "पृथ्वी के चारों ओर हवा की परत",
-        "correct": "Atmosphere",
-        "options": ["Biosphere", "Hydrosphere", "Atmosphere", "Lithosphere"],
-        "topic": "Air, Water and Weather",
-        "grade": "4"
-    },
+	
     {
         "question": "The condition of the air around us",
         "Translation": "हमारे चारों ओर की हवा की स्थिति",
@@ -2160,19 +2146,7 @@ window.categories = {
         "topic": "Air, Water and Weather",
         "grade": "4"
     },
-{
-    "question": "What is water changing into vapor?",
-    "Translation": "पानी का वाष्प में बदलना क्या कहलाता है?",
-    "correct": "Evaporation",
-    "options": [
-      "Condensation",
-      "Freezing",
-      "Evaporation",
-      "Melting"
-    ],
-    "topic": "Force, Work, and Energy",
-    "grade": "4"
-  },	
+
     {
         "question": "What is the measure of how hot or cold a place is?",
         "Translation": "किसी स्थान के गर्म या ठंडे होने का माप क्या है?",
@@ -2202,14 +2176,7 @@ window.categories = {
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },	
-    {
-        "question": "What is the process of water changing into vapor?",
-        "Translation": "पानी के वाष्प में बदलने की प्रक्रिया क्या है?",
-        "correct": "Evaporation",
-        "options": ["Condensation", "Precipitation", "Evaporation", "Sublimation"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
+    
     {
         "question": "What do we call water droplets formed on cold objects?",
         "Translation": "ठंडी वस्तुओं पर बनने वाली पानी की बूंदों को हम क्या कहते हैं?",
@@ -2234,14 +2201,7 @@ window.categories = {
         "topic": "Air Water Weather",
         "grade": "4"
     },
-    {
-        "question": "Changing of water into vapor",
-        "Translation": "पानी का वाष्प में बदलना",
-        "correct": "Evaporation",
-        "options": ["Condensation", "Evaporation", "Freezing", "Melting"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
+    
     {
         "question": "Water vapor changing into water",
         "Translation": "जल वाष्प का पानी में बदलना",
@@ -2265,30 +2225,9 @@ window.categories = {
   },	
  
 
-    {
-        "question": "The hotness or coldness of a place",
-        "Translation": "किसी स्थान की गर्मी या ठंडक",
-        "correct": "Temperature",
-        "options": ["Wind", "Humidity", "Temperature", "Pressure"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
-    {
-        "question": "Air in motion",
-        "Translation": "गति में वायु",
-        "correct": "Wind",
-        "options": ["Clouds", "Rain", "Wind", "Fog"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
-    {
-        "question": "Changing of vapor to liquid",
-        "Translation": "वाष्प का तरल में परिवर्तन",
-        "correct": "Condensation",
-        "options": ["Evaporation", "Condensation", "Melting", "Boiling"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
+   
+   
+    
     {
         "question": "Water falling from clouds",
         "Translation": "बादलों से गिरने वाला पानी",
@@ -2297,39 +2236,11 @@ window.categories = {
         "topic": "Air Water Weather",
         "grade": "4"
     },
-    {
-        "question": "Layer of air around Earth",
-        "Translation": "पृथ्वी के चारों ओर हवा की परत",
-        "correct": "Atmosphere",
-        "options": ["Biosphere", "Hydrosphere", "Atmosphere", "Lithosphere"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
+   
 
-  {
-    "question": "What is the layer of air around the Earth called?",
-    "Translation": "पृथ्वी के चारों ओर की हवा की परत को क्या कहा जाता है?",
-    "correct": "Atmosphere",
-    "options": ["Atmosphere", "Troposphere", "Stratosphere", "Exosphere"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
-  {
-    "question": "What is the process where water changes into water vapor?",
-    "Translation": "वह प्रक्रिया क्या है जहाँ पानी जल वाष्प में बदल जाता है?",
-    "correct": "Evaporation",
-    "options": ["Evaporation", "Condensation", "Precipitation", "Sublimation"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
-  {
-    "question": "What is water vapor turning back into liquid water called?",
-    "Translation": "जल वाष्प का वापस तरल पानी में बदलना क्या कहलाता है?",
-    "correct": "Condensation",
-    "options": ["Condensation", "Evaporation", "Melting", "Freezing"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
+ 
+  
   {
     "question": "What are the tiny droplets of water that we see in the sky called?",
     "Translation": "आकाश में हमें पानी की जो छोटी-छोटी बूँदें दिखाई देती हैं, उन्हें क्या कहते हैं?",
@@ -2418,14 +2329,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is the movement of air across the Earth's surface?",
-    "Translation": "पृथ्वी की सतह पर हवा की गति क्या है?",
-    "correct": "Wind",
-    "options": ["Wind", "Current", "Draft", "Breeze"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "What is the term for water in its gaseous form?",
     "Translation": "पानी के गैसीय रूप के लिए क्या शब्द है?",
@@ -2555,14 +2459,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is water turning into water vapour called?",
-    "Translation": "पानी का जल वाष्प में बदलना क्या कहलाता है?",
-    "correct": "Evaporation",
-    "options": ["Evaporation", "Condensation", "Boiling", "Sublimation"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "What is the result of condensation on the grass in the morning?",
     "Translation": "सुबह घास पर संघनन का परिणाम क्या होता है?",
@@ -2644,14 +2541,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What do water droplets form in air?",
-    "Translation": "पानी की बूँदें हवा में क्या बनाती हैं?",
-    "correct": "Clouds",
-    "options": ["Clouds", "Mist", "Dew", "Smog"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+
   {
     "question": "Storms can be predicted by?",
     "Translation": "तूफान का पूर्वानुमान किससे लगाया जा सकता है?",
@@ -2797,14 +2687,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is the condition of the atmosphere?",
-    "Translation": "वायुमंडल की स्थिति क्या है?",
-    "correct": "Weather",
-    "options": ["Weather", "Climate", "Ozone", "Air"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "If air has much water vapour, it is?",
     "Translation": "यदि हवा में अधिक जल वाष्प है, तो यह क्या है?",
@@ -2840,7 +2723,7 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "Air near the surface becomes?",
+    "question": "During the day, air near the surface becomes?",
     "Translation": "सतह के पास की हवा कैसी हो जाती है?",
     "correct": "Warm",
     "options": ["Warm", "Cold", "Cool", "Hot"],
@@ -2968,14 +2851,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "Water vapour changes to water by?",
-    "Translation": "जल वाष्प किस प्रक्रिया द्वारा पानी में बदलता है?",
-    "correct": "Condensation",
-    "options": ["Condensation", "Evaporation", "Freezing", "Boiling"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "Rain clouds are made of tiny?",
     "Translation": "बारिश के बादल छोटे किससे बने होते हैं?",
@@ -2984,14 +2860,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What falls from clouds as water?",
-    "Translation": "बादलों से पानी के रूप में क्या गिरता है?",
-    "correct": "Rain",
-    "options": ["Rain", "Snow", "Hail", "Fog"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "Ice crystals sticking together form?",
     "Translation": "बर्फ के क्रिस्टल एक साथ चिपककर क्या बनाते हैं?",
@@ -3064,14 +2933,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is water vapour in air changing into water droplets called?",
-    "Translation": "हवा में जल वाष्प का पानी की बूंदों में बदलना क्या कहलाता है?",
-    "correct": "Condensation",
-    "options": ["Condensation", "Evaporation", "Sublimation", "Melting"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "What is the process of heating water and turning it into vapor called?",
     "Translation": "पानी को गर्म करने और उसे वाष्प में बदलने की प्रक्रिया को क्या कहते हैं?",
@@ -3083,14 +2945,7 @@ window.categories = {
 
 
 
-  {
-    "question": "What layer of air surrounds Earth?",
-    "Translation": "पृथ्वी को कौन सी हवा की परत घेरती है?",
-    "correct": "Atmosphere",
-    "options": ["Atmosphere", "Space", "Ozone", "Stratosphere"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "What causes most weather conditions?",
     "Translation": "अधिकांश मौसम की स्थिति किसके कारण होती है?",
@@ -3107,14 +2962,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is a measure of hot or cold?",
-    "Translation": "गर्म या ठंडे का माप क्या है?",
-    "correct": "Temperature",
-    "options": ["Temperature", "Humidity", "Wind", "Pressure"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "Where is one of the hottest places?",
     "Translation": "सबसे गर्म स्थानों में से एक कहाँ है?",
@@ -3139,14 +2987,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is moving air called?",
-    "Translation": "चलती हवा को क्या कहते हैं?",
-    "correct": "Wind",
-    "options": ["Wind", "Breeze", "Storm", "Air"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "What is gentle wind called?",
     "Translation": "हल्की हवा को क्या कहते हैं?",
@@ -3211,14 +3052,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "Water vapour changes to water by?",
-    "Translation": "जल वाष्प किस प्रक्रिया द्वारा पानी में बदलता है?",
-    "correct": "Condensation",
-    "options": ["Condensation", "Evaporation", "Boiling", "Melting"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+  
   {
     "question": "Tiny water droplets on cold objects are?",
     "Translation": "ठंडी वस्तुओं पर पानी की छोटी बूँदें क्या होती हैं?",
