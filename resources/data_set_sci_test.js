@@ -100,14 +100,6 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "What hatches from butterfly egg?",
-    "Translation": "तितली के अंडे से क्या निकलता है?",
-    "correct": "Caterpillar",
-    "options": ["Pupa", "Larva", "Tadpole", "Caterpillar"],
-    "topic": "How do animals increase in number",
-    "grade": "4"
-  },
-  {
     "question": "What is caterpillar also called?",
     "Translation": "कैटरपिलर को और क्या कहा जाता है?",
     "correct": "Larva",
