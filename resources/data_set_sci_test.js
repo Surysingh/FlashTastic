@@ -1937,7 +1937,7 @@ window.categories = {
       "Absorb sunlight",
       "Release oxygen",
       "Hold soil particles together",
-      "Prevent floods"
+      "Create land breeze"
     ],
     "topic": "Our Green World",
     "grade": "4"
@@ -2605,7 +2605,7 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "Water vapor on dust Particles forms ____",
+    "question": "Water vapor with dust Particles forms ____",
     "Translation": "कोहरा धूल पर बनता है?",
     "correct": "Fog",
     "options": ["Fog", "Water", "Ice", "Plants"],
