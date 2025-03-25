@@ -2427,14 +2427,7 @@ window.categories = {
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "What is formed when water vapour cools?",
-    "Translation": "जब जल वाष्प ठंडा होता है तो क्या बनता है?",
-    "correct": "Clouds",
-    "options": ["Clouds", "Mist", "Dew", "Smog"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+ 
   {
     "question": "Clouds that are very cold form?",
     "Translation": "बादल जो बहुत ठंडे होते हैं, क्या बनाते हैं?",
@@ -2562,7 +2555,7 @@ window.categories = {
     "question": "Clouds high up become very?",
     "Translation": "ऊँचे बादल कैसे हो जाते हैं?",
     "correct": "Cold",
-    "options": ["Cold", "Warm", "Hot", "Cool"],
+    "options": ["Cold", "Warm", "Hot", "Pretty"],
     "topic": "Air Water Weather",
     "grade": "4"
   },
@@ -2623,29 +2616,22 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "Fog forms on dust?",
+    "question": "Water vapor on dust Particles forms ____",
     "Translation": "कोहरा धूल पर बनता है?",
-    "correct": "Particles",
-    "options": ["Particles", "Water", "Ice", "Plants"],
+    "correct": "Fog",
+    "options": ["Fog", "Water", "Ice", "Plants"],
     "topic": "Air Water Weather",
     "grade": "4"
   },
   {
-    "question": "Fog is like a cloud near?",
+    "question": "Fog is like a cloud near ____",
     "Translation": "कोहरा किसके पास एक बादल की तरह होता है?",
     "correct": "Ground",
-    "options": ["Ground", "Sky", "Mountains", "Sea"],
+    "options": ["Ground", "Sky", "Space", "Sea"],
     "topic": "Air Water Weather",
     "grade": "4"
   },
-  {
-    "question": "We use water for drinking?",
-    "Translation": "हम पानी का उपयोग पीने के लिए करते हैं?",
-    "correct": "Yes",
-    "options": ["Yes", "No"],
-    "topic": "Air Water Weather",
-    "grade": "4"
-  },
+ 
   {
     "question": "Water can contain harmful?",
     "Translation": "पानी में हानिकारक क्या हो सकते हैं?",
@@ -2731,7 +2717,7 @@ window.categories = {
     "grade": "4"
   },
   {
-    "question": "Warm air is than cool air?",
+    "question": "Warm air is ___ than cool air?",
     "Translation": "गर्म हवा ठंडी हवा से कैसी होती है?",
     "correct": "Lighter",
     "options": ["Lighter", "Heavier", "Same", "Denser"],
@@ -2889,7 +2875,7 @@ window.categories = {
     "question": "Removing solid substances from water is?",
     "Translation": "पानी से ठोस पदार्थ निकालना क्या कहलाता है?",
     "correct": "Purifying",
-    "options": ["Purifying", "Filtering", "Boiling", "Cleaning"],
+    "options": ["Purifying", "Picking", "Boiling", "Clearing"],
     "topic": "Air Water Weather",
     "grade": "4"
   },
