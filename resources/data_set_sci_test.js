@@ -166,7 +166,7 @@ window.categories = {
     {
         "question": "Which commonly do not lay eggs",
         "Translation": "अंडे देने वाले जानवर",
-        "correct": "Birds",
+        "correct": "Mammals",
         "options": ["Mammals", "Insects", "Birds", "Reptiles"],
         "topic": "How do animals increase in number",
         "grade": "4"
