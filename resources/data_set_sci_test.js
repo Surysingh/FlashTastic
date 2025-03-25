@@ -1392,19 +1392,7 @@ window.categories = {
     "topic": "Our Green World",
     "grade": "4"
   },
-  {
-    "question": "What is the main source of water on Earth?",
-    "Translation": "पृथ्वी पर पानी का मुख्य स्रोत क्या है?",
-    "correct": "Rain",
-    "options": [
-      "Rivers",
-      "Lakes",
-      "Ponds",
-      "Rain"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
+ 
   {
     "question": "What do plants absorb from the soil?",
     "Translation": "पौधे मिट्टी से क्या अवशोषित करते हैं?",
@@ -1809,19 +1797,8 @@ window.categories = {
     "topic": "Our Green World",
     "grade": "4"
   },
-  {
-    "question": "What is the main source of water on Earth?",
-    "Translation": "पृथ्वी पर पानी का मुख्य स्रोत क्या है?",
-    "correct": "Rain",
-    "options": [
-      "Rivers",
-      "Lakes",
-      "Oceans",
-      "Rain"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
+
+
   {
     "question": "What do plants absorb from the soil?",
     "Translation": "पौधे मिट्टी से क्या अवशोषित करते हैं?",
@@ -1861,19 +1838,7 @@ window.categories = {
     "topic": "Our Green World",
     "grade": "4"
   },
-  {
-    "question": "What is soil used for?",
-    "Translation": "मिट्टी का उपयोग किस लिए किया जाता है?",
-    "correct": "To make pots, bricks and mud houses",
-    "options": [
-      "To grow crops",
-      "To make glass",
-      "To make paper",
-      "To make pots, bricks and mud houses"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
+  
   {
     "question": "What can prevent damage to barren soil?",
     "Translation": "बंजर भूमि को नुकसान से क्या बचा सकता है?",
@@ -2135,7 +2100,20 @@ window.categories = {
         "options": ["Air pollution", "Water pollution", "Soil damage", "Noise pollution"],
         "topic": "Our Green World",
         "grade": "4"
-    }
+    },
+	{
+    "question": "What is not allowed in a protected forest?",
+    "Translation": "एक संरक्षित वन में क्या अनुमति नहीं है?",
+    "correct": "Trapping or killing animals, cutting trees or removing plants",
+    "options": [
+      "Visiting for picnics",
+      "Studying wildlife",
+      "Trapping or killing animals, cutting trees or removing plants",
+      "Conducting research"
+    ],
+    "topic": "Our Green World",
+    "grade": "4"
+  }
 	
   
 	],
@@ -2285,14 +2263,7 @@ window.categories = {
     "topic": "Force, Work, and Energy",
     "grade": "4"
   },	
-    {
-        "question": "Main source of water",
-        "Translation": "पानी का मुख्य स्रोत",
-        "correct": "Rain",
-        "options": ["Rivers", "Lakes", "Rain", "Groundwater"],
-        "topic": "Air Water Weather",
-        "grade": "4"
-    },
+ 
 
     {
         "question": "The hotness or coldness of a place",
@@ -3274,71 +3245,11 @@ window.categories = {
   },
 	
 	
-  {
-    "question": "What will happen if forests are destroyed?",
-    "Translation": "यदि वन नष्ट हो जाते हैं तो क्या होगा?",
-    "correct": "Many plants and animals will become homeless",
-    "options": [
-      "The region will become fertile",
-      "The air will become clean",
-      "Water will become pure",
-      "Many plants and animals will become homeless"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
-  {
-    "question": "What will the region turn into if forests are destroyed?",
-    "Translation": "यदि वन नष्ट हो जाते हैं तो क्षेत्र किसमें बदल जाएगा?",
-    "correct": "Barren",
-    "options": [
-      "Fertile",
-      "Green",
-      "Lush",
-      "Barren"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
-  {
-    "question": "Who owns and protects forests in India?",
-    "Translation": "भारत में वनों का स्वामित्व और संरक्षण कौन करता है?",
-    "correct": "The Government of India",
-    "options": [
-      "Local communities",
-      "Private companies",
-      "The Government of India",
-      "Non-governmental organizations"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
-  {
-    "question": "What are protected forest regions known as in India?",
-    "Translation": "भारत में संरक्षित वन क्षेत्र किस नाम से जाने जाते हैं?",
-    "correct": "Wildlife sanctuaries or national parks",
-    "options": [
-      "Botanical gardens",
-      "Zoological parks",
-      "Wildlife sanctuaries or national parks",
-      "Reserved forests"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  },
-  {
-    "question": "What is not allowed in a protected forest?",
-    "Translation": "एक संरक्षित वन में क्या अनुमति नहीं है?",
-    "correct": "Trapping or killing animals, cutting trees or removing plants",
-    "options": [
-      "Visiting for picnics",
-      "Studying wildlife",
-      "Trapping or killing animals, cutting trees or removing plants",
-      "Conducting research"
-    ],
-    "topic": "Our Green World",
-    "grade": "4"
-  }
+ 
+  
+  
+  
+  
 
 ]
 
