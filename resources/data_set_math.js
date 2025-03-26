@@ -1,14 +1,21 @@
 window.categories = {
 	
-"Visual Fraction": {
+"Visual Add, Sub, Mul, Div, Rem": {	
 	
-	"One": [
+	  
+	"Operation": [
       {
 		"question": "1",
 		"options": ["Done"] ,
 		"correct": "Done"
 	  }
-	  ] , 
+	  ] ,	  
+	  
+
+},	
+	
+"Visual Fraction": {	
+	
 	  
 	"Operation": [
       {

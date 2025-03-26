@@ -217,8 +217,10 @@
             <div id="question-text"></div>
 				<div id="myTableContainer"></div>
 				 <div class="chart-container" id="charts"></div>
+				 
+				 
 	 <div id="game-chart-container" class="hidden">			 
-<div class="chart-container">
+		<div class="chart-container">
         <div class="chart-wrapper">
             <canvas id="chart1"></canvas>
             <div id="fraction1" class="fraction-display"></div>
@@ -245,7 +247,56 @@
         <div id="resultFraction" class="fraction-display"></div>
     </div>
     </div>	
+	</div>	
+	
+	<div id="game-op-container" class="hidden">	
+	
+
+<div class="container">
+    
+
+
+    <!-- Sliders for A and B -->
+    <div class="slider-container">
+        <label for="sliderA">A:</label>
+        <input type="range" id="sliderA" min="-10" max="10" value="3" oninput="updateMath()">
+        <span id="valueA">3</span>
+    </div>
+	
+	    <div class="box-container" id="boxContainerA"></div>
+
+    <!-- Select operation to calculate C -->
+    <div class="slider-container">
+       
+        <select id="operation2" onchange="updateMath()">
+            <option value="add">Add A + B</option>
+            <option value="sub">Sub A - B</option>
+            <option value="mul">Mul A × B</option>
+            <option value="div">Div A / B</option>
+            <option value="mod">Rem of A / B</option>
+        </select>
+    </div>
+
+    <div class="slider-container">
+        <label for="sliderB">B:</label>
+        <input type="range" id="sliderB" min="-10" max="10" value="2" oninput="updateMath()">
+        <span id="valueB">2</span>
+    </div>
+	<div class="box-container" id="boxContainerB"></div>
+	
+  
+
+   <!-- Number Line -->
+    <div id="chart-container">
+        <canvas id="numberLine" width="600" height="100"></canvas>
+    </div>
+	   <div class="box-container" id="boxContainerD"></div>	
+	   
+	  <div class="box-container" id="boxContainerC"></div>
+	   <div class="box-container" id="boxContainerE"></div>	
+</div>
 </div>	
+	
 				
         </div>
         <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>

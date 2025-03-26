@@ -410,11 +410,7 @@ input:checked + .slider:before {
  .chart-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
 .chart-wrapper { display: flex; flex-direction: column; align-items: center; }
 
-canvas 
-{ max-width: 150px; 
-max-height: 150px; 
-display: block; 
-}
+
 
         .chart-container {
             display: flex;
@@ -423,6 +419,7 @@ display: block;
             gap: 20px;
             margin-top: 20px;
             align-items: center;
+			
         }
 
         .chart-wrapper {
@@ -432,8 +429,8 @@ display: block;
         }
 
         canvas {
-            max-width: 200px;
-            max-height: 200px;
+            max-width: 600px;
+            max-height: 600px;
             display: block;
         }
 
@@ -442,4 +439,40 @@ display: block;
             font-size: 18px;
         }
 
-    
+	.container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        #chart-container {
+            margin-top: 20px;
+        }
+        .slider-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        input[type="range"] {
+            width: 80%;
+        }
+        
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .box {
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+        }

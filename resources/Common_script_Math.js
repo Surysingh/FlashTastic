@@ -33,7 +33,8 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 
+		const fraction_piechart_height = 200; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
@@ -48,15 +49,15 @@
 	
 function makeTable(num1, num2) {
 
-console.log(num1);
+//console.log(num1);
   // Ensure inputs are strings
-  console.log(num1);
+  //console.log(num1);
   num1 = String(num1).padStart(6, ' ');
-  console.log(num1);
+  //console.log(num1);
   
-  console.log(num2);
+  //console.log(num2);
   num2 = String(num2).padStart(6, ' ');
-  console.log(num2);
+  //console.log(num2);
 
   let tableHTML = `
     <table>
@@ -122,15 +123,15 @@ console.log(num1);
 
 function makeTable_div(num1, num2) {
 
-console.log(num1);
+//console.log(num1);
   // Ensure inputs are strings
-  console.log(num1);
+  //console.log(num1);
   num1 = String(num1).padStart(3, ' ');
-  console.log(num1);
+  //console.log(num1);
   
-  console.log(num2);
+  //console.log(num2);
   num2 = String(num2).padStart(2, ' ');
-  console.log(num2);
+  //console.log(num2);
 
   let tableHTML = `
     <table>
@@ -273,7 +274,7 @@ console.log(num1);
 function createCategoryButtons() {
     const menuDiv = document.getElementById("menu");
     settings.grade = Number(document.getElementById("grade-select").value);
-    console.log(settings.grade);
+    //console.log(settings.grade);
 
     // remove old menu if it exists
     let existingCategoryName = menuDiv.querySelectorAll("button");
@@ -315,7 +316,7 @@ function createCategoryButtons() {
             Object.keys(subCategories).forEach(subCategoryName => {
 				
 				   //current
-					//console.log(categories[topLevelCategoryName][subCategoryName]);
+					////console.log(categories[topLevelCategoryName][subCategoryName]);
 					const filteredQuestions = categories[topLevelCategoryName][subCategoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ); // || Number(question.grade) + 2  == settings.grade || Number(question.grade) - 2  == settings.grade);
 
 					if (filteredQuestions.length > 0) {
@@ -340,7 +341,7 @@ function createCategoryButtons() {
  function createCategoryButtons_() {
        const menuDiv = document.getElementById("menu");
 	    settings.grade = Number(document.getElementById("grade-select").value);
-		console.log(settings.grade);
+		//console.log(settings.grade);
 		   // remove old menu if it exists
 			let existingcategoryName = menuDiv.querySelectorAll("button");
 			
@@ -361,9 +362,9 @@ function createCategoryButtons() {
 
            categoryNames.forEach((categoryName, index) => {
 			   
-			   //console.log(categoryName);
-			   //console.log(categories[categoryName]);
-			   //console.log(categories[categoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) - 2)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ));
+			   ////console.log(categoryName);
+			   ////console.log(categories[categoryName]);
+			   ////console.log(categories[categoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) - 2)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ));
 			   
 			
    //current
@@ -398,9 +399,9 @@ function createCategoryButtons() {
                 return;
             }
             categories = window.categories;
-            console.log(categories);
+            //console.log(categories);
 			currentCategory = null;
-            console.log('Categories loaded successfully');
+            //console.log('Categories loaded successfully');
             createCategoryButtons();
 			
 			speakText(" "); //init voice, atleast once
@@ -444,7 +445,7 @@ function createCategoryButtons() {
                 currentFlashcards = flashcards ; //shuffle(  flashcards.filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade  ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade )); 
 				
                 currentIndex = 0;
-				console.log("currentIndex:", currentIndex);
+				//console.log("currentIndex:", currentIndex);
 
                 document.getElementById("menu").classList.add("hidden");
                 document.getElementById("game-container").classList.remove("hidden");
@@ -580,6 +581,8 @@ Dark Green
             let title = document.createElement("p");
             title.innerText = "" ; // label;
             let canvas = document.createElement("canvas");
+			canvas.height = fraction_piechart_height;
+			canvas.height = fraction_piechart_height;
             //wrapper.appendChild(title);
             wrapper.appendChild(canvas);
             container.appendChild(wrapper);
@@ -616,8 +619,8 @@ Dark Green
 
         function createPieChart(canvasId) {
 			
-			//console.log(canvasId);
-			//console.log(document.getElementById(canvasId));
+			////console.log(canvasId);
+			////console.log(document.getElementById(canvasId));
             let ctx = document.getElementById(canvasId).getContext("2d");
             return new Chart(ctx, {
                 type: "pie",
@@ -670,11 +673,22 @@ Dark Green
 
             let resultNum, resultDen;
             if (operation === "+") {
+				
+				if (den1 == den2){
+                resultNum = num1  + num2 ;
+                resultDen = den1 ;					
+				}else{
                 resultNum = num1 * den2 + num2 * den1;
                 resultDen = den1 * den2;
+				}
             } else if (operation === "-") {
+				if (den1 == den2){
+                resultNum = num1  - num2 ;
+                resultDen = den1 ;					
+				}else{				
                 resultNum = num1 * den2 - num2 * den1;
                 resultDen = den1 * den2;
+			}
             } else if (operation === "*") {
                 resultNum = num1 * num2;
                 resultDen = den1 * den2;
@@ -689,35 +703,23 @@ function displayVisualFraction(card){
 	
 	OngoingOp = 3;
 	  document.getElementById("game-chart-container").classList.remove("hidden");
+	  
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	//document.getElementById("game-chart-container").classList.add("hidden");	
+	document.getElementById("game-op-container").classList.add("hidden");	  
  
-			if(card.question == "1"){
-				
-				charts.chart1 = createPieChart("chart1");
-				
-				// Initialize charts with default values
-            updatePieChart(charts.chart1, 1, 4, "fraction1");
 			
-// Add event listeners for input changes
-            document.getElementById("numerator1").addEventListener("input", function () {
-                let numerator = parseInt(this.value);
-                let denominator = parseInt(document.getElementById("denominator1").value);
-                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
-                //calculateResult();
-            });
-
-            document.getElementById("denominator1").addEventListener("input", function () {
-                let numerator = parseInt(document.getElementById("numerator1").value);
-                let denominator = parseInt(this.value);
-                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
-                //calculateResult();
-            });			
-			
-			}
-			else{
 				
 			charts.chart1 = createPieChart("chart1");
             charts.chart2 = createPieChart("chart2");
             charts.result = createPieChart("resultChart");
+			
+			charts.chart1.height = fraction_piechart_height;
+			charts.chart1.width = fraction_piechart_height;
+			charts.chart2.height = fraction_piechart_height;
+			charts.chart2.width = fraction_piechart_height;
+			charts.result.height = fraction_piechart_height;
+			charts.result.width = fraction_piechart_height;			
 
             // Initialize charts with default values
             updatePieChart(charts.chart1, 1, 4, "fraction1");
@@ -755,12 +757,415 @@ function displayVisualFraction(card){
 
             document.getElementById("operation").addEventListener("change", calculateResult);
         				
-			}
+			
 				
 				
             
  
            
+}
+
+ // Initial values for A, B, and C
+    let a = 3, b = 2, c = 0;
+
+
+    // Draw number line and update results
+    function updateMath() {
+		
+		//console.log("a= ", a);
+		//console.log("b= ", b);
+		
+        a = parseInt(document.getElementById('sliderA').value);
+        b = parseInt(document.getElementById('sliderB').value);
+
+		//console.log("a= ", a);
+		//console.log("b= ", b);
+		
+        document.getElementById('valueA').innerText = a;
+        document.getElementById('valueB').innerText = b;
+
+
+        // Calculate results
+        let add = a + b;
+        let sub = a - b;
+        let mul = a * b;
+        let div = b !== 0 ? (a / b).toFixed(2) : "Undefined (Div by zero)";
+        let mod = b !== 0 ? a % b : "Undefined";
+
+
+        // Update displayed results
+        //document.getElementById('addResult').innerText = `A + B = ${add}`;
+        //document.getElementById('subResult').innerText = `A - B = ${sub}`;
+        //document.getElementById('mulResult').innerText = `A × B = ${mul}`;
+        //document.getElementById('divResult').innerText = `A ÷ B = ${div}`;
+        //document.getElementById('modResult').innerText = `A % B = ${mod}`;
+
+
+        // Determine operation for C
+        const operation = document.getElementById('operation2').value;
+        switch (operation) {
+            case 'add': c = add; break;
+            case 'sub': c = sub; break;
+            case 'mul': c = mul; break;
+            case 'div': c = b !== 0 ? parseFloat(div) : 0; break;
+            case 'mod': c = b !== 0 ? mod : 0; break;
+        }
+
+
+        //document.getElementById('valueC').innerText = c;
+
+		//console.log("b= ", b);
+        // Draw number line, plot points, and visualize results
+        drawNumberLine(a, b, c);
+        visualizeOperations(a, b, c);
+		
+		//visualizeOperations(a, b, c);
+		{
+		visualizeResult(a, b, c, operation);
+		}
+    }
+	
+	
+
+    // Visualize operations with colored squares
+    function visualizeOperations(a, b, c) {
+		//console.log("b= ", b);
+        visualizeBoxes(a, 'red', 'A', 'boxContainerA');
+        visualizeBoxes(b, 'blue', 'B', 'boxContainerB');
+        visualizeBoxes(c, 'green', 'C', 'boxContainerD');
+    }
+
+
+    // Draw boxes to visualize numbers
+    function visualizeBoxes(count, color, label, containerId) {
+        const boxContainer = document.getElementById(containerId);
+        boxContainer.innerHTML = ''; // Clear previous visualization
+
+
+        for (let i = 0; i < Math.abs(count); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = color;
+            box.title = label + ' = ' + count;
+            boxContainer.appendChild(box);
+        }
+
+
+        // Show negative with a border
+        if (count < 0) {
+            boxContainer.appendChild(document.createTextNode(' (Negative)'));
+        } else if (count === 0) {
+            boxContainer.innerHTML = '<p>0 (No boxes to show)</p>';
+        }
+    }	
+
+
+    // Draw Number Line
+    function drawNumberLine(a, b, c) {
+        const canvas = document.getElementById('numberLine');
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        // Draw horizontal line
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(550, 50);
+        ctx.strokeStyle = '#333';
+        ctx.stroke();
+
+
+        // Draw ticks and numbers
+        for (let i = -10; i <= 10; i++) {
+            let x = 50 + (i + 10) * 25;
+            ctx.beginPath();
+            ctx.moveTo(x, 45);
+            ctx.lineTo(x, 55);
+            ctx.stroke();
+            ctx.fillText(i, x - 5, 70);
+        }
+
+
+        // Plot A, B, and C on number line
+        plotPoint(a, 'A', 'red');
+        plotPoint(b, 'B', 'blue');
+        plotPoint(c, 'C', 'green');
+    }
+
+
+    // Plot a point with label
+    function plotPoint(value, label, color) {
+        const canvas = document.getElementById('numberLine');
+        const ctx = canvas.getContext('2d');
+        let x = 50 + (value + 10) * 25;
+
+
+        ctx.beginPath();
+        ctx.arc(x, 50, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.fillText(label + ' = ' + value, x - 10, 35);
+    }
+
+
+ // Visualize the result of C with appropriate operation
+    function visualizeResult(a, b, c, operation) {
+        const boxContainer = document.getElementById('boxContainerC');
+        boxContainer.innerHTML = ''; // Clear previous visualization
+
+		if ((operation == 'div') || (operation == 'mod'))
+		{
+				return;
+		}
+
+        if (operation === 'add') {
+            visualizeAddition(a, b);
+        } else if (operation === 'sub') {
+			//console.log("b= ", b);
+            visualizeSubtraction(a, b);
+        } else if (operation === 'mul') {
+            visualizeMultiplication(a, b);
+        } else if (operation === 'div') {
+            visualizeDivision(a, b, c);
+        } else if (operation === 'mod') {
+            visualizeModulus(a, b, c);
+        }
+    }
+
+
+    // Visualize addition by combining A and B
+    function visualizeAddition(a, b) {
+        createBoxes(a, 'red', 'A');
+        createBoxes(b, 'blue', 'B');
+    }
+	
+function visualizeSubtraction(a, b) {
+	//console.log("b= ", b);
+	
+    const boxContainerA = document.getElementById('boxContainerC');
+	const boxContainerB = document.getElementById('boxContainerE');
+    boxContainerA.innerHTML = ''; // Clear previous visualization
+	boxContainerB.innerHTML = ''; // Clear previous visualization
+	
+
+    const rowA = document.createElement('div');
+    rowA.className = 'row';
+    const rowB = document.createElement('div');
+    rowB.className = 'row';
+
+    if (b >= 0 && a >= 0) {
+        // Standard subtraction: Cancel out min(a, b) elements
+        let minVal = Math.min(Math.abs(a), Math.abs(b));
+
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowB.appendChild(box);
+        }
+    } else if (a >= 0){
+        // If B is negative, it acts like addition, so no cancellations
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) { // Adding |b| instead of subtracting
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            rowB.appendChild(box);
+        }
+    } else    if (b <= 0 && a <= 0) {
+        // Standard subtraction: Cancel out min(a, b) elements
+        let minVal = Math.min(Math.abs(a), Math.abs(b));
+
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowB.appendChild(box);
+        }
+    } else {
+        // If B is negative, it acts like addition, so no cancellations
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) { // Adding |b| instead of subtracting
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            rowB.appendChild(box);
+        }
+    }
+
+    boxContainerA.appendChild(rowA);
+    boxContainerB.appendChild(rowB);
+}
+	
+	
+function visualizeSubtraction3(a, b) {
+    const boxContainer = document.getElementById('boxContainerC');
+    boxContainer.innerHTML = ''; // Clear previous visualization
+
+    const rowA = document.createElement('div');
+    rowA.className = 'row';
+    const rowB = document.createElement('div');
+    rowB.className = 'row';
+
+    if (b >= 0) {
+        // Standard subtraction: cancel out common elements
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            if (i < Math.abs(b)) box.innerText = '✖'; // Mark cancelled elements
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            box.innerText = '✖'; // Mark cancelled elements
+            rowB.appendChild(box);
+        }
+    } else {
+        // If B is negative, it's equivalent to addition: No cancellations
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) { // Adding |b| instead of subtracting
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            rowB.appendChild(box);
+        }
+    }
+
+    boxContainer.appendChild(rowA);
+    boxContainer.appendChild(rowB);
+}
+	
+
+
+function visualizeSubtraction2(a, b) {
+    const boxContainer = document.getElementById('boxContainerC');
+    boxContainer.innerHTML = ''; // Clear previous visualization
+
+    const rowA = document.createElement('div');
+    rowA.className = 'row';
+    const rowB = document.createElement('div');
+    rowB.className = 'row';
+
+    let minVal = Math.min(a, b);
+    let maxVal = Math.max(a, b);
+
+    for (let i = 0; i < Math.abs(a); i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.backgroundColor = 'red';
+        box.innerText = i < Math.abs(minVal) ? '✖' : ''; // Cross if it cancels
+        rowA.appendChild(box);
+    }
+
+    for (let i = 0; i < Math.abs(b); i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.backgroundColor = 'blue';
+        box.innerText = i < Math.abs(minVal) ? '✖' : ''; // Cross if it cancels
+        rowB.appendChild(box);
+    }
+
+    boxContainer.appendChild(rowA);
+    boxContainer.appendChild(rowB);
+}
+
+
+
+    // Visualize multiplication as a grid with A rows and B columns
+    function visualizeMultiplication(a, b) {
+        for (let i = 0; i < Math.abs(a); i++) {
+            const row = document.createElement('div');
+            row.className = 'row';
+            createBoxes(Math.abs(b), (i % 2 === 0) ? 'red' : 'blue', 'B', row);
+            document.getElementById('boxContainerC').appendChild(row);
+        }
+    }
+
+
+    // Visualize division by grouping B into A
+    function visualizeDivision(a, b, c) {
+        if (b === 0) {
+            boxContainer.innerHTML = '<p>Division by zero is undefined!</p>';
+            return;
+        }
+        for (let i = 0; i < Math.abs(c); i++) {
+            createBoxes(Math.abs(b), 'blue', 'B');
+        }
+    }
+
+
+    // Visualize modulus as leftover after division
+    function visualizeModulus(a, b, c) {
+        createBoxes(c, 'green', 'C');
+    }
+
+
+    // Create colored boxes to visualize numbers
+    function createBoxes(count, color, label, container = document.getElementById('boxContainerC')) {
+        for (let i = 0; i < Math.abs(count); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = color;
+            box.title = label + ' = ' + count;
+            container.appendChild(box);
+        }
+    }
+
+
+function displayVisualAdd(card){
+	
+	OngoingOp = 4;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");	
+	//document.getElementById("game-op-container").classList.add("hidden");
+	
+	
+	
+	 document.getElementById("game-op-container").classList.remove("hidden");
+	
+	// Initialize first render
+    updateMath();
 }
 		
 function displayFraction(card){
@@ -769,6 +1174,7 @@ function displayFraction(card){
 	
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
 	
     if (card.denominator2)	{
 		drawCharts(card.num1, card.num2, card.denominator , card.denominator2);	
@@ -784,6 +1190,7 @@ function displayMultiplication(card){
 	
             document.getElementById('charts').innerHTML = "";	 // clear any chart
 			document.getElementById("game-chart-container").classList.add("hidden");
+			document.getElementById("game-op-container").classList.add("hidden");
 			
 			if (table_init == 0){
 			let myTableHTML = makeTable(card.num1, card.num2);
@@ -801,6 +1208,7 @@ function displayDivision(card) {
 	//drawCharts(card.num1, 0, card.num2 , 0);	
 	document.getElementById('charts').innerHTML = "";	 // clear any chart
 	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
 	
 			if (table_init == 0){
 			let myTableHTML = makeTable_div(card.num1, card.num2);
@@ -818,13 +1226,13 @@ function displayDivision(card) {
 			
             let card = currentFlashcards[currentIndex];
 			
-			console.log(card);
+			//console.log(card);
 			
 			if (settings.voice){
 				
-				console.log(card.question);
+				//console.log(card.question);
 				speakText(card.question);
-				console.log(card.q_english);
+				//console.log(card.q_english);
 				speakText(card.q_english);
 				
 			}
@@ -833,7 +1241,7 @@ function displayDivision(card) {
 			
 			//displayFormattedQuestion();
 		/*	if (card.visual){
-				console.log (card.visual);
+				//console.log (card.visual);
 				document.getElementById("question-text").innerText = card.question + card.visual ;
 			} else
 			{
@@ -863,7 +1271,9 @@ function displayDivision(card) {
 					displayFraction(card); // Use displayDivision for division
 			}else if (currenttopLevelCategoryName == "Visual Fraction"){
 				displayVisualFraction(card); 
-			}				
+			}else if (currenttopLevelCategoryName == "Visual Add, Sub, Mul, Div, Rem"){
+				displayVisualAdd(card); 
+			}	
 			else {
 				displayMultiplication(card); // Use displayMultiplication for multiplication
 			}
@@ -1024,7 +1434,7 @@ function clear() {
 
     function openSuggestFlashcardModal() {
 	
-        //console.log( openSuggestFlashcardModal )
+        ////console.log( openSuggestFlashcardModal )
 		if (!currentCard) return;  // Exit if no card
 
         
@@ -1033,7 +1443,7 @@ function clear() {
     }
 
     function closeSuggestFlashcardModal() {
-	//console.log( closeSuggestFlashcardModal )
+	////console.log( closeSuggestFlashcardModal )
         document.getElementById("suggest-flashcard-modal").style.display = "none";
     }
 
@@ -1069,15 +1479,18 @@ function clear() {
 //    this.action = `mailto:<span class="math-inline">\{recipient\}?subject\=</span>{encodeURIComponent(emailTitle)}&body=${encodeURIComponent(emailBody)}`;
 this.action = `mailto:${recipient}?subject=${emailTitle}&body=${encodeURIComponent(emailBody)}`;
 
-console.log( this.action )
+//console.log( this.action )
      // Programmatically trigger the <a> link
      window.location.href = this.action;
-	 //console.log( this.action )
+	 ////console.log( this.action )
     closeSuggestFlashcardModal();
 });
 
 
 function ans_fraction(selected){
+}
+
+function ans_visual(selected){
 }
 
 function ans_div(selected){
@@ -1091,7 +1504,7 @@ function ans_div(selected){
                 Quot = Quot *10 + parseInt(card.stepValue);
 				}
 				let expectedQuote = card.num1 / card.num2;
-				//console.log(totalSum);
+				////console.log(totalSum);
 				
 				expectedQuote = expectedQuote.toFixed(2);
 				  // Ensure inputs are strings
@@ -1099,7 +1512,7 @@ function ans_div(selected){
 
 				let newRow = `<td>=</td><td colspan="3"  >Quotient ${expectedQuote}</td><td   class="correct">${in_ans[0]}</td><td  class="correct">${in_ans[1]}</td><td   class="correct">${in_ans[2]}</td><td colspan="5" class="correct">✔ Step ${currentIndex + 1} Rem = ${card.remainder}</td>`;
                // let newRow = `<tr><td>+</td><td></td><td></td><td></td> <td>${selected}</td><td colspan="3" class="correct">${card.step}</td><td colspan="2" class="correct">✔ Step ${currentIndex + 1} </td></tr>`;
-                //console.log(newRow);
+                ////console.log(newRow);
 				document.getElementById("steps").innerHTML = newRow;
 				
 								  // Ensure inputs are strings
@@ -1126,7 +1539,7 @@ function ans_div(selected){
 				  }
 				  
 				  document.getElementById("Remainder").innerHTML += `<tr></tr><tr><td>=</td>${extra_shift}<td></td><td></td>${rem_color}${in_ans[0]}</td>${rem_color}${in_ans[1]}</td>${rem_color}${in_ans[2]}</td> <td></td><td colspan="6" class="table_head">${card.ans_english}</tr>`;
-				//console.log(newRow);
+				////console.log(newRow);
                // document.getElementById("totalRow").innerHTML = `<td></td><td></td><td></td><td></td><td  class="table_head">${totalSum}</td><td colspan="5" class="table_head">Product ${expectedSum}</td>`;
              
                 clearHighlight();
@@ -1138,21 +1551,21 @@ function ans_mult(selected){
 	//fix me
                 totalSum += parseInt(selected);
 				let expectedSum = card.num1 * card.num2;
-				//console.log(totalSum);
+				////console.log(totalSum);
 				
 				  // Ensure inputs are strings
 			  in_ans = String(selected).padStart(6, ' ');
 
 				let newRow = `<tr><td>+</td><td>${in_ans[0]}</td><td>${in_ans[1]}</td><td>${in_ans[2]}</td> <td>${in_ans[3]}</td><td>${in_ans[4]}</td> <td>${in_ans[5]}</td><td colspan="3" class="correct">${card.step}</td><td colspan="2" class="correct">✔ Step ${currentIndex + 1} </td></tr>`;
                // let newRow = `<tr><td>+</td><td></td><td></td><td></td> <td>${selected}</td><td colspan="3" class="correct">${card.step}</td><td colspan="2" class="correct">✔ Step ${currentIndex + 1} </td></tr>`;
-                //console.log(newRow);
+                ////console.log(newRow);
 				document.getElementById("steps").innerHTML += newRow;
 				
 								  // Ensure inputs are strings
 			  in_ans = String(totalSum).padStart(6, ' ');
 				 
 				 document.getElementById("totalRow").innerHTML = `<td>=</td><td>${in_ans[0]}</td><td>${in_ans[1]}</td><td>${in_ans[2]}</td> <td>${in_ans[3]}</td><td>${in_ans[4]}</td> <td>${in_ans[5]}</td><td colspan="5" class="table_head">${card.num1} X ${card.num2} = ${expectedSum}</td>`;
-				//console.log(newRow);
+				////console.log(newRow);
                // document.getElementById("totalRow").innerHTML = `<td></td><td></td><td></td><td></td><td  class="table_head">${totalSum}</td><td colspan="5" class="table_head">Product ${expectedSum}</td>`;
              
                 clearHighlight();
@@ -1184,16 +1597,18 @@ function ans_mult(selected){
                 document.getElementById("message").innerText = "Correct!!!";
                 triggerConfetti();
 				
-				console.log(OngoingOp);
+				//console.log(OngoingOp);
 				
 				if (OngoingOp == 0){
 					ans_mult(selected);
 				} else if (OngoingOp == 1){
 					ans_div(selected);
-				}
-				else if (OngoingOp == 2){
+				} else if (OngoingOp == 2){
 					ans_fraction(selected);
-				}				
+				}	
+				else if (OngoingOp == 3 || OngoingOp == 4){
+					ans_visual(selected);
+				}	
 				
                 
 				
@@ -1214,7 +1629,7 @@ function ans_mult(selected){
 		
 		
 		currentIndex =  - 1; //repeat
-		console.log("currentIndex:", currentIndex);
+		//console.log("currentIndex:", currentIndex);
 		
             }
 			
@@ -1251,7 +1666,7 @@ document.getElementById('charts').innerHTML = "";
 document.getElementById('myTableContainer').innerHTML = "";
 			
 			currentIndex = 0;	
-			console.log("currentIndex:", currentIndex);			
+			//console.log("currentIndex:", currentIndex);			
 }
 
 
@@ -1259,9 +1674,9 @@ function nextFlashcard() {
 	
 
 	
-	console.log("Cuurent Subcategory:", currentsubCategoryName);
-	console.log("flashcard:", currentFlashcards);
-	console.log("currentIndex:", currentIndex);
+	//console.log("Cuurent Subcategory:", currentsubCategoryName);
+	//console.log("flashcard:", currentFlashcards);
+	//console.log("currentIndex:", currentIndex);
 	
 	if(currentIndex == -1) //repeat same currentsubCategoryName
 	{
@@ -1283,7 +1698,7 @@ function nextFlashcard() {
 
     // Find the current index of the subcategory
     currentIndex = subCategories.indexOf(currentsubCategoryName); 
-	console.log("currentIndex:", currentIndex);
+	//console.log("currentIndex:", currentIndex);
  
 		//last item in subcategory?
 	    if ((currentIndex + 1) === subCategories.length) {
@@ -1297,15 +1712,15 @@ function nextFlashcard() {
     // Update to the new subcategory
     currentsubCategoryName = subCategories[nextIndex];
 
-    console.log("Next Subcategory:", currentsubCategoryName);
+    //console.log("Next Subcategory:", currentsubCategoryName);
 
     // Reset flashcard index
     currentIndex = 0;
-	console.log("currentIndex:", currentIndex);
+	//console.log("currentIndex:", currentIndex);
 
     // Get the flashcards for the new subcategory 
     currentFlashcards = categories[currenttopLevelCategoryName][currentsubCategoryName];
-	console.log("flashcard:", currentFlashcards);
+	//console.log("flashcard:", currentFlashcards);
     // If no flashcards found, show the summary
     if (!currentFlashcards || currentFlashcards.length === 0) {
         summaryGame();
@@ -1469,7 +1884,7 @@ function toggleBackgroundInputs() {
         document.body.style.background = bgColorPicker.value;
     } else if (bgGradientRadio.checked) {
         let gradientString = `linear-gradient(${bgGradientDirection.value}, ${bgGradientStart.value}, ${bgGradientEnd.value})`;
-        //console.log("Gradient CSS:", gradientString); // Debugging
+        ////console.log("Gradient CSS:", gradientString); // Debugging
         document.body.style.background = gradientString;
     }			
 
@@ -1667,12 +2082,12 @@ function speakText(text) {
 			return; 
 			/*
             
-			console.log(text);
+			//console.log(text);
 			const sanitizedtext = text.replace(/=/g, '').replace(/_/g, '');
 			
 			
             // Create a new SpeechSynthesisUtterance object
-			console.log(sanitizedtext);
+			//console.log(sanitizedtext);
             var utterance = new SpeechSynthesisUtterance( sanitizedtext);
 
             // Set properties for the speech (optional)
