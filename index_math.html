@@ -253,17 +253,29 @@
 	
 
 <div class="container">
+
+ <!-- Number Line -->
+    <div id="chart-container">
+        <canvas id="numberLine" width="600" height="100"></canvas>
+    </div>
+	   <div class="box-container" id="boxContainerD"></div>	
+	   
+	  <div class="box-container" id="boxContainerC"></div>
+	   <div class="box-container" id="boxContainerE"></div>	
     
 
 
     <!-- Sliders for A and B -->
+	
+	 <div class="box-container" id="boxContainerA"></div>
+	 
     <div class="slider-container">
         <label for="sliderA">A:</label>
         <input type="range" id="sliderA" min="-10" max="10" value="3" oninput="updateMath()">
         <span id="valueA">3</span>
     </div>
 	
-	    <div class="box-container" id="boxContainerA"></div>
+	   
 
     <!-- Select operation to calculate C -->
     <div class="slider-container">
@@ -276,24 +288,19 @@
             <option value="mod">Rem of A / B</option>
         </select>
     </div>
+	
+	<div class="box-container" id="boxContainerB"></div>
 
     <div class="slider-container">
         <label for="sliderB">B:</label>
         <input type="range" id="sliderB" min="-10" max="10" value="2" oninput="updateMath()">
         <span id="valueB">2</span>
     </div>
-	<div class="box-container" id="boxContainerB"></div>
+	
 	
   
 
-   <!-- Number Line -->
-    <div id="chart-container">
-        <canvas id="numberLine" width="600" height="100"></canvas>
-    </div>
-	   <div class="box-container" id="boxContainerD"></div>	
-	   
-	  <div class="box-container" id="boxContainerC"></div>
-	   <div class="box-container" id="boxContainerE"></div>	
+  
 </div>
 </div>	
 	
