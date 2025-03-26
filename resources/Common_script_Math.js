@@ -34,7 +34,7 @@
 		let Quot = 0;
 		let extra_shift = '';
 		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 
-		const fraction_piechart_height = 200; // height and width of pie charts
+		const fraction_piechart_height = 300; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
