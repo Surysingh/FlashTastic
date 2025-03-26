@@ -912,6 +912,10 @@ function displayVisualFraction(card){
     function visualizeResult(a, b, c, operation) {
         const boxContainer = document.getElementById('boxContainerC');
         boxContainer.innerHTML = ''; // Clear previous visualization
+		
+ 
+	const boxContainerB = document.getElementById('boxContainerE');  
+	boxContainerB.innerHTML = ''; // Clear previous visualization		
 
 		if ((operation == 'div') || (operation == 'mod'))
 		{
