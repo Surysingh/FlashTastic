@@ -28,9 +28,1625 @@ window.categories = {
 
 },
 	  
+   
+  "Addition": {
+"1 + 0": [
+    {
+      "question": "What does 1 + 0 equal?",
+      "correct": "1",
+      "options": ["1", "0", "2", "-1"],
+      "num1": 1,
+      "num2": 0,
+      "operator": "add"
+    }
+  ],
+  "-1 + 0": [
+    {
+      "question": "What does -1 + 0 equal?",
+      "correct": "-1",
+      "options": ["-1", "0", "-2", "1"],
+      "num1": -1,
+      "num2": 0,
+      "operator": "add"
+    }
+  ],
+  "5 + 2": [
+    {
+      "question": "What does 5 + 2 equal?",
+      "correct": "7",
+      "options": ["7", "3", "9", "11"],
+      "num1": 5,
+      "num2": 2,
+      "operator": "add"
+    }
+  ],
+  "5 + (-2)": [
+    {
+      "question": "What does 5 + -2 equal?",
+      "correct": "3",
+      "options": ["3", "7", "10", "2"],
+      "num1": 5,
+      "num2": -2,
+      "operator": "add"
+    }
+  ],
+  "-5 + 2": [
+    {
+      "question": "What does -5 + 2 equal?",
+      "correct": "-3",
+      "options": ["-3", "-7", "3", "-10"],
+      "num1": -5,
+      "num2": 2,
+      "operator": "add"
+    }
+  ],
+  "-5 + (-2)": [
+    {
+      "question": "What does -5 + -2 equal?",
+      "correct": "-7",
+      "options": ["-7", "-3", "-10", "-2"],
+      "num1": -5,
+      "num2": -2,
+      "operator": "add"
+    }
+  ],
+  "3 + 4": [
+    {
+      "question": "What does 3 + 4 equal?",
+      "correct": "7",
+      "options": ["7", "1", "0", "12"],
+      "num1": 3,
+      "num2": 4,
+      "operator": "add"
+    }
+  ],
+  "3 + (-4)": [
+    {
+      "question": "What does 3 + -4 equal?",
+      "correct": "-1",
+      "options": ["-1", "7", "-7", "1"],
+      "num1": 3,
+      "num2": -4,
+      "operator": "add"
+    }
+  ],
+  "-3 + 4": [
+    {
+      "question": "What does -3 + 4 equal?",
+      "correct": "1",
+      "options": ["1", "-1", "0", "7"],
+      "num1": -3,
+      "num2": 4,
+      "operator": "add"
+    }
+  ],
+  "-3 + (-4)": [
+    {
+      "question": "What does -3 + -4 equal?",
+      "correct": "-7",
+      "options": ["-7", "7", "-1", "-8"],
+      "num1": -3,
+      "num2": -4,
+      "operator": "add"
+    }
+  ],
+  "1 + 1": [
+    {
+      "question": "What does 1 + 1 equal?",
+      "correct": "2",
+      "options": ["2", "0", "1", "-1"],
+      "num1": 1,
+      "num2": 1,
+      "operator": "add"
+    }
+  ],
+  "1 + (-1)": [
+    {
+      "question": "What does 1 + -1 equal?",
+      "correct": "0",
+      "options": ["0", "2", "-2", "1"],
+      "num1": 1,
+      "num2": -1,
+      "operator": "add"
+    }
+  ],
+  "-1 + 1": [
+    {
+      "question": "What does -1 + 1 equal?",
+      "correct": "0",
+      "options": ["0", "-2", "2", "-1"],
+      "num1": -1,
+      "num2": 1,
+      "operator": "add"
+    }
+  ],
+  "-1 + (-1)": [
+    {
+      "question": "What does -1 + -1 equal?",
+      "correct": "-2",
+      "options": ["-2", "0", "2", "-3"],
+      "num1": -1,
+      "num2": -1,
+      "operator": "add"
+    }
+  ] , 
+  "2 + 3": [
+    {
+      "question": "What does 2 + 3 equal?",
+      "correct": "5",
+      "options": ["5", "6", "1", "-1"],
+      "num1": 2,
+      "num2": 3,
+      "operator": "add"
+    }
+  ],
+  "2 + (-3)": [
+    {
+      "question": "What does 2 + -3 equal?",
+      "correct": "-1",
+      "options": ["-1", "5", "-5", "1"],
+      "num1": 2,
+      "num2": -3,
+      "operator": "add"
+    }
+  ],
+  "-2 + 3": [
+    {
+      "question": "What does -2 + 3 equal?",
+      "correct": "1",
+      "options": ["1", "-1", "5", "-5"],
+      "num1": -2,
+      "num2": 3,
+      "operator": "add"
+    }
+  ],
+  "-2 + (-3)": [
+    {
+      "question": "What does -2 + -3 equal?",
+      "correct": "-5",
+      "options": ["-5", "-1", "1", "5"],
+      "num1": -2,
+      "num2": -3,
+      "operator": "add"
+    }
+  ],
+  "4 + 0": [
+    {
+      "question": "What does 4 + 0 equal?",
+      "correct": "4",
+      "options": ["4", "0", "8", "-4"],
+      "num1": 4,
+      "num2": 0,
+      "operator": "add"
+    }
+  ],
+  "-4 + 0": [
+    {
+      "question": "What does -4 + 0 equal?",
+      "correct": "-4",
+      "options": ["-4", "0", "4", "-8"],
+      "num1": -4,
+      "num2": 0,
+      "operator": "add"
+    }
+  ],
+    "0 + 4": [
+    {
+      "question": "What does 0 + 4 equal?",
+      "correct": "4",
+      "options": ["4", "0", "8", "-4"],
+      "num1": 0,
+      "num2": 4,
+      "operator": "add"
+    }
+  ],
+  "0 + (-4)": [
+    {
+      "question": "What does 0 + -4 equal?",
+      "correct": "-4",
+      "options": ["-4", "0", "4", "-8"],
+      "num1": 0,
+      "num2": -4,
+      "operator": "add"
+    }
+  ],
+  "10 + 5": [
+    {
+      "question": "What does 10 + 5 equal?",
+      "correct": "15",
+      "options": ["15", "5", "10", "-5"],
+      "num1": 10,
+      "num2": 5,
+      "operator": "add"
+    }
+  ],
+  "10 + (-5)": [
+    {
+      "question": "What does 10 + -5 equal?",
+      "correct": "5",
+      "options": ["5", "15", "-5", "-15"],
+      "num1": 10,
+      "num2": -5,
+      "operator": "add"
+    }
+  ],
+  "-10 + 5": [
+    {
+      "question": "What does -10 + 5 equal?",
+      "correct": "-5",
+      "options": ["-5", "5", "-15", "15"],
+      "num1": -10,
+      "num2": 5,
+      "operator": "add"
+    }
+  ],
+  "-10 + (-5)": [
+    {
+      "question": "What does -10 + -5 equal?",
+      "correct": "-15",
+      "options": ["-15", "-5", "15", "5"],
+      "num1": -10,
+      "num2": -5,
+      "operator": "add"
+    }
+  ],
+    "8 + 2": [
+    {
+      "question": "What does 8 + 2 equal?",
+      "correct": "10",
+      "options": ["10", "6", "12", "-6"],
+      "num1": 8,
+      "num2": 2,
+      "operator": "add"
+    }
+  ],
+  "8 + (-2)": [
+    {
+      "question": "What does 8 + -2 equal?",
+      "correct": "6",
+      "options": ["6", "10", "-6", "-10"],
+      "num1": 8,
+      "num2": -2,
+      "operator": "add"
+    }
+  ],
+  "-8 + 2": [
+    {
+      "question": "What does -8 + 2 equal?",
+      "correct": "-6",
+      "options": ["-6", "6", "-10", "10"],
+      "num1": -8,
+      "num2": 2,
+      "operator": "add"
+    }
+  ],
+  "-8 + (-2)": [
+    {
+      "question": "What does -8 + -2 equal?",
+      "correct": "-10",
+      "options": ["-10", "-6", "6", "10"],
+      "num1": -8,
+      "num2": -2,
+      "operator": "add"
+    }
+  ]
+  } ,
 
+"Subtraction": {
+	"9 - 1": [
+    {
+      "question": "What does 9 - 1 equal?",
+      "correct": "8",
+      "options": ["8", "10", "7", "-8"],
+      "num1": 9,
+      "num2": 1,
+      "operator": "sub"
+    }
+  ],
+  "9 - (-1)": [
+    {
+      "question": "What does 9 - -1 equal?",
+      "correct": "10",
+      "options": ["10", "8", "-10", "-8"],
+      "num1": 9,
+      "num2": -1,
+      "operator": "sub"
+    }
+  ],
+  "-9 - 1": [
+    {
+      "question": "What does -9 - 1 equal?",
+      "correct": "-10",
+      "options": ["-10", "-8", "10", "8"],
+      "num1": -9,
+      "num2": 1,
+      "operator": "sub"
+    }
+  ],
+  "-9 - (-1)": [
+    {
+      "question": "What does -9 - -1 equal?",
+      "correct": "-8",
+      "options": ["-8", "-10", "8", "10"],
+      "num1": -9,
+      "num2": -1,
+      "operator": "sub"
+    }
+  ],
+  "6 - 4": [
+    {
+      "question": "What does 6 - 4 equal?",
+      "correct": "2",
+      "options": ["2", "10", "0", "-2"],
+      "num1": 6,
+      "num2": 4,
+      "operator": "sub"
+    }
+  ],
+  "6 - (-4)": [
+    {
+      "question": "What does 6 - -4 equal?",
+      "correct": "10",
+      "options": ["10", "2", "-10", "-2"],
+      "num1": 6,
+      "num2": -4,
+      "operator": "sub"
+    }
+  ],
+  "-6 - 4": [
+    {
+      "question": "What does -6 - 4 equal?",
+      "correct": "-10",
+      "options": ["-10", "-2", "10", "2"],
+      "num1": -6,
+      "num2": 4,
+      "operator": "sub"
+    }
+  ],
+  "-6 - (-4)": [
+    {
+      "question": "What does -6 - -4 equal?",
+      "correct": "-2",
+      "options": ["-2", "-10", "2", "10"],
+      "num1": -6,
+      "num2": -4,
+      "operator": "sub"
+    }
+  ],
+  "7 - 1": [
+    {
+      "question": "What does 7 - 1 equal?",
+      "correct": "6",
+      "options": ["6", "8", "5", "-6"],
+      "num1": 7,
+      "num2": 1,
+      "operator": "sub"
+    }
+  ],
+  "7 - (-1)": [
+    {
+      "question": "What does 7 - -1 equal?",
+      "correct": "8",
+      "options": ["8", "6", "-8", "-6"],
+      "num1": 7,
+      "num2": -1,
+      "operator": "sub"
+    }
+  ],
+  "-7 - 1": [
+    {
+      "question": "What does -7 - 1 equal?",
+      "correct": "-8",
+      "options": ["-8", "-6", "8", "6"],
+      "num1": -7,
+      "num2": 1,
+      "operator": "sub"
+    }
+  ],
+  "-7 - (-1)": [
+    {
+      "question": "What does -7 - -1 equal?",
+      "correct": "-6",
+      "options": ["-6", "-8", "6", "8"],
+      "num1": -7,
+      "num2": -1,
+      "operator": "sub"
+    }
+  ],
+  "9 - 8": [
+    {
+      "question": "What does 9 - 8 equal?",
+      "correct": "1",
+      "options": ["1", "17", "-1", "-17"],
+      "num1": 9,
+      "num2": 8,
+      "operator": "sub"
+    }
+  ],
+  "9 - (-8)": [
+    {
+      "question": "What does 9 - -8 equal?",
+      "correct": "17",
+      "options": ["17", "1", "-17", "-1"],
+      "num1": 9,
+      "num2": -8,
+      "operator": "sub"
+    }
+  ],
+  "-9 - 8": [
+    {
+      "question": "What does -9 - 8 equal?",
+      "correct": "-17",
+      "options": ["-17", "-1", "17", "1"],
+      "num1": -9,
+      "num2": 8,
+      "operator": "sub"
+    }
+  ],
+  "-9 - (-8)": [
+    {
+      "question": "What does -9 - -8 equal?",
+      "correct": "-1",
+      "options": ["-1", "-17", "1", "17"],
+      "num1": -9,
+      "num2": -8,
+      "operator": "sub"
+    }
+  ]
+	
+	,
+ "2 - 3": [
+    {
+      "question": "What does 2 - 3 equal?",
+      "correct": "-1",
+      "options": ["-1", "5", "1", "-5"],
+      "num1": 2,
+      "num2": 3,
+      "operator": "sub"
+    }
+  ],
+  "2 - (-3)": [
+    {
+      "question": "What does 2 - -3 equal?",
+      "correct": "5",
+      "options": ["5", "-1", "1", "-5"],
+      "num1": 2,
+      "num2": -3,
+      "operator": "sub"
+    }
+  ],
+  "-2 - 3": [
+    {
+      "question": "What does -2 - 3 equal?",
+      "correct": "-5",
+      "options": ["-5", "-1", "1", "5"],
+      "num1": -2,
+      "num2": 3,
+      "operator": "sub"
+    }
+  ],
+  "-2 - (-3)": [
+    {
+      "question": "What does -2 - -3 equal?",
+      "correct": "1",
+      "options": ["1", "-5", "-1", "5"],
+      "num1": -2,
+      "num2": -3,
+      "operator": "sub"
+    }
+  ],
+  "4 - 0": [
+    {
+      "question": "What does 4 - 0 equal?",
+      "correct": "4",
+      "options": ["4", "0", "8", "-4"],
+      "num1": 4,
+      "num2": 0,
+      "operator": "sub"
+    }
+  ],
+  "-4 - 0": [
+    {
+      "question": "What does -4 - 0 equal?",
+      "correct": "-4",
+      "options": ["-4", "0", "4", "-8"],
+      "num1": -4,
+      "num2": 0,
+      "operator": "sub"
+    }
+  ],
+  "0 - 4": [
+    {
+      "question": "What does 0 - 4 equal?",
+      "correct": "-4",
+      "options": ["-4", "4", "0", "-8"],
+      "num1": 0,
+      "num2": 4,
+      "operator": "sub"
+    }
+  ],
+  "0 - (-4)": [
+    {
+      "question": "What does 0 - -4 equal?",
+      "correct": "4",
+      "options": ["4", "-4", "0", "8"],
+      "num1": 0,
+      "num2": -4,
+      "operator": "sub"
+    }
+  ],
+  "10 - 5": [
+    {
+      "question": "What does 10 - 5 equal?",
+      "correct": "5",
+      "options": ["5", "15", "10", "-5"],
+      "num1": 10,
+      "num2": 5,
+      "operator": "sub"
+    }
+  ],
+  "10 - (-5)": [
+    {
+      "question": "What does 10 - -5 equal?",
+      "correct": "15",
+      "options": ["15", "5", "-5", "-15"],
+      "num1": 10,
+      "num2": -5,
+      "operator": "sub"
+    }
+  ],
+  "-10 - 5": [
+    {
+      "question": "What does -10 - 5 equal?",
+      "correct": "-15",
+      "options": ["-15", "-5", "15", "5"],
+      "num1": -10,
+      "num2": 5,
+      "operator": "sub"
+    }
+  ],
+  "-10 - (-5)": [
+    {
+      "question": "What does -10 - -5 equal?",
+      "correct": "-5",
+      "options": ["-5", "-15", "5", "15"],
+      "num1": -10,
+      "num2": -5,
+      "operator": "sub"
+    }
+  ],
+  "8 - 2": [
+    {
+      "question": "What does 8 - 2 equal?",
+      "correct": "6",
+      "options": ["6", "10", "-6", "4"],
+      "num1": 8,
+      "num2": 2,
+      "operator": "sub"
+    }
+  ],
+  "8 - (-2)": [
+    {
+      "question": "What does 8 - -2 equal?",
+      "correct": "10",
+      "options": ["10", "6", "-10", "-6"],
+      "num1": 8,
+      "num2": -2,
+      "operator": "sub"
+    }
+  ],
+  "-8 - 2": [
+    {
+      "question": "What does -8 - 2 equal?",
+      "correct": "-10",
+      "options": ["-10", "-6", "6", "10"],
+      "num1": -8,
+      "num2": 2,
+      "operator": "sub"
+    }
+  ],
+  "-8 - (-2)": [
+    {
+      "question": "What does -8 - -2 equal?",
+      "correct": "-6",
+      "options": ["-6", "-10", "6", "10"],
+      "num1": -8,
+      "num2": -2,
+      "operator": "sub"
+    }
+  ]
+},
 
 "Multiplcation": {
+	
+	"7 * 1": [
+    {
+      "question": "What is the result of multiplying 7 by 1?",
+      "correct": "7",
+      "options": ["6", "7", "8", "0"],
+      "num1": 7,
+      "num2": 1,
+      "operator": "mul"
+    }
+  ],
+  "7 * (-1)": [
+    {
+      "question": "Calculate 7 multiplied by -1.",
+      "correct": "-7",
+      "options": ["-6", "-7", "-8", "0"],
+      "num1": 7,
+      "num2": -1,
+      "operator": "mul"
+    }
+  ],
+  "(-7) * 1": [
+    {
+      "question": "What is -7 times 1?",
+      "correct": "-7",
+      "options": ["-6", "-7", "-8", "0"],
+      "num1": -7,
+      "num2": 1,
+      "operator": "mul"
+    }
+  ],
+  "(-7) * (-1)": [
+    {
+      "question": "Find the product of -7 and -1.",
+      "correct": "7",
+      "options": ["6", "7", "8", "0"],
+      "num1": -7,
+      "num2": -1,
+      "operator": "mul"
+    }
+  ],
+  "1 * 9": [
+    {
+      "question": "What is 1 multiplied by 9?",
+      "correct": "9",
+      "options": ["8", "9", "10", "0"],
+      "num1": 1,
+      "num2": 9,
+      "operator": "mul"
+    }
+  ],
+  "1 * (-9)": [
+    {
+      "question": "Calculate 1 times -9.",
+      "correct": "-9",
+      "options": ["-8", "-9", "-10", "0"],
+      "num1": 1,
+      "num2": -9,
+      "operator": "mul"
+    }
+  ],
+  "(-1) * 9": [
+    {
+      "question": "What is -1 multiplied by 9?",
+      "correct": "-9",
+      "options": ["-8", "-9", "-10", "0"],
+      "num1": -1,
+      "num2": 9,
+      "operator": "mul"
+    }
+  ],
+  "(-1) * (-9)": [
+    {
+      "question": "Find the product of -1 and -9.",
+      "correct": "9",
+      "options": ["8", "9", "10", "0"],
+      "num1": -1,
+      "num2": -9,
+      "operator": "mul"
+    }
+  ],
+  "0 * 5": [
+    {
+      "question": "What is 0 multiplied by 5?",
+      "correct": "0",
+      "options": ["5", "0", "1", "-5"],
+      "num1": 0,
+      "num2": 5,
+      "operator": "mul"
+    }
+  ],
+  "0 * (-5)": [
+    {
+      "question": "Calculate 0 times -5.",
+      "correct": "0",
+      "options": ["-5", "0", "1", "5"],
+      "num1": 0,
+      "num2": -5,
+      "operator": "mul"
+    }
+  ],
+  "(-0) * 5": [
+    {
+      "question": "What is -0 multiplied by 5?",
+      "correct": "0",
+      "options": ["5", "0", "1", "-5"],
+      "num1": 0,
+      "num2": 5,
+      "operator": "mul"
+    }
+  ],
+  "(-0) * (-5)": [
+    {
+      "question": "Find the product of -0 and -5.",
+      "correct": "0",
+      "options": ["-5", "0", "1", "5"],
+      "num1": 0,
+      "num2": -5,
+      "operator": "mul"
+    }
+  ],
+  "6 * 3": [
+    {
+      "question": "What is 6 multiplied by 3?",
+      "correct": "18",
+      "options": ["9", "18", "3", "2"],
+      "num1": 6,
+      "num2": 3,
+      "operator": "mul"
+    }
+  ],
+  "6 * (-3)": [
+    {
+      "question": "What is 6 times -3?",
+      "correct": "-18",
+      "options": ["-9", "-18", "-3", "-2"],
+      "num1": 6,
+      "num2": -3,
+      "operator": "mul"
+    }
+  ],
+  "(-6) * 3": [
+    {
+      "question": "What is -6 multiplied by 3?",
+      "correct": "-18",
+      "options": ["-9", "-18", "-3", "-6"],
+      "num1": -6,
+      "num2": 3,
+      "operator": "mul"
+    }
+  ],
+  "(-6) * (-3)": [
+    {
+      "question": "What is -6 times -3?",
+      "correct": "18",
+      "options": ["9", "18", "3", "6"],
+      "num1": -6,
+      "num2": -3,
+      "operator": "mul"
+    }
+  ],
+  "8 * 2": [
+    {
+      "question": "Multiply 8 by 2.",
+      "correct": "16",
+      "options": ["10", "16", "6", "4"],
+      "num1": 8,
+      "num2": 2,
+      "operator": "mul"
+    }
+  ],
+  "8 * (-2)": [
+    {
+      "question": "Calculate 8 multiplied by -2.",
+      "correct": "-16",
+      "options": ["-10", "-16", "-6", "-4"],
+      "num1": 8,
+      "num2": -2,
+      "operator": "mul"
+    }
+  ],
+  "(-8) * 2": [
+    {
+      "question": "What is -8 times 2?",
+      "correct": "-16",
+      "options": ["-10", "-16", "-6", "-8"],
+      "num1": -8,
+      "num2": 2,
+      "operator": "mul"
+    }
+  ],
+  "(-8) * (-2)": [
+    {
+      "question": "Find the product of -8 and -2.",
+      "correct": "16",
+      "options": ["10", "16", "6", "8"],
+      "num1": -8,
+      "num2": -2,
+      "operator": "mul"
+    }
+  ] ,
+	
+	"5 * 2": [
+    {
+      "question": "What does 5 * 2 equal?",
+      "correct": "10",
+      "options": ["7", "10", "2", "0"],
+      "num1": 5,
+      "num2": 2,
+      "operator": "mul"
+    }
+  ],
+  "5 * (-2)": [
+    {
+      "question": "What does 5 * -2 equal?",
+      "correct": "-10",
+      "options": ["-7", "-10", "2", "3"],
+      "num1": 5,
+      "num2": -2,
+      "operator": "mul"
+    }
+  ],
+  "(-5) * 2": [
+    {
+      "question": "What does -5 * 2 equal?",
+      "correct": "-10",
+      "options": ["-10", "10", "-2", "5"],
+      "num1": -5,
+      "num2": 2,
+      "operator": "mul"
+    }
+  ],
+  "(-5) * (-2)": [
+    {
+      "question": "What does -5 * -2 equal?",
+      "correct": "10",
+      "options": ["-10", "10", "5", "0"],
+      "num1": -5,
+      "num2": -2,
+      "operator": "mul"
+    }
+  ],
+  "3 * 4": [
+    {
+      "question": "What does 3 * 4 equal?",
+      "correct": "12",
+      "options": ["9", "12", "6", "7"],
+      "num1": 3,
+      "num2": 4,
+      "operator": "mul"
+    }
+  ],
+  "3 * (-4)": [
+    {
+      "question": "What does 3 * -4 equal?",
+      "correct": "-12",
+      "options": ["-12", "12", "-6", "-7"],
+      "num1": 3,
+      "num2": -4,
+      "operator": "mul"
+    }
+  ],
+  "(-3) * 4": [
+    {
+      "question": "What does -3 * 4 equal?",
+      "correct": "-12",
+      "options": ["-12", "12", "-6", "-3"],
+      "num1": -3,
+      "num2": 4,
+      "operator": "mul"
+    }
+  ],
+  "(-3) * (-4)": [
+    {
+      "question": "What does -3 * -4 equal?",
+      "correct": "12",
+      "options": ["12", "-12", "-6", "-3"],
+      "num1": -3,
+      "num2": -4,
+      "operator": "mul"
+    }
+  ] ,
+  "6 * 3": [
+    {
+      "question": "What does 6 * 3 equal?",
+      "correct": "18",
+      "options": ["18", "9", "12", "6"],
+      "num1": 6,
+      "num2": 3,
+      "operator": "mul"
+    }
+  ],
+  "6 * (-3)": [
+    {
+      "question": "What does 6 * -3 equal?",
+      "correct": "-18",
+      "options": ["-18", "18", "-9", "-6"],
+      "num1": 6,
+      "num2": -3,
+      "operator": "mul"
+    }
+  ],
+  "(-6) * 3": [
+    {
+      "question": "What does -6 * 3 equal?",
+      "correct": "-18",
+      "options": ["-18", "18", "-12", "-9"],
+      "num1": -6,
+      "num2": 3,
+      "operator": "mul"
+    }
+  ],
+  "(-6) * (-3)": [
+    {
+      "question": "What does -6 * -3 equal?",
+      "correct": "18",
+      "options": ["18", "-18", "6", "12"],
+      "num1": -6,
+      "num2": -3,
+      "operator": "mul"
+    }
+  ],
+  "7 * 5": [
+    {
+      "question": "What does 7 * 5 equal?",
+      "correct": "35",
+      "options": ["35", "25", "30", "40"],
+      "num1": 7,
+      "num2": 5,
+      "operator": "mul"
+    }
+  ],
+  "7 * (-5)": [
+    {
+      "question": "What does 7 * -5 equal?",
+      "correct": "-35",
+      "options": ["-35", "35", "-25", "-40"],
+      "num1": 7,
+      "num2": -5,
+      "operator": "mul"
+    }
+  ],
+  "(-7) * 5": [
+    {
+      "question": "What does -7 * 5 equal?",
+      "correct": "-35",
+      "options": ["-35", "35", "-25", "-30"],
+      "num1": -7,
+      "num2": 5,
+      "operator": "mul"
+    }
+  ],
+  "(-7) * (-5)": [
+    {
+      "question": "What does -7 * -5 equal?",
+      "correct": "35",
+      "options": ["35", "-35", "25", "40"],
+      "num1": -7,
+      "num2": -5,
+      "operator": "mul"
+    }
+  ] ,
+  
+	
+},
+
+"Division": {
+	
+	"6 / 0": [
+    {
+      "question": "What does 6 divided by 0 equal?",
+      "correct": "Not Allowed",
+      "options": ["2", "3", "4", "Not Allowed"],
+      "num1": 6,
+      "num2": 0,
+      "operator": "div"
+    }
+  ],
+  
+	"6 / 2": [
+    {
+      "question": "What does 6 divided by 2 equal?",
+      "correct": "3",
+      "options": ["2", "3", "4", "8"],
+      "num1": 6,
+      "num2": 2,
+      "operator": "div"
+    }
+  ],
+  "6 / (-2)": [
+    {
+      "question": "What does 6 divided by -2 equal?",
+      "correct": "-3",
+      "options": ["-2", "-3", "-4", "-8"],
+      "num1": 6,
+      "num2": -2,
+      "operator": "div"
+    }
+  ],
+  "(-6) / 2": [
+    {
+      "question": "What does -6 divided by 2 equal?",
+      "correct": "-3",
+      "options": ["-2", "-3", "-4", "-6"],
+      "num1": -6,
+      "num2": 2,
+      "operator": "div"
+    }
+  ],
+  "(-6) / (-2)": [
+    {
+      "question": "What does -6 divided by -2 equal?",
+      "correct": "3",
+      "options": ["2", "3", "4", "6"],
+      "num1": -6,
+      "num2": -2,
+      "operator": "div"
+    }
+  ],
+  "8 / 4": [
+    {
+      "question": "What is 8 divided by 4?",
+      "correct": "2",
+      "options": ["1", "2", "3", "12"],
+      "num1": 8,
+      "num2": 4,
+      "operator": "div"
+    }
+  ],
+  "8 / (-4)": [
+    {
+      "question": "What is 8 divided by -4?",
+      "correct": "-2",
+      "options": ["-1", "-2", "-3", "-12"],
+      "num1": 8,
+      "num2": -4,
+      "operator": "div"
+    }
+  ],
+  "(-8) / 4": [
+    {
+      "question": "What is -8 divided by 4?",
+      "correct": "-2",
+      "options": ["-1", "-2", "-3", "-8"],
+      "num1": -8,
+      "num2": 4,
+      "operator": "div"
+    }
+  ],
+  "(-8) / (-4)": [
+    {
+      "question": "What is -8 divided by -4?",
+      "correct": "2",
+      "options": ["1", "2", "3", "8"],
+      "num1": -8,
+      "num2": -4,
+      "operator": "div"
+    }
+  ],
+  "9 / 3": [
+    {
+      "question": "What is 9 divided by 3?",
+      "correct": "3",
+      "options": ["2", "3", "6", "12"],
+      "num1": 9,
+      "num2": 3,
+      "operator": "div"
+    }
+  ],
+  "9 / (-3)": [
+    {
+      "question": "What is 9 divided by -3?",
+      "correct": "-3",
+      "options": ["-2", "-3", "-6", "-12"],
+      "num1": 9,
+      "num2": -3,
+      "operator": "div"
+    }
+  ],
+  "(-9) / 3": [
+    {
+      "question": "What is -9 divided by 3?",
+      "correct": "-3",
+      "options": ["-2", "-3", "-6", "-9"],
+      "num1": -9,
+      "num2": 3,
+      "operator": "div"
+    }
+  ],
+  "(-9) / (-3)": [
+    {
+      "question": "What is -9 divided by -3?",
+      "correct": "3",
+      "options": ["2", "3", "6", "9"],
+      "num1": -9,
+      "num2": -3,
+      "operator": "div"
+    }
+  ],
+  "4 / 2": [
+    {
+      "question": "Divide 4 by 2.",
+      "correct": "2",
+      "options": ["1", "2", "6", "8"],
+      "num1": 4,
+      "num2": 2,
+      "operator": "div"
+    }
+  ],
+  "4 / (-2)": [
+    {
+      "question": "What is 4 divided by -2?",
+      "correct": "-2",
+      "options": ["-1", "-2", "-6", "-8"],
+      "num1": 4,
+      "num2": -2,
+      "operator": "div"
+    }
+  ],
+  "(-4) / 2": [
+    {
+      "question": "Divide -4 by 2.",
+      "correct": "-2",
+      "options": ["-1", "-2", "-6", "-4"],
+      "num1": -4,
+      "num2": 2,
+      "operator": "div"
+    }
+  ],
+  "(-4) / (-2)": [
+    {
+      "question": "What is -4 divided by -2?",
+      "correct": "2",
+      "options": ["1", "2", "6", "4"],
+      "num1": -4,
+      "num2": -2,
+      "operator": "div"
+    }
+  ],
+  "5 / 1": [
+    {
+      "question": "Calculate 5 divided by 1.",
+      "correct": "5",
+      "options": ["4", "5", "6", "0"],
+      "num1": 5,
+      "num2": 1,
+      "operator": "div"
+    }
+  ],
+  "5 / (-1)": [
+    {
+      "question": "What is 5 divided by -1?",
+      "correct": "-5",
+      "options": ["-4", "-5", "-6", "0"],
+      "num1": 5,
+      "num2": -1,
+      "operator": "div"
+    }
+  ],
+  "(-5) / 1": [
+    {
+      "question": "Calculate -5 divided by 1.",
+      "correct": "-5",
+      "options": ["-4", "-5", "-6", "0"],
+      "num1": -5,
+      "num2": 1,
+      "operator": "div"
+    }
+  ],
+  "(-5) / (-1)": [
+    {
+      "question": "What is -5 divided by -1?",
+      "correct": "5",
+      "options": ["4", "5", "6", "0"],
+      "num1": -5,
+      "num2": -1,
+      "operator": "div"
+    }
+  ] ,
+	
+	"10 / 2": [
+    {
+      "question": "What does 10 divided by 2 equal?",
+      "correct": "5",
+      "options": ["3", "5", "12", "8"],
+      "num1": 10,
+      "num2": 2,
+      "operator": "div"
+    }
+  ],
+  "10 / (-2)": [
+    {
+      "question": "What does 10 divided by -2 equal?",
+      "correct": "-5",
+      "options": ["-3", "-5", "12", "-8"],
+      "num1": 10,
+      "num2": -2,
+      "operator": "div"
+    }
+  ],
+  "(-10) / 2": [
+    {
+      "question": "What does -10 divided by 2 equal?",
+      "correct": "-5",
+      "options": ["-3", "-5", "-12", "8"],
+      "num1": -10,
+      "num2": 2,
+      "operator": "div"
+    }
+  ],
+  "(-10) / (-2)": [
+    {
+      "question": "What does -10 divided by -2 equal?",
+      "correct": "5",
+      "options": ["3", "5", "-12", "8"],
+      "num1": -10,
+      "num2": -2,
+      "operator": "div"
+    }
+  ],
+  "12 / 3": [
+    {
+      "question": "What is 12 divided by 3?",
+      "correct": "4",
+      "options": ["3", "4", "9", "15"],
+      "num1": 12,
+      "num2": 3,
+      "operator": "div"
+    }
+  ],
+  "12 / (-3)": [
+    {
+      "question": "What is 12 divided by -3?",
+      "correct": "-4",
+      "options": ["-3", "-4", "-9", "-15"],
+      "num1": 12,
+      "num2": -3,
+      "operator": "div"
+    }
+  ],
+  "(-12) / 3": [
+    {
+      "question": "What is -12 divided by 3?",
+      "correct": "-4",
+      "options": ["-3", "-4", "-9", "-12"],
+      "num1": -12,
+      "num2": 3,
+      "operator": "div"
+    }
+  ],
+  "(-12) / (-3)": [
+    {
+      "question": "What is -12 divided by -3?",
+      "correct": "4",
+      "options": ["3", "4", "9", "12"],
+      "num1": -12,
+      "num2": -3,
+      "operator": "div"
+    }
+  ],
+  "7 / 1": [
+    {
+      "question": "What is 7 divided by 1?",
+      "correct": "7",
+      "options": ["6", "7", "8", "0"],
+      "num1": 7,
+      "num2": 1,
+      "operator": "div"
+    }
+  ],
+  "7 / (-1)": [
+    {
+      "question": "What is 7 divided by -1?",
+      "correct": "-7",
+      "options": ["-6", "-7", "-8", "0"],
+      "num1": 7,
+      "num2": -1,
+      "operator": "div"
+    }
+  ],
+  "(-7) / 1": [
+    {
+      "question": "What is -7 divided by 1?",
+      "correct": "-7",
+      "options": ["-6", "-7", "-8", "0"],
+      "num1": -7,
+      "num2": 1,
+      "operator": "div"
+    }
+  ],
+  "(-7) / (-1)": [
+    {
+      "question": "What is -7 divided by -1?",
+      "correct": "7",
+      "options": ["6", "7", "8", "0"],
+      "num1": -7,
+      "num2": -1,
+      "operator": "div"
+    }
+  ],
+  "9 / 9": [
+    {
+      "question": "What is 9 divided by 9?",
+      "correct": "1",
+      "options": ["8", "1", "10", "0"],
+      "num1": 9,
+      "num2": 9,
+      "operator": "div"
+    }
+  ],
+  "9 / (-9)": [
+    {
+      "question": "What is 9 divided by -9?",
+      "correct": "-1",
+      "options": ["-8", "-1", "-10", "0"],
+      "num1": 9,
+      "num2": -9,
+      "operator": "div"
+    }
+  ],
+  "(-9) / 9": [
+    {
+      "question": "What is -9 divided by 9?",
+      "correct": "-1",
+      "options": ["-8", "-1", "-10", "0"],
+      "num1": -9,
+      "num2": 9,
+      "operator": "div"
+    }
+  ],
+  "(-9) / (-9)": [
+    {
+      "question": "What is -9 divided by -9?",
+      "correct": "1",
+      "options": ["8", "1", "10", "0"],
+      "num1": -9,
+      "num2": -9,
+      "operator": "div"
+    }
+  ],
+  "0 / 5": [
+    {
+      "question": "What is 0 divided by 5?",
+      "correct": "0",
+      "options": ["5", "0", "1", "-5"],
+      "num1": 0,
+      "num2": 5,
+      "operator": "div"
+    }
+  ],
+  "0 / (-5)": [
+    {
+      "question": "What is 0 divided by -5?",
+      "correct": "0",
+      "options": ["-5", "0", "1", "5"],
+      "num1": 0,
+      "num2": -5,
+      "operator": "div"
+    }
+  ],
+  "(-0) / 5": [
+    {
+      "question": "What is -0 divided by 5?",
+      "correct": "0",
+      "options": ["5", "0", "1", "-5"],
+      "num1": 0,
+      "num2": 5,
+      "operator": "div"
+    }
+  ],
+  "(-0) / (-5)": [
+    {
+      "question": "What is -0 divided by -5?",
+      "correct": "0",
+      "options": ["-5", "0", "1", "5"],
+      "num1": 0,
+      "num2": -5,
+      "operator": "div"
+    }
+  ],
+ 
+  
+	
+},
+
+"Remainder": {
+  "Rem of 10 / 2": [
+    {
+      "question": "What is the remainder when 10 is divided by 2?",
+      "correct": "0",
+      "options": ["0", "5", "1", "2"],
+      "num1": 10,
+      "num2": 2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 10 / (-2)": [
+    {
+      "question": "What is the remainder when 10 is divided by -2?",
+      "correct": "0",
+      "options": ["0", "-5", "1", "-2"],
+      "num1": 10,
+      "num2": -2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-10) / 2": [
+    {
+      "question": "What is the remainder when -10 is divided by 2?",
+      "correct": "0",
+      "options": ["0", "-5", "-1", "2"],
+      "num1": -10,
+      "num2": 2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-10) / (-2)": [
+    {
+      "question": "What is the remainder when -10 is divided by -2?",
+      "correct": "0",
+      "options": ["0", "5", "-1", "-2"],
+      "num1": -10,
+      "num2": -2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 9 / 2": [
+    {
+      "question": "What is the remainder when 9 is divided by 2?",
+      "correct": "1",
+      "options": ["0", "1", "9", "5"],
+      "num1": 9,
+      "num2": 2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 9 / (-2)": [
+    {
+      "question": "What is the remainder when 9 is divided by -2?",
+      "correct": "1",
+      "options": ["0", "1", "-9", "-5"],
+      "num1": 9,
+      "num2": -2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-9) / 2": [
+    {
+      "question": "What is the remainder when -9 is divided by 2?",
+      "correct": "-1",
+      "options": ["0", "-1", "-9", "5"],
+      "num1": -9,
+      "num2": 2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-9) / (-2)": [
+    {
+      "question": "What is the remainder when -9 is divided by -2?",
+      "correct": "-1",
+      "options": ["0", "-1", "9", "-5"],
+      "num1": -9,
+      "num2": -2,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 7 / 5": [
+    {
+      "question": "What is the remainder when 7 is divided by 5?",
+      "correct": "2",
+      "options": ["0", "2", "7", "2.4"],
+      "num1": 7,
+      "num2": 5,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 7 / (-5)": [
+    {
+      "question": "What is the remainder when 7 is divided by -5?",
+      "correct": "2",
+      "options": ["0", "2", "-7", "-2.4"],
+      "num1": 7,
+      "num2": -5,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-7) / 5": [
+    {
+      "question": "What is the remainder when -7 is divided by 5?",
+      "correct": "-2",
+      "options": ["0", "-2", "-7", "2.4"],
+      "num1": -7,
+      "num2": 5,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-7) / (-5)": [
+    {
+      "question": "What is the remainder when -7 is divided by -5?",
+      "correct": "-2",
+      "options": ["0", "-2", "7", "-2.4"],
+      "num1": -7,
+      "num2": -5,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 7 / 4": [
+    {
+      "question": "What is the remainder when 7 is divided by 4?",
+      "correct": "3",
+      "options": ["3", "0", "1", "3.75"],
+      "num1": 7,
+      "num2": 4,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 7 / (-4)": [
+    {
+      "question": "What is the remainder when 7 is divided by -4?",
+      "correct": "3",
+      "options": ["3", "0", "-1", "-3.75"],
+      "num1": 7,
+      "num2": -4,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-7) / 4": [
+    {
+      "question": "What is the remainder when -7 is divided by 4?",
+      "correct": "-3",
+      "options": ["-3", "0", "-1", "3.75"],
+      "num1": -7,
+      "num2": 4,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-7) / (-4)": [
+    {
+      "question": "What is the remainder when -7 is divided by -4?",
+      "correct": "-3",
+      "options": ["-3", "0", "1", "-3.75"],
+      "num1": -7,
+      "num2": -4,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 8 / 3": [
+    {
+      "question": "Calculate the remainder of 8 divided by 3.",
+      "correct": "2",
+      "options": ["2", "5", "1", "0"],
+      "num1": 8,
+      "num2": 3,
+      "operator": "mod"
+    }
+  ],
+  "Rem of 8 / (-3)": [
+    {
+      "question": "Calculate the remainder of 8 divided by -3.",
+      "correct": "2",
+      "options": ["2", "-5", "1", "0"],
+      "num1": 8,
+      "num2": -3,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-8) / 3": [
+    {
+      "question": "Calculate the remainder of -8 divided by 3.",
+      "correct": "-2",
+      "options": ["-2", "-5", "-1", "0"],
+      "num1": -8,
+      "num2": 3,
+      "operator": "mod"
+    }
+  ],
+  "Rem of (-8) / (-3)": [
+    {
+      "question": "Calculate the remainder of -8 divided by -3.",
+      "correct": "-2",
+      "options": ["-2", "5", "-1", "0"],
+      "num1": -8,
+      "num2": -3,
+      "operator": "mod"
+    }
+  ]
+},
+
+"Multiplcation Steps": {
 	
 	 "6 x 7": [
       {
@@ -977,7 +2593,7 @@ window.categories = {
    
 
   
-  "Division": {
+  "Division Steps": {
 	  
 	
 	  

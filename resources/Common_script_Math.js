@@ -33,7 +33,7 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 
 		const fraction_piechart_height = 300; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
@@ -1219,7 +1219,33 @@ function displayDivision(card) {
 			document.getElementById('myTableContainer').innerHTML = myTableHTML;
 			table_init = 1;
 			}
+
  
+}
+
+// Function to set slider values programmatically
+function setSliderValues(a, b, op) {
+    let sliderA = document.getElementById("sliderA");
+    let sliderB = document.getElementById("sliderB"); 
+	let op2 = document.getElementById("operation2");
+
+    sliderA.value = a;
+    sliderB.value = b;
+	op2.value = op
+
+    updateMath();
+}
+
+
+function displayOp(card){
+	
+	OngoingOp = 5;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.remove("hidden");
+	
+   setSliderValues(card.num1 ,card.num2 , card.operator )
 }
   
 		
@@ -1269,7 +1295,7 @@ function displayDivision(card) {
             optionsDiv.innerHTML = "";
 			
 			
-			 if (currenttopLevelCategoryName === "Division") {
+			 if (currenttopLevelCategoryName == "Division Steps") {
 					displayDivision(card); // Use displayDivision for division
 			}else if ((currenttopLevelCategoryName == "Fraction 1") || (currenttopLevelCategoryName == "Fraction 2")) {
 					displayFraction(card); // Use displayDivision for division
@@ -1277,8 +1303,9 @@ function displayDivision(card) {
 				displayVisualFraction(card); 
 			}else if (currenttopLevelCategoryName == "Visual Add, Sub, Mul, Div, Rem"){
 				displayVisualAdd(card); 
-			}	
-			else {
+			}else if ((currenttopLevelCategoryName == "Addition") || (currenttopLevelCategoryName == "Multiplcation") || (currenttopLevelCategoryName == "Subtraction") || (currenttopLevelCategoryName == "Division") || (currenttopLevelCategoryName == "Remainder")) {
+				displayOp(card); 
+			} else {
 				displayMultiplication(card); // Use displayMultiplication for multiplication
 			}
 			
@@ -1610,7 +1637,7 @@ function ans_mult(selected){
 				} else if (OngoingOp == 2){
 					ans_fraction(selected);
 				}	
-				else if (OngoingOp == 3 || OngoingOp == 4){
+				else if (OngoingOp == 3 || OngoingOp == 4 || OngoingOp == 5){
 					ans_visual(selected);
 				}	
 				
