@@ -27,6 +27,20 @@ window.categories = {
 	  
 
 },
+
+"Visual Angle, Triangle, Quad": {	
+	
+	  
+	"Operation": [
+      {
+		"question": "2",
+		"options": ["Done"] ,
+		"correct": "Done"
+	  }
+	  ] ,	  
+	  
+
+},
 	  
    
   "Addition": {

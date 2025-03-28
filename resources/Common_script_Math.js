@@ -33,7 +33,7 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 
 		const fraction_piechart_height = 300; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
@@ -706,6 +706,7 @@ function displayVisualFraction(card){
 	  
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	//document.getElementById("game-chart-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");	  
  
 			
@@ -1162,6 +1163,7 @@ function displayVisualAdd(card){
 	
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	document.getElementById("game-chart-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");
 	//document.getElementById("game-op-container").classList.add("hidden");
 	
 	
@@ -1178,6 +1180,7 @@ function displayFraction(card){
 	
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
 	
     if (card.denominator2)	{
@@ -1194,6 +1197,7 @@ function displayMultiplication(card){
 	
             document.getElementById('charts').innerHTML = "";	 // clear any chart
 			document.getElementById("game-chart-container").classList.add("hidden");
+			document.getElementById("game-angle-container").classList.add("hidden");
 			document.getElementById("game-op-container").classList.add("hidden");
 			
 			if (table_init == 0){
@@ -1212,6 +1216,7 @@ function displayDivision(card) {
 	//drawCharts(card.num1, 0, card.num2 , 0);	
 	document.getElementById('charts').innerHTML = "";	 // clear any chart
 	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
 	
 			if (table_init == 0){
@@ -1236,6 +1241,213 @@ function setSliderValues(a, b, op) {
     updateMath();
 }
 
+  // --- Canvas, Context, Displays, Elements ---
+    const canvas = document.getElementById('geometryCanvas'); const ctx = canvas.getContext('2d'); const metricsDisplayLeft = document.getElementById('metrics-display-left'); const infoTextDisplay = document.getElementById('info-text'); /* */
+    const canvasWidth = canvas.width; /* */
+    const canvasHeight = canvas.height; /* */
+    const labelSide1 = document.getElementById('labelSide1'); const labelSide2 = document.getElementById('labelSide2'); const labelAngle = document.getElementById('labelAngle'); const sliderAngle = document.getElementById('sliderAngle'); /* */
+
+    // --- Coordinate System Settings (Origin snapped to grid) ---
+    const scale = 25; /* */
+    const originX = Math.round(canvasWidth / 2 / scale) * scale; /* */
+    const originY = Math.round(canvasHeight / 2 / scale) * scale + (scale * 3) ; /* */
+    const axisColor = '#aaa'; const axisLabelColor = '#555'; const gridColor = '#e8e8e8'; const pointColor = '#007bff'; const heightColor = '#28a745'; const shapeColor = '#333'; /* */
+     // --- Colors ---
+    const colorAB = '#ff6347'; const colorBC = '#4682b4'; const colorCD = '#32cd32'; const colorDA = '#ffa500'; const fillColor = 'rgba(200, 200, 255, 0.3)'; /* */
+    // --- Tolerance ---
+    const epsilon = 0.01; const angleEpsilon = 0.5; /* */
+    // --- Global Math Coords ---
+    let mthA={}, mthB={}, mthC={}, mthD={}, mthH={}; /* */
+
+    // --- Update Visualization ---
+    function updateVisualization() { /* */
+        // ... (Reading sliders and adjusting controls remains the same) ...
+        const selectedTopic = document.getElementById('geometryTopic').value; /* */ const side1Len = parseFloat(document.getElementById('sliderSide1').value); document.getElementById('valueSide1').innerText = side1Len; /* */ const side2Len = parseFloat(document.getElementById('sliderSide2').value); document.getElementById('valueSide2').innerText = side2Len; /* */ let angleDegrees = parseInt(sliderAngle.value); /* */ if (selectedTopic === 'angle') { labelSide1.innerText = "AB:"; labelSide2.innerText = "BC:"; labelAngle.innerText = "Angle B:"; if (sliderAngle.max !== "360") { sliderAngle.min = 0; sliderAngle.max = 360; angleDegrees = parseInt(sliderAngle.value); } document.getElementById('quad-controls').style.display = 'none'; } else { labelSide1.innerText = "AB:"; labelSide2.innerText = "BC:"; labelAngle.innerText = "Angle B"; if (sliderAngle.max !== "179") { sliderAngle.min = 1; sliderAngle.max = 179; angleDegrees = Math.min(179, Math.max(1, angleDegrees)); sliderAngle.value = angleDegrees; } document.getElementById('quad-controls').style.display = selectedTopic === 'quadrilateral' ? 'block' : 'none'; } document.getElementById('valueAngle').innerText = angleDegrees; /* */ let topLengthCD = 0; if (selectedTopic === 'quadrilateral') { topLengthCD = parseFloat(document.getElementById('sliderTopCD').value); document.getElementById('valueTopCD').innerText = topLengthCD; } /* */
+
+        // --- Clear & Draw Background ---
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight); metricsDisplayLeft.style.display = 'none'; drawGrid(); drawAxes(); /* */
+
+        // --- Topic Specific Logic ---
+        try {
+            if (selectedTopic === 'angle') { /* */
+                 const angleRad=angleDegrees*(Math.PI/180); mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleRad), y:side2Len*Math.sin(angleRad)}; drawAngle(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC),angleDegrees, side1Len, side2Len, colorAB, colorBC); const angleTypeResult = getAngleType(angleDegrees); metricsDisplayLeft.innerHTML = `Type: ${angleTypeResult.name}<br><span style="font-size:9px; font-weight:normal;">(${angleTypeResult.reason})</span>`; metricsDisplayLeft.style.display='block'; /* */
+
+            } else if (selectedTopic === 'triangle') { /* */
+                 const angleBRad=angleDegrees*(Math.PI/180); mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:side2Len*Math.sin(angleBRad)}; const height_tri=Math.abs(mthC.y); mthH={x:mthC.x,y:0}; const sideAC=calculateDistance(mthA,mthC); if(isNaN(sideAC))throw new Error("Calc error."); let angleA_deg=0; if(side1Len>epsilon&&sideAC>epsilon){const cosA=(side1Len**2+sideAC**2-side2Len**2)/(2*side1Len*sideAC); angleA_deg=Math.acos(Math.max(-1,Math.min(1,cosA)))*(180/Math.PI);} let angleC_deg=0; if(side2Len>epsilon&&sideAC>epsilon){const cosC=(side2Len**2+sideAC**2-side1Len**2)/(2*side2Len*sideAC); angleC_deg=Math.acos(Math.max(-1,Math.min(1,cosC)))*(180/Math.PI);} if(Math.abs(angleA_deg+angleDegrees+angleC_deg-180)>angleEpsilon*5){angleC_deg=180-angleA_deg-angleDegrees;} const base_tri=side1Len; const area_tri=0.5*base_tri*height_tri; const perimeter_tri=side1Len+side2Len+sideAC; drawTriangleShape(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const triTypeResult=getTriangleType(side1Len,side2Len,sideAC,angleA_deg,angleDegrees,angleC_deg); metricsDisplayLeft.innerHTML=`<b>Metrics (Triangle):</b><br> AB=${side1Len.toFixed(1)} BC=${side2Len.toFixed(1)} AC≈${sideAC.toFixed(1)}<br> Height CH≈${height_tri.toFixed(1)}<br><hr> ∠A≈${angleA_deg.toFixed(1)}° ∠B=${angleDegrees.toFixed(1)}° ∠C≈${angleC_deg.toFixed(1)}°<br><hr> Perim≈${perimeter_tri.toFixed(1)}<br>Area Formula: 1/2 * Base * Height<br>Area≈${area_tri.toFixed(1)}<br>Type: ${triTypeResult.name}<br><hr><span style="font-size:9px; font-weight:normal;">(${triTypeResult.reason})</span>`; metricsDisplayLeft.style.display='block';  /* */
+
+            } else if (selectedTopic === 'quadrilateral') { /* */
+                 if(side1Len<=0||side2Len<=0){handleInvalidInput("Side lengths must be positive."); return;} const angleBRad=angleDegrees*(Math.PI/180); const height=side2Len*Math.sin(angleBRad); if(height<epsilon){handleInvalidInput("Height near zero; invalid shape."); return;} mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:height}; mthD={x:mthC.x-topLengthCD,y:height}; mthH={x:mthC.x, y:0}; const sideBC=side2Len; const sideDA=calculateDistance(mthD,mthA); if(isNaN(sideDA))throw new Error("Calc error."); const angleB_q=angleDegrees; const angleA_q=calculateAngleAtVertex(mthA,mthD,mthB); const angleD_q=calculateAngleAtVertex(mthD,mthC,mthA); const angleC_q=calculateAngleAtVertex(mthC,mthB,mthD); const perimeter_q=side1Len+sideBC+Math.abs(topLengthCD)+sideDA; const area_q_final=0.5*Math.abs(side1Len+topLengthCD)*height; drawQuadrilateral(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC),mathToCanvas(mthD)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const quadTypeResult=getQuadrilateralName(side1Len,sideBC,Math.abs(topLengthCD),sideDA,angleA_q,angleB_q,angleC_q,angleD_q,height); metricsDisplayLeft.innerHTML=`<b>Metrics (Quad):</b><br> AB=${side1Len.toFixed(1)} BC=${sideBC.toFixed(1)} CD=${Math.abs(topLengthCD).toFixed(1)} DA≈${sideDA.toFixed(1)}<br> Height CH≈${height.toFixed(1)}<br><hr> ∠A≈${angleA_q.toFixed(1)}° ∠B=${angleB_q.toFixed(1)}°<br> ∠C≈${angleC_q.toFixed(1)}° ∠D≈${angleD_q.toFixed(1)}°<br> (Sum: ${(angleA_q+angleB_q+angleC_q+angleD_q).toFixed(0)}°)<br><hr> Perim≈${perimeter_q.toFixed(1)}<br>Area Formula: 1/2*(AB+CD)*Height<br>Area≈${area_q_final.toFixed(1)}<br><hr> Type: ${quadTypeResult.name}<br><span style="font-size:9px; font-weight:normal;">(${quadTypeResult.reason})</span>}`; metricsDisplayLeft.style.display='block'; /* */
+            }
+         } catch (e) { console.error(e); handleInvalidInput("Error during calculation or drawing."); } /* */
+    }
+
+     // --- Handle Invalid Input ---
+     function handleInvalidInput(message){ /* ... */ ctx.fillStyle='red'; ctx.font='14px Arial'; ctx.textAlign='center'; ctx.fillText(message, canvasWidth/2, 40); ctx.textAlign='left'; metricsDisplayLeft.style.display='none';  } /* */
+    // --- Coordinate Transformation ---
+    function mathToCanvas(mathPoint){ /* ... */ return { x:originX+mathPoint.x*scale, y:originY-mathPoint.y*scale }; } /* */
+
+    // --- Drawing Functions ---
+     function drawGrid(){ /* ... */ ctx.strokeStyle=gridColor; ctx.lineWidth=0.5; for(let x=0; x<=canvasWidth; x+=scale){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,canvasHeight); ctx.stroke(); } for(let y=0; y<=canvasHeight; y+=scale){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(canvasWidth,y); ctx.stroke(); } } /* */
+     function drawAxes() { // Draws -10 to 10 labels /* */
+         ctx.strokeStyle=axisColor; ctx.fillStyle=axisLabelColor; ctx.lineWidth=1; ctx.font='10px Arial'; ctx.beginPath(); ctx.moveTo(0, originY); ctx.lineTo(canvasWidth, originY); ctx.stroke(); ctx.beginPath(); ctx.moveTo(originX, 0); ctx.lineTo(originX, canvasHeight); ctx.stroke(); /* */
+         for (let i = -10; i <= 10; i++) { if(i===0)continue; const xPos=originX+i*scale; ctx.beginPath(); ctx.moveTo(xPos, originY-4); ctx.lineTo(xPos, originY+4); ctx.stroke(); if(xPos>5&&xPos<canvasWidth-5)ctx.fillText(i, xPos-(i<0?6:3), originY+15); } /* */
+         for (let i = -10; i <= 10; i++) { if(i===0)continue; const yPos=originY-i*scale; ctx.beginPath(); ctx.moveTo(originX-4, yPos); ctx.lineTo(originX+4, yPos); ctx.stroke(); if(yPos>10&&yPos<canvasHeight-5)ctx.fillText(i, originX+8, yPos+3); } ctx.fillText('0', originX-10, originY+15); /* */
+     } /* */
+
+    function drawAngle(cvA, cvB, cvC, degrees, len1, len2, color1 = shapeColor, color2 = shapeColor){ // Added vertex coords /* */
+        // ... (Draw lines, labels with coords, arc, points - same as previous) ...
+        const radians = degrees*(Math.PI/180); ctx.lineWidth=2; ctx.font='bold 10px Arial'; ctx.strokeStyle=color1; ctx.fillStyle=color1; ctx.beginPath(); ctx.moveTo(cvB.x,cvB.y); ctx.lineTo(cvA.x,cvA.y); ctx.stroke(); ctx.fillText(`A (${mthA.x.toFixed(1)},${mthA.y.toFixed(1)})`,cvA.x+5,cvA.y+15); ctx.strokeStyle=color2; ctx.fillStyle=color2; ctx.beginPath(); ctx.moveTo(cvB.x,cvB.y); ctx.lineTo(cvC.x,cvC.y); ctx.stroke(); if(degrees>1&&degrees<359)ctx.fillText(`C (${mthC.x.toFixed(1)},${mthC.y.toFixed(1)})`,cvC.x+5,cvC.y-5); else if(degrees<=1)ctx.fillText(`C≈A`,cvA.x+5,cvA.y-5); ctx.fillStyle=shapeColor; ctx.fillText(`B (${mthB.x.toFixed(1)},${mthB.y.toFixed(1)})`,cvB.x-40,cvB.y+15); ctx.beginPath(); ctx.arc(cvB.x,cvB.y,15,0,-radians,true); ctx.strokeStyle='#d9534f'; ctx.lineWidth=1.5; ctx.stroke(); const tr=22, ta=-radians/2, tx=cvB.x+tr*Math.cos(ta), ty=cvB.y+tr*Math.sin(ta); ctx.fillStyle='#333'; ctx.font='10px Arial'; ctx.fillText(degrees+'°',tx,ty); ctx.fillStyle=pointColor; [cvB,cvA,cvC].forEach(p=>{ctx.beginPath(); ctx.arc(p.x,p.y,3,0,2*Math.PI); ctx.fill();}); ctx.fillStyle=shapeColor; ctx.strokeStyle=shapeColor; ctx.lineWidth=2;
+    } /* */
+
+    function drawTriangleShape(cvA, cvB, cvC){ // Added vertex coords and side dashes /* */
+         ctx.lineWidth = 2; ctx.font = 'bold 10px Arial'; /* */
+         // Fill Area
+         ctx.fillStyle = fillColor; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.closePath(); ctx.fill(); /* */
+         // Sides
+         ctx.strokeStyle = colorAB; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.stroke(); // AB /* */
+         ctx.strokeStyle = colorBC; ctx.beginPath(); ctx.moveTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.stroke(); // BC /* */
+         ctx.strokeStyle = colorDA; ctx.beginPath(); ctx.moveTo(cvC.x, cvC.y); ctx.lineTo(cvA.x, cvA.y); ctx.stroke(); // CA /* */
+
+         // --- Side Equality Dashes ---
+         const sAB = calculateDistance(mthA, mthB); const sBC = calculateDistance(mthB, mthC); const sAC = calculateDistance(mthC, mthA); /* */
+         let dashStyles = {}; let currentStyle = 1; /* */
+         const ab_bc = Math.abs(sAB - sBC) < epsilon;
+         const bc_ac = Math.abs(sBC - sAC) < epsilon;
+         const ac_ab = Math.abs(sAC - sAB) < epsilon;
+
+         if (ab_bc && bc_ac) { // Equilateral
+            dashStyles.AB = 1; dashStyles.BC = 1; dashStyles.AC = 1;
+         } else if (ab_bc) {
+            dashStyles.AB = 1; dashStyles.BC = 1;
+            if (ac_ab) { /* Should not happen if equilateral handled */ }
+         } else if (bc_ac) {
+            dashStyles.BC = 1; dashStyles.AC = 1;
+         } else if (ac_ab) {
+            dashStyles.AC = 1; dashStyles.AB = 1;
+         } // No else needed for scalene
+
+         if(dashStyles.AB) drawSideDash(cvA, cvB, dashStyles.AB); /* */
+         if(dashStyles.BC) drawSideDash(cvB, cvC, dashStyles.BC); /* */
+         if(dashStyles.AC) drawSideDash(cvC, cvA, dashStyles.AC); /* */
+
+         // Points & Labels with Coords
+         const points = [{p:cvA, l:'A', m:mthA}, {p:cvB, l:'B', m:mthB}, {p:cvC, l:'C', m:mthC}]; /* */
+         points.forEach(item => { ctx.fillStyle = pointColor; ctx.beginPath(); ctx.arc(item.p.x, item.p.y, 3, 0, 2*Math.PI); ctx.fill(); ctx.fillStyle = shapeColor; ctx.fillText(`${item.l} (${item.m.x.toFixed(1)},${item.m.y.toFixed(1)})`, item.p.x+(item.l==='A'||item.l==='B'?-25:5), item.p.y+(item.l==='A'||item.l==='B'?25:-5)); }); /* */
+         ctx.fillStyle = shapeColor; /* */
+    } /* */
+
+    function drawQuadrilateral(cvA, cvB, cvC, cvD){ // Added vertex coords and side dashes /* */
+        ctx.lineWidth = 2; ctx.font = 'bold 10px Arial'; /* */
+        // Fill Area
+        ctx.fillStyle = fillColor; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.lineTo(cvD.x, cvD.y); ctx.closePath(); ctx.fill(); /* */
+        // Sides: A->B, B->C, C->D, D->A
+        ctx.strokeStyle = colorAB; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.stroke(); // AB /* */
+        ctx.strokeStyle = colorBC; ctx.beginPath(); ctx.moveTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.stroke(); // BC /* */
+        ctx.strokeStyle = colorCD; ctx.beginPath(); ctx.moveTo(cvC.x, cvC.y); ctx.lineTo(cvD.x, cvD.y); ctx.stroke(); // CD /* */
+        ctx.strokeStyle = colorDA; ctx.beginPath(); ctx.moveTo(cvD.x, cvD.y); ctx.lineTo(cvA.x, cvA.y); ctx.stroke(); // DA /* */
+
+        // --- Side Equality Dashes (Revised Logic) ---
+        const sAB = calculateDistance(mthA, mthB); const sBC = calculateDistance(mthB, mthC); const sCD = calculateDistance(mthC, mthD); // Use direct distance for CD
+        const sDA = calculateDistance(mthD, mthA);
+        let qDashStyles = {};
+        const ab_eq_bc = Math.abs(sAB - sBC) < epsilon;
+        const bc_eq_cd = Math.abs(sBC - sCD) < epsilon;
+        const cd_eq_da = Math.abs(sCD - sDA) < epsilon;
+        const da_eq_ab = Math.abs(sDA - sAB) < epsilon;
+        const ab_eq_cd = Math.abs(sAB - sCD) < epsilon; // Opposite 1
+        const bc_eq_da = Math.abs(sBC - sDA) < epsilon; // Opposite 2
+
+        if (ab_eq_bc && bc_eq_cd && cd_eq_da) { // All 4 equal (Rhombus/Square)
+            qDashStyles.AB = 1; qDashStyles.BC = 1; qDashStyles.CD = 1; qDashStyles.DA = 1;
+        } else {
+            let currentStyle = 1;
+            if (ab_eq_cd) { // Pair 1 (AB=CD)
+                qDashStyles.AB = currentStyle;
+                qDashStyles.CD = currentStyle;
+            } 
+			
+			if (bc_eq_da) { // Pair 2 (BC=DA)
+                 // If pair 1 was also equal, use style 1, otherwise use next style (1 or 2)
+                const style = ab_eq_cd ? currentStyle+1 : currentStyle;
+                qDashStyles.BC = style;
+                qDashStyles.DA = style;
+                if (!ab_eq_cd) currentStyle++; // Increment style only if pair 1 wasn't equal
+            }
+             // Could add checks for adjacent pairs (kites) but keeping simple for now
+        }
+
+        if(qDashStyles.AB) drawSideDash(cvA, cvB, qDashStyles.AB);
+        if(qDashStyles.BC) drawSideDash(cvB, cvC, qDashStyles.BC);
+        if(qDashStyles.CD) drawSideDash(cvC, cvD, qDashStyles.CD);
+        if(qDashStyles.DA) drawSideDash(cvD, cvA, qDashStyles.DA);
+
+        // Points & Labels with Coords
+        const points = [{p:cvA, l:'A', m:mthA}, {p:cvB, l:'B', m:mthB}, {p:cvC, l:'C', m:mthC}, {p:cvD, l:'D', m:mthD}]; /* */
+        points.forEach(item => { /* ... (labeling adjusted slightly) ... */ ctx.fillStyle = pointColor; ctx.beginPath(); ctx.arc(item.p.x, item.p.y, 3, 0, 2*Math.PI); ctx.fill(); ctx.fillStyle = shapeColor; let lx=item.p.x+5, ly=item.p.y-5; if(item.l==='A'){lx-=25;ly+=30;} if(item.l==='B'){lx-=45; ly+=30;} if(item.l==='D')lx-=45; if(item.l==='C')lx+=3; ctx.fillText(`${item.l} (${item.m.x.toFixed(1)},${item.m.y.toFixed(1)})`, lx, ly); ctx.fillStyle = pointColor; }); /* */
+        ctx.fillStyle = shapeColor; /* */
+    } /* */
+
+    function drawDottedHeightLine(cvTop, cvFoot, label){ /* ... (same) ... */ ctx.strokeStyle=heightColor; ctx.lineWidth=1.5; ctx.setLineDash([3,3]); ctx.beginPath(); ctx.moveTo(cvTop.x,cvTop.y); ctx.lineTo(cvFoot.x,cvFoot.y); ctx.stroke(); ctx.setLineDash([]); ctx.fillStyle=heightColor; ctx.beginPath(); ctx.arc(cvFoot.x,cvFoot.y,3,0,2*Math.PI); ctx.fill(); ctx.font='bold 11px Arial'; ctx.fillText(label, cvFoot.x-5, cvFoot.y+15); ctx.fillStyle=shapeColor; } /* */
+
+    // --- NEW: Draw Side Dash Function ---
+    function drawSideDash(cvP1, cvP2, style = 1, length = 8, gap = 4) { // Increased gap
+        const midX = (cvP1.x + cvP2.x) / 2; const midY = (cvP1.y + cvP2.y) / 2; const angle = Math.atan2(cvP2.y - cvP1.y, cvP2.x - cvP1.x); const perpAngle = angle + Math.PI / 2; /* */
+        ctx.strokeStyle = shapeColor; ctx.lineWidth = 1.5; /* */
+        for (let i = 0; i < style; i++) { /* */
+            const offset = (i - (style - 1) / 2) * (length/1.5 + gap) ; // Adjusted spacing /* */
+            const startX = midX + offset * Math.cos(angle) - length / 2 * Math.cos(perpAngle); const startY = midY + offset * Math.sin(angle) - length / 2 * Math.sin(perpAngle); const endX = midX + offset * Math.cos(angle) + length / 2 * Math.cos(perpAngle); const endY = midY + offset * Math.sin(angle) + length / 2 * Math.sin(perpAngle); /* */
+            ctx.beginPath(); ctx.moveTo(startX, startY); ctx.lineTo(endX, endY); ctx.stroke(); /* */
+        } ctx.lineWidth = 2; // Reset line width /* */
+    }
+
+    // --- Type Classification ---
+    function getAngleType(degrees){ // Returns {name, reason} /* */
+        degrees=degrees%360; if(degrees<0)degrees+=360; /* */
+        if(Math.abs(degrees-0)<epsilon||Math.abs(degrees-360)<epsilon) return{name:"Zero/Full", reason:"Angle = 0°/360°"}; /* */
+        if(degrees>0&&degrees<90) return{name:"Acute", reason:"0° < Angle < 90°"}; /* */
+        if(Math.abs(degrees-90)<angleEpsilon) return{name:"Right", reason:"Angle = 90°"}; /* */
+        if(degrees>90&&degrees<180) return{name:"Obtuse", reason:"90° < Angle < 180°"}; /* */
+        if(Math.abs(degrees-180)<angleEpsilon) return{name:"Straight", reason:"Angle = 180°"}; /* */
+        if(degrees>180&&degrees<360) return{name:"Reflex", reason:"180° < Angle < 360°"}; /* */
+        return{name:"Unknown", reason:""}; } /* */
+
+    function getTriangleType(sAB, sBC, sAC, aA, aB, aC){ // Returns {name, reason} /* */
+        // ... (same logic) ... /* */
+        let sideType="", angleType="", sideReason="", angleReason=""; const ab_bc=Math.abs(sAB-sBC)<epsilon; const bc_ac=Math.abs(sBC-sAC)<epsilon; const ac_ab=Math.abs(sAC-sAB)<epsilon; if(ab_bc&&bc_ac){sideType="Equilateral"; sideReason="AB = BC = CA";} else if(ab_bc||bc_ac||ac_ab){sideType="Isosceles"; sideReason=ab_bc?"AB = BC":bc_ac?"BC = CA":"CA = AB";} else{sideType="Scalene"; sideReason="All sides different";} const isRight=Math.abs(aA-90)<angleEpsilon||Math.abs(aB-90)<angleEpsilon||Math.abs(aC-90)<angleEpsilon; const isObtuse=aA>90+angleEpsilon||aB>90+angleEpsilon||aC>90+angleEpsilon; if(isRight){angleType="Right"; angleReason=Math.abs(aA-90)<angleEpsilon?"∠A=90°":Math.abs(aB-90)<angleEpsilon?"∠B=90°":"∠C=90°";} else if(isObtuse){angleType="Obtuse"; angleReason=aA>90?"∠A>90°":aB>90?"∠B>90°":"∠C>90°";} else{angleType="Acute"; angleReason="All angles < 90°";} return{name:`${sideType} ${angleType}`, reason:`${sideReason}; ${angleReason}`};
+    } /* */
+
+    function getQuadrilateralName(sAB, sBC, sCD, sDA, aA, aB, aC, aD, height){ // Returns {name, reason} /* */
+         // Use Math.abs(sCD) for length comparison /* */
+         const absCD = Math.abs(sCD); /* */
+         const isParallelAB_CD=true; const slopeBC=(mthC.y-mthB.y)/(mthC.x-mthB.x); const slopeDA=(mthA.y-mthD.y)/(mthA.x-mthD.x); const isBCV=Math.abs(mthC.x-mthB.x)<epsilon; const isDAV=Math.abs(mthA.x-mthD.x)<epsilon; let isParallelBC_DA=false; if(isBCV&&isDAV)isParallelBC_DA=true; else if(!isBCV&&!isDAV)isParallelBC_DA=Math.abs(slopeBC-slopeDA)<epsilon; const isRA=Math.abs(aA-90)<angleEpsilon; const isRB=Math.abs(aB-90)<angleEpsilon; const isRC=Math.abs(aC-90)<angleEpsilon; const isRD=Math.abs(aD-90)<angleEpsilon; const allRA=isRA&&isRB&&isRC&&isRD; const nonParEq=Math.abs(sBC-sDA)<epsilon; const allSidesEq=Math.abs(sAB-sBC)<epsilon&&Math.abs(sBC-absCD)<epsilon&&Math.abs(absCD-sDA)<epsilon; let name="Trapezoid", reason="AB || CD"; if(isParallelBC_DA){name="Parallelogram"; reason="AB||CD & BC||DA"; if(allSidesEq){name="Rhombus"; reason="Parallelogram w/ AB=BC=CD=DA"; if(allRA){name="Square"; reason="Rhombus w/ all ∠=90°";}}else if(allRA){name="Rectangle"; reason="Parallelogram w/ all ∠=90°";}}else if(nonParEq){name="Isosceles Trapezoid"; reason="Trapezoid w/ BC=DA";} if(sCD<0){name="Crossed Quadrilateral"; reason="CD length < 0";} return{name:name, reason:reason}; /* */
+    } /* */
+
+
+    // --- Calculation and Display ---
+    function calculateDistance(p1, p2){ /* ... */ return Math.sqrt(Math.pow(p2.x-p1.x, 2)+Math.pow(p2.y-p1.y, 2)); } /* */
+    function calculateAngleAtVertex(V, P_prev, P_next) { // Order: P_prev -> V -> P_next CCW? /* */
+        const v1x = P_prev.x - V.x; const v1y = P_prev.y - V.y; const v2x = P_next.x - V.x; const v2y = P_next.y - V.y; /* */
+        let angle = Math.atan2(v2y, v2x) - Math.atan2(v1y, v1x); if (angle < 0) angle += 2 * Math.PI; /* */
+        let degrees = angle * (180 / Math.PI); if (Math.abs(degrees) < angleEpsilon) return 0; /* */
+        if (Math.abs(degrees - 180) < angleEpsilon) return 180; if (Math.abs(degrees - 360) < angleEpsilon) return 0; return degrees; /* */
+    } /* */
+
+
+function displayVisualAngle(card){
+	
+	OngoingOp = 6;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
+	
+	
+	document.getElementById("game-angle-container").classList.remove("hidden");
+	
+	document.getElementById("metrics-display-left").classList.add("hidden");
+	
+   updateVisualization();
+}
 
 function displayOp(card){
 	
@@ -1243,6 +1455,8 @@ function displayOp(card){
 	
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.add("hidden");
+	
 	document.getElementById("game-op-container").classList.remove("hidden");
 	
    setSliderValues(card.num1 ,card.num2 , card.operator )
@@ -1305,7 +1519,11 @@ function displayOp(card){
 				displayVisualAdd(card); 
 			}else if ((currenttopLevelCategoryName == "Addition") || (currenttopLevelCategoryName == "Multiplcation") || (currenttopLevelCategoryName == "Subtraction") || (currenttopLevelCategoryName == "Division") || (currenttopLevelCategoryName == "Remainder")) {
 				displayOp(card); 
-			} else {
+			} 
+			else if (currenttopLevelCategoryName == "Visual Angle, Triangle, Quad"){
+				displayVisualAngle(card); 
+			}		
+			else {
 				displayMultiplication(card); // Use displayMultiplication for multiplication
 			}
 			
@@ -1637,7 +1855,7 @@ function ans_mult(selected){
 				} else if (OngoingOp == 2){
 					ans_fraction(selected);
 				}	
-				else if (OngoingOp == 3 || OngoingOp == 4 || OngoingOp == 5){
+				else if (OngoingOp == 3 || OngoingOp == 4 || OngoingOp == 5 || OngoingOp == 6){
 					ans_visual(selected);
 				}	
 				

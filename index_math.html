@@ -218,7 +218,8 @@
 				<div id="myTableContainer"></div>
 				 <div class="chart-container" id="charts"></div>
 				 
-				 
+
+ <!-- Fraction operations -->				 
 	 <div id="game-chart-container" class="hidden">			 
 		<div class="chart-container">
         <div class="chart-wrapper">
@@ -249,8 +250,10 @@
     </div>	
 	</div>	
 	
+	<!-- Operations -->
 	<div id="game-op-container" class="hidden">	
 	
+
 
 <div class="container">
 
@@ -308,6 +311,45 @@
   
 </div>
 </div>	
+
+<!-- Angle, Tri & Quad -->
+	<div id="game-angle-container" class="hidden">	
+<div class="container"> 
+    
+
+     <div id="topic-selector"> 
+          <label for="geometryTopic">Choose Topic:</label> <select id="geometryTopic" onchange="updateVisualization()"> <option value="angle">Angle</option> <option value="triangle">Triangle</option> <option value="quadrilateral">Quadrilateral</option> </select> 
+    </div>
+
+    
+    <div id="canvas-container"> 
+        
+        <canvas id="geometryCanvas" width="550" height="425"></canvas> 
+        <div id="metrics-display-left"  style="display: none;" ></div>
+        
+    </div>
+
+    <div class="controls-container"> 
+         
+         <div class="slider-container" id="side1-slider-div"> <label for="sliderSide1" id="labelSide1">AB:</label> <input type="range" id="sliderSide1" min="1" max="10" value="5" step="0.5" oninput="updateVisualization()"> <span id="valueSide1">5</span><span class="unit">units</span> </div> 
+         <div class="slider-container" id="side2-slider-div"> <label for="sliderSide2" id="labelSide2">BC:</label> <input type="range" id="sliderSide2" min="1" max="10" value="5" step="0.5" oninput="updateVisualization()"> <span id="valueSide2">5</span><span class="unit">units</span> </div> 
+         <div class="slider-container" id="angle-slider-div"> <label for="sliderAngle" id="labelAngle">Angle B:</label> <input type="range" id="sliderAngle" min="1" max="179" value="90" step="1" oninput="updateVisualization()"> <span id="valueAngle">90</span>° </div> 
+        
+         <div id="quad-controls" style="display: none;"> 
+              <hr style="border-top: 1px dashed #ccc; margin: 10px 0;"> 
+             <div class="slider-container"> 
+                 <label for="sliderTopCD">CD Length:</label>
+                 <input type="range" id="sliderTopCD" min="-10" max="10" value="-5" step="0.5" oninput="updateVisualization()"> 
+                 <span id="valueTopCD">5</span><span class="unit">units</span> 
+             </div>
+            
+        </div>
+    </div>
+
+</div>
+	
+</div>	
+
 	
 				
         </div>
