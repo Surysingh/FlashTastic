@@ -452,6 +452,8 @@ input:checked + .slider:before {
             align-items: center;
             margin: 10px 0;
         }
+		
+		
         input[type="range"] {
             width: 80%;
         }
@@ -466,6 +468,7 @@ input:checked + .slider:before {
             justify-content: center;
             gap: 5px;
             margin-top: 20px;
+			
         }
         .row {
             display: flex;
@@ -497,13 +500,14 @@ input:checked + .slider:before {
             margin-right: auto;
         }
         canvas {
-            border: 1px solid #ddd;
+            /* border: 1px solid #ddd; */
+			border: none;
             background-color: #fff;
         }
         .slider-container {
             display: flex;
-            justify-content: center; /* Center slider */
-            align-items: center;
+            justify-content: left; /* Center slider */
+            align-items: left;
             margin: 20px 0;
             padding: 0 10px;
             max-width: 500px; /* Limit slider width */

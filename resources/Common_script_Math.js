@@ -34,7 +34,7 @@
 		let Quot = 0;
 		let extra_shift = '';
 		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 
-		const fraction_piechart_height = 300; // height and width of pie charts
+		const fraction_piechart_height = 200; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
@@ -604,7 +604,7 @@ Dark Green
                 },
                 options: {
                     responsive: false,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
                     plugins: {
                         legend: { display: false },
                         title: { display: true, text: label }
@@ -661,7 +661,7 @@ Dark Green
             chart.options.plugins.title.text = `${numerator}/${denominator}`;
 
             chart.update();
-            document.getElementById(displayId).innerText = `${numerator}/${denominator}`;
+            document.getElementById(displayId).innerText = "" ;// `${numerator}/${denominator}`;
         }
 
         function calculateResult() {
