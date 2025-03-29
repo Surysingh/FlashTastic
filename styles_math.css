@@ -535,3 +535,176 @@ input:checked + .slider:before {
 #metrics-display-left { position: relative; top: -425px; right: 8px; background-color: rgba(255, 255, 255, 0.9); padding: 6px; border-radius: 4px; font-size: 10.5px; text-align: left; border: 1px solid #ccc; line-height: 1.3; max-width: 160px; } 
   
  .unit { font-size: 11px; margin-left: 2px; color: #555;} /* */	
+ 
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+     background-color: #f0f2f5;
+     min-width: 700px;
+ }
+
+ h1 {
+     color: #1c3d5a;
+     margin-bottom: 15px;
+ }
+
+ h3 {
+     color: #333;
+     margin-top: 0;
+     margin-bottom: 15px;
+     text-align: center;
+     width: 100%;
+     border-bottom: 1px solid #ddd;
+     padding-bottom: 8px;
+     font-weight: 600;
+ }
+
+ p {
+     color: #444;
+     text-align: center;
+     max-width: 600px;
+     margin-top: 0px;
+     margin-bottom: 15px;
+ }
+
+ #balanceCanvas {
+     background-color: #ffffff;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     margin-bottom: 20px;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+ }
+
+/* Equation Display Styling */
+ .equation-display {
+     margin-top: 0px;
+     margin-bottom: 20px;
+     width: 100%;
+     text-align: center;
+ }
+
+ strong#equation {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 1.5em;
+     padding: 8px 15px;
+     border-radius: 6px;
+     transition: background-color 0.4s ease, color 0.4s ease;
+     color: white;
+     display: inline-block;
+     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+ }
+
+/* Style the main controls container */
+ #all-controls {
+     background-color: #ffffff;
+     padding: 25px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+     width: 650px;
+     align-items: center;
+ }
+
+ /* Styling for sections within all controls */
+ .control-section {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     align-items: stretch;
+ }
+
+ #action-controls-section {
+      border-top: 2px solid #eee;
+      padding-top: 20px;
+      margin-top: 10px;
+ }
+
+/* Style each individual slider group (label ABOVE, input, span BELOW) */
+ .slider-group {
+     display: grid;
+     grid-template-areas:
+         "label value"
+         "slider slider";
+     grid-template-columns: 1fr auto;
+     grid-template-rows: auto auto;
+     gap: 2px 10px;
+     align-items: center;
+     width: 100%;
+ }
+
+ .slider-group label {
+     grid-area: label;
+     justify-self: start;
+     font-weight: 500;
+     color: #555;
+     font-size: 0.9em;
+     margin-bottom: 0px;
+ }
+
+ .slider-group input[type="range"] {
+     grid-area: slider;
+     width: 100%;
+     cursor: pointer;
+     height: 6px;
+     margin-top: 3px;
+ }
+
+ .slider-group span {
+     grid-area: value;
+     justify-self: end;
+     font-weight: bold;
+     color: #0056b3;
+     min-width: 45px;
+     text-align: right;
+     font-family: monospace;
+     font-size: 1.05em;
+ }
+
+/* Action Control Specifics */
+ .action-group {
+     width: 100%;
+     border: 1px solid #e0e0e0;
+     border-radius: 6px;
+     padding: 15px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .action-group .slider-group {
+     flex-basis: 100%;
+     margin-bottom: 10px;
+ }
+
+ .action-group button {
+     padding: 8px 10px;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 0.85em;
+     flex-basis: calc(50% - 10px);
+     text-align: center;
+     transition: background-color 0.2s ease;
+ }
+
+ .action-group button:hover {
+     background-color: #0056b3;
+ }
+
+ .action-group button:active {
+      background-color: #004085;
+ }
+
+/* Balance Indicator Colors */
+ .balanced { background-color: #28a745; color: white; }
+ .unbalanced { background-color: #dc3545; color: white; } 

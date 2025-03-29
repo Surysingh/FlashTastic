@@ -33,7 +33,7 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 7 angle, 8 algebra balance, 9 linear eq
 		const fraction_piechart_height = 200; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
@@ -707,7 +707,8 @@ function displayVisualFraction(card){
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	//document.getElementById("game-chart-container").classList.add("hidden");	
 	document.getElementById("game-angle-container").classList.add("hidden");
-	document.getElementById("game-op-container").classList.add("hidden");	  
+	document.getElementById("game-op-container").classList.add("hidden");	
+document.getElementById("game-algebra-balance-container").classList.add("hidden");	
  
 			
 				
@@ -1165,6 +1166,7 @@ function displayVisualAdd(card){
 	document.getElementById("game-chart-container").classList.add("hidden");	
 	document.getElementById("game-angle-container").classList.add("hidden");
 	//document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	
 	
 	
@@ -1182,6 +1184,7 @@ function displayFraction(card){
 	document.getElementById("game-chart-container").classList.add("hidden");
 	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	
     if (card.denominator2)	{
 		drawCharts(card.num1, card.num2, card.denominator , card.denominator2);	
@@ -1199,6 +1202,7 @@ function displayMultiplication(card){
 			document.getElementById("game-chart-container").classList.add("hidden");
 			document.getElementById("game-angle-container").classList.add("hidden");
 			document.getElementById("game-op-container").classList.add("hidden");
+			document.getElementById("game-algebra-balance-container").classList.add("hidden");
 			
 			if (table_init == 0){
 			let myTableHTML = makeTable(card.num1, card.num2);
@@ -1218,6 +1222,7 @@ function displayDivision(card) {
 	document.getElementById("game-chart-container").classList.add("hidden");
 	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	
 			if (table_init == 0){
 			let myTableHTML = makeTable_div(card.num1, card.num2);
@@ -1446,8 +1451,8 @@ function displayVisualAngle(card){
 	
 	
 	document.getElementById("game-angle-container").classList.remove("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	
-	document.getElementById("metrics-display-left").classList.add("hidden");
 	
    updateVisualization();
 }
@@ -1459,7 +1464,7 @@ function displayOp(card){
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	document.getElementById("game-chart-container").classList.add("hidden");
 	document.getElementById("game-angle-container").classList.add("hidden");
-	
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.remove("hidden");
 	
    setSliderValues(card.num1 ,card.num2 , card.operator )
@@ -1529,13 +1534,473 @@ function displayAngleTriangleQuad(card){
 		document.getElementById('myTableContainer').innerHTML = ""; // clear any table
 	document.getElementById("game-chart-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
-	
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	document.getElementById("game-angle-container").classList.remove("hidden");
 	
    setAngleSliderValues(card )
 }
+
+
+const balanceCanvas = document.getElementById('balanceCanvas');
+ const balanceCtx = balanceCanvas.getContext('2d');
+ 
+ console.log(document);
+
+// --- Slider and Value Displays ---
+
+ /*  BalSliderA
+   BalSliderA
+   BalSliderA */
+                 
+
+console.log(document.getElementById('BalSliderA'));
+ const BalsliderA = document.getElementById('BalSliderA');
+ const BalvalueA = document.getElementById('BalvalueA');
+ const BalsliderX = document.getElementById('BalSliderX');
+ const BalvalueX = document.getElementById('BalvalueX');
+ const BalsliderB = document.getElementById('BalSliderB');
+ const BalvalueB = document.getElementById('BalvalueB');
+ const BalsliderD = document.getElementById('BalSliderD');
+ const BalvalueD = document.getElementById('BalvalueD');
+ const BalsliderC = document.getElementById('BalSliderC');
+ const BalvalueC = document.getElementById('BalvalueC');
+ const equationDisplay = document.getElementById('equation');
+
+// --- Action Sliders and Buttons ---
+ const kConstSlider = document.getElementById('kConstSlider');
+ const BalvalKConst = document.getElementById('BalvalKConst');
+ const btnAddConst = document.getElementById('btnAddConst');
+ const btnSubConst = document.getElementById('btnSubConst');
+ const btnMultiplyConst = document.getElementById('btnMultiplyConst');
+ const btnDivideConst = document.getElementById('btnDivideConst');
+
+
+ const kX = document.getElementById('kX');
+ const BalvalKX = document.getElementById('BalvalKX');
+ const btnAddX = document.getElementById('btnAddX');
+ const btnSubX = document.getElementById('btnSubX');
+ //const btnMultiplyX = document.getElementById('btnMultiplyX');
+ //const btnDivideX = document.getElementById('btnDivideX');
+
+
+// --- Constants for Drawing (Adjusted for 600x400 balanceCanvas) ---
+ const scaleBaseY = balanceCanvas.height - 50;
+ const scaleBaseWidth = 150;
+ const scalePillarHeight = balanceCanvas.height * 0.7;
+ const scalePillarX = balanceCanvas.width / 2;
+ const scaleBeamY = scaleBaseY - scalePillarHeight;
+ const scaleBeamLength = balanceCanvas.width * 0.75;
+ const panWidth = 120;
+ const panHeight = 15;
+ const panStringLength = 90;
+ const maxTiltAngle = Math.PI / 18;
+ const tiltMultiplier = 0.02;
+
+ const itemSize = 18;
+ const itemPadding = 4;
+ const constantRadius = 16;
+ const baseFontSize = 12;
+
+// --- Colors ---
+ const colorPositive = '#5bc0de';
+ const colorNegative = '#d9534f';
+ const colorXPositive = '#5cb85c';
+ const colorXNegative = '#f0ad4e';
+ const colorScale = '#5a6268';
+ const colorBeam = '#868e96';
+ const colorPan = '#adb5bd';
+ const colorString = '#495057';
+ const colorTextLight = '#fff';
+ const colorTextDark = '#212529';
+
+// --- Drawing Functions ---
+
+ function drawScaleBase(balanceCtx) {
+     balanceCtx.fillStyle = colorScale;
+     balanceCtx.fillRect(scalePillarX - scaleBaseWidth / 2, scaleBaseY, scaleBaseWidth, 20);
+     balanceCtx.fillRect(scalePillarX - 10, scaleBeamY, 20, scalePillarHeight);
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(scalePillarX - 15, scaleBeamY);
+     balanceCtx.lineTo(scalePillarX + 15, scaleBeamY);
+     balanceCtx.lineTo(scalePillarX, scaleBeamY - 15);
+     balanceCtx.closePath();
+     balanceCtx.fillStyle = '#343a40';
+     balanceCtx.fill();
+ }
+
+ function drawScaleBeamAndPans(balanceCtx, tiltAngle) {
+     balanceCtx.save();
+     balanceCtx.translate(scalePillarX, scaleBeamY);
+     balanceCtx.rotate(tiltAngle);
+
+     balanceCtx.lineWidth = 8;
+     balanceCtx.strokeStyle = colorBeam;
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(-scaleBeamLength / 2, 0);
+     balanceCtx.lineTo(scaleBeamLength / 2, 0);
+     balanceCtx.stroke();
+
+     const leftPanAttachX = -scaleBeamLength / 2 + 30;
+     const rightPanAttachX = scaleBeamLength / 2 - 30;
+     const panAttachY = 0;
+
+     balanceCtx.lineWidth = 2;
+     balanceCtx.strokeStyle = colorString;
+
+     const leftPanBaseY = panAttachY + panStringLength;
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(leftPanAttachX, panAttachY);
+     balanceCtx.lineTo(leftPanAttachX - panWidth / 2 + 15, leftPanBaseY);
+     balanceCtx.moveTo(leftPanAttachX, panAttachY);
+     balanceCtx.lineTo(leftPanAttachX + panWidth / 2 - 15, leftPanBaseY);
+     balanceCtx.stroke();
+     balanceCtx.fillStyle = colorPan;
+     balanceCtx.fillRect(leftPanAttachX - panWidth / 2, leftPanBaseY, panWidth, panHeight);
+
+     const rightPanBaseY = panAttachY + panStringLength;
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(rightPanAttachX, panAttachY);
+     balanceCtx.lineTo(rightPanAttachX - panWidth / 2 + 15, rightPanBaseY);
+     balanceCtx.moveTo(rightPanAttachX, panAttachY);
+     balanceCtx.lineTo(rightPanAttachX + panWidth / 2 - 15, rightPanBaseY);
+     balanceCtx.stroke();
+     balanceCtx.fillStyle = colorPan;
+     balanceCtx.fillRect(rightPanAttachX - panWidth / 2, rightPanBaseY, panWidth, panHeight);
+
+     balanceCtx.restore();
+ }
+
+ function drawXBox(balanceCtx, drawX, drawY, color) {
+     balanceCtx.fillStyle = color;
+     balanceCtx.strokeStyle = colorTextDark;
+     balanceCtx.lineWidth = 1.5;
+     balanceCtx.fillRect(drawX - itemSize / 2, drawY - itemSize / 2, itemSize, itemSize);
+     balanceCtx.strokeRect(drawX - itemSize / 2, drawY - itemSize / 2, itemSize, itemSize);
+     balanceCtx.fillStyle = colorTextLight;
+     balanceCtx.font = `bold ${baseFontSize}px Arial`;
+     balanceCtx.textAlign = 'center';
+     balanceCtx.textBaseline = 'middle';
+     balanceCtx.fillText('x', drawX, drawY + 1);
+ }
+
+ function drawConstantCircle(balanceCtx, drawX, drawY, value, color) {
+     let radius = constantRadius;
+     let fontSize = baseFontSize + 2;
+     const valueStr = Number.isInteger(value) ? value.toString() : value.toFixed(1);
+
+     balanceCtx.fillStyle = color;
+     balanceCtx.strokeStyle = colorTextDark;
+     balanceCtx.lineWidth = 1.5;
+     balanceCtx.beginPath();
+     balanceCtx.arc(drawX, drawY, radius, 0, Math.PI * 2);
+     balanceCtx.fill();
+     balanceCtx.stroke();
+     balanceCtx.fillStyle = colorTextLight;
+     balanceCtx.font = `bold ${fontSize}px Arial`;
+     balanceCtx.textAlign = 'center';
+     balanceCtx.textBaseline = 'middle';
+     balanceCtx.fillText(valueStr, drawX, drawY + 1);
+ }
+
+ function arrangeItems(balanceCtx, panCenterX, panTopY, coeffValue, itemType, colorPositive, colorNegative, displayValue = null) {
+     const valueToDraw = (itemType === 'constant') ? displayValue : coeffValue;
+     if (Math.abs(valueToDraw) < 0.01) return 0;
+
+     if (itemType === 'constant') {
+         const color = valueToDraw > 0 ? colorPositive : colorNegative;
+         drawConstantCircle(balanceCtx, panCenterX, panTopY - constantRadius - itemPadding, valueToDraw, color);
+         return constantRadius * 2 + itemPadding * 2;
+     } else if (itemType === 'x') {
+         const numBoxes = Math.round(Math.abs(valueToDraw));
+         if (numBoxes === 0) return 0;
+         const boxColor = valueToDraw > 0 ? colorXPositive : colorXNegative;
+         const itemsPerRowX = Math.floor(panWidth / (itemSize + itemPadding * 2)) || 1;
+         const totalRowsX = Math.ceil(numBoxes / itemsPerRowX);
+         const startY = panTopY - (itemSize / 2) - itemPadding;
+         let itemsDrawn = 0;
+         let totalHeight = 0;
+
+         for (let r = 0; r < totalRowsX; r++) {
+             const itemsInThisRow = Math.min(numBoxes - itemsDrawn, itemsPerRowX);
+             if (itemsInThisRow <= 0) break;
+
+             const thisRowWidth = itemsInThisRow * itemSize + Math.max(0, itemsInThisRow - 1) * itemPadding;
+             let currentX = panCenterX - thisRowWidth / 2 + itemSize / 2;
+             const currentY = startY - r * (itemSize + itemPadding);
+             for (let i = 0; i < itemsInThisRow; i++) {
+                 if (itemsDrawn < numBoxes) {
+                     drawXBox(balanceCtx, currentX, currentY, boxColor);
+                     currentX += (itemSize + itemPadding);
+                     itemsDrawn++;
+                 }
+             }
+             totalHeight = (r + 1) * itemSize + r * itemPadding;
+         }
+         return totalHeight + itemPadding * 2;
+     }
+     return 0;
+ }
+
+// --- Main Update Function ---
+ function updateVisualizationBalance(sourceSlider = null) {
+     const a = parseFloat(BalsliderA.value);
+     const x = parseFloat(BalsliderX.value);
+     const b = parseFloat(BalsliderB.value);
+     const d = parseFloat(BalsliderD.value);
+     const c = parseFloat(BalsliderC.value);
+
+     BalvalueA.textContent = a.toFixed(1);
+     BalvalueX.textContent = x.toFixed(1);
+     BalvalueB.textContent = b.toFixed(1);
+     BalvalueD.textContent = d.toFixed(1);
+     BalvalueC.textContent = c.toFixed(1);
+     BalvalKConst.textContent = parseFloat(kConstSlider.value).toFixed(1); 
+     BalvalKX.textContent = parseFloat(kX.value).toFixed(1);
+
+     const formatNum = (num) => {
+         const fixed = num.toFixed(1);
+         return fixed.endsWith('.0') ? fixed.slice(0, -2) : fixed;
+     };
+     const bSign = b >= 0 ? '+' : '-';
+     const bAbsStr = formatNum(Math.abs(b));
+     const aNum = a;
+     const dNum = d;
+     const cNum = c;
+     let aStr = '';
+     if (Math.abs(aNum - 1) < 0.01) aStr = '';
+     else if (Math.abs(aNum + 1) < 0.01) aStr = '-';
+     else if (Math.abs(aNum) > 0.01) aStr = formatNum(aNum);
+     const aTerm = Math.abs(aNum) < 0.01 ? '' : `${aStr}x`;
+     let dStr = '';
+     if (Math.abs(dNum - 1) < 0.01) dStr = 'x';
+     else if (Math.abs(dNum + 1) < 0.01) dStr = '-x';
+     else if (Math.abs(dNum) > 0.01) dStr = `${formatNum(dNum)}x`;
+     let cStr = '';
+     let cSign = '';
+     if (Math.abs(cNum) > 0.01) {
+         cSign = cNum >= 0 ? '+' : '-';
+         cStr = formatNum(Math.abs(cNum));
+     }
+     let rightSideStr = "";
+     if (dStr) {
+         rightSideStr += dStr;
+         if (cStr) { rightSideStr += ` ${cSign} ${cStr}`; }
+     } else if (cStr) {
+         rightSideStr = `${cNum >= 0 ? '' : '-'}${cStr}`;
+     } else {
+         rightSideStr = "0";
+     }
+     let leftSideStr = "";
+     if (aTerm) {
+         leftSideStr += aTerm;
+         if (Math.abs(b) > 0.01) {
+             leftSideStr += ` ${bSign} ${bAbsStr}`;
+         }
+     } else if (Math.abs(b) > 0.01) {
+          leftSideStr = `${b >= 0 ? '' : '-'}${bAbsStr}`;
+     } else {
+         leftSideStr = "0";
+     }
+     equationDisplay.textContent = `${leftSideStr} = ${rightSideStr}`;
+
+     const leftValue = a * x + b;
+     const rightValue = d * x + c;
+     const tolerance = 0.01;
+     const isBalanced = Math.abs(leftValue - rightValue) < tolerance;
+     if (isBalanced) {
+         equationDisplay.classList.remove('unbalanced'); equationDisplay.classList.add('balanced');
+     } else {
+         equationDisplay.classList.remove('balanced'); equationDisplay.classList.add('unbalanced');
+     }
+
+     const valueDifference = leftValue - rightValue;
+     let tiltAngle = Math.max(-maxTiltAngle, Math.min(maxTiltAngle, valueDifference * -tiltMultiplier));
+
+     balanceCtx.clearRect(0, 0, balanceCanvas.width, balanceCanvas.height);
+     drawScaleBase(balanceCtx);
+
+     const leftAttachGlobal = rotatePoint(-scaleBeamLength / 2 + 30, 0, tiltAngle, scalePillarX, scaleBeamY);
+     const rightAttachGlobal = rotatePoint(scaleBeamLength / 2 - 30, 0, tiltAngle, scalePillarX, scaleBeamY);
+     const leftPanDrawY = leftAttachGlobal.y + panStringLength + panHeight;
+     const rightPanDrawY = rightAttachGlobal.y + panStringLength + panHeight;
+
+     drawScaleBeamAndPans(balanceCtx, tiltAngle);
+
+     let yLeft = leftPanDrawY;
+     let heightB = arrangeItems(balanceCtx, leftAttachGlobal.x, yLeft, b, 'constant', colorPositive, colorNegative, b);
+     let heightAX = arrangeItems(balanceCtx, leftAttachGlobal.x, yLeft - heightB, a, 'x', colorXPositive, colorXNegative);
+
+     let yRight = rightPanDrawY;
+     let heightC = arrangeItems(balanceCtx, rightAttachGlobal.x, yRight, c, 'constant', colorPositive, colorNegative, c);
+     let heightDX = arrangeItems(balanceCtx, rightAttachGlobal.x, yRight - heightC, d, 'x', colorXPositive, colorXNegative);
+ }
+
+ function rotatePoint(xRel, yRel, angle, pivotX, pivotY) {
+     const cosA = Math.cos(angle);
+     const sinA = Math.sin(angle);
+     const xRot = xRel * cosA - yRel * sinA;
+     const yRot = xRel * sinA + yRel * cosA;
+     return { x: xRot + pivotX, y: yRot + pivotY };
+ }
+
+ function roundTo(num, places) {
+     const factor = 10 ** places;
+     return Math.round((num + Number.EPSILON) * factor) / factor;
+ }
   
-		
+
+// --- Action Handlers ---
+
+ btnAddConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     BalsliderB.value = roundTo(parseFloat(BalsliderB.value) + k, 2);
+     BalsliderC.value = roundTo(parseFloat(BalsliderC.value) + k, 2);
+     updateVisualizationBalance('action');
+ });
+ btnSubConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     BalsliderB.value = roundTo(parseFloat(BalsliderB.value) - k, 2);
+     BalsliderC.value = roundTo(parseFloat(BalsliderC.value) - k, 2);
+     updateVisualizationBalance('action');
+ });
+ btnMultiplyConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     if (Math.abs(k) < 0.01) {
+         console.warn("Multiplication by zero. Resetting equation to 0 = 0.");
+         BalsliderA.value = 0; BalsliderB.value = 0; BalsliderD.value = 0; BalsliderC.value = 0;
+     } else {
+         BalsliderA.value = roundTo(parseFloat(BalsliderA.value) * k, 2);
+         BalsliderB.value = roundTo(parseFloat(BalsliderB.value) * k, 2);
+         BalsliderD.value = roundTo(parseFloat(BalsliderD.value) * k, 2);
+         BalsliderC.value = roundTo(parseFloat(BalsliderC.value) * k, 2);
+     }
+     updateVisualizationBalance('action');
+ });
+ btnDivideConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     if (Math.abs(k) < 0.01) {
+         alert("Error: Cannot divide by zero!");
+         kConstSlider.value = (k >= 0 ? 0.1 : -0.1);
+         valKConst.textContent = parseFloat(kConstSlider.value).toFixed(1);
+         return;
+     }
+     BalsliderA.value = roundTo(parseFloat(BalsliderA.value) / k, 2);
+     BalsliderB.value = roundTo(parseFloat(BalsliderB.value) / k, 2);
+     BalsliderD.value = roundTo(parseFloat(BalsliderD.value) / k, 2);
+     BalsliderC.value = roundTo(parseFloat(BalsliderC.value) / k, 2);
+     updateVisualizationBalance('action');
+ });
+
+
+ btnAddX.addEventListener('click', () => {
+     const k = parseFloat(kX.value);
+     BalsliderA.value = roundTo(parseFloat(BalsliderA.value) + k, 2);
+     BalsliderD.value = roundTo(parseFloat(BalsliderD.value) + k, 2);
+     updateVisualizationBalance('action');
+ });
+ btnSubX.addEventListener('click', () => {
+     const k = parseFloat(kX.value);
+     BalsliderA.value = roundTo(parseFloat(BalsliderA.value) - k, 2);
+     BalsliderD.value = roundTo(parseFloat(BalsliderD.value) - k, 2);
+     updateVisualizationBalance('action');
+ });
+
+
+
+// --- Event Listeners for value displays (Action Sliders) ---
+ kConstSlider.addEventListener('input', () => {
+     let currentVal = parseFloat(kConstSlider.value);
+     if (Math.abs(currentVal) < 0.01 && (event?.target === btnDivideConst)) {
+         currentVal = 0.1 * Math.sign(currentVal || 1);
+         kConstSlider.value = currentVal;
+     }
+     BalvalKConst.textContent = parseFloat(kConstSlider.value).toFixed(1);
+ });
+ kX.addEventListener('input', () => {
+      let currentVal = parseFloat(kX.value);
+      if (Math.abs(currentVal) < 0.01 && (event?.target === btnDivideX)) {
+         currentVal = 0.1 * Math.sign(currentVal || 1);
+         kX.value = currentVal;
+     }
+     BalvalKX.textContent = parseFloat(kX.value).toFixed(1);
+ });
+
+// --- Event Listeners for main sliders ---
+ BalsliderA.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderX.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderB.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderD.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderC.addEventListener('input', () => { updateVisualizationBalance(); });
+  
+
+function displayVisualBalance(card){
+	
+	OngoingOp = 8 ;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");	
+//document.getElementById("game-algebra-balance-container").classList.add("hidden");
+
+document.getElementById("game-algebra-balance-container").classList.remove("hidden");
+	
+ 
+ 
+// --- Initial Draw ---
+ updateVisualizationBalance();
+ 
+}
+
+
+function displayLinearEq(card){
+	
+	OngoingOp = 9;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");	
+//document.getElementById("game-algebra-balance-container").classList.add("hidden");
+
+document.getElementById("game-algebra-balance-container").classList.remove("hidden");
+	
+  let BalSliderA = document.getElementById("BalSliderA");
+    let BalSliderB = document.getElementById("BalSliderB"); 
+		let BalSliderC = document.getElementById("BalSliderC"); 
+	let BalSliderD = document.getElementById("BalSliderD");
+
+  
+	
+
+	
+	if (card.a){
+	BalSliderA.value = card.a;
+	} else {
+		BalSliderA.value = 0;
+	}
+	
+	if (card.b){
+	BalSliderB.value = card.b;
+	} else {
+		BalSliderB.value = 0;
+	}	
+
+	if (card.c){
+	BalSliderC.value = card.c;
+	} else {
+		BalSliderC.value = 0;
+	}
+	
+	if (card.d){
+	BalSliderD.value = card.d;
+	} else {
+		BalSliderD.value = 0;
+	}
+	
+	 updateVisualizationBalance();
+ 
+}		
 
         function showFlashcard() {
 		    
@@ -1592,7 +2057,15 @@ function displayAngleTriangleQuad(card){
 				displayVisualAdd(card); 
 			}else if ((currenttopLevelCategoryName == "Addition") || (currenttopLevelCategoryName == "Multiplcation") || (currenttopLevelCategoryName == "Subtraction") || (currenttopLevelCategoryName == "Division") || (currenttopLevelCategoryName == "Remainder")) {
 				displayOp(card); 
-			} 
+
+			}else if ((currenttopLevelCategoryName == "Visual Algebra Balancing Equation")) {
+				displayVisualBalance(card); 
+			}
+			else if ((currenttopLevelCategoryName == "Algebra Linear Equation")) {
+				displayLinearEq(card); 
+			}
+
+			
 			else if ((currenttopLevelCategoryName == "Angle") || (currenttopLevelCategoryName == "Triangle") || (currenttopLevelCategoryName == "Quadrilateral") || (currenttopLevelCategoryName == "Perimeter") || (currenttopLevelCategoryName == "Area") ) {
 				displayAngleTriangleQuad(card); 
 			} 		
@@ -1933,7 +2406,7 @@ function ans_mult(selected){
 				} else if (OngoingOp == 2){
 					ans_fraction(selected);
 				}	
-				else if (OngoingOp == 3 || OngoingOp == 4 || OngoingOp == 5 || OngoingOp == 6 || OngoingOp == 7 ){
+				else if (OngoingOp >= 3 && OngoingOp <= 8 ){
 					ans_visual(selected);
 				}	
 				

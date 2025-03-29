@@ -3,7 +3,7 @@ window.categories = {
 "Visual Add, Sub, Mul, Div, Rem": {	
 	
 	  
-	"Operation": [
+	"Arithmetic Operators": [
       {
 		"question": "1",
 		"options": ["Done"] ,
@@ -13,11 +13,13 @@ window.categories = {
 	  
 
 },	
+
+
 	
 "Visual Fraction": {	
 	
 	  
-	"Operation": [
+	"Fraction Arithmetic": [
       {
 		"question": "2",
 		"options": ["Done"] ,
@@ -31,7 +33,7 @@ window.categories = {
 "Visual Angle, Triangle, Quad": {	
 	
 	  
-	"Operation": [
+	"Geomtery": [
       {
 		"question": "2",
 		"options": ["Done"] ,
@@ -41,7 +43,24 @@ window.categories = {
 	  
 
 },
+
+
+"Visual Algebra Balancing Equation": {	
+	
 	  
+	"Balancing Equation": [
+      {
+		"question": "2",
+		"options": ["Done"] ,
+		"correct": "Done"
+	  }
+	  ] ,	  
+	  
+
+},
+	
+	
+	
    
   "Addition": {
 "1 + 0": [
@@ -5749,4 +5768,301 @@ window.categories = {
   }
 
 
-}
+,
+"Algebra Linear Equation":
+{
+  "x - 1 = 0": [
+    {
+      "question": "ax +b = dx + c. Find x",
+      "correct": "1",
+      "options": ["1", "0" , "-1", "Unknown"],
+      "a": 1,
+      "b": -1,
+      "c": 0,
+      "d": 0
+    },
+  ],  
+  "x + 2 = 5": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "3",
+  "options": ["3", "7", "-3", "2"],
+  "a": 1,
+  "b": 2,
+  "c": 5,
+  "d": 0
+  }
+  ],
+  
+  "5 = x + 3": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "2",
+  "options": ["2", "8", "-2", "5/3"],
+  "a": 0,
+  "b": 5,
+  "c": 3,
+  "d": 1
+  }
+  ],
+  "10 - x = 6": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "4",
+  "options": ["4", "-4", "16", "6"],
+  "a": -1,
+  "b": 10,
+  "c": 6,
+  "d": 0
+  }
+  ],
+  "2x + 1 = x + 5": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "4",
+  "options": ["4", "6", "2", "3"],
+  "a": 2,
+  "b": 1,
+  "c": 5,
+  "d": 1
+  }
+  ],
+  "5x - 2 = 3x + 8": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "5",
+  "options": ["5", "10", "3", "2.5"],
+  "a": 5,
+  "b": -2,
+  "c": 8,
+  "d": 3
+  }
+  ],
+   "4x = 20": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "5",
+  "options": ["5", "80", "16", "24"],
+  "a": 4,
+  "b": 0,
+  "c": 20,
+  "d": 0
+  }
+  ],
+   "-2x = 10": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "-5",
+  "options": ["-5", "5", "-12", "-8"],
+  "a": -2,
+  "b": 0,
+  "c": 10,
+  "d": 0
+  }
+  ],
+   "x / 2 = 4": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "8",
+  "options": ["8", "2", "4", "6"],
+  "a": 0.5,
+  "b": 0,
+  "c": 4,
+  "d": 0
+  }
+  ],
+   "3x + 5 = 3x + 5": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "Infinite Solutions",
+  "options": ["Infinite Solutions", "0", "5/3", "No Solution"],
+  "a": 3,
+  "b": 5,
+  "c": 5,
+  "d": 3
+  }
+  ],
+   "2x + 1 = 2x + 3": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "No Solution",
+  "options": ["No Solution", "1", "2", "0"],
+  "a": 2,
+  "b": 1,
+  "c": 3,
+  "d": 2
+  }
+  ],
+   "7 - 3x = x - 1": [
+  {
+  "question": "ax + b = dx + c. Find x",
+  "correct": "2",
+  "options": ["2", "-2", "8/4", "1"],
+  "a": -3,
+  "b": 7,
+  "c": -1,
+  "d": 1
+  }
+  ] ,
+  "2x + 1 = 7": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "3",
+  "options": ["3", "4", "6", "8"],
+  "a": 2,
+  "b": 1,
+  "c": 7,
+  "d": 0
+  }
+  ],
+  "3x - 5 = 4": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "3",
+  "options": ["3", "9", "-1/3", "1"],
+  "a": 3,
+  "b": -5,
+  "c": 4,
+  "d": 0
+  }
+  ],
+  "8 - x = 3": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "5",
+  "options": ["5", "-5", "11", "8/3"],
+  "a": -1,
+  "b": 8,
+  "c": 3,
+  "d": 0
+  }
+  ],
+  "4x + 2 = 2x + 8": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "3",
+  "options": ["3", "6", "5", "1.5"],
+  "a": 4,
+  "b": 2,
+  "c": 8,
+  "d": 2
+  }
+  ],
+  "x - 7 = -2x - 1": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "2",
+  "options": ["2", "-8/3", "6", "-2"],
+  "a": 1,
+  "b": -7,
+  "c": -1,
+  "d": -2
+  }
+  ],
+  "5x + 9 = 5x + 9": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "Infinite Solutions",
+  "options": ["Infinite Solutions", "0", "9/5", "No Solution"],
+  "a": 5,
+  "b": 9,
+  "c": 9,
+  "d": 5
+  }
+  ],
+  "-3x + 4 = -3x - 1": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "No Solution",
+  "options": ["No Solution", "0", "5/(-6)", "Infinite Solutions"],
+  "a": -3,
+  "b": 4,
+  "c": -1,
+  "d": -3
+  }
+  ],
+  "6x = -6": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "-1",
+  "options": ["-1", "1", "0", "-12"],
+  "a": 6,
+  "b": 0,
+  "c": -6,
+  "d": 0
+  }
+  ],
+  "-2x + 5 = 1": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "2",
+  "options": ["2", "-2", "-3", "4"],
+  "a": -2,
+  "b": 5,
+  "c": 1,
+  "d": 0
+  }
+  ],
+  "x = 8x + 7": [
+  {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "-1",
+  "options": ["-1", "1", "-7/7", "7/8"],
+  "a": 1,
+  "b": 0,
+  "c": 7,
+  "d": 8
+  }
+  ],
+  "4 - 2x = 3x - 6": [
+   {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "2",
+  "options": ["2", "-2", "10/5", "10"],
+  "a": -2,
+  "b": 4,
+  "c": -6,
+  "d": 3
+  }
+  ],
+   "5 + x = 1 - x": [
+   {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "-2",
+  "options": ["-2", "2", "-4/2", "4"],
+  "a": 1,
+  "b": 5,
+  "c": 1,
+  "d": -1
+  }
+  ],
+   "3x - 7 = 0": [
+   {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "7/3",
+  "options": ["7/3", "-7/3", "3/7", "7"],
+  "a": 3,
+  "b": -7,
+  "c": 0,
+  "d": 0
+  }
+  ],
+   "9x = 9": [
+   {
+  "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+  "correct": "1",
+  "options": ["1", "0", "9", "-1"],
+  "a": 9,
+  "b": 0,
+  "c": 9,
+  "d": 0
+  }
+  ]
+  }
+  
+  
+  
+  }
+  
+  
+
