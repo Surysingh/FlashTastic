@@ -220,42 +220,46 @@
 				 
 
  <!-- Fraction operations -->				 
-	 <div id="game-chart-container" class="hidden">			 
-		<div class="chart-container">
-        <div class="chart-wrapper">
-		
-            <canvas id="chart1"></canvas>
-			<label>Numerator: <input type="range" id="numerator1" min="0" max="10" value="1"></label>
-            <label>Denominator: <input type="range" id="denominator1" min="2" max="10" value="4"></label>
-            
-			<div id="fraction1" class="fraction-display"></div>
-            
-        </div>
+	 <div id="game-chart-container" class="hidden">
 
-        <select id="operation">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">×</option>
-            <option value="/">÷</option>
-        </select>
+        <div class="charts-row">
+            <div class="chart-wrapper">
+                <div id="fraction1" class="fraction-display"></div>
+                <canvas id="chart1"></canvas>
+            </div>
 
-        <div class="chart-wrapper">
+            <div class="operator-wrapper">
+                <select id="operation">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">×</option>
+                    <option value="/">÷</option>
+                </select>
+            </div>
+
+            <div class="chart-wrapper">
+                <div id="fraction2" class="fraction-display"></div>
+                <canvas id="chart2"></canvas>
+            </div>
+
+            <div class="equals-sign">=</div>
+
+            <div class="chart-wrapper">
+                <div id="resultFraction" class="fraction-display"></div>
+                <canvas id="resultChart"></canvas>
+            </div>
+        </div> <div class="sliders-row">
+            <div class="fraction-controls">
+                <p>Fraction 1</p> <label>Numerator: <input type="range" id="numerator1" min="0" max="10" value="1"></label>
+                <label>Denominator: <input type="range" id="denominator1" min="2" max="10" value="4"></label>
+            </div>
+
+            <div class="fraction-controls">
+                 <p>Fraction 2</p> <label>Numerator: <input type="range" id="numerator2" min="0" max="10" value="1"></label>
+                <label>Denominator: <input type="range" id="denominator2" min="2" max="10" value="4"></label>
+            </div>
+        </div> </div>
 		
-            <canvas id="chart2"></canvas>
-            
-			<label>Numerator: <input type="range" id="numerator2" min="0" max="10" value="1"></label>
-            <label>Denominator: <input type="range" id="denominator2" min="2" max="10" value="4"></label>
-			<div id="fraction2" class="fraction-display"></div>
-            
-        </div>
-		
-		 <div class="chart-wrapper">
-        <canvas id="resultChart"></canvas>
-        <div id="resultFraction" class="fraction-display"></div>
-    </div>
-    </div>	
-	</div>	
-	
 	<!-- Operations -->
 	<div id="game-op-container" class="hidden">	
 	

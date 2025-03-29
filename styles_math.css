@@ -29,7 +29,7 @@ h1 {
 }
 /* Game Container Styling */
 #game-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   background-color: #fff;
   padding: 20px;
@@ -708,3 +708,109 @@ body {
 /* Balance Indicator Colors */
  .balanced { background-color: #28a745; color: white; }
  .unbalanced { background-color: #dc3545; color: white; } 
+ 
+/* Styles specific to the fraction visualization container */
+#game-chart-container {
+    /* Optional: Add padding or margin if needed */
+    margin-top: 1px;
+}
+
+/* Row for the charts, operator, equals */
+#game-chart-container .charts-row {
+    display: flex;
+    justify-content: space-around; /* Distribute items */
+    align-items: left;       /* Vertically center items in the row */
+    flex-wrap: wrap;           /* Allow wrapping if needed */
+    gap: 1px;                 /* Space between items */
+    margin-bottom: 1px;       /* Space below the charts row */
+}
+
+/* Styles for each chart group (Fraction + Canvas) */
+#game-chart-container .chart-wrapper {
+    display: flex;
+    flex-direction: column;    /* Stack fraction text and canvas vertically */
+    align-items: center;       /* Center items horizontally */
+    text-align: center;
+}
+
+/* Fraction text display */
+#game-chart-container .fraction-display {
+    margin-bottom: 1px;
+    font-size: 24px;
+    font-weight: bold;
+    min-height: 30px;
+    color: #333;
+}
+
+/* Canvas size within the chart row */
+#game-chart-container .charts-row canvas {
+    max-width: 120px;  /* Further reduced size for single row */
+    max-height: 120px; /* Further reduced size */
+    display: block;
+}
+
+/* Operator dropdown wrapper */
+#game-chart-container .operator-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 0; /* Removed padding-top from previous step */ */
+}
+
+#game-chart-container #operation {
+    font-size: 24px;
+    padding: 1px;
+}
+
+/* Equals sign */
+#game-chart-container .equals-sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    /* padding-top: 0; /* Removed padding-top from previous step */ */
+}
+
+/* Row for the sliders */
+#game-chart-container .sliders-row {
+    display: flex;
+    justify-content: center; /* Center the slider groups */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1px;              /* Add more space between slider groups */
+    margin-top: 1px;       /* Space above the sliders row */
+    padding: 1px;
+    border-top: 1px solid #eee; /* Optional separator line */
+}
+
+/* Individual Slider Group styling */
+#game-chart-container .fraction-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Center labels/sliders */
+    gap: 1px;
+}
+
+#game-chart-container .fraction-controls p {
+    font-weight: bold;
+    margin-bottom: 1px;
+    color: #555;
+}
+
+#game-chart-container .fraction-controls label {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-size: 14px;
+}
+
+#game-chart-container .fraction-controls input[type="range"] {
+    width: 600px; /* Adjust slider width */
+}
+
+/* Override general canvas styles ONLY within this container's chart row */
+#game-chart-container .charts-row canvas {
+    max-width: 1500px;
+    max-height: 400px;
+} 
