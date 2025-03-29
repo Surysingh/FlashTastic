@@ -4899,7 +4899,7 @@ window.categories = {
 
 "Perimeter":
 {
-  "Equilateral": [
+  "Perimeter of Equilateral": [
     {
       "question": "What is the perimeter?",
       "correct": "30",
@@ -4938,7 +4938,7 @@ window.categories = {
       }
    
   ],
-  "Isosceles": [
+  "Perimeter of Isosceles": [
     
     
     {
@@ -4985,7 +4985,7 @@ window.categories = {
 	   
   ],
   
-  "Scalene with AC=7.8": [
+  "Perimeter of Scalene with AC=7.8": [
     {
        "question": "Calculate the triangle's perimeter.",
         "correct": "18.8", // Calculation: 4+7+sqrt(4^2+7^2-2*4*7*cos(85)) = 18.75 -> 18.8
@@ -4998,7 +4998,7 @@ window.categories = {
 	
 	],
 	
-  "Scalene with AC=6.6": [
+  "Perimeter of Scalene with AC=6.6": [
     {
        "question": "Find the total perimeter.",
         "correct": "22.6", // Calculation: 10+6+sqrt(10^2+6^2-2*10*6*cos(40)) = 22.64 -> 22.6
@@ -5012,7 +5012,7 @@ window.categories = {
 	],	
     
       
-    "Scalene with AC=6.4": [
+    "Perimeter of Scalene with AC=6.4": [
       {
         "question": "What is the perimeter? (Note: Example values may differ slightly from strict calculation)",
         "correct": "17.4", // Corrected value based on calculation: 5+6+sqrt(5^2+6^2-2*5*6*cos(70)) = 17.36 -> 17.4
@@ -5034,7 +5034,7 @@ window.categories = {
          "Type": "triangle"
        }
      ],
-    "Scalene with AC=12.0": [
+    "Perimeter of Scalene with AC=12.0": [
        {
          "question": "Calculate the total length around the triangle.",
          "correct": "26.0",
@@ -5045,7 +5045,7 @@ window.categories = {
          "Type": "triangle"
        }
      ],
-    "Scalene with AC=10.6": [
+    "Perimeter of Scalene with AC=10.6": [
        {
          "question": "Find the triangle's perimeter.",
          "correct": "25.6",
@@ -5061,7 +5061,7 @@ window.categories = {
  
   
   
-    "Square": [
+    "Perimeter of Square": [
       {
         "question": "What is the perimeter?",
         "correct": "40",
@@ -5119,7 +5119,7 @@ window.categories = {
       }
       
     ],
-    "Rectangle": [
+    "Perimeter of Rectangle": [
       {
            "question": "What is the perimeter?",
         "correct": "36",
@@ -5167,7 +5167,7 @@ window.categories = {
       }	  
      
     ],
-    "Rhombus": [
+    "Perimeter of Rhombus": [
       {
              "question": "What is the perimeter?",
         "correct": "28",
@@ -5238,7 +5238,7 @@ window.categories = {
   
      
     
-    "Parallelogram": [
+    "Perimeter of Parallelogram": [
     
 	  {
         "question": "A parallelogram has adjacent sides AB=5 and BC=9. What is its perimeter?",
@@ -5302,6 +5302,451 @@ window.categories = {
 
 
  
-}
+}, 
+
+"Area": {	
+	
+	  
+"Area of Right Triangle": [
+    {
+      "question": "What is the area",
+      "correct": "12.5",
+      "options": ["12.5", "5", "25", "10"],
+      "AB": 5,
+      "BC": 5,
+      "angle_B": 90,
+      "Type": "triangle"
+    },
+	{
+      "question": "What is the area",
+      "correct": "6",
+      "options": ["6", "3", "7", "9"],
+      "AB": 3,
+      "BC": 4,
+      "angle_B": 90,
+      "Type": "triangle"
+    },	
+	 {
+        "question": "Find the area. The angle at B is 90 degrees.",
+        "correct": "24.0",
+        "options": ["48.0", "14.0", "24.0", "10.0"],
+        "AB": 6,
+        "BC": 8,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "What is the area of an isosceles right triangle with legs AB=10, BC=10?",
+        "correct": "50.0",
+        "options": ["100.0", "20.0", "40.0", "50.0"],
+        "AB": 10,
+        "BC": 10,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "Calculate the area of a right triangle with base AB=5 and height BC=6.",
+        "correct": "15.0",
+        "options": ["60.0", "17.0", "15.0", "13.0"],
+        "AB": 5,
+        "BC": 6,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "Find the area of this right triangle.",
+        "correct": "24.5",
+        "options": ["49.0", "14.0", "24.5", "28.0"],
+        "AB": 7,
+        "BC": 7,
+        "angle_B": 90,
+        "Type": "triangle"
+      } ,  {
+        "question": "A right triangle has legs AB=9 and BC=10. Find its area.",
+        "correct": "45.0",
+        "options": ["90.0", "19.0", "45.0", "13.5"],
+        "AB": 9,
+        "BC": 10,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "Calculate the area of a triangle where angle B is 90°, AB=2, and BC=8.",
+        "correct": "8.0",
+        "options": ["16.0", "10.0", "8.0", "4.0"],
+        "AB": 2,
+        "BC": 8,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "What is the area? Sides adjacent to the 90° angle are 1.5 and 6.",
+        "correct": "4.5",
+        "options": ["9.0", "7.5", "3.0", "4.5"],
+        "AB": 1.5,
+        "BC": 6,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "Find the area of an isosceles right triangle with leg lengths of 6.",
+        "correct": "18.0",
+        "options": ["36.0", "12.0", "18.0", "24.0"],
+        "AB": 6,
+        "BC": 6,
+        "angle_B": 90,
+        "Type": "triangle"
+      },
+      {
+        "question": "Calculate the area. Angle B is 90°, side AB=10, side BC=4.",
+        "correct": "20.0",
+        "options": ["44.0", "15.0", "20.0", "8.0"],
+        "AB": 10,
+        "BC": 4,
+        "angle_B": 90,
+        "Type": "triangle"
+      }
+    ] ,	  
+"Area of Triangle with CH=7": [
+    {
+      "question": "What is the area",
+      "correct": "35",
+      "options": ["35", "10", "6", "12"],
+      "AB": 10,
+      "BC": 8,
+      "angle_B": 119,
+      "Type": "triangle"
+    },	
+  
+  
+  ],    
+  
+"Area of Triangle with CH=5": [
+    {
+      "question": "What is the area",
+      "correct": "10",
+      "options": ["12.5", "5", "25", "10"],
+      "AB": 4,
+      "BC": 10,
+      "angle_B": 30,
+      "Type": "triangle"
+    },	
+    {
+      "question": "What is the area",
+      "correct": "25",
+      "options": ["12.5", "5", "25", "10"],
+      "AB": 10,
+      "BC": 10,
+      "angle_B": 30,
+      "Type": "triangle"
+    },	
+	
+	],
+  
+"Area of Triangle with CH=4": [
+    {
+      "question": "What is the area",
+      "correct": "8",
+      "options": ["20", "10", "8", "16"],
+      "AB": 4,
+      "BC": 8,
+      "angle_B": 30,
+      "Type": "triangle"
+    },	  
+ {
+      "question": "What is the area",
+      "correct": "20",
+      "options": ["20", "10", "8", "16"],
+      "AB": 10,
+      "BC": 8,
+      "angle_B": 30,
+      "Type": "triangle"
+    },	
+	
+	
+	],
+  
+"Area of Triangle with CH=3": [
+    {
+      "question": "What is the area",
+      "correct": "6",
+      "options": ["15", "10", "6", "12"],
+      "AB": 4,
+      "BC": 6,
+      "angle_B": 30,
+      "Type": "triangle"
+    },	 
+ {
+      "question": "What is the area",
+      "correct": "6",
+      "options": ["15", "10", "6", "12"],
+      "AB": 4,
+      "BC": 3.5,
+      "angle_B": 120,
+      "Type": "triangle"
+    },	
+  {
+      "question": "What is the area",
+      "correct": "15",
+      "options": ["15", "10", "6", "12"],
+      "AB": 10,
+      "BC": 6,
+      "angle_B": 30,
+      "Type": "triangle"
+    },	
+  
+],
+
+  "Area of Square": [
+      {
+        "question": "What is the area?",
+        "correct": "100",
+        "options": ["40", "10", "20", "100"],
+        "AB": 10,
+        "BC": 10,
+        "angle_B": 90,
+		"CD": -10,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+	    {
+        "question": "A square has a side length of AB=5. What is its area?",
+        "correct": "25",
+        "options": ["20", "5", "10", "25"],
+        "AB": 5,
+        "BC": 5,
+        "angle_B": 90,
+        "CD": -5,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Calculate the area of a square where side AB = 8.",
+        "correct": "64",
+        "options": ["32", "8", "16", "64"],
+        "AB": 8,
+        "BC": 8,
+        "angle_B": 90,
+        "CD": -8,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Find the area of a square with side length 9.",
+        "correct": "81",
+        "options": ["36", "9", "18", "81"],
+        "AB": 9,
+        "BC": 9,
+        "angle_B": 90,
+        "CD": -9,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "What is the area of a square with side AB = 6.5?",
+        "correct": "42.25",
+        "options": ["26.0", "6.5", "13.0", "42.25"],
+        "AB": 6.5,
+        "BC": 6.5,
+        "angle_B": 90,
+        "CD": -6.5,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "If a square has a side length of 4 (BC=4), what is its area?",
+        "correct": "16",
+        "options": ["16", "4", "8", "12"],
+        "AB": 4,
+        "BC": 4,
+        "angle_B": 90,
+        "CD": -4,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      }
+ ],
+    "Area of Rectangle": [
+      {
+           "question": "What is the Area?",
+        "correct": "80",
+        "options": ["36", "10", "8", "80"],
+        "AB": 10,
+        "BC": 8,
+        "angle_B": 90,
+		"CD": -10,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },{
+        "question": "A rectangle has sides AB=6 and BC=8. What is its area?",
+        "correct": "48",
+        "options": ["28", "14", "48", "60"],
+        "AB": 6,
+        "BC": 8,
+        "angle_B": 90,
+        "CD": -6,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Calculate the area of a rectangle with side lengths 9 and 5.",
+        "correct": "45",
+        "options": ["28", "14", "45", "50"],
+        "AB": 9,
+        "BC": 5,
+        "angle_B": 90,
+        "CD": -9,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Find the area of a rectangle where adjacent sides measure AB=7 and BC=4.",
+        "correct": "28",
+        "options": ["22", "11", "28", "30"],
+        "AB": 7,
+        "BC": 4,
+        "angle_B": 90,
+        "CD": -7,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "What is the area of a rectangle with sides AB = 8.5 and BC = 4?",
+        "correct": "34.0",
+        "options": ["25.0", "12.5", "32.0", "34.0"],
+        "AB": 8.5,
+        "BC": 4,
+        "angle_B": 90,
+        "CD": -8.5,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "If a rectangle has side lengths AB = 5 and BC = 6.5, calculate its area.",
+        "correct": "32.5",
+        "options": ["23.0", "11.5", "32.5", "30.0"],
+        "AB": 5,
+        "BC": 6.5,
+        "angle_B": 90,
+        "CD": -5,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      }	  
+	  
+ ],
+ 
+  "Area of Parallelogram with CH=8": [
+    
+	  {
+        "question": "What is its area?",
+        "correct": "40",
+        "options": ["40", "28", "45", "10"],
+        "AB": 5,
+        "BC": 8.5,
+        "angle_B": 110,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+	  
+	  
+	  {
+        "question": "What is its area?",
+        "correct": "40",
+        "options": ["40", "28", "45", "10"],
+        "AB": 5,
+        "BC": 8.5,
+        "angle_B": 71,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+]	,
+ 
+     "Area of Parallelogram with CH=7": [
+    
+	  {
+        "question": "What is its area?",
+        "correct": "35",
+        "options": ["35", "28", "45", "10"],
+        "AB": 5,
+        "BC": 8.5,
+        "angle_B": 56,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+	  
+	  
+	  {
+        "question": "What is its area?",
+        "correct": "35",
+        "options": ["35", "28", "45", "10"],
+        "AB": 5,
+        "BC": 8.5,
+        "angle_B": 124,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },	
+]	,
+  
+     "Area of Parallelogram with CH=6": [
+    
+	  {
+        "question": "What is its area?",
+        "correct": "30",
+        "options": ["30", "28", "45", "10"],
+        "AB": 5,
+        "BC": 8.5,
+        "angle_B": 45,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+	  
+	  
+  {
+        "question": "What is its area?",
+        "correct": "30",
+        "options": ["30", "28", "45", "10"],
+        "AB": 5,
+        "BC": 8.5,
+        "angle_B": 135,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+]	,  
+    
+    "Area of Parallelogram with CH=5": [
+    
+	  {
+        "question": "What is its area?",
+        "correct": "25",
+        "options": ["25", "28", "45", "10"],
+        "AB": 5,
+        "BC": 6,
+        "angle_B": 124,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+	  
+	  {
+        "question": "What is its area?",
+        "correct": "25",
+        "options": ["25", "28", "45", "10"],
+        "AB": 5,
+        "BC": 6,
+        "angle_B": 56,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },	
+]	  
+
+
+  }
+
 
 }

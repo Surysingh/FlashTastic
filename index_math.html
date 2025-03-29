@@ -322,7 +322,7 @@
     
 
      <div id="topic-selector"> 
-          <label for="geometryTopic">Choose Topic:</label> <select id="geometryTopic" onchange="updateVisualization()"> <option value="angle">Angle</option> <option value="triangle">Triangle</option> <option value="quadrilateral">Quadrilateral</option> </select> 
+          <label for="geometryTopic">Choose Topic:</label> <select id="geometryTopic" onchange="updateVisualization()"> <option value="angle">Angle</option> <option value="triangle">Triangle</option> <option value="quadrilateral">Trapezium (Sq, Rect,..)</option> </select> 
     </div>
 
     
@@ -342,7 +342,7 @@
          <div id="quad-controls" style="display: none;"> 
               <hr style="border-top: 1px dashed #ccc; margin: 10px 0;"> 
              <div class="slider-container"> 
-                 <label for="sliderTopCD">CD Length:</label>
+                 <label for="sliderTopCD">CD:</label>
                  <input type="range" id="sliderTopCD" min="-10" max="10" value="-5" step="0.5" oninput="updateVisualization()"> 
                  <span id="valueTopCD">5</span><span class="unit">units</span> 
              </div>

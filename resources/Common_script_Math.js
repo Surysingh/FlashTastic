@@ -1593,7 +1593,7 @@ function displayAngleTriangleQuad(card){
 			}else if ((currenttopLevelCategoryName == "Addition") || (currenttopLevelCategoryName == "Multiplcation") || (currenttopLevelCategoryName == "Subtraction") || (currenttopLevelCategoryName == "Division") || (currenttopLevelCategoryName == "Remainder")) {
 				displayOp(card); 
 			} 
-			else if ((currenttopLevelCategoryName == "Angle") || (currenttopLevelCategoryName == "Triangle") || (currenttopLevelCategoryName == "Quadrilateral") || (currenttopLevelCategoryName == "Perimeter") ) {
+			else if ((currenttopLevelCategoryName == "Angle") || (currenttopLevelCategoryName == "Triangle") || (currenttopLevelCategoryName == "Quadrilateral") || (currenttopLevelCategoryName == "Perimeter") || (currenttopLevelCategoryName == "Area") ) {
 				displayAngleTriangleQuad(card); 
 			} 		
 			
