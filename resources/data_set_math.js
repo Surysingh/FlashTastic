@@ -3907,4 +3907,1401 @@ window.categories = {
 },
   
  
+
+"Angle":   
+ {
+	 
+ "45": [ 
+ {
+    "question": "angle B is 45°. What type of angle is it?",
+    "correct": "Acute",
+    "options": ["Acute", "Right", "Obtuse", "Straight"],
+    "AB": 5,
+    "BC": 5,
+    "angle_B": 45,
+    "Type": "angle"
+  }, ], 
+  
+"60": [
+ {
+    "question": "If angle B = 60°, what type of angle is formed?",
+   "correct": "Acute",
+    "options": ["Acute", "Right", "Obtuse", "Reflex"],
+      "AB": 10,
+      "BC": 10,
+      "angle_B": 60,
+	  "Type" : "angle"
+    }, ], 
+
+"90": [
+ {
+     "question": "If angle B = 90°, what type of angle is formed?",
+   "correct": "Right",
+    "options": ["Acute", "Right", "Obtuse", "Reflex"],
+      "AB": 10,
+      "BC": 10,
+      "angle_B": 90,
+	  "Type" : "angle"
+    }, ], 
+	
+	
+
+
+   "120": [ 
+ {
+    "question": "If angle B = 120°, what type of angle is formed?",
+    "correct": "Obtuse",
+    "options": ["Acute", "Right", "Obtuse", "Reflex"],
+    "AB": 6,
+    "BC": 7,
+    "angle_B": 120,
+    "Type": "angle"
+  }, ], 
+
+   "180": [ 
+ {
+    "question": "What type of angle is angle B if it measures 180°?",
+    "correct": "Straight",
+    "options": ["Acute", "Right", "Obtuse", "Straight"],
+    "AB": 10,
+    "BC": 4,
+    "angle_B": 180,
+    "Type": "angle"
+  }, ], 
+
+   "270": [ 
+ {
+    "question": "angle B measures 270°. What type of angle is this?",
+    "correct": "Reflex",
+    "options": ["Acute", "Obtuse", "Straight", "Reflex"],
+    "AB": 7,
+    "BC": 7,
+    "angle_B": 270,
+    "Type": "angle"
+  }, ], 
+
+   "10": [ 
+ {
+    "question": "angle B is 10°. What type of angle is it?",
+    "correct": "Acute",
+    "options": ["Acute", "Zero", "Right", "Obtuse"],
+    "AB": 5,
+    "BC": 8,
+    "angle_B": 10,
+    "Type": "angle"
+  }, ], 
+
+   "89": [ 
+ {
+    "question": "angle B is 89°. What type of angle is formed?",
+    "correct": "Acute",
+    "options": ["Acute", "Right", "Obtuse", "Zero"],
+    "AB": 9,
+    "BC": 9,
+    "angle_B": 89,
+    "Type": "angle"
+  }, ], 
+
+    "91": [ 
+ {
+    "question": "If angle B = 91°, what type of angle is it?",
+    "correct": "Obtuse",
+    "options": ["Acute", "Right", "Obtuse", "Straight"],
+    "AB": 6,
+    "BC": 6,
+    "angle_B": 91,
+    "Type": "angle"
+  }, ], 
+
+   "179": [ 
+ {
+    "question": "What type of angle is angle B if it measures 179°?",
+    "correct": "Obtuse",
+    "options": ["Acute", "Straight", "Obtuse", "Reflex"],
+    "AB": 10,
+    "BC": 10,
+    "angle_B": 179,
+    "Type": "angle"
+  }, ], 
+
+   "359": [ 
+ {
+    "question": "angle B is 359°. What type of angle is formed?",
+    "correct": "Reflex",
+    "options": ["Acute", "Obtuse", "Straight", "Reflex"],
+    "AB": 4,
+    "BC": 4,
+    "angle_B": 359,
+    "Type": "angle"
+  }, ], 
+
+   "0": [ 
+ {
+    "question": "An angle measures 0°. What is its type?",
+    "correct": "Zero",
+    "options": ["Acute", "Zero", "Right", "Full"],
+    "AB": 5,
+    "BC": 5,
+    "angle_B": 0,
+    "Type": "angle"
+   }, ], 
+
+    "360": [ 
+ {
+    "question": "An angle measures 360°. What is its type?",
+    "correct": "Full",
+    "options": ["Straight", "Zero", "Reflex", "Full"],
+    "AB": 8,
+    "BC": 8,
+    "angle_B": 360,
+    "Type": "angle"
+   }, ], 
+
+    ">90°": [ 
+ {
+    "question": "An angle measures exactly 90°. It is a:",
+    "correct": "Acute angle",
+    "options": ["Acute angle", "Right angle", "Obtuse angle", "Straight angle"],
+    "AB": 7,
+    "BC": 7,
+    "angle_B": 30,
+    "Type": "angle"
+   }, ], 
+
+    ">90° but <180°": [ 
+ {
+    "question": "An angle is greater than 90° but less than 180°. What type is it?",
+    "correct": "Obtuse",
+    "options": ["Acute", "Right", "Obtuse", "Reflex"],
+    "AB": 6,
+    "BC": 8,
+    "angle_B": 110, // Example value
+    "Type": "angle"
+   }, ], 
+
+    ">180° but <360°": [ 
+ {
+    "question": "An angle is greater than 180° but less than 360°. What type is it?",
+    "correct": "Reflex",
+    "options": ["Acute", "Straight", "Obtuse", "Reflex"],
+    "AB": 9,
+    "BC": 5,
+    "angle_B": 200, // Example value
+    "Type": "angle"
+   }	
+	
+  ],
+ 
+ 
+} ,
+
+"Triangle":
+{
+  "Equilateral": [
+    {
+      "question": "Given AB=10, BC=10, and the angle at B is 60°, what type of triangle is this?",
+      "correct": "Equilateral",
+      "options": ["Equilateral", "Isosceles Acute", "Isosceles Right", "Scalene Acute"],
+      "AB": 10,
+      "BC": 10,
+      "angle_B": 60,
+      "Type": "triangle"
+    },
+    {
+      "question": "A triangle has sides AB=7, BC=7, and the angle between them is 60°. Classify the triangle.",
+      "correct": "Equilateral",
+      "options": ["Equilateral", "Isosceles Obtuse", "Scalene Right", "Isosceles Acute"],
+      "AB": 7,
+      "BC": 7,
+      "angle_B": 60,
+      "Type": "triangle"
+    }
+  ],
+  "Isosceles Acute": [
+    {
+      "question": "If side AB=8, side BC=8, and angle B=70°, what kind of triangle is formed?",
+      "correct": "Isosceles Acute",
+      "options": ["Isosceles Acute", "Equilateral", "Isosceles Right", "Scalene Acute"],
+      "AB": 8,
+      "BC": 8,
+      "angle_B": 70,
+      "Type": "triangle"
+    },
+    {
+      "question": "Classify the triangle with sides AB=15, BC=15, and the included angle B=40°.",
+      "correct": "Isosceles Acute",
+      "options": ["Isosceles Right", "Isosceles Acute", "Equilateral", "Isosceles Obtuse"],
+      "AB": 15,
+      "BC": 15,
+      "angle_B": 40,
+      "Type": "triangle"
+    },
+    {
+      "question": "What is this type of Triangle?",
+      "correct": "Isosceles Acute",
+      "options": ["Equilateral Acute", "Isosceles Acute", "Scalene Acute", "Isosceles Right"],
+      "AB": 3.5,
+      "BC": 10,
+      "angle_B": 80,
+	  "Type" : "triangle"
+    } ,	
+    {
+      "question": "What type is a triangle where AB=6, BC=6, and angle B=85°?",
+      "correct": "Isosceles Acute",
+      "options": ["Isosceles Obtuse", "Equilateral", "Isosceles Acute", "Isosceles Right"],
+      "AB": 6,
+      "BC": 6,
+      "angle_B": 85,
+      "Type": "triangle"
+    },
+    {
+      "question": "What is this type of Triangle?",
+      "correct": "Isosceles Acute",
+      "options": ["Equilateral Acute", "Isosceles Acute", "Scalene Acute", "Isosceles Right"],
+      "AB": 5.5,
+      "BC": 6.5,
+      "angle_B": 65,
+	  "Type" : "triangle"
+    } ,		
+	
+	   {
+      "question": "Identify the triangle type: AB=5, BC=5, angle B=90°.",
+      "correct": "Isosceles Acute",
+      "options": ["Isosceles Acute", "Isosceles Right", "Scalene Right", "Equilateral"],
+      "AB": 5,
+      "BC": 5,
+      "angle_B": 45,
+      "Type": "triangle"
+    },
+  ],
+  "Isosceles Right": [
+    {
+      "question": "Identify the triangle type: AB=5, BC=5, angle B=90°.",
+      "correct": "Isosceles Right",
+      "options": ["Isosceles Acute", "Isosceles Right", "Scalene Right", "Equilateral"],
+      "AB": 5,
+      "BC": 5,
+      "angle_B": 90,
+      "Type": "triangle"
+    },
+	
+    {
+      "question": "What kind of triangle has AB=12, BC=12, and angle B=90°?",
+      "correct": "Isosceles Right",
+      "options": ["Isosceles Right", "Scalene Right", "Isosceles Obtuse", "Isosceles Acute"],
+      "AB": 12,
+      "BC": 12,
+      "angle_B": 90,
+      "Type": "triangle"
+    }
+  ],
+  "Isosceles Obtuse": [
+    {
+      "question": "A triangle is defined by AB=9, BC=9, angle B=100°. What type is it?",
+      "correct": "Isosceles Obtuse",
+      "options": ["Isosceles Acute", "Isosceles Obtuse", "Scalene Obtuse", "Isosceles Right"],
+      "AB": 9,
+      "BC": 9,
+      "angle_B": 100,
+      "Type": "triangle"
+    },
+    {
+      "question": "Classify the triangle: AB=4, BC=4, angle B=150°.",
+      "correct": "Isosceles Obtuse",
+      "options": ["Scalene Obtuse", "Isosceles Right", "Isosceles Obtuse", "Isosceles Acute"],
+      "AB": 4,
+      "BC": 4,
+      "angle_B": 150,
+      "Type": "triangle"
+    },
+    {
+      "question": "What type of triangle has sides AB=11, BC=11 and the angle between them is 115°?",
+      "correct": "Isosceles Obtuse",
+      "options": ["Isosceles Acute", "Scalene Obtuse", "Isosceles Obtuse", "Equilateral"],
+      "AB": 11,
+      "BC": 11,
+      "angle_B": 115,
+      "Type": "triangle"
+    }
+  ],
+  "Scalene Acute": [
+    {
+      "question": "Given AB=5, BC=6, angle B=70°, classify the triangle.",
+      "correct": "Scalene Acute",
+      "options": ["Scalene Acute", "Isosceles Acute", "Scalene Right", "Scalene Obtuse"],
+      "AB": 5,
+      "BC": 6,
+      "angle_B": 70,
+      "Type": "triangle"
+    },
+    {
+      "question": "What type of triangle has AB=8, BC=10, and angle B=50°?",
+      "correct": "Scalene Acute",
+      "options": ["Scalene Acute", "Equilateral", "Isosceles Acute", "Scalene Obtuse"],
+      "AB": 8,
+      "BC": 10,
+      "angle_B": 50,
+      "Type": "triangle"
+    },
+    {
+      "question": "Identify the triangle: AB=7, BC=9, angle B=65°.",
+      "correct": "Scalene Acute",
+      "options": ["Isosceles Acute", "Scalene Right", "Scalene Acute", "Scalene Obtuse"],
+      "AB": 7,
+      "BC": 9,
+      "angle_B": 65,
+      "Type": "triangle"
+    }
+  ],
+  "Scalene Right": [
+    {
+      "question": "A triangle has sides AB=3, BC=4, and the angle at B is 90°. What type is it?",
+      "correct": "Scalene Right",
+      "options": ["Scalene Right", "Isosceles Right", "Scalene Acute", "Scalene Obtuse"],
+      "AB": 3,
+      "BC": 4,
+      "angle_B": 90,
+      "Type": "triangle"
+    },
+    {
+      "question": "Classify the triangle with AB=12, BC=5, and angle B=90°.",
+      "correct": "Scalene Right",
+      "options": ["Scalene Right", "Isosceles Right", "Scalene Acute", "Equilateral"],
+      "AB": 12,
+      "BC": 5,
+      "angle_B": 90,
+      "Type": "triangle"
+    },
+	
+    {
+      "question": "Classify the triangle with AB=6, BC=8.5, and angle B=45°.",
+      "correct": "Scalene Right",
+      "options": ["Scalene Right", "Isosceles Right", "Scalene Acute", "Equilateral"],
+      "AB": 6,
+      "BC": 8.5,
+      "angle_B": 45,
+      "Type": "triangle"
+    },	
+     {
+      "question": "What type is a triangle with sides AB=8, BC=15 and angle B=90°?",
+      "correct": "Scalene Right",
+      "options": ["Isosceles Right", "Scalene Acute", "Scalene Right", "Scalene Obtuse"],
+      "AB": 8,
+      "BC": 15,
+      "angle_B": 90,
+      "Type": "triangle"
+    }
+  ],
+  "Scalene Obtuse": [
+    {
+      "question": "Identify the triangle type: AB=4, BC=5, angle B=110°.",
+      "correct": "Scalene Obtuse",
+      "options": ["Scalene Obtuse", "Isosceles Obtuse", "Scalene Acute", "Scalene Right"],
+      "AB": 4,
+      "BC": 5,
+      "angle_B": 110,
+      "Type": "triangle"
+    },
+    {
+      "question": "What kind of triangle is formed by AB=7, BC=3, and angle B=130°?",
+      "correct": "Scalene Obtuse",
+      "options": ["Scalene Obtuse", "Isosceles Obtuse", "Scalene Acute", "Equilateral"],
+      "AB": 7,
+      "BC": 3,
+      "angle_B": 130,
+      "Type": "triangle"
+    },
+    {
+      "question": "Classify the triangle where AB=10, BC=6, and angle B=105°.",
+      "correct": "Scalene Obtuse",
+      "options": ["Isosceles Obtuse", "Scalene Obtuse", "Scalene Right", "Scalene Acute"],
+      "AB": 10,
+      "BC": 6,
+      "angle_B": 105,
+      "Type": "triangle"
+    }
+  ]
+} ,
+  "Quadrilateral": {
+    "Square": [
+      {
+        "question": "This quadrilateral has AB=10, BC=10, and Angle B=90°. All sides are equal. What is it?",
+        "correct": "Square",
+        "options": ["Square", "Rectangle", "Rhombus", "Trapezoid"],
+        "AB": 10,
+        "BC": 10,
+        "angle_B": 90,
+		"CD": -10,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Identify the shape: All four sides are 5 units long, and all angles are right angles.",
+        "correct": "Square",
+        "options": ["Square", "Rhombus", "Rectangle", "Parallelogram"],
+        "AB": 5,
+        "BC": 5,
+        "angle_B": 90,
+		"CD": -5,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+	  {
+      "question": "This quadrilateral has AB=10, BC=10, and Angle B=90°. All sides are equal. What is it?",
+      "correct": "Square",
+      "options": ["Square", "Rectangle", "Rhombus", "Trapezoid"],
+      "AB": 10,
+      "BC": 10,
+      "angle_B": 90,
+      "CD": -10,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+      "question": "Identify the shape: All four sides are 5 units long, and all angles are right angles.",
+      "correct": "Square",
+      "options": ["Square", "Rhombus", "Rectangle", "Parallelogram"],
+      "AB": 5,
+      "BC": 5,
+      "angle_B": 90,
+      "CD": -5,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+      "question": "A shape has 4 equal sides of length 8, and Angle B is 90 degrees. What shape is it?",
+      "correct": "Square",
+      "options": ["Square", "Rectangle", "Rhombus", "Parallelogram"],
+      "AB": 8,
+      "BC": 8,
+      "angle_B": 90,
+      "CD": -8,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+      "question": "If AB=BC=12 and Angle B is a right angle, and all sides are equal, what is this quadrilateral?",
+      "correct": "Square",
+      "options": ["Square", "Rhombus", "Rectangle", "Kite"],
+      "AB": 12,
+      "BC": 12,
+      "angle_B": 90,
+      "CD": -12,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+       "question": "This quadrilateral has four equal sides (length 3.5) and four right angles. Name it.",
+       "correct": "Square",
+       "options": ["Square", "Rectangle", "Rhombus", "Trapezoid"],
+       "AB": 3.5,
+       "BC": 3.5,
+       "angle_B": 90,
+       "CD": -3.5,
+       "properties": ["All sides equal", "All angles 90°"],
+       "Type": "quadrilateral"
+     },
+     {
+      "question": "Which quadrilateral has four equal sides AND four 90° angles?",
+      "correct": "Square",
+      "options": ["Square", "Rectangle", "Rhombus", "Parallelogram"],
+      "AB": 6,
+      "BC": 6,
+      "angle_B": 90,
+      "CD": -6,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+     },
+	   {
+      "question": "A shape has 4 equal sides and 3 of its angles are right angles (90°). What must this shape be?",
+      "correct": "Square",
+      "options": ["Square", "Rhombus", "Rectangle", "Trapezoid"],
+      "AB": 7,
+      "BC": 7,
+      "angle_B": 90,
+      "CD": -7,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+      "question": "If a quadrilateral has four sides of length 15 and four 90° angles, what is it called?",
+      "correct": "Square",
+      "options": ["Square", "Rectangle", "Parallelogram", "Rhombus"],
+      "AB": 15,
+      "BC": 15,
+      "angle_B": 90,
+      "CD": -15,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+      "question": "I am a special quadrilateral. I have four right angles like a rectangle, AND four equal sides like a rhombus. What shape am I?",
+      "correct": "Square",
+      "options": ["Square", "Rectangle", "Rhombus", "Parallelogram"],
+      "AB": 9,
+      "BC": 9,
+      "angle_B": 90,
+      "CD": -9,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    },
+    {
+      "question": "Imagine a flat shape with four sides. All sides measure exactly 20 units, and every corner angle is a perfect 90°. What is this shape?",
+      "correct": "Square",
+      "options": ["Square", "Rhombus", "Rectangle", "Kite"],
+      "AB": 20,
+      "BC": 20,
+      "angle_B": 90,
+      "CD": -20,
+      "properties": ["All sides equal", "All angles 90°"],
+      "Type": "quadrilateral"
+    }
+    ],
+    "Rectangle": [
+      {
+        "question": "A quadrilateral has AB=12, BC=8, and Angle B=90°. Opposite sides are equal. What is it?",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Square", "Parallelogram", "Kite"],
+        "AB": 12,
+        "BC": 8,
+        "angle_B": 90,
+		"CD": -12,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "This shape has opposite sides equal (AB=15, BC=7) and all angles are 90°. Classify it.",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Parallelogram", "Square", "Trapezoid"],
+        "AB": 15,
+        "BC": 7,
+        "angle_B": 90,
+		"CD": -15,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+	   {
+        "question": "A quadrilateral has AB=12, BC=8, and Angle B=90°. Opposite sides are equal. What is it?",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Square", "Parallelogram", "Kite"],
+        "AB": 12,
+        "BC": 8,
+        "angle_B": 90,
+        "CD": -12,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "This shape has opposite sides equal (AB=15, BC=7) and all angles are 90°. Classify it.",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Parallelogram", "Square", "Trapezoid"],
+        "AB": 15,
+        "BC": 7,
+        "angle_B": 90,
+        "CD": -15,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "This quadrilateral has four right angles (90°). Its adjacent sides have different lengths (AB=10, BC=6). What is it?",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Square", "Rhombus", "Parallelogram"],
+        "AB": 10,
+        "BC": 6,
+        "angle_B": 90,
+        "CD": -10,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "A shape has two sides of length 20 and two sides of length 9. All its corner angles are 90°. Identify the shape.",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Square", "Kite", "Trapezoid"],
+        "AB": 20,
+        "BC": 9,
+        "angle_B": 90,
+        "CD": -20,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "I am a parallelogram with four right angles. My adjacent sides AB=5 and BC=3 are not equal. What am I?",
+        "correct": "Rectangle",
+        "options": ["Rectangle", "Square", "Rhombus", "Trapezoid"],
+        "AB": 5,
+        "BC": 3,
+        "angle_B": 90,
+        "CD": -5,
+        "properties": ["Opposite sides equal", "All angles 90°", "Parallelogram"],
+        "Type": "quadrilateral"
+    },
+    
+    ],
+    "Rhombus": [
+      {
+        "question": "A quadrilateral has AB=7, BC=7, and Angle B=65°. All sides are equal, but angles are not 90°. What is it?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Kite", "Parallelogram"],
+        "AB": 7,
+        "BC": 7,
+        "angle_B": 65,
+		"CD": -7,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "All four sides of this quadrilateral are 9 units long. Angle B is 110°. What shape is it?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Trapezoid", "Kite"],
+        "AB": 9,
+        "BC": 9,
+        "angle_B": 110,
+		"CD": -9,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+	   {
+        "question": "A quadrilateral has AB=7, BC=7, and Angle B=65°. All sides are equal, but angles are not 90°. What is it?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Kite", "Parallelogram"],
+        "AB": 7,
+        "BC": 7,
+        "angle_B": 65,
+        "CD": -7,
+        "properties": ["All sides equal", "Opposite angles equal", "Angles not 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "All four sides of this quadrilateral are 9 units long. Angle B is 110°. What shape is it?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Trapezoid", "Kite"],
+        "AB": 9,
+        "BC": 9,
+        "angle_B": 110,
+        "CD": -9,
+        "properties": ["All sides equal", "Opposite angles equal", "Angles not 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "I am a quadrilateral with four equal sides of length 10. My angles are not right angles (Angle B = 80°). What am I?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Rectangle", "Trapezoid"],
+        "AB": 10,
+        "BC": 10,
+        "angle_B": 80,
+        "CD": -10,
+        "properties": ["All sides equal", "Opposite angles equal", "Angles not 90°"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "A shape has four sides of length 12. The angle between two adjacent sides (Angle B) is 130°. What is this shape?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Parallelogram", "Kite"],
+        "AB": 12,
+        "BC": 12,
+        "angle_B": 130,
+        "CD": -12,
+        "properties": ["All sides equal", "Opposite angles equal", "Angles not 90°"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "I am a parallelogram where all four sides are equal in length (e.g., 6 units). However, my corners are not square (Angle B = 50°). What am I?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Rectangle", "Trapezoid"],
+        "AB": 6,
+        "BC": 6,
+        "angle_B": 50,
+        "CD": -6,
+        "properties": ["All sides equal", "Opposite sides parallel", "Opposite angles equal", "Angles not 90°"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "A shape has 4 equal sides of length 5. Angle B is 75°. Its opposite angle (Angle D) is also 75°. What is the shape?",
+        "correct": "Rhombus",
+        "options": ["Rhombus", "Square", "Kite", "Rectangle"],
+        "AB": 5,
+        "BC": 5,
+        "angle_B": 75,
+        "CD": -5,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+    }
+    ],
+    "Parallelogram": [
+      {
+        "question": "A quadrilateral has AB=5, BC=9, and Angle B=75°. Opposite sides are parallel and equal. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Rectangle", "Rhombus", "Trapezoid"],
+        "AB": 5,
+        "BC": 9,
+        "angle_B": 75,
+		"CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "This shape has opposite sides parallel. Side AB=5, BC=6, and Angle B=120°. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Rhombus", "Rectangle", "Isosceles Trapezoid"],
+        "AB": 5,
+        "BC": 6,
+        "angle_B": 120,
+		"CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Identify the shape where opposite sides are parallel and equal, but angles are not right angles.",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Trapezoid", "Rectangle", "Kite"],
+        "AB": 7, 
+        "BC": 8,  
+        "angle_B": 60, 
+		"CD": -7,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+	  {
+        "question": "A quadrilateral has AB=5, BC=9, and Angle B=75°. Opposite sides are parallel and equal. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Rectangle", "Rhombus", "Trapezoid"],
+        "AB": 5,
+        "BC": 9,
+        "angle_B": 75,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "This shape has opposite sides parallel. Side AB=5, BC=6, and Angle B=120°. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Rhombus", "Rectangle", "Isosceles Trapezoid"],
+        "AB": 5,
+        "BC": 6,
+        "angle_B": 120,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Identify the shape where opposite sides are parallel and equal, but angles are not right angles (e.g., Angle B = 60°).",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Trapezoid", "Rectangle", "Kite"],
+        "AB": 7, 
+        "BC": 8,   
+        "angle_B": 60, 
+        "CD": -7,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A shape has opposite sides parallel. Angle B=110° and the adjacent Angle C=70°. Sides are AB=10, BC=8. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Rectangle", "Trapezoid", "Rhombus"],
+        "AB": 10,
+        "BC": 8,
+        "angle_B": 110,
+        "CD": -10,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal", "Consecutive angles supplementary"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "A quadrilateral has sides AB=6 and BC=11. The angle at B is 140°. Its opposite sides are equal and parallel. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Kite", "Rhombus", "Rectangle"],
+        "AB": 6,
+        "BC": 11,
+        "angle_B": 140,
+        "CD": -6,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "Which shape MUST have two pairs of parallel sides and opposite sides of equal length, but corners aren't necessarily 90°?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Square", "Trapezoid", "Rectangle"],
+        "AB": 9,
+        "BC": 4,
+        "angle_B": 85,
+        "CD": -9,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "Opposite sides are parallel in this shape. AB=12, BC=7. Angle B = 55° and Angle D (opposite B) = 55°. What is it?",
+        "correct": "Parallelogram",
+        "options": ["Parallelogram", "Isosceles Trapezoid", "Rhombus", "Kite"],
+        "AB": 12,
+        "BC": 7,
+        "angle_B": 55,
+        "CD": -12,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+    }
+    ],
+   
+    "Isosceles Trapezoid": [
+      {
+        "question": "This shape has exactly one pair of parallel sides (AB || CD). The non-parallel sides AD and BC are equal. What is it?",
+        "correct": "Isosceles Trapezoid",
+        "options": ["Isosceles Trapezoid", "Trapezoid", "Rectangle", "Parallelogram"],
+        "AB": 6, 
+        "BC": 4,   
+        "angle_B": 120,
+		"CD": -10,
+        "properties": ["Exactly one pair of parallel sides", "Non-parallel sides equal", "Base angles equal"],
+        "Type": "quadrilateral"
+      },
+     {
+        "question": "This shape has exactly one pair of parallel sides (AB || CD). The non-parallel sides AD and BC are equal. What is it?",
+        "correct": "Isosceles Trapezoid",
+        "options": ["Isosceles Trapezoid", "Trapezoid", "Rectangle", "Parallelogram"],
+        "AB": 4, 
+        "BC": 5.5,   
+        "angle_B": 120,
+		"CD": -9.5,
+        "properties": ["Exactly one pair of parallel sides", "Non-parallel sides equal", "Base angles equal"],
+        "Type": "quadrilateral"
+      },	  
+      {
+        "question": "A trapezoid has non-parallel sides of equal length (AD=BC). What is this specific type of trapezoid called?",
+        "correct": "Isosceles Trapezoid",
+        "options": ["Isosceles Trapezoid", "Right Trapezoid", "Scalene Trapezoid", "Parallelogram"],
+        "AB": 4, 
+        "BC": 4, 
+        "angle_B": 120, 
+		"CD": -8,
+        "properties": ["Exactly one pair of parallel sides", "Non-parallel sides equal"],
+        "Type": "quadrilateral"
+      },
+	  {
+        "question": "This shape has exactly one pair of parallel sides (AB || CD). The non-parallel sides AD and BC are equal. What is it?",
+        "correct": "Isosceles Trapezoid",
+        "options": ["Isosceles Trapezoid", "Trapezoid", "Rectangle", "Parallelogram"],
+        "AB": 10, 
+        "BC": 4,    
+        "angle_B": 60, 
+        "CD": -6, 
+        "properties": ["Exactly one pair of parallel sides", "Non-parallel sides equal", "Base angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A trapezoid has non-parallel sides of equal length (AD=BC). What is this specific type of trapezoid called?",
+        "correct": "Isosceles Trapezoid",
+        "options": ["Isosceles Trapezoid", "Right Trapezoid", "Scalene Trapezoid", "Parallelogram"],
+        "AB": 8, 
+        "BC": 4, 
+        "angle_B": 60, 
+        "CD": -4,
+        "properties": ["Exactly one pair of parallel sides", "Non-parallel sides equal"],
+        "Type": "quadrilateral"
+      },
+    
+    
+    
+    
+    ],
+    "Trapezoid": [
+      {
+        "question": "This shape has exactly one pair of parallel sides (like AB || CD). The other sides are not necessarily equal. What is it?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Isosceles Trapezoid", "Parallelogram", "Rectangle"],
+        "AB": 8, 
+        "BC": 5,   
+        "angle_B": 120, 
+		"CD": -10,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A quadrilateral has only one pair of opposite sides parallel. What is its most general name?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Kite", "Parallelogram", "quadrilateral"],
+        "AB": 6, 
+        "BC": 10, 
+        "angle_B": 160, 
+		"CD": -9,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A quadrilateral has only one pair of opposite sides parallel. What is its most general name?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Kite", "Parallelogram", "quadrilateral"],
+        "AB": 3.5, 
+        "BC": 6, 
+        "angle_B": 70, 
+		"CD": -7,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+      },	  
+     {
+        "question": "A quadrilateral has only one pair of opposite sides parallel. What is its most general name?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Kite", "Parallelogram", "quadrilateral"],
+        "AB": 5.5, 
+        "BC": 7, 
+        "angle_B": 129, 
+		"CD": -10,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+      }	,
+  {
+        "question": "This shape has exactly one pair of parallel sides (like AB || CD). The other sides are not necessarily equal. What is it?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Isosceles Trapezoid", "Parallelogram", "Rectangle"],
+        "AB": 8, 
+        "BC": 5,    
+        "angle_B": 120, 
+        "CD": -10,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A quadrilateral has only one pair of opposite sides parallel. What is its most general name?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Kite", "Parallelogram", "Quadrilateral"],
+        "AB": 6, 
+        "BC": 10, 
+        "angle_B": 160, 
+        "CD": -9,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+      },
+    {
+        "question": "Unlike a parallelogram, this quadrilateral has only ONE pair of parallel sides. What is it?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Rhombus", "Rectangle", "Kite"],
+        "AB": 7,
+        "BC": 4,
+        "angle_B": 80,
+        "CD": -11,
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+    },
+    {
+        "question": "This quadrilateral has sides AD and BC parallel, while sides AB and CD are not parallel. What is its classification?",
+        "correct": "Trapezoid",
+        "options": ["Trapezoid", "Parallelogram", "Rectangle", "Rhombus"],
+        "AB": 5,
+        "BC": 10, 
+        "angle_B": 95, 
+        "CD": -8, 
+        "properties": ["Exactly one pair of parallel sides"],
+        "Type": "quadrilateral"
+    },
+    
+    
+    ]
+  }
+
+,
+
+"Perimeter":
+{
+  "Equilateral": [
+    {
+      "question": "What is the perimeter?",
+      "correct": "30",
+      "options": ["10", "20", "30", "100"],
+      "AB": 10,
+      "BC": 10,
+      "angle_B": 60,
+      "Type": "triangle"
+    },
+	{
+        "question": "What is the perimeter?",
+        "correct": "30.0",
+        "options": ["10.0", "20.0", "30.0", "100.0"],
+        "AB": 10,
+        "BC": 10,
+        "angle_B": 60,
+        "Type": "triangle"
+      },
+      {
+        "question": "Calculate the perimeter of this equilateral triangle.",
+        "correct": "24.0",
+        "options": ["8.0", "16.0", "24.0", "64.0"],
+        "AB": 8,
+        "BC": 8,
+        "angle_B": 60,
+        "Type": "triangle"
+      },
+      {
+        "question": "Find the perimeter.",
+        "correct": "16.5",
+        "options": ["5.5", "11.0", "16.5", "30.3"],
+        "AB": 5.5,
+        "BC": 5.5,
+        "angle_B": 60,
+        "Type": "triangle"
+      }
+   
+  ],
+  "Isosceles": [
+    
+    
+    {
+      "question": "What is the perimeter?",
+      "correct": "23.5",
+      "options": ["3.5", "13.5", "23.5", "30"],
+      "AB": 3.5,
+      "BC": 10,
+      "angle_B": 80,
+	  "Type" : "triangle"
+    } ,	
+    
+    {
+      "question": "What is the perimeter?",
+      "correct": "18.5",
+      "options": ["18.5", "12", "18", "30"],
+      "AB": 5.5,
+      "BC": 6.5,
+      "angle_B": 65,
+	  "Type" : "triangle"
+    } ,	
+
+{
+        "question": "What is the perimeter?",
+        "correct": "23.5",
+        "options": ["3.5", "13.5", "23.5", "30.0"],
+        "AB": 3.5,
+        "BC": 10,
+        "angle_B": 80,
+        "Type": "triangle"
+      },
+      {
+        "question": "What is the perimeter?",
+        "correct": "18.5",
+        "options": ["18.5", "12.0", "18.0", "30.0"],
+        "AB": 5.5,
+        "BC": 6.5,
+        "angle_B": 65,
+        "Type": "triangle"
+      },
+      
+      
+	
+	   
+  ],
+  
+  "Scalene with AC=7.8": [
+    {
+       "question": "Calculate the triangle's perimeter.",
+        "correct": "18.8", // Calculation: 4+7+sqrt(4^2+7^2-2*4*7*cos(85)) = 18.75 -> 18.8
+        "options": ["11.0", "18.8", "7.8", "20.0"],
+        "AB": 4,
+        "BC": 7,
+        "angle_B": 85,
+        "Type": "triangle"
+    },
+	
+	],
+	
+  "Scalene with AC=6.6": [
+    {
+       "question": "Find the total perimeter.",
+        "correct": "22.6", // Calculation: 10+6+sqrt(10^2+6^2-2*10*6*cos(40)) = 22.64 -> 22.6
+        "options": ["16.0", "6.6", "22.0", "22.6"],
+        "AB": 10,
+        "BC": 6,
+        "angle_B": 40,
+        "Type": "triangle"
+    },
+	
+	],	
+    
+      
+    "Scalene with AC=6.4": [
+      {
+        "question": "What is the perimeter? (Note: Example values may differ slightly from strict calculation)",
+        "correct": "17.4", // Corrected value based on calculation: 5+6+sqrt(5^2+6^2-2*5*6*cos(70)) = 17.36 -> 17.4
+        "options": ["17.4", "11.0", "6.4", "18.0"], // Kept original options, adjusted correct value
+        "AB": 5,
+        "BC": 6,
+        "angle_B": 70,
+        "Type": "triangle"
+      },
+	  ],
+	   "Scalene with AC=8.5": [
+       {
+         "question": "What is the perimeter of this triangle?",
+         "correct": "26.5",
+         "options": ["18.0", "8.5", "26.5", "27.0"],
+         "AB": 8,
+         "BC": 10,
+         "angle_B": 55,
+         "Type": "triangle"
+       }
+     ],
+    "Scalene with AC=12.0": [
+       {
+         "question": "Calculate the total length around the triangle.",
+         "correct": "26.0",
+         "options": ["14.0", "26.0", "12.0", "25.5"],
+         "AB": 9,
+         "BC": 5,
+         "angle_B": 115,
+         "Type": "triangle"
+       }
+     ],
+    "Scalene with AC=10.6": [
+       {
+         "question": "Find the triangle's perimeter.",
+         "correct": "25.6",
+         "options": ["15.0", "10.6", "25.6", "26.0"],
+         "AB": 7,
+         "BC": 8,
+         "angle_B": 90,
+         "Type": "triangle"
+       }
+     ],
+      
+
+ 
+  
+  
+    "Square": [
+      {
+        "question": "What is the perimeter?",
+        "correct": "40",
+        "options": ["40", "10", "20", "100"],
+        "AB": 10,
+        "BC": 10,
+        "angle_B": 90,
+		"CD": -10,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+	   {
+        "question": "Find the perimeter of a square with side AB = 5.",
+        "correct": "20",
+        "options": ["5", "10", "20", "25"],
+        "AB": 5,
+        "BC": 5,
+        "angle_B": 90,
+        "CD": -5,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "What is the perimeter of a square where side BC = 8?",
+        "correct": "32",
+        "options": ["8", "16", "32", "64"],
+        "AB": 8,
+        "BC": 8,
+        "angle_B": 90,
+        "CD": -8,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Calculate the perimeter of a square with side length 12.",
+        "correct": "12",
+        "options": ["12", "3", "6", "9"],
+        "AB": 3,
+        "BC": 3,
+        "angle_B": 90,
+        "CD": -3,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A square has side AB = 3.5. What is the total length around the shape?",
+        "correct": "14.0",
+        "options": ["3.5", "7.0", "14.0", "12.3"],
+        "AB": 3.5,
+        "BC": 3.5,
+        "angle_B": 90,
+        "CD": -3.5,
+        "properties": ["All sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      }
+      
+    ],
+    "Rectangle": [
+      {
+           "question": "What is the perimeter?",
+        "correct": "36",
+        "options": ["36", "10", "8", "100"],
+        "AB": 10,
+        "BC": 8,
+        "angle_B": 90,
+		"CD": -10,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+ {
+        "question": "Calculate the perimeter of a rectangle with side lengths 10 and 6.",
+        "correct": "32",
+        "options": ["16", "20", "12", "32"],
+        "AB": 10,
+        "BC": 6,
+        "angle_B": 90,
+        "CD": -10,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+
+      {
+        "question": "What is the perimeter of a rectangle with adjacent sides measuring 7 and 9?",
+        "correct": "32",
+        "options": ["16", "32", "14", "18"],
+        "AB": 7,
+        "BC": 9,
+        "angle_B": 90,
+        "CD": -7,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A rectangle has sides AB = 4.5 and BC = 8.5. Calculate its perimeter.",
+        "correct": "26.0",
+        "options": ["13.0", "9.0", "17.0", "26.0"],
+        "AB": 4.5,
+        "BC": 8.5,
+        "angle_B": 90,
+        "CD": -4.5,
+        "properties": ["Opposite sides equal", "All angles 90°"],
+        "Type": "quadrilateral"
+      }	  
+     
+    ],
+    "Rhombus": [
+      {
+             "question": "What is the perimeter?",
+        "correct": "28",
+        "options": ["28", "7", "14", "49"],
+        "AB": 7,
+        "BC": 7,
+        "angle_B": 65,
+		"CD": -7,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+ {
+        "question": "A rhombus has side length AB=7. What is its perimeter?",
+        "correct": "24",
+        "options": ["6", "12", "24", "36"],
+        "AB": 6,
+        "BC": 6,
+        "angle_B": 65,
+        "CD": -6,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "All four sides of this rhombus are 9 units long. Calculate the perimeter.",
+        "correct": "36",
+        "options": ["9", "18", "36", "81"],
+        "AB": 9,
+        "BC": 9,
+        "angle_B": 110,
+        "CD": -9,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Find the perimeter of a rhombus with side length AB = 8.",
+        "correct": "32",
+        "options": ["8", "16", "32", "64"],
+        "AB": 8,
+        "BC": 8,
+        "angle_B": 80,
+        "CD": -8,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "What is the perimeter of a rhombus where the side length (BC) is 6.5?",
+        "correct": "26.0",
+        "options": ["6.5", "13.0", "26.0", "42.3"],
+        "AB": 6.5,
+        "BC": 6.5,
+        "angle_B": 55,
+        "CD": -6.5,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Calculate the perimeter of a rhombus with a side measuring 4.5 units.",
+        "correct": "18.0",
+        "options": ["4.5", "9.0", "18.0", "20.3"],
+        "AB": 4.5,
+        "BC": 4.5,
+        "angle_B": 125,
+        "CD": -4.5,
+        "properties": ["All sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      }
+    ],
+  
+     
+    
+    "Parallelogram": [
+    
+	  {
+        "question": "A parallelogram has adjacent sides AB=5 and BC=9. What is its perimeter?",
+        "correct": "28",
+        "options": ["14", "28", "18", "10"],
+        "AB": 5,
+        "BC": 9,
+        "angle_B": 75,
+        "CD": -5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Calculate the perimeter of a parallelogram with side lengths 6 and 8.",
+        "correct": "28",
+        "options": ["14", "12", "16", "28"],
+        "AB": 6,
+        "BC": 8,
+        "angle_B": 60,
+        "CD": -6,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "Find the total length around a parallelogram where side AB=4 and side BC=7.",
+        "correct": "22",
+        "options": ["11", "22", "8", "14"],
+        "AB": 4,
+        "BC": 7,
+        "angle_B": 110,
+        "CD": -4,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "What is the perimeter if a parallelogram has sides AB=5.5 and BC=9.5?",
+        "correct": "30.0",
+        "options": ["15.0", "11.0", "19.0", "30.0"],
+        "AB": 5.5,
+        "BC": 9.5,
+        "angle_B": 80,
+        "CD": -5.5,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      },
+      {
+        "question": "A parallelogram's adjacent sides measure 3 and 6. Calculate its perimeter.",
+        "correct": "18",
+        "options": ["9", "6", "12", "18"],
+        "AB": 3,
+        "BC": 6,
+        "angle_B": 130,
+        "CD": -3,
+        "properties": ["Opposite sides parallel", "Opposite sides equal", "Opposite angles equal"],
+        "Type": "quadrilateral"
+      }
+    
+    ]
+  
+
+
+
+ 
+}
+
 }

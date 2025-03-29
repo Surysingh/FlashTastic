@@ -484,14 +484,14 @@ input:checked + .slider:before {
  .container {
             width: 95%; /* Wider for axes visibility */
             max-width: 800px; /* Adjust max width */
-            margin: 20px auto;
+            margin: 10px auto;
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         #canvas-container {
-            margin-top: 20px;
+            margin-top: 10px;
             text-align: center; /* Center canvas */
             position: relative; /* Needed for absolute positioning of metrics */
             width: 600px; /* Fixed canvas size */
@@ -508,7 +508,7 @@ input:checked + .slider:before {
             display: flex;
             justify-content: left; /* Center slider */
             align-items: left;
-            margin: 20px 0;
+            margin: 10px 0;
             padding: 0 10px;
             max-width: 500px; /* Limit slider width */
             margin-left: auto; /* Center */

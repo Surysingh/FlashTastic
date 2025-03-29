@@ -1264,6 +1264,9 @@ function setSliderValues(a, b, op) {
         // ... (Reading sliders and adjusting controls remains the same) ...
         const selectedTopic = document.getElementById('geometryTopic').value; /* */ const side1Len = parseFloat(document.getElementById('sliderSide1').value); document.getElementById('valueSide1').innerText = side1Len; /* */ const side2Len = parseFloat(document.getElementById('sliderSide2').value); document.getElementById('valueSide2').innerText = side2Len; /* */ let angleDegrees = parseInt(sliderAngle.value); /* */ if (selectedTopic === 'angle') { labelSide1.innerText = "AB:"; labelSide2.innerText = "BC:"; labelAngle.innerText = "Angle B:"; if (sliderAngle.max !== "360") { sliderAngle.min = 0; sliderAngle.max = 360; angleDegrees = parseInt(sliderAngle.value); } document.getElementById('quad-controls').style.display = 'none'; } else { labelSide1.innerText = "AB:"; labelSide2.innerText = "BC:"; labelAngle.innerText = "Angle B"; if (sliderAngle.max !== "179") { sliderAngle.min = 1; sliderAngle.max = 179; angleDegrees = Math.min(179, Math.max(1, angleDegrees)); sliderAngle.value = angleDegrees; } document.getElementById('quad-controls').style.display = selectedTopic === 'quadrilateral' ? 'block' : 'none'; } document.getElementById('valueAngle').innerText = angleDegrees; /* */ let topLengthCD = 0; if (selectedTopic === 'quadrilateral') { topLengthCD = parseFloat(document.getElementById('sliderTopCD').value); document.getElementById('valueTopCD').innerText = topLengthCD; } /* */
 
+		console.log(selectedTopic);
+		console.log(side1Len);
+		
         // --- Clear & Draw Background ---
         ctx.clearRect(0, 0, canvasWidth, canvasHeight); metricsDisplayLeft.style.display = 'none'; drawGrid(); drawAxes(); /* */
 
@@ -1276,7 +1279,7 @@ function setSliderValues(a, b, op) {
                  const angleBRad=angleDegrees*(Math.PI/180); mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:side2Len*Math.sin(angleBRad)}; const height_tri=Math.abs(mthC.y); mthH={x:mthC.x,y:0}; const sideAC=calculateDistance(mthA,mthC); if(isNaN(sideAC))throw new Error("Calc error."); let angleA_deg=0; if(side1Len>epsilon&&sideAC>epsilon){const cosA=(side1Len**2+sideAC**2-side2Len**2)/(2*side1Len*sideAC); angleA_deg=Math.acos(Math.max(-1,Math.min(1,cosA)))*(180/Math.PI);} let angleC_deg=0; if(side2Len>epsilon&&sideAC>epsilon){const cosC=(side2Len**2+sideAC**2-side1Len**2)/(2*side2Len*sideAC); angleC_deg=Math.acos(Math.max(-1,Math.min(1,cosC)))*(180/Math.PI);} if(Math.abs(angleA_deg+angleDegrees+angleC_deg-180)>angleEpsilon*5){angleC_deg=180-angleA_deg-angleDegrees;} const base_tri=side1Len; const area_tri=0.5*base_tri*height_tri; const perimeter_tri=side1Len+side2Len+sideAC; drawTriangleShape(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const triTypeResult=getTriangleType(side1Len,side2Len,sideAC,angleA_deg,angleDegrees,angleC_deg); metricsDisplayLeft.innerHTML=`<b>Metrics (Triangle):</b><br> AB=${side1Len.toFixed(1)} BC=${side2Len.toFixed(1)} AC≈${sideAC.toFixed(1)}<br> Height CH≈${height_tri.toFixed(1)}<br><hr> ∠A≈${angleA_deg.toFixed(1)}° ∠B=${angleDegrees.toFixed(1)}° ∠C≈${angleC_deg.toFixed(1)}°<br><hr> Perim≈${perimeter_tri.toFixed(1)}<br>Area Formula: 1/2 * Base * Height<br>Area≈${area_tri.toFixed(1)}<br>Type: ${triTypeResult.name}<br><hr><span style="font-size:9px; font-weight:normal;">(${triTypeResult.reason})</span>`; metricsDisplayLeft.style.display='block';  /* */
 
             } else if (selectedTopic === 'quadrilateral') { /* */
-                 if(side1Len<=0||side2Len<=0){handleInvalidInput("Side lengths must be positive."); return;} const angleBRad=angleDegrees*(Math.PI/180); const height=side2Len*Math.sin(angleBRad); if(height<epsilon){handleInvalidInput("Height near zero; invalid shape."); return;} mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:height}; mthD={x:mthC.x-topLengthCD,y:height}; mthH={x:mthC.x, y:0}; const sideBC=side2Len; const sideDA=calculateDistance(mthD,mthA); if(isNaN(sideDA))throw new Error("Calc error."); const angleB_q=angleDegrees; const angleA_q=calculateAngleAtVertex(mthA,mthD,mthB); const angleD_q=calculateAngleAtVertex(mthD,mthC,mthA); const angleC_q=calculateAngleAtVertex(mthC,mthB,mthD); const perimeter_q=side1Len+sideBC+Math.abs(topLengthCD)+sideDA; const area_q_final=0.5*Math.abs(side1Len+topLengthCD)*height; drawQuadrilateral(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC),mathToCanvas(mthD)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const quadTypeResult=getQuadrilateralName(side1Len,sideBC,Math.abs(topLengthCD),sideDA,angleA_q,angleB_q,angleC_q,angleD_q,height); metricsDisplayLeft.innerHTML=`<b>Metrics (Quad):</b><br> AB=${side1Len.toFixed(1)} BC=${sideBC.toFixed(1)} CD=${Math.abs(topLengthCD).toFixed(1)} DA≈${sideDA.toFixed(1)}<br> Height CH≈${height.toFixed(1)}<br><hr> ∠A≈${angleA_q.toFixed(1)}° ∠B=${angleB_q.toFixed(1)}°<br> ∠C≈${angleC_q.toFixed(1)}° ∠D≈${angleD_q.toFixed(1)}°<br> (Sum: ${(angleA_q+angleB_q+angleC_q+angleD_q).toFixed(0)}°)<br><hr> Perim≈${perimeter_q.toFixed(1)}<br>Area Formula: 1/2*(AB+CD)*Height<br>Area≈${area_q_final.toFixed(1)}<br><hr> Type: ${quadTypeResult.name}<br><span style="font-size:9px; font-weight:normal;">(${quadTypeResult.reason})</span>}`; metricsDisplayLeft.style.display='block'; /* */
+                 if(side1Len<=0||side2Len<=0){handleInvalidInput("Side lengths must be positive."); return;} const angleBRad=angleDegrees*(Math.PI/180); const height=side2Len*Math.sin(angleBRad); if(height<epsilon){handleInvalidInput("Height near zero; invalid shape."); return;} mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:height}; mthD={x:mthC.x-topLengthCD,y:height}; mthH={x:mthC.x, y:0}; const sideBC=side2Len; const sideDA=calculateDistance(mthD,mthA); if(isNaN(sideDA))throw new Error("Calc error."); const angleB_q=angleDegrees; const angleA_q=calculateAngleAtVertex(mthA,mthD,mthB); const angleD_q=calculateAngleAtVertex(mthD,mthC,mthA); const angleC_q=calculateAngleAtVertex(mthC,mthB,mthD); const perimeter_q=side1Len+sideBC+Math.abs(topLengthCD)+sideDA;  drawQuadrilateral(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC),mathToCanvas(mthD)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const quadTypeResult=getQuadrilateralName(side1Len,sideBC,Math.abs(topLengthCD),sideDA,angleA_q,angleB_q,angleC_q,angleD_q,height);let area_q_final=0; console.log(quadTypeResult);if (quadTypeResult.name == "Square" || quadTypeResult.name == "Rectangle" || quadTypeResult.name == "Parallelogram"){area_q_final  = Math.abs(side1Len)*Math.abs(side2Len);}else {area_q_final = 0;}; metricsDisplayLeft.innerHTML=`<b>Metrics (Quad):</b><br> AB=${side1Len.toFixed(1)} BC=${sideBC.toFixed(1)} CD=${Math.abs(topLengthCD).toFixed(1)} DA≈${sideDA.toFixed(1)}<br> Height CH≈${height.toFixed(1)}<br><hr> ∠A≈${angleA_q.toFixed(1)}° ∠B=${angleB_q.toFixed(1)}°<br> ∠C≈${angleC_q.toFixed(1)}° ∠D≈${angleD_q.toFixed(1)}°<br> (Sum: ${(angleA_q+angleB_q+angleC_q+angleD_q).toFixed(0)}°)<br><hr> Perim≈${perimeter_q.toFixed(1)}<br><hr> Type: ${quadTypeResult.name}<br><span style="font-size:9px; font-weight:normal;">(${quadTypeResult.reason})</span>}`; metricsDisplayLeft.style.display='block'; /* */
             }
          } catch (e) { console.error(e); handleInvalidInput("Error during calculation or drawing."); } /* */
     }
@@ -1461,6 +1464,76 @@ function displayOp(card){
 	
    setSliderValues(card.num1 ,card.num2 , card.operator )
 }
+
+/* Angle,Triangle , Quadrilateral
+
+valueSide1
+valueSide2
+valueAngle
+valueTopCD */
+
+// Function to set slider values programmatically
+function setAngleSliderValues(card) {
+	
+	console.log(card);
+	
+    let sliderAB = document.getElementById("sliderSide1");
+    let sliderBC = document.getElementById("sliderSide2"); 
+	let sliderCD = document.getElementById("sliderTopCD"); 
+	let sliderAngleB = document.getElementById("sliderAngle"); 
+	let geoTopic = document.getElementById("geometryTopic");
+
+  
+	
+	if (card.Type){
+	geoTopic.value = card.Type;
+	} else {
+		geoTopic.value = "Quadrilateral";
+	}	
+	
+	if (card.AB){
+	sliderAB.value = card.AB;
+	} else {
+		sliderAB.value = 0;
+	}
+	
+	if (card.BC){
+	sliderBC.value = card.BC;
+	} else {
+		sliderBC.value = 0;
+	}	
+
+		if (card.angle_B){
+	sliderAngleB.value = card.angle_B;
+	} else {
+		sliderAngleB.value = 0;
+	}
+	
+	if (card.CD){
+	sliderCD.value = card.CD;
+	} else {
+		sliderCD.value = 0;
+	}
+
+    updateVisualization();
+}
+
+function displayAngleTriangleQuad(card){
+	
+	OngoingOp = 7;
+	
+	
+	
+
+	
+		document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
+	
+	document.getElementById("game-angle-container").classList.remove("hidden");
+	
+   setAngleSliderValues(card )
+}
   
 		
 
@@ -1520,6 +1593,11 @@ function displayOp(card){
 			}else if ((currenttopLevelCategoryName == "Addition") || (currenttopLevelCategoryName == "Multiplcation") || (currenttopLevelCategoryName == "Subtraction") || (currenttopLevelCategoryName == "Division") || (currenttopLevelCategoryName == "Remainder")) {
 				displayOp(card); 
 			} 
+			else if ((currenttopLevelCategoryName == "Angle") || (currenttopLevelCategoryName == "Triangle") || (currenttopLevelCategoryName == "Quadrilateral") || (currenttopLevelCategoryName == "Perimeter") ) {
+				displayAngleTriangleQuad(card); 
+			} 		
+			
+			
 			else if (currenttopLevelCategoryName == "Visual Angle, Triangle, Quad"){
 				displayVisualAngle(card); 
 			}		
@@ -1855,7 +1933,7 @@ function ans_mult(selected){
 				} else if (OngoingOp == 2){
 					ans_fraction(selected);
 				}	
-				else if (OngoingOp == 3 || OngoingOp == 4 || OngoingOp == 5 || OngoingOp == 6){
+				else if (OngoingOp == 3 || OngoingOp == 4 || OngoingOp == 5 || OngoingOp == 6 || OngoingOp == 7 ){
 					ans_visual(selected);
 				}	
 				
