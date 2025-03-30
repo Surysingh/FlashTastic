@@ -88,6 +88,9 @@
       
     </div>	
 	
+	
+ 
+	
 
     <div id="settings-page" class="hidden">
         <h2>Settings</h2>
@@ -209,10 +212,233 @@
         <div id="score">Score: 0</div>
         <div id="high-score">High Score: 0</div>
         <div id="message"></div>
-        <div id="flashcard">
+        <div id="flashcard">	
+	
             <div id="question-text"></div>
 				<div id="myTableContainer"></div>
 				 <div class="chart-container" id="charts"></div>
+				 
+
+ <!-- Fraction operations -->				 
+	 <div id="game-chart-container" class="hidden">
+
+        <div class="charts-row">
+            <div class="chart-wrapper">
+                <div id="fraction1" class="fraction-display"></div>
+                <canvas id="chart1"></canvas>
+            </div>
+
+            <div class="operator-wrapper">
+                <select id="operation">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">×</option>
+                    <option value="/">÷</option>
+                </select>
+            </div>
+
+            <div class="chart-wrapper">
+                <div id="fraction2" class="fraction-display"></div>
+                <canvas id="chart2"></canvas>
+            </div>
+
+            <div class="equals-sign">=</div>
+
+            <div class="chart-wrapper">
+                <div id="resultFraction" class="fraction-display"></div>
+                <canvas id="resultChart"></canvas>
+            </div>
+        </div> <div class="sliders-row">
+            <div class="fraction-controls">
+                <p>Fraction 1</p> <label>Numerator: <input type="range" id="numerator1" min="0" max="10" value="1"></label>
+                <label>Denominator: <input type="range" id="denominator1" min="2" max="10" value="4"></label>
+            </div>
+
+            <div class="fraction-controls">
+                 <p>Fraction 2</p> <label>Numerator: <input type="range" id="numerator2" min="0" max="10" value="1"></label>
+                <label>Denominator: <input type="range" id="denominator2" min="2" max="10" value="4"></label>
+            </div>
+        </div> </div>
+		
+	<!-- Operations -->
+	<div id="game-op-container" class="hidden">	
+	
+
+
+<div class="container">
+
+ <!-- Number Line -->
+    <div id="chart-container">
+        <canvas id="numberLine" width="600" height="100"></canvas>
+    </div>
+	
+	   <div class="box-container" id="boxContainerD"></div>	
+	   <label for="boxContainerD">C:</label>
+	   
+	 
+	  <div class="box-container" id="boxContainerC"></div>
+	 
+	   <div class="box-container" id="boxContainerE"></div>	
+	    <label for="boxContainerC">A,B:</label> 
+    
+
+
+    <!-- Sliders for A and B -->
+	
+	 <div class="box-container" id="boxContainerA"></div>
+	 
+    <div class="slider-container">
+        <label for="sliderA">A:</label>
+        <input type="range" id="sliderA" min="-10" max="10" value="3" oninput="updateMath()">
+        <span id="valueA">3</span>
+    </div>
+	
+	   
+
+    <!-- Select operation to calculate C -->
+    <div class="slider-container">
+       
+        <select id="operation2" onchange="updateMath()">
+            <option value="add">Add A + B</option>
+            <option value="sub">Sub A - B</option>
+            <option value="mul">Mul A × B</option>
+            <option value="div">Div A / B</option>
+            <option value="mod">Rem of A / B</option>
+        </select>
+    </div>
+	
+	<div class="box-container" id="boxContainerB"></div>
+
+    <div class="slider-container">
+        <label for="sliderB">B:</label>
+        <input type="range" id="sliderB" min="-10" max="10" value="2" oninput="updateMath()">
+        <span id="valueB">2</span>
+    </div>
+	
+	
+  
+
+  
+</div>
+</div>	
+
+<!-- Angle, Tri & Quad -->
+	<div id="game-angle-container" class="hidden">	
+<div class="container"> 
+    
+
+     <div id="topic-selector"> 
+          <label for="geometryTopic">Choose Topic:</label> <select id="geometryTopic" onchange="updateVisualization()"> <option value="angle">Angle</option> <option value="triangle">Triangle</option> <option value="quadrilateral">Trapezium (Sq, Rect,..)</option> </select> 
+    </div>
+
+    
+    <div id="canvas-container"> 
+        
+        <canvas id="geometryCanvas" width="550" height="425"></canvas> 
+        <div id="metrics-display-left"  style="display: none;" ></div>
+        
+    </div>
+
+    <div class="controls-container"> 
+         
+         <div class="slider-container" id="side1-slider-div"> <label for="sliderSide1" id="labelSide1">AB:</label> <input type="range" id="sliderSide1" min="1" max="10" value="5" step="0.5" oninput="updateVisualization()"> <span id="valueSide1">5</span><span class="unit">units</span> </div> 
+         <div class="slider-container" id="side2-slider-div"> <label for="sliderSide2" id="labelSide2">BC:</label> <input type="range" id="sliderSide2" min="1" max="10" value="5" step="0.5" oninput="updateVisualization()"> <span id="valueSide2">5</span><span class="unit">units</span> </div> 
+         <div class="slider-container" id="angle-slider-div"> <label for="sliderAngle" id="labelAngle">Angle B:</label> <input type="range" id="sliderAngle" min="1" max="179" value="90" step="1" oninput="updateVisualization()"> <span id="valueAngle">90</span>° </div> 
+        
+         <div id="quad-controls" style="display: none;"> 
+              <hr style="border-top: 1px dashed #ccc; margin: 10px 0;"> 
+             <div class="slider-container"> 
+                 <label for="sliderTopCD">CD:</label>
+                 <input type="range" id="sliderTopCD" min="-10" max="10" value="-5" step="0.5" oninput="updateVisualization()"> 
+                 <span id="valueTopCD">5</span><span class="unit">units</span> 
+             </div>
+            
+        </div>
+    </div>
+
+</div>
+	
+</div>	
+
+<!-- Algebra Balance Scale -->
+<div id="game-algebra-balance-container" class="hidden">
+
+ <div id="all-controls">
+
+        <div class="control-section">
+              <h3>Initial Equation Values:</h3>
+             <div class="slider-group">
+                 <label for="BalSliderA">Coefficient 'a'</label>
+                 <input type="range" id="BalSliderA" name="BalSliderA" min="-10" max="10" value="2" step="0.1">
+                 <span id="BalvalueA">2.0</span>
+             </div>
+             <div class="slider-group">
+                 <label for="BalSliderB">Constant 'b'</label>
+                 <input type="range" id="BalSliderB" name="BalSliderB" min="-10" max="10" value="3" step="0.1">
+                 <span id="BalvalueB">3.0</span>
+             </div>
+             <div class="slider-group">
+                 <label for="BalSliderD">Coefficient 'd'</label>
+                 <input type="range" id="BalSliderD" name="BalSliderD" min="-10" max="10" value="0" step="0.1">
+                 <span id="BalvalueD">0.0</span>
+             </div>
+             <div class="slider-group">
+                 <label for="BalSliderC">Constant 'c'</label>
+                 <input type="range" id="BalSliderC" name="BalSliderC" min="-10" max="10" value="13" step="0.1">
+                 <span id="BalvalueC">13.0</span>
+             </div>
+         </div>
+
+        <canvas id="balanceCanvas" width="600" height="400">
+             Your browser does not support the HTML canvas tag.
+         </canvas>
+
+        <p class="equation-display">Equation: <strong id="equation" class="unbalanced">ax + b = dx + c</strong></p>
+
+        <div class="control-section">
+              <div class="slider-group">
+                 <label for="BalSliderX">Try value for 'x'</label>
+                 <input type="range" id="BalSliderX" name="BalSliderX" min="-10" max="10" value="5" step="0.1">
+                 <span id="BalvalueX">5.0</span>
+             </div>
+         </div>
+
+
+        <div class="control-section" id="action-controls-section">
+              <h3>Apply Operations to Both Sides:</h3>
+
+            <div class="action-group">
+                 <div class="slider-group">
+                     <label for="kConstSlider">Constant 'k'</label>
+                     <input type="range" id="kConstSlider" min="-10" max="10" value="1" step="0.1">
+                     <span id="BalvalKConst">1.0</span>
+                 </div>
+                 <button id="btnAddConst">Add k</button>
+                 <button id="btnSubConst">Subtract k</button>
+                 <button id="btnMultiplyConst">Multiply by k</button>
+                 <button id="btnDivideConst">Divide by k</button>
+             </div>
+
+            <div class="action-group">
+                 <div class="slider-group">
+                     <label for="kX">Coefficient 'k' for x</label>
+                     <input type="range" id="kX" min="-10" max="10" value="1" step="0.1">
+                     <span id="BalvalKX">1.0</span>
+                 </div>
+                 <button id="btnAddX">Add kx</button>
+                 <button id="btnSubX">Subtract kx</button>
+
+             </div>
+
+         </div>
+     </div>
+
+   
+
+</div>		
+
+
+	
 				
         </div>
         <div id="translation" class="hidden" style="font-size:18px; color:#555;"></div>

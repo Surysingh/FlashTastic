@@ -29,7 +29,7 @@ h1 {
 }
 /* Game Container Styling */
 #game-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   background-color: #fff;
   padding: 20px;
@@ -410,10 +410,407 @@ input:checked + .slider:before {
  .chart-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
 .chart-wrapper { display: flex; flex-direction: column; align-items: center; }
 
-canvas 
-{ max-width: 150px; 
-max-height: 150px; 
-display: block; 
+
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            align-items: center;
+			
+        }
+
+        .chart-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 600px;
+            max-height: 600px;
+            display: block;
+        }
+
+        .fraction-display {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+	.container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        #chart-container {
+            margin-top: 20px;
+        }
+        .slider-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+		
+		
+        input[type="range"] {
+            width: 80%;
+        }
+        
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 20px;
+			
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .box {
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+        }
+		
+      
+ .container {
+            width: 95%; /* Wider for axes visibility */
+            max-width: 800px; /* Adjust max width */
+            margin: 10px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #canvas-container {
+            margin-top: 10px;
+            text-align: center; /* Center canvas */
+            position: relative; /* Needed for absolute positioning of metrics */
+            width: 600px; /* Fixed canvas size */
+            height: 450px; /* Fixed canvas size */
+            margin-left: auto; /* Center the container */
+            margin-right: auto;
+        }
+        canvas {
+            /* border: 1px solid #ddd; */
+			border: none;
+            background-color: #fff;
+        }
+        .slider-container {
+            display: flex;
+            justify-content: left; /* Center slider */
+            align-items: left;
+            margin: 10px 0;
+            padding: 0 10px;
+            max-width: 500px; /* Limit slider width */
+            margin-left: auto; /* Center */
+            margin-right: auto;
+        }
+        input[type="range"] {
+            width: 60%; /* Adjust width */
+        }
+         label {
+            min-width: 120px; /* Ensure labels align */
+            text-align: right;
+            margin-right: 10px;
+        }
+        span {
+            min-width: 35px; /* Ensure values align - increased width */
+            text-align: left;
+        }
+        #topic-selector {
+            margin-bottom: 20px;
+            text-align:center;
+        }
+		
+		  
+#metrics-display-left { position: relative; top: -425px; right: 8px; background-color: rgba(255, 255, 255, 0.9); padding: 6px; border-radius: 4px; font-size: 10.5px; text-align: left; border: 1px solid #ccc; line-height: 1.3; max-width: 160px; } 
+  
+ .unit { font-size: 11px; margin-left: 2px; color: #555;} /* */	
+ 
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+     background-color: #f0f2f5;
+     min-width: 700px;
+ }
+
+ h1 {
+     color: #1c3d5a;
+     margin-bottom: 15px;
+ }
+
+ h3 {
+     color: #333;
+     margin-top: 0;
+     margin-bottom: 15px;
+     text-align: center;
+     width: 100%;
+     border-bottom: 1px solid #ddd;
+     padding-bottom: 8px;
+     font-weight: 600;
+ }
+
+ p {
+     color: #444;
+     text-align: center;
+     max-width: 600px;
+     margin-top: 0px;
+     margin-bottom: 15px;
+ }
+
+ #balanceCanvas {
+     background-color: #ffffff;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     margin-bottom: 20px;
+     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+ }
+
+/* Equation Display Styling */
+ .equation-display {
+     margin-top: 0px;
+     margin-bottom: 20px;
+     width: 100%;
+     text-align: center;
+ }
+
+ strong#equation {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 1.5em;
+     padding: 8px 15px;
+     border-radius: 6px;
+     transition: background-color 0.4s ease, color 0.4s ease;
+     color: white;
+     display: inline-block;
+     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+ }
+
+/* Style the main controls container */
+ #all-controls {
+     background-color: #ffffff;
+     padding: 25px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+     width: 650px;
+     align-items: center;
+ }
+
+ /* Styling for sections within all controls */
+ .control-section {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     align-items: stretch;
+ }
+
+ #action-controls-section {
+      border-top: 2px solid #eee;
+      padding-top: 20px;
+      margin-top: 10px;
+ }
+
+/* Style each individual slider group (label ABOVE, input, span BELOW) */
+ .slider-group {
+     display: grid;
+     grid-template-areas:
+         "label value"
+         "slider slider";
+     grid-template-columns: 1fr auto;
+     grid-template-rows: auto auto;
+     gap: 2px 10px;
+     align-items: center;
+     width: 100%;
+ }
+
+ .slider-group label {
+     grid-area: label;
+     justify-self: start;
+     font-weight: 500;
+     color: #555;
+     font-size: 0.9em;
+     margin-bottom: 0px;
+ }
+
+ .slider-group input[type="range"] {
+     grid-area: slider;
+     width: 100%;
+     cursor: pointer;
+     height: 6px;
+     margin-top: 3px;
+ }
+
+ .slider-group span {
+     grid-area: value;
+     justify-self: end;
+     font-weight: bold;
+     color: #0056b3;
+     min-width: 45px;
+     text-align: right;
+     font-family: monospace;
+     font-size: 1.05em;
+ }
+
+/* Action Control Specifics */
+ .action-group {
+     width: 100%;
+     border: 1px solid #e0e0e0;
+     border-radius: 6px;
+     padding: 15px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .action-group .slider-group {
+     flex-basis: 100%;
+     margin-bottom: 10px;
+ }
+
+ .action-group button {
+     padding: 8px 10px;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 0.85em;
+     flex-basis: calc(50% - 10px);
+     text-align: center;
+     transition: background-color 0.2s ease;
+ }
+
+ .action-group button:hover {
+     background-color: #0056b3;
+ }
+
+ .action-group button:active {
+      background-color: #004085;
+ }
+
+/* Balance Indicator Colors */
+ .balanced { background-color: #28a745; color: white; }
+ .unbalanced { background-color: #dc3545; color: white; } 
+ 
+/* Styles specific to the fraction visualization container */
+#game-chart-container {
+    /* Optional: Add padding or margin if needed */
+    margin-top: 1px;
 }
 
-    
+/* Row for the charts, operator, equals */
+#game-chart-container .charts-row {
+    display: flex;
+    justify-content: space-around; /* Distribute items */
+    align-items: left;       /* Vertically center items in the row */
+    flex-wrap: wrap;           /* Allow wrapping if needed */
+    gap: 1px;                 /* Space between items */
+    margin-bottom: 1px;       /* Space below the charts row */
+}
+
+/* Styles for each chart group (Fraction + Canvas) */
+#game-chart-container .chart-wrapper {
+    display: flex;
+    flex-direction: column;    /* Stack fraction text and canvas vertically */
+    align-items: center;       /* Center items horizontally */
+    text-align: center;
+}
+
+/* Fraction text display */
+#game-chart-container .fraction-display {
+    margin-bottom: 1px;
+    font-size: 24px;
+    font-weight: bold;
+    min-height: 30px;
+    color: #333;
+}
+
+/* Canvas size within the chart row */
+#game-chart-container .charts-row canvas {
+    max-width: 120px;  /* Further reduced size for single row */
+    max-height: 120px; /* Further reduced size */
+    display: block;
+}
+
+/* Operator dropdown wrapper */
+#game-chart-container .operator-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 0; /* Removed padding-top from previous step */ */
+}
+
+#game-chart-container #operation {
+    font-size: 24px;
+    padding: 1px;
+}
+
+/* Equals sign */
+#game-chart-container .equals-sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    /* padding-top: 0; /* Removed padding-top from previous step */ */
+}
+
+/* Row for the sliders */
+#game-chart-container .sliders-row {
+    display: flex;
+    justify-content: center; /* Center the slider groups */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1px;              /* Add more space between slider groups */
+    margin-top: 1px;       /* Space above the sliders row */
+    padding: 1px;
+    border-top: 1px solid #eee; /* Optional separator line */
+}
+
+/* Individual Slider Group styling */
+#game-chart-container .fraction-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Center labels/sliders */
+    gap: 1px;
+}
+
+#game-chart-container .fraction-controls p {
+    font-weight: bold;
+    margin-bottom: 1px;
+    color: #555;
+}
+
+#game-chart-container .fraction-controls label {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-size: 14px;
+}
+
+#game-chart-container .fraction-controls input[type="range"] {
+    width: 600px; /* Adjust slider width */
+}
+
+/* Override general canvas styles ONLY within this container's chart row */
+#game-chart-container .charts-row canvas {
+    max-width: 1500px;
+    max-height: 400px;
+} 

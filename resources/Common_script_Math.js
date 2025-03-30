@@ -33,7 +33,8 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 7 angle, 8 algebra balance, 9 linear eq
+		const fraction_piechart_height = 200; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
    const bgGradientRadio = document.getElementById("bg-gradient-radio");
@@ -48,15 +49,15 @@
 	
 function makeTable(num1, num2) {
 
-console.log(num1);
+//console.log(num1);
   // Ensure inputs are strings
-  console.log(num1);
+  //console.log(num1);
   num1 = String(num1).padStart(6, ' ');
-  console.log(num1);
+  //console.log(num1);
   
-  console.log(num2);
+  //console.log(num2);
   num2 = String(num2).padStart(6, ' ');
-  console.log(num2);
+  //console.log(num2);
 
   let tableHTML = `
     <table>
@@ -122,15 +123,15 @@ console.log(num1);
 
 function makeTable_div(num1, num2) {
 
-console.log(num1);
+//console.log(num1);
   // Ensure inputs are strings
-  console.log(num1);
+  //console.log(num1);
   num1 = String(num1).padStart(3, ' ');
-  console.log(num1);
+  //console.log(num1);
   
-  console.log(num2);
+  //console.log(num2);
   num2 = String(num2).padStart(2, ' ');
-  console.log(num2);
+  //console.log(num2);
 
   let tableHTML = `
     <table>
@@ -273,7 +274,7 @@ console.log(num1);
 function createCategoryButtons() {
     const menuDiv = document.getElementById("menu");
     settings.grade = Number(document.getElementById("grade-select").value);
-    console.log(settings.grade);
+    //console.log(settings.grade);
 
     // remove old menu if it exists
     let existingCategoryName = menuDiv.querySelectorAll("button");
@@ -315,7 +316,7 @@ function createCategoryButtons() {
             Object.keys(subCategories).forEach(subCategoryName => {
 				
 				   //current
-					//console.log(categories[topLevelCategoryName][subCategoryName]);
+					////console.log(categories[topLevelCategoryName][subCategoryName]);
 					const filteredQuestions = categories[topLevelCategoryName][subCategoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ); // || Number(question.grade) + 2  == settings.grade || Number(question.grade) - 2  == settings.grade);
 
 					if (filteredQuestions.length > 0) {
@@ -340,7 +341,7 @@ function createCategoryButtons() {
  function createCategoryButtons_() {
        const menuDiv = document.getElementById("menu");
 	    settings.grade = Number(document.getElementById("grade-select").value);
-		console.log(settings.grade);
+		//console.log(settings.grade);
 		   // remove old menu if it exists
 			let existingcategoryName = menuDiv.querySelectorAll("button");
 			
@@ -361,9 +362,9 @@ function createCategoryButtons() {
 
            categoryNames.forEach((categoryName, index) => {
 			   
-			   //console.log(categoryName);
-			   //console.log(categories[categoryName]);
-			   //console.log(categories[categoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) - 2)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ));
+			   ////console.log(categoryName);
+			   ////console.log(categories[categoryName]);
+			   ////console.log(categories[categoryName].filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade ||	(Number(question.grade) - 2)  == settings.grade || (Number(question.grade) - 1)  == settings.grade ));
 			   
 			
    //current
@@ -398,9 +399,9 @@ function createCategoryButtons() {
                 return;
             }
             categories = window.categories;
-            console.log(categories);
+            //console.log(categories);
 			currentCategory = null;
-            console.log('Categories loaded successfully');
+            //console.log('Categories loaded successfully');
             createCategoryButtons();
 			
 			speakText(" "); //init voice, atleast once
@@ -444,7 +445,7 @@ function createCategoryButtons() {
                 currentFlashcards = flashcards ; //shuffle(  flashcards.filter(question => !question.grade ||	settings.grade == 0 ||	Number(question.grade) == settings.grade  ||	(Number(question.grade) + 1)  == settings.grade || (Number(question.grade) - 1)  == settings.grade )); 
 				
                 currentIndex = 0;
-				console.log("currentIndex:", currentIndex);
+				//console.log("currentIndex:", currentIndex);
 
                 document.getElementById("menu").classList.add("hidden");
                 document.getElementById("game-container").classList.remove("hidden");
@@ -580,6 +581,8 @@ Dark Green
             let title = document.createElement("p");
             title.innerText = "" ; // label;
             let canvas = document.createElement("canvas");
+			canvas.height = fraction_piechart_height;
+			canvas.height = fraction_piechart_height;
             //wrapper.appendChild(title);
             wrapper.appendChild(canvas);
             container.appendChild(wrapper);
@@ -601,7 +604,7 @@ Dark Green
                 },
                 options: {
                     responsive: false,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
                     plugins: {
                         legend: { display: false },
                         title: { display: true, text: label }
@@ -611,12 +614,577 @@ Dark Green
             chartInstances.push(chart);
         }
 
+       
+  let charts = {};
+
+        function createPieChart(canvasId) {
+			
+			////console.log(canvasId);
+			////console.log(document.getElementById(canvasId));
+            let ctx = document.getElementById(canvasId).getContext("2d");
+            return new Chart(ctx, {
+                type: "pie",
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: []
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: ''
+                        }
+                    }
+                }
+            });
+        }
+
+        function updatePieChart(chart, numerator, denominator, displayId) {
+            const backgroundColors = Array(denominator).fill("#ddd");
+            for (let i = 0; i < numerator; i++) {
+                backgroundColors[i] = "#4CAF50";
+            }
+
+            chart.data.labels = Array(denominator).fill("");
+            chart.data.datasets[0].data = Array(denominator).fill(1);
+            chart.data.datasets[0].backgroundColor = backgroundColors;
+
+            chart.options.plugins.title.display = true;
+            chart.options.plugins.title.text = `${numerator}/${denominator}`;
+
+            chart.update();
+            document.getElementById(displayId).innerText = "" ;// `${numerator}/${denominator}`;
+        }
+
+        function calculateResult() {
+            let num1 = parseInt(document.getElementById("numerator1").value);
+            let den1 = parseInt(document.getElementById("denominator1").value);
+            let num2 = parseInt(document.getElementById("numerator2").value);
+            let den2 = parseInt(document.getElementById("denominator2").value);
+            let operation = document.getElementById("operation").value;
+
+            let resultNum, resultDen;
+            if (operation === "+") {
+				
+				if (den1 == den2){
+                resultNum = num1  + num2 ;
+                resultDen = den1 ;					
+				}else{
+                resultNum = num1 * den2 + num2 * den1;
+                resultDen = den1 * den2;
+				}
+            } else if (operation === "-") {
+				if (den1 == den2){
+                resultNum = num1  - num2 ;
+                resultDen = den1 ;					
+				}else{				
+                resultNum = num1 * den2 - num2 * den1;
+                resultDen = den1 * den2;
+			}
+            } else if (operation === "*") {
+                resultNum = num1 * num2;
+                resultDen = den1 * den2;
+            } else {
+                resultNum = num1 * den2;
+                resultDen = num2 * den1;
+            }
+
+            updatePieChart(charts.result, resultNum, resultDen, "resultFraction");
+        }
+function displayVisualFraction(card){
+	
+	OngoingOp = 3;
+	  document.getElementById("game-chart-container").classList.remove("hidden");
+	  
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	//document.getElementById("game-chart-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+document.getElementById("game-algebra-balance-container").classList.add("hidden");	
+ 
+			
+				
+			charts.chart1 = createPieChart("chart1");
+            charts.chart2 = createPieChart("chart2");
+            charts.result = createPieChart("resultChart");
+			
+			charts.chart1.height = fraction_piechart_height;
+			charts.chart1.width = fraction_piechart_height;
+			charts.chart2.height = fraction_piechart_height;
+			charts.chart2.width = fraction_piechart_height;
+			charts.result.height = fraction_piechart_height;
+			charts.result.width = fraction_piechart_height;			
+
+            // Initialize charts with default values
+            updatePieChart(charts.chart1, 1, 4, "fraction1");
+            updatePieChart(charts.chart2, 1, 4, "fraction2");
+            calculateResult();
+
+            // Add event listeners for input changes
+            document.getElementById("numerator1").addEventListener("input", function () {
+                let numerator = parseInt(this.value);
+                let denominator = parseInt(document.getElementById("denominator1").value);
+                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
+                calculateResult();
+            });
+
+            document.getElementById("denominator1").addEventListener("input", function () {
+                let numerator = parseInt(document.getElementById("numerator1").value);
+                let denominator = parseInt(this.value);
+                updatePieChart(charts.chart1, numerator, denominator, "fraction1");
+                calculateResult();
+            });
+
+            document.getElementById("numerator2").addEventListener("input", function () {
+                let numerator = parseInt(this.value);
+                let denominator = parseInt(document.getElementById("denominator2").value);
+                updatePieChart(charts.chart2, numerator, denominator, "fraction2");
+                calculateResult();
+            });
+
+            document.getElementById("denominator2").addEventListener("input", function () {
+                let numerator = parseInt(document.getElementById("numerator2").value);
+                let denominator = parseInt(this.value);
+                updatePieChart(charts.chart2, numerator, denominator, "fraction2");
+                calculateResult();
+            });
+
+            document.getElementById("operation").addEventListener("change", calculateResult);
+        				
+			
+				
+				
+            
+ 
+           
+}
+
+ // Initial values for A, B, and C
+    let a = 3, b = 2, c = 0;
+
+
+    // Draw number line and update results
+    function updateMath() {
+		
+		//console.log("a= ", a);
+		//console.log("b= ", b);
+		
+        a = parseInt(document.getElementById('sliderA').value);
+        b = parseInt(document.getElementById('sliderB').value);
+
+		//console.log("a= ", a);
+		//console.log("b= ", b);
+		
+        document.getElementById('valueA').innerText = a;
+        document.getElementById('valueB').innerText = b;
+
+
+        // Calculate results
+        let add = a + b;
+        let sub = a - b;
+        let mul = a * b;
+        let div = b !== 0 ? (a / b).toFixed(2) : "Undefined (Div by zero)";
+        let mod = b !== 0 ? a % b : "Undefined";
+
+
+        // Update displayed results
+        //document.getElementById('addResult').innerText = `A + B = ${add}`;
+        //document.getElementById('subResult').innerText = `A - B = ${sub}`;
+        //document.getElementById('mulResult').innerText = `A × B = ${mul}`;
+        //document.getElementById('divResult').innerText = `A ÷ B = ${div}`;
+        //document.getElementById('modResult').innerText = `A % B = ${mod}`;
+
+
+        // Determine operation for C
+        const operation = document.getElementById('operation2').value;
+        switch (operation) {
+            case 'add': c = add; break;
+            case 'sub': c = sub; break;
+            case 'mul': c = mul; break;
+            case 'div': c = b !== 0 ? parseFloat(div) : 0; break;
+            case 'mod': c = b !== 0 ? mod : 0; break;
+        }
+
+
+        //document.getElementById('valueC').innerText = c;
+
+		//console.log("b= ", b);
+        // Draw number line, plot points, and visualize results
+        drawNumberLine(a, b, c);
+        visualizeOperations(a, b, c);
+		
+		//visualizeOperations(a, b, c);
+		{
+		visualizeResult(a, b, c, operation);
+		}
+    }
+	
+	
+
+    // Visualize operations with colored squares
+    function visualizeOperations(a, b, c) {
+		//console.log("b= ", b);
+        visualizeBoxes(a, 'red', 'A', 'boxContainerA');
+        visualizeBoxes(b, 'blue', 'B', 'boxContainerB');
+        visualizeBoxes(c, 'green', 'C', 'boxContainerD');
+    }
+
+
+    // Draw boxes to visualize numbers
+    function visualizeBoxes(count, color, label, containerId) {
+        const boxContainer = document.getElementById(containerId);
+        boxContainer.innerHTML = ''; // Clear previous visualization
+
+
+        for (let i = 0; i < Math.abs(count); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = color;
+            box.title = label + ' = ' + count;
+            boxContainer.appendChild(box);
+        }
+
+
+        // Show negative with a border
+        if (count < 0) {
+            boxContainer.appendChild(document.createTextNode(' (Negative)'));
+        } else if (count === 0) {
+            boxContainer.innerHTML = '<p>0 (No boxes to show)</p>';
+        }
+    }	
+
+
+    // Draw Number Line
+    function drawNumberLine(a, b, c) {
+        const canvas = document.getElementById('numberLine');
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+        // Draw horizontal line
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(550, 50);
+        ctx.strokeStyle = '#333';
+        ctx.stroke();
+
+
+        // Draw ticks and numbers
+        for (let i = -10; i <= 10; i++) {
+            let x = 50 + (i + 10) * 25;
+            ctx.beginPath();
+            ctx.moveTo(x, 45);
+            ctx.lineTo(x, 55);
+            ctx.stroke();
+            ctx.fillText(i, x - 5, 70);
+        }
+
+
+        // Plot A, B, and C on number line
+        plotPoint(a, 'A', 'red');
+        plotPoint(b, 'B', 'blue');
+        plotPoint(c, 'C', 'green');
+    }
+
+
+    // Plot a point with label
+    function plotPoint(value, label, color) {
+        const canvas = document.getElementById('numberLine');
+        const ctx = canvas.getContext('2d');
+        let x = 50 + (value + 10) * 25;
+
+
+        ctx.beginPath();
+        ctx.arc(x, 50, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.fillText(label + ' = ' + value, x - 10, 35);
+    }
+
+
+ // Visualize the result of C with appropriate operation
+    function visualizeResult(a, b, c, operation) {
+        const boxContainer = document.getElementById('boxContainerC');
+        boxContainer.innerHTML = ''; // Clear previous visualization
+		
+ 
+	const boxContainerB = document.getElementById('boxContainerE');  
+	boxContainerB.innerHTML = ''; // Clear previous visualization		
+
+		if ((operation == 'div') || (operation == 'mod'))
+		{
+				return;
+		}
+
+        if (operation === 'add') {
+            visualizeAddition(a, b);
+        } else if (operation === 'sub') {
+			//console.log("b= ", b);
+            visualizeSubtraction(a, b);
+        } else if (operation === 'mul') {
+            visualizeMultiplication(a, b);
+        } else if (operation === 'div') {
+            visualizeDivision(a, b, c);
+        } else if (operation === 'mod') {
+            visualizeModulus(a, b, c);
+        }
+    }
+
+
+    // Visualize addition by combining A and B
+    function visualizeAddition(a, b) {
+        createBoxes(a, 'red', 'A');
+        createBoxes(b, 'blue', 'B');
+    }
+	
+function visualizeSubtraction(a, b) {
+	//console.log("b= ", b);
+	
+    const boxContainerA = document.getElementById('boxContainerC');
+	const boxContainerB = document.getElementById('boxContainerE');
+    boxContainerA.innerHTML = ''; // Clear previous visualization
+	boxContainerB.innerHTML = ''; // Clear previous visualization
+	
+
+    const rowA = document.createElement('div');
+    rowA.className = 'row';
+    const rowB = document.createElement('div');
+    rowB.className = 'row';
+
+    if (b >= 0 && a >= 0) {
+        // Standard subtraction: Cancel out min(a, b) elements
+        let minVal = Math.min(Math.abs(a), Math.abs(b));
+
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowB.appendChild(box);
+        }
+    } else if (a >= 0){
+        // If B is negative, it acts like addition, so no cancellations
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) { // Adding |b| instead of subtracting
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            rowB.appendChild(box);
+        }
+    } else    if (b <= 0 && a <= 0) {
+        // Standard subtraction: Cancel out min(a, b) elements
+        let minVal = Math.min(Math.abs(a), Math.abs(b));
+
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            if (i < minVal) box.innerText = '✖'; // Cross only the cancelled ones
+            rowB.appendChild(box);
+        }
+    } else {
+        // If B is negative, it acts like addition, so no cancellations
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) { // Adding |b| instead of subtracting
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            rowB.appendChild(box);
+        }
+    }
+
+    boxContainerA.appendChild(rowA);
+    boxContainerB.appendChild(rowB);
+}
+	
+	
+function visualizeSubtraction3(a, b) {
+    const boxContainer = document.getElementById('boxContainerC');
+    boxContainer.innerHTML = ''; // Clear previous visualization
+
+    const rowA = document.createElement('div');
+    rowA.className = 'row';
+    const rowB = document.createElement('div');
+    rowB.className = 'row';
+
+    if (b >= 0) {
+        // Standard subtraction: cancel out common elements
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            if (i < Math.abs(b)) box.innerText = '✖'; // Mark cancelled elements
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            box.innerText = '✖'; // Mark cancelled elements
+            rowB.appendChild(box);
+        }
+    } else {
+        // If B is negative, it's equivalent to addition: No cancellations
+        for (let i = 0; i < Math.abs(a); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'red';
+            rowA.appendChild(box);
+        }
+
+        for (let i = 0; i < Math.abs(b); i++) { // Adding |b| instead of subtracting
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = 'blue';
+            rowB.appendChild(box);
+        }
+    }
+
+    boxContainer.appendChild(rowA);
+    boxContainer.appendChild(rowB);
+}
+	
+
+
+function visualizeSubtraction2(a, b) {
+    const boxContainer = document.getElementById('boxContainerC');
+    boxContainer.innerHTML = ''; // Clear previous visualization
+
+    const rowA = document.createElement('div');
+    rowA.className = 'row';
+    const rowB = document.createElement('div');
+    rowB.className = 'row';
+
+    let minVal = Math.min(a, b);
+    let maxVal = Math.max(a, b);
+
+    for (let i = 0; i < Math.abs(a); i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.backgroundColor = 'red';
+        box.innerText = i < Math.abs(minVal) ? '✖' : ''; // Cross if it cancels
+        rowA.appendChild(box);
+    }
+
+    for (let i = 0; i < Math.abs(b); i++) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.backgroundColor = 'blue';
+        box.innerText = i < Math.abs(minVal) ? '✖' : ''; // Cross if it cancels
+        rowB.appendChild(box);
+    }
+
+    boxContainer.appendChild(rowA);
+    boxContainer.appendChild(rowB);
+}
+
+
+
+    // Visualize multiplication as a grid with A rows and B columns
+    function visualizeMultiplication(a, b) {
+        for (let i = 0; i < Math.abs(a); i++) {
+            const row = document.createElement('div');
+            row.className = 'row';
+            createBoxes(Math.abs(b), (i % 2 === 0) ? 'red' : 'blue', 'B', row);
+            document.getElementById('boxContainerC').appendChild(row);
+        }
+    }
+
+
+    // Visualize division by grouping B into A
+    function visualizeDivision(a, b, c) {
+        if (b === 0) {
+            boxContainer.innerHTML = '<p>Division by zero is undefined!</p>';
+            return;
+        }
+        for (let i = 0; i < Math.abs(c); i++) {
+            createBoxes(Math.abs(b), 'blue', 'B');
+        }
+    }
+
+
+    // Visualize modulus as leftover after division
+    function visualizeModulus(a, b, c) {
+        createBoxes(c, 'green', 'C');
+    }
+
+
+    // Create colored boxes to visualize numbers
+    function createBoxes(count, color, label, container = document.getElementById('boxContainerC')) {
+        for (let i = 0; i < Math.abs(count); i++) {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.style.backgroundColor = color;
+            box.title = label + ' = ' + count;
+            container.appendChild(box);
+        }
+    }
+
+
+function displayVisualAdd(card){
+	
+	OngoingOp = 4;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");
+	//document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	
+	
+	
+	 document.getElementById("game-op-container").classList.remove("hidden");
+	
+	// Initialize first render
+    updateMath();
+}
 		
 function displayFraction(card){
 	
 	OngoingOp = 2;
 	
 	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	
     if (card.denominator2)	{
 		drawCharts(card.num1, card.num2, card.denominator , card.denominator2);	
@@ -631,6 +1199,10 @@ function displayMultiplication(card){
 	OngoingOp = 0;
 	
             document.getElementById('charts').innerHTML = "";	 // clear any chart
+			document.getElementById("game-chart-container").classList.add("hidden");
+			document.getElementById("game-angle-container").classList.add("hidden");
+			document.getElementById("game-op-container").classList.add("hidden");
+			document.getElementById("game-algebra-balance-container").classList.add("hidden");
 			
 			if (table_init == 0){
 			let myTableHTML = makeTable(card.num1, card.num2);
@@ -647,16 +1219,788 @@ function displayDivision(card) {
 	
 	//drawCharts(card.num1, 0, card.num2 , 0);	
 	document.getElementById('charts').innerHTML = "";	 // clear any chart
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	
 			if (table_init == 0){
 			let myTableHTML = makeTable_div(card.num1, card.num2);
 			document.getElementById('myTableContainer').innerHTML = myTableHTML;
 			table_init = 1;
 			}
+
  
 }
-  
+
+// Function to set slider values programmatically
+function setSliderValues(a, b, op) {
+    let sliderA = document.getElementById("sliderA");
+    let sliderB = document.getElementById("sliderB"); 
+	let op2 = document.getElementById("operation2");
+
+    sliderA.value = a;
+    sliderB.value = b;
+	op2.value = op
+
+    updateMath();
+}
+
+  // --- Canvas, Context, Displays, Elements ---
+    const canvas = document.getElementById('geometryCanvas'); const ctx = canvas.getContext('2d'); const metricsDisplayLeft = document.getElementById('metrics-display-left'); const infoTextDisplay = document.getElementById('info-text'); /* */
+    const canvasWidth = canvas.width; /* */
+    const canvasHeight = canvas.height; /* */
+    const labelSide1 = document.getElementById('labelSide1'); const labelSide2 = document.getElementById('labelSide2'); const labelAngle = document.getElementById('labelAngle'); const sliderAngle = document.getElementById('sliderAngle'); /* */
+
+    // --- Coordinate System Settings (Origin snapped to grid) ---
+    const scale = 25; /* */
+    const originX = Math.round(canvasWidth / 2 / scale) * scale; /* */
+    const originY = Math.round(canvasHeight / 2 / scale) * scale + (scale * 3) ; /* */
+    const axisColor = '#aaa'; const axisLabelColor = '#555'; const gridColor = '#e8e8e8'; const pointColor = '#007bff'; const heightColor = '#28a745'; const shapeColor = '#333'; /* */
+     // --- Colors ---
+    const colorAB = '#ff6347'; const colorBC = '#4682b4'; const colorCD = '#32cd32'; const colorDA = '#ffa500'; const fillColor = 'rgba(200, 200, 255, 0.3)'; /* */
+    // --- Tolerance ---
+    const epsilon = 0.01; const angleEpsilon = 0.5; /* */
+    // --- Global Math Coords ---
+    let mthA={}, mthB={}, mthC={}, mthD={}, mthH={}; /* */
+
+    // --- Update Visualization ---
+    function updateVisualization() { /* */
+        // ... (Reading sliders and adjusting controls remains the same) ...
+        const selectedTopic = document.getElementById('geometryTopic').value; /* */ const side1Len = parseFloat(document.getElementById('sliderSide1').value); document.getElementById('valueSide1').innerText = side1Len; /* */ const side2Len = parseFloat(document.getElementById('sliderSide2').value); document.getElementById('valueSide2').innerText = side2Len; /* */ let angleDegrees = parseInt(sliderAngle.value); /* */ if (selectedTopic === 'angle') { labelSide1.innerText = "AB:"; labelSide2.innerText = "BC:"; labelAngle.innerText = "Angle B:"; if (sliderAngle.max !== "360") { sliderAngle.min = 0; sliderAngle.max = 360; angleDegrees = parseInt(sliderAngle.value); } document.getElementById('quad-controls').style.display = 'none'; } else { labelSide1.innerText = "AB:"; labelSide2.innerText = "BC:"; labelAngle.innerText = "Angle B"; if (sliderAngle.max !== "179") { sliderAngle.min = 1; sliderAngle.max = 179; angleDegrees = Math.min(179, Math.max(1, angleDegrees)); sliderAngle.value = angleDegrees; } document.getElementById('quad-controls').style.display = selectedTopic === 'quadrilateral' ? 'block' : 'none'; } document.getElementById('valueAngle').innerText = angleDegrees; /* */ let topLengthCD = 0; if (selectedTopic === 'quadrilateral') { topLengthCD = parseFloat(document.getElementById('sliderTopCD').value); document.getElementById('valueTopCD').innerText = topLengthCD; } /* */
+
+		console.log(selectedTopic);
+		console.log(side1Len);
 		
+        // --- Clear & Draw Background ---
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight); metricsDisplayLeft.style.display = 'none'; drawGrid(); drawAxes(); /* */
+
+        // --- Topic Specific Logic ---
+        try {
+            if (selectedTopic === 'angle') { /* */
+                 const angleRad=angleDegrees*(Math.PI/180); mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleRad), y:side2Len*Math.sin(angleRad)}; drawAngle(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC),angleDegrees, side1Len, side2Len, colorAB, colorBC); const angleTypeResult = getAngleType(angleDegrees); metricsDisplayLeft.innerHTML = `Type: ${angleTypeResult.name}<br><span style="font-size:9px; font-weight:normal;">(${angleTypeResult.reason})</span>`; metricsDisplayLeft.style.display='block'; /* */
+
+            } else if (selectedTopic === 'triangle') { /* */
+                 const angleBRad=angleDegrees*(Math.PI/180); mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:side2Len*Math.sin(angleBRad)}; const height_tri=Math.abs(mthC.y); mthH={x:mthC.x,y:0}; const sideAC=calculateDistance(mthA,mthC); if(isNaN(sideAC))throw new Error("Calc error."); let angleA_deg=0; if(side1Len>epsilon&&sideAC>epsilon){const cosA=(side1Len**2+sideAC**2-side2Len**2)/(2*side1Len*sideAC); angleA_deg=Math.acos(Math.max(-1,Math.min(1,cosA)))*(180/Math.PI);} let angleC_deg=0; if(side2Len>epsilon&&sideAC>epsilon){const cosC=(side2Len**2+sideAC**2-side1Len**2)/(2*side2Len*sideAC); angleC_deg=Math.acos(Math.max(-1,Math.min(1,cosC)))*(180/Math.PI);} if(Math.abs(angleA_deg+angleDegrees+angleC_deg-180)>angleEpsilon*5){angleC_deg=180-angleA_deg-angleDegrees;} const base_tri=side1Len; const area_tri=0.5*base_tri*height_tri; const perimeter_tri=side1Len+side2Len+sideAC; drawTriangleShape(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const triTypeResult=getTriangleType(side1Len,side2Len,sideAC,angleA_deg,angleDegrees,angleC_deg); metricsDisplayLeft.innerHTML=`<b>Metrics (Triangle):</b><br> AB=${side1Len.toFixed(1)} BC=${side2Len.toFixed(1)} AC≈${sideAC.toFixed(1)}<br> Height CH≈${height_tri.toFixed(1)}<br><hr> ∠A≈${angleA_deg.toFixed(1)}° ∠B=${angleDegrees.toFixed(1)}° ∠C≈${angleC_deg.toFixed(1)}°<br><hr> Perim≈${perimeter_tri.toFixed(1)}<br>Area Formula: 1/2 * Base * Height<br>Area≈${area_tri.toFixed(1)}<br>Type: ${triTypeResult.name}<br><hr><span style="font-size:9px; font-weight:normal;">(${triTypeResult.reason})</span>`; metricsDisplayLeft.style.display='block';  /* */
+
+            } else if (selectedTopic === 'quadrilateral') { /* */
+                 if(side1Len<=0||side2Len<=0){handleInvalidInput("Side lengths must be positive."); return;} const angleBRad=angleDegrees*(Math.PI/180); const height=side2Len*Math.sin(angleBRad); if(height<epsilon){handleInvalidInput("Height near zero; invalid shape."); return;} mthB={x:0,y:0}; mthA={x:side1Len,y:0}; mthC={x:side2Len*Math.cos(angleBRad), y:height}; mthD={x:mthC.x-topLengthCD,y:height}; mthH={x:mthC.x, y:0}; const sideBC=side2Len; const sideDA=calculateDistance(mthD,mthA); if(isNaN(sideDA))throw new Error("Calc error."); const angleB_q=angleDegrees; const angleA_q=calculateAngleAtVertex(mthA,mthD,mthB); const angleD_q=calculateAngleAtVertex(mthD,mthC,mthA); const angleC_q=calculateAngleAtVertex(mthC,mthB,mthD); const perimeter_q=side1Len+sideBC+Math.abs(topLengthCD)+sideDA;  drawQuadrilateral(mathToCanvas(mthA),mathToCanvas(mthB),mathToCanvas(mthC),mathToCanvas(mthD)); drawDottedHeightLine(mathToCanvas(mthC),mathToCanvas(mthH),'H'); const quadTypeResult=getQuadrilateralName(side1Len,sideBC,Math.abs(topLengthCD),sideDA,angleA_q,angleB_q,angleC_q,angleD_q,height);let area_q_final=0; console.log(quadTypeResult);if (quadTypeResult.name == "Square" || quadTypeResult.name == "Rectangle" || quadTypeResult.name == "Parallelogram"){area_q_final  = Math.abs(side1Len)*Math.abs(side2Len);}else {area_q_final = 0;}; metricsDisplayLeft.innerHTML=`<b>Metrics (Quad):</b><br> AB=${side1Len.toFixed(1)} BC=${sideBC.toFixed(1)} CD=${Math.abs(topLengthCD).toFixed(1)} DA≈${sideDA.toFixed(1)}<br> Height CH≈${height.toFixed(1)}<br><hr> ∠A≈${angleA_q.toFixed(1)}° ∠B=${angleB_q.toFixed(1)}°<br> ∠C≈${angleC_q.toFixed(1)}° ∠D≈${angleD_q.toFixed(1)}°<br> (Sum: ${(angleA_q+angleB_q+angleC_q+angleD_q).toFixed(0)}°)<br><hr> Perim≈${perimeter_q.toFixed(1)}<br><hr> Type: ${quadTypeResult.name}<br><span style="font-size:9px; font-weight:normal;">(${quadTypeResult.reason})</span>}`; metricsDisplayLeft.style.display='block'; /* */
+            }
+         } catch (e) { console.error(e); handleInvalidInput("Error during calculation or drawing."); } /* */
+    }
+
+     // --- Handle Invalid Input ---
+     function handleInvalidInput(message){ /* ... */ ctx.fillStyle='red'; ctx.font='14px Arial'; ctx.textAlign='center'; ctx.fillText(message, canvasWidth/2, 40); ctx.textAlign='left'; metricsDisplayLeft.style.display='none';  } /* */
+    // --- Coordinate Transformation ---
+    function mathToCanvas(mathPoint){ /* ... */ return { x:originX+mathPoint.x*scale, y:originY-mathPoint.y*scale }; } /* */
+
+    // --- Drawing Functions ---
+     function drawGrid(){ /* ... */ ctx.strokeStyle=gridColor; ctx.lineWidth=0.5; for(let x=0; x<=canvasWidth; x+=scale){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,canvasHeight); ctx.stroke(); } for(let y=0; y<=canvasHeight; y+=scale){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(canvasWidth,y); ctx.stroke(); } } /* */
+     function drawAxes() { // Draws -10 to 10 labels /* */
+         ctx.strokeStyle=axisColor; ctx.fillStyle=axisLabelColor; ctx.lineWidth=1; ctx.font='10px Arial'; ctx.beginPath(); ctx.moveTo(0, originY); ctx.lineTo(canvasWidth, originY); ctx.stroke(); ctx.beginPath(); ctx.moveTo(originX, 0); ctx.lineTo(originX, canvasHeight); ctx.stroke(); /* */
+         for (let i = -10; i <= 10; i++) { if(i===0)continue; const xPos=originX+i*scale; ctx.beginPath(); ctx.moveTo(xPos, originY-4); ctx.lineTo(xPos, originY+4); ctx.stroke(); if(xPos>5&&xPos<canvasWidth-5)ctx.fillText(i, xPos-(i<0?6:3), originY+15); } /* */
+         for (let i = -10; i <= 10; i++) { if(i===0)continue; const yPos=originY-i*scale; ctx.beginPath(); ctx.moveTo(originX-4, yPos); ctx.lineTo(originX+4, yPos); ctx.stroke(); if(yPos>10&&yPos<canvasHeight-5)ctx.fillText(i, originX+8, yPos+3); } ctx.fillText('0', originX-10, originY+15); /* */
+     } /* */
+
+    function drawAngle(cvA, cvB, cvC, degrees, len1, len2, color1 = shapeColor, color2 = shapeColor){ // Added vertex coords /* */
+        // ... (Draw lines, labels with coords, arc, points - same as previous) ...
+        const radians = degrees*(Math.PI/180); ctx.lineWidth=2; ctx.font='bold 10px Arial'; ctx.strokeStyle=color1; ctx.fillStyle=color1; ctx.beginPath(); ctx.moveTo(cvB.x,cvB.y); ctx.lineTo(cvA.x,cvA.y); ctx.stroke(); ctx.fillText(`A (${mthA.x.toFixed(1)},${mthA.y.toFixed(1)})`,cvA.x+5,cvA.y+15); ctx.strokeStyle=color2; ctx.fillStyle=color2; ctx.beginPath(); ctx.moveTo(cvB.x,cvB.y); ctx.lineTo(cvC.x,cvC.y); ctx.stroke(); if(degrees>1&&degrees<359)ctx.fillText(`C (${mthC.x.toFixed(1)},${mthC.y.toFixed(1)})`,cvC.x+5,cvC.y-5); else if(degrees<=1)ctx.fillText(`C≈A`,cvA.x+5,cvA.y-5); ctx.fillStyle=shapeColor; ctx.fillText(`B (${mthB.x.toFixed(1)},${mthB.y.toFixed(1)})`,cvB.x-40,cvB.y+15); ctx.beginPath(); ctx.arc(cvB.x,cvB.y,15,0,-radians,true); ctx.strokeStyle='#d9534f'; ctx.lineWidth=1.5; ctx.stroke(); const tr=22, ta=-radians/2, tx=cvB.x+tr*Math.cos(ta), ty=cvB.y+tr*Math.sin(ta); ctx.fillStyle='#333'; ctx.font='10px Arial'; ctx.fillText(degrees+'°',tx,ty); ctx.fillStyle=pointColor; [cvB,cvA,cvC].forEach(p=>{ctx.beginPath(); ctx.arc(p.x,p.y,3,0,2*Math.PI); ctx.fill();}); ctx.fillStyle=shapeColor; ctx.strokeStyle=shapeColor; ctx.lineWidth=2;
+    } /* */
+
+    function drawTriangleShape(cvA, cvB, cvC){ // Added vertex coords and side dashes /* */
+         ctx.lineWidth = 2; ctx.font = 'bold 10px Arial'; /* */
+         // Fill Area
+         ctx.fillStyle = fillColor; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.closePath(); ctx.fill(); /* */
+         // Sides
+         ctx.strokeStyle = colorAB; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.stroke(); // AB /* */
+         ctx.strokeStyle = colorBC; ctx.beginPath(); ctx.moveTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.stroke(); // BC /* */
+         ctx.strokeStyle = colorDA; ctx.beginPath(); ctx.moveTo(cvC.x, cvC.y); ctx.lineTo(cvA.x, cvA.y); ctx.stroke(); // CA /* */
+
+         // --- Side Equality Dashes ---
+         const sAB = calculateDistance(mthA, mthB); const sBC = calculateDistance(mthB, mthC); const sAC = calculateDistance(mthC, mthA); /* */
+         let dashStyles = {}; let currentStyle = 1; /* */
+         const ab_bc = Math.abs(sAB - sBC) < epsilon;
+         const bc_ac = Math.abs(sBC - sAC) < epsilon;
+         const ac_ab = Math.abs(sAC - sAB) < epsilon;
+
+         if (ab_bc && bc_ac) { // Equilateral
+            dashStyles.AB = 1; dashStyles.BC = 1; dashStyles.AC = 1;
+         } else if (ab_bc) {
+            dashStyles.AB = 1; dashStyles.BC = 1;
+            if (ac_ab) { /* Should not happen if equilateral handled */ }
+         } else if (bc_ac) {
+            dashStyles.BC = 1; dashStyles.AC = 1;
+         } else if (ac_ab) {
+            dashStyles.AC = 1; dashStyles.AB = 1;
+         } // No else needed for scalene
+
+         if(dashStyles.AB) drawSideDash(cvA, cvB, dashStyles.AB); /* */
+         if(dashStyles.BC) drawSideDash(cvB, cvC, dashStyles.BC); /* */
+         if(dashStyles.AC) drawSideDash(cvC, cvA, dashStyles.AC); /* */
+
+         // Points & Labels with Coords
+         const points = [{p:cvA, l:'A', m:mthA}, {p:cvB, l:'B', m:mthB}, {p:cvC, l:'C', m:mthC}]; /* */
+         points.forEach(item => { ctx.fillStyle = pointColor; ctx.beginPath(); ctx.arc(item.p.x, item.p.y, 3, 0, 2*Math.PI); ctx.fill(); ctx.fillStyle = shapeColor; ctx.fillText(`${item.l} (${item.m.x.toFixed(1)},${item.m.y.toFixed(1)})`, item.p.x+(item.l==='A'||item.l==='B'?-25:5), item.p.y+(item.l==='A'||item.l==='B'?25:-5)); }); /* */
+         ctx.fillStyle = shapeColor; /* */
+    } /* */
+
+    function drawQuadrilateral(cvA, cvB, cvC, cvD){ // Added vertex coords and side dashes /* */
+        ctx.lineWidth = 2; ctx.font = 'bold 10px Arial'; /* */
+        // Fill Area
+        ctx.fillStyle = fillColor; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.lineTo(cvD.x, cvD.y); ctx.closePath(); ctx.fill(); /* */
+        // Sides: A->B, B->C, C->D, D->A
+        ctx.strokeStyle = colorAB; ctx.beginPath(); ctx.moveTo(cvA.x, cvA.y); ctx.lineTo(cvB.x, cvB.y); ctx.stroke(); // AB /* */
+        ctx.strokeStyle = colorBC; ctx.beginPath(); ctx.moveTo(cvB.x, cvB.y); ctx.lineTo(cvC.x, cvC.y); ctx.stroke(); // BC /* */
+        ctx.strokeStyle = colorCD; ctx.beginPath(); ctx.moveTo(cvC.x, cvC.y); ctx.lineTo(cvD.x, cvD.y); ctx.stroke(); // CD /* */
+        ctx.strokeStyle = colorDA; ctx.beginPath(); ctx.moveTo(cvD.x, cvD.y); ctx.lineTo(cvA.x, cvA.y); ctx.stroke(); // DA /* */
+
+        // --- Side Equality Dashes (Revised Logic) ---
+        const sAB = calculateDistance(mthA, mthB); const sBC = calculateDistance(mthB, mthC); const sCD = calculateDistance(mthC, mthD); // Use direct distance for CD
+        const sDA = calculateDistance(mthD, mthA);
+        let qDashStyles = {};
+        const ab_eq_bc = Math.abs(sAB - sBC) < epsilon;
+        const bc_eq_cd = Math.abs(sBC - sCD) < epsilon;
+        const cd_eq_da = Math.abs(sCD - sDA) < epsilon;
+        const da_eq_ab = Math.abs(sDA - sAB) < epsilon;
+        const ab_eq_cd = Math.abs(sAB - sCD) < epsilon; // Opposite 1
+        const bc_eq_da = Math.abs(sBC - sDA) < epsilon; // Opposite 2
+
+        if (ab_eq_bc && bc_eq_cd && cd_eq_da) { // All 4 equal (Rhombus/Square)
+            qDashStyles.AB = 1; qDashStyles.BC = 1; qDashStyles.CD = 1; qDashStyles.DA = 1;
+        } else {
+            let currentStyle = 1;
+            if (ab_eq_cd) { // Pair 1 (AB=CD)
+                qDashStyles.AB = currentStyle;
+                qDashStyles.CD = currentStyle;
+            } 
+			
+			if (bc_eq_da) { // Pair 2 (BC=DA)
+                 // If pair 1 was also equal, use style 1, otherwise use next style (1 or 2)
+                const style = ab_eq_cd ? currentStyle+1 : currentStyle;
+                qDashStyles.BC = style;
+                qDashStyles.DA = style;
+                if (!ab_eq_cd) currentStyle++; // Increment style only if pair 1 wasn't equal
+            }
+             // Could add checks for adjacent pairs (kites) but keeping simple for now
+        }
+
+        if(qDashStyles.AB) drawSideDash(cvA, cvB, qDashStyles.AB);
+        if(qDashStyles.BC) drawSideDash(cvB, cvC, qDashStyles.BC);
+        if(qDashStyles.CD) drawSideDash(cvC, cvD, qDashStyles.CD);
+        if(qDashStyles.DA) drawSideDash(cvD, cvA, qDashStyles.DA);
+
+        // Points & Labels with Coords
+        const points = [{p:cvA, l:'A', m:mthA}, {p:cvB, l:'B', m:mthB}, {p:cvC, l:'C', m:mthC}, {p:cvD, l:'D', m:mthD}]; /* */
+        points.forEach(item => { /* ... (labeling adjusted slightly) ... */ ctx.fillStyle = pointColor; ctx.beginPath(); ctx.arc(item.p.x, item.p.y, 3, 0, 2*Math.PI); ctx.fill(); ctx.fillStyle = shapeColor; let lx=item.p.x+5, ly=item.p.y-5; if(item.l==='A'){lx-=25;ly+=30;} if(item.l==='B'){lx-=45; ly+=30;} if(item.l==='D')lx-=45; if(item.l==='C')lx+=3; ctx.fillText(`${item.l} (${item.m.x.toFixed(1)},${item.m.y.toFixed(1)})`, lx, ly); ctx.fillStyle = pointColor; }); /* */
+        ctx.fillStyle = shapeColor; /* */
+    } /* */
+
+    function drawDottedHeightLine(cvTop, cvFoot, label){ /* ... (same) ... */ ctx.strokeStyle=heightColor; ctx.lineWidth=1.5; ctx.setLineDash([3,3]); ctx.beginPath(); ctx.moveTo(cvTop.x,cvTop.y); ctx.lineTo(cvFoot.x,cvFoot.y); ctx.stroke(); ctx.setLineDash([]); ctx.fillStyle=heightColor; ctx.beginPath(); ctx.arc(cvFoot.x,cvFoot.y,3,0,2*Math.PI); ctx.fill(); ctx.font='bold 11px Arial'; ctx.fillText(label, cvFoot.x-5, cvFoot.y+15); ctx.fillStyle=shapeColor; } /* */
+
+    // --- NEW: Draw Side Dash Function ---
+    function drawSideDash(cvP1, cvP2, style = 1, length = 8, gap = 4) { // Increased gap
+        const midX = (cvP1.x + cvP2.x) / 2; const midY = (cvP1.y + cvP2.y) / 2; const angle = Math.atan2(cvP2.y - cvP1.y, cvP2.x - cvP1.x); const perpAngle = angle + Math.PI / 2; /* */
+        ctx.strokeStyle = shapeColor; ctx.lineWidth = 1.5; /* */
+        for (let i = 0; i < style; i++) { /* */
+            const offset = (i - (style - 1) / 2) * (length/1.5 + gap) ; // Adjusted spacing /* */
+            const startX = midX + offset * Math.cos(angle) - length / 2 * Math.cos(perpAngle); const startY = midY + offset * Math.sin(angle) - length / 2 * Math.sin(perpAngle); const endX = midX + offset * Math.cos(angle) + length / 2 * Math.cos(perpAngle); const endY = midY + offset * Math.sin(angle) + length / 2 * Math.sin(perpAngle); /* */
+            ctx.beginPath(); ctx.moveTo(startX, startY); ctx.lineTo(endX, endY); ctx.stroke(); /* */
+        } ctx.lineWidth = 2; // Reset line width /* */
+    }
+
+    // --- Type Classification ---
+    function getAngleType(degrees){ // Returns {name, reason} /* */
+        degrees=degrees%360; if(degrees<0)degrees+=360; /* */
+        if(Math.abs(degrees-0)<epsilon||Math.abs(degrees-360)<epsilon) return{name:"Zero/Full", reason:"Angle = 0°/360°"}; /* */
+        if(degrees>0&&degrees<90) return{name:"Acute", reason:"0° < Angle < 90°"}; /* */
+        if(Math.abs(degrees-90)<angleEpsilon) return{name:"Right", reason:"Angle = 90°"}; /* */
+        if(degrees>90&&degrees<180) return{name:"Obtuse", reason:"90° < Angle < 180°"}; /* */
+        if(Math.abs(degrees-180)<angleEpsilon) return{name:"Straight", reason:"Angle = 180°"}; /* */
+        if(degrees>180&&degrees<360) return{name:"Reflex", reason:"180° < Angle < 360°"}; /* */
+        return{name:"Unknown", reason:""}; } /* */
+
+    function getTriangleType(sAB, sBC, sAC, aA, aB, aC){ // Returns {name, reason} /* */
+        // ... (same logic) ... /* */
+        let sideType="", angleType="", sideReason="", angleReason=""; const ab_bc=Math.abs(sAB-sBC)<epsilon; const bc_ac=Math.abs(sBC-sAC)<epsilon; const ac_ab=Math.abs(sAC-sAB)<epsilon; if(ab_bc&&bc_ac){sideType="Equilateral"; sideReason="AB = BC = CA";} else if(ab_bc||bc_ac||ac_ab){sideType="Isosceles"; sideReason=ab_bc?"AB = BC":bc_ac?"BC = CA":"CA = AB";} else{sideType="Scalene"; sideReason="All sides different";} const isRight=Math.abs(aA-90)<angleEpsilon||Math.abs(aB-90)<angleEpsilon||Math.abs(aC-90)<angleEpsilon; const isObtuse=aA>90+angleEpsilon||aB>90+angleEpsilon||aC>90+angleEpsilon; if(isRight){angleType="Right"; angleReason=Math.abs(aA-90)<angleEpsilon?"∠A=90°":Math.abs(aB-90)<angleEpsilon?"∠B=90°":"∠C=90°";} else if(isObtuse){angleType="Obtuse"; angleReason=aA>90?"∠A>90°":aB>90?"∠B>90°":"∠C>90°";} else{angleType="Acute"; angleReason="All angles < 90°";} return{name:`${sideType} ${angleType}`, reason:`${sideReason}; ${angleReason}`};
+    } /* */
+
+    function getQuadrilateralName(sAB, sBC, sCD, sDA, aA, aB, aC, aD, height){ // Returns {name, reason} /* */
+         // Use Math.abs(sCD) for length comparison /* */
+         const absCD = Math.abs(sCD); /* */
+         const isParallelAB_CD=true; const slopeBC=(mthC.y-mthB.y)/(mthC.x-mthB.x); const slopeDA=(mthA.y-mthD.y)/(mthA.x-mthD.x); const isBCV=Math.abs(mthC.x-mthB.x)<epsilon; const isDAV=Math.abs(mthA.x-mthD.x)<epsilon; let isParallelBC_DA=false; if(isBCV&&isDAV)isParallelBC_DA=true; else if(!isBCV&&!isDAV)isParallelBC_DA=Math.abs(slopeBC-slopeDA)<epsilon; const isRA=Math.abs(aA-90)<angleEpsilon; const isRB=Math.abs(aB-90)<angleEpsilon; const isRC=Math.abs(aC-90)<angleEpsilon; const isRD=Math.abs(aD-90)<angleEpsilon; const allRA=isRA&&isRB&&isRC&&isRD; const nonParEq=Math.abs(sBC-sDA)<epsilon; const allSidesEq=Math.abs(sAB-sBC)<epsilon&&Math.abs(sBC-absCD)<epsilon&&Math.abs(absCD-sDA)<epsilon; let name="Trapezoid", reason="AB || CD"; if(isParallelBC_DA){name="Parallelogram"; reason="AB||CD & BC||DA"; if(allSidesEq){name="Rhombus"; reason="Parallelogram w/ AB=BC=CD=DA"; if(allRA){name="Square"; reason="Rhombus w/ all ∠=90°";}}else if(allRA){name="Rectangle"; reason="Parallelogram w/ all ∠=90°";}}else if(nonParEq){name="Isosceles Trapezoid"; reason="Trapezoid w/ BC=DA";} if(sCD<0){name="Crossed Quadrilateral"; reason="CD length < 0";} return{name:name, reason:reason}; /* */
+    } /* */
+
+
+    // --- Calculation and Display ---
+    function calculateDistance(p1, p2){ /* ... */ return Math.sqrt(Math.pow(p2.x-p1.x, 2)+Math.pow(p2.y-p1.y, 2)); } /* */
+    function calculateAngleAtVertex(V, P_prev, P_next) { // Order: P_prev -> V -> P_next CCW? /* */
+        const v1x = P_prev.x - V.x; const v1y = P_prev.y - V.y; const v2x = P_next.x - V.x; const v2y = P_next.y - V.y; /* */
+        let angle = Math.atan2(v2y, v2x) - Math.atan2(v1y, v1x); if (angle < 0) angle += 2 * Math.PI; /* */
+        let degrees = angle * (180 / Math.PI); if (Math.abs(degrees) < angleEpsilon) return 0; /* */
+        if (Math.abs(degrees - 180) < angleEpsilon) return 180; if (Math.abs(degrees - 360) < angleEpsilon) return 0; return degrees; /* */
+    } /* */
+
+
+function displayVisualAngle(card){
+	
+	OngoingOp = 6;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
+	
+	
+	document.getElementById("game-angle-container").classList.remove("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	
+	
+   updateVisualization();
+}
+
+function displayOp(card){
+	
+	OngoingOp = 5;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.remove("hidden");
+	
+   setSliderValues(card.num1 ,card.num2 , card.operator )
+}
+
+/* Angle,Triangle , Quadrilateral
+
+valueSide1
+valueSide2
+valueAngle
+valueTopCD */
+
+// Function to set slider values programmatically
+function setAngleSliderValues(card) {
+	
+	console.log(card);
+	
+    let sliderAB = document.getElementById("sliderSide1");
+    let sliderBC = document.getElementById("sliderSide2"); 
+	let sliderCD = document.getElementById("sliderTopCD"); 
+	let sliderAngleB = document.getElementById("sliderAngle"); 
+	let geoTopic = document.getElementById("geometryTopic");
+
+  
+	
+	if (card.Type){
+	geoTopic.value = card.Type;
+	} else {
+		geoTopic.value = "Quadrilateral";
+	}	
+	
+	if (card.AB){
+	sliderAB.value = card.AB;
+	} else {
+		sliderAB.value = 0;
+	}
+	
+	if (card.BC){
+	sliderBC.value = card.BC;
+	} else {
+		sliderBC.value = 0;
+	}	
+
+		if (card.angle_B){
+	sliderAngleB.value = card.angle_B;
+	} else {
+		sliderAngleB.value = 0;
+	}
+	
+	if (card.CD){
+	sliderCD.value = card.CD;
+	} else {
+		sliderCD.value = 0;
+	}
+
+    updateVisualization();
+}
+
+function displayAngleTriangleQuad(card){
+	
+	OngoingOp = 7;
+	
+	
+	
+
+	
+		document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");
+	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	document.getElementById("game-angle-container").classList.remove("hidden");
+	
+   setAngleSliderValues(card )
+}
+
+
+const balanceCanvas = document.getElementById('balanceCanvas');
+ const balanceCtx = balanceCanvas.getContext('2d');
+ 
+ console.log(document);
+
+// --- Slider and Value Displays ---
+
+ /*  BalSliderA
+   BalSliderA
+   BalSliderA */
+                 
+
+console.log(document.getElementById('BalSliderA'));
+ const BalsliderA = document.getElementById('BalSliderA');
+ const BalvalueA = document.getElementById('BalvalueA');
+ const BalsliderX = document.getElementById('BalSliderX');
+ const BalvalueX = document.getElementById('BalvalueX');
+ const BalsliderB = document.getElementById('BalSliderB');
+ const BalvalueB = document.getElementById('BalvalueB');
+ const BalsliderD = document.getElementById('BalSliderD');
+ const BalvalueD = document.getElementById('BalvalueD');
+ const BalsliderC = document.getElementById('BalSliderC');
+ const BalvalueC = document.getElementById('BalvalueC');
+ const equationDisplay = document.getElementById('equation');
+
+// --- Action Sliders and Buttons ---
+ const kConstSlider = document.getElementById('kConstSlider');
+ const BalvalKConst = document.getElementById('BalvalKConst');
+ const btnAddConst = document.getElementById('btnAddConst');
+ const btnSubConst = document.getElementById('btnSubConst');
+ const btnMultiplyConst = document.getElementById('btnMultiplyConst');
+ const btnDivideConst = document.getElementById('btnDivideConst');
+
+
+ const kX = document.getElementById('kX');
+ const BalvalKX = document.getElementById('BalvalKX');
+ const btnAddX = document.getElementById('btnAddX');
+ const btnSubX = document.getElementById('btnSubX');
+ //const btnMultiplyX = document.getElementById('btnMultiplyX');
+ //const btnDivideX = document.getElementById('btnDivideX');
+
+
+// --- Constants for Drawing (Adjusted for 600x400 balanceCanvas) ---
+ const scaleBaseY = balanceCanvas.height - 50;
+ const scaleBaseWidth = 150;
+ const scalePillarHeight = balanceCanvas.height * 0.7;
+ const scalePillarX = balanceCanvas.width / 2;
+ const scaleBeamY = scaleBaseY - scalePillarHeight;
+ const scaleBeamLength = balanceCanvas.width * 0.75;
+ const panWidth = 120;
+ const panHeight = 15;
+ const panStringLength = 90;
+ const maxTiltAngle = Math.PI / 18;
+ const tiltMultiplier = 0.02;
+
+ const itemSize = 18;
+ const itemPadding = 4;
+ const constantRadius = 16;
+ const baseFontSize = 12;
+
+// --- Colors ---
+ const colorPositive = '#5bc0de';
+ const colorNegative = '#d9534f';
+ const colorXPositive = '#5cb85c';
+ const colorXNegative = '#f0ad4e';
+ const colorScale = '#5a6268';
+ const colorBeam = '#868e96';
+ const colorPan = '#adb5bd';
+ const colorString = '#495057';
+ const colorTextLight = '#fff';
+ const colorTextDark = '#212529';
+
+// --- Drawing Functions ---
+
+ function drawScaleBase(balanceCtx) {
+     balanceCtx.fillStyle = colorScale;
+     balanceCtx.fillRect(scalePillarX - scaleBaseWidth / 2, scaleBaseY, scaleBaseWidth, 20);
+     balanceCtx.fillRect(scalePillarX - 10, scaleBeamY, 20, scalePillarHeight);
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(scalePillarX - 15, scaleBeamY);
+     balanceCtx.lineTo(scalePillarX + 15, scaleBeamY);
+     balanceCtx.lineTo(scalePillarX, scaleBeamY - 15);
+     balanceCtx.closePath();
+     balanceCtx.fillStyle = '#343a40';
+     balanceCtx.fill();
+ }
+
+ function drawScaleBeamAndPans(balanceCtx, tiltAngle) {
+     balanceCtx.save();
+     balanceCtx.translate(scalePillarX, scaleBeamY);
+     balanceCtx.rotate(tiltAngle);
+
+     balanceCtx.lineWidth = 8;
+     balanceCtx.strokeStyle = colorBeam;
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(-scaleBeamLength / 2, 0);
+     balanceCtx.lineTo(scaleBeamLength / 2, 0);
+     balanceCtx.stroke();
+
+     const leftPanAttachX = -scaleBeamLength / 2 + 30;
+     const rightPanAttachX = scaleBeamLength / 2 - 30;
+     const panAttachY = 0;
+
+     balanceCtx.lineWidth = 2;
+     balanceCtx.strokeStyle = colorString;
+
+     const leftPanBaseY = panAttachY + panStringLength;
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(leftPanAttachX, panAttachY);
+     balanceCtx.lineTo(leftPanAttachX - panWidth / 2 + 15, leftPanBaseY);
+     balanceCtx.moveTo(leftPanAttachX, panAttachY);
+     balanceCtx.lineTo(leftPanAttachX + panWidth / 2 - 15, leftPanBaseY);
+     balanceCtx.stroke();
+     balanceCtx.fillStyle = colorPan;
+     balanceCtx.fillRect(leftPanAttachX - panWidth / 2, leftPanBaseY, panWidth, panHeight);
+
+     const rightPanBaseY = panAttachY + panStringLength;
+     balanceCtx.beginPath();
+     balanceCtx.moveTo(rightPanAttachX, panAttachY);
+     balanceCtx.lineTo(rightPanAttachX - panWidth / 2 + 15, rightPanBaseY);
+     balanceCtx.moveTo(rightPanAttachX, panAttachY);
+     balanceCtx.lineTo(rightPanAttachX + panWidth / 2 - 15, rightPanBaseY);
+     balanceCtx.stroke();
+     balanceCtx.fillStyle = colorPan;
+     balanceCtx.fillRect(rightPanAttachX - panWidth / 2, rightPanBaseY, panWidth, panHeight);
+
+     balanceCtx.restore();
+ }
+
+ function drawXBox(balanceCtx, drawX, drawY, color) {
+     balanceCtx.fillStyle = color;
+     balanceCtx.strokeStyle = colorTextDark;
+     balanceCtx.lineWidth = 1.5;
+     balanceCtx.fillRect(drawX - itemSize / 2, drawY - itemSize / 2, itemSize, itemSize);
+     balanceCtx.strokeRect(drawX - itemSize / 2, drawY - itemSize / 2, itemSize, itemSize);
+     balanceCtx.fillStyle = colorTextLight;
+     balanceCtx.font = `bold ${baseFontSize}px Arial`;
+     balanceCtx.textAlign = 'center';
+     balanceCtx.textBaseline = 'middle';
+     balanceCtx.fillText('x', drawX, drawY + 1);
+ }
+
+ function drawConstantCircle(balanceCtx, drawX, drawY, value, color) {
+     let radius = constantRadius;
+     let fontSize = baseFontSize + 2;
+     const valueStr = Number.isInteger(value) ? value.toString() : value.toFixed(1);
+
+     balanceCtx.fillStyle = color;
+     balanceCtx.strokeStyle = colorTextDark;
+     balanceCtx.lineWidth = 1.5;
+     balanceCtx.beginPath();
+     balanceCtx.arc(drawX, drawY, radius, 0, Math.PI * 2);
+     balanceCtx.fill();
+     balanceCtx.stroke();
+     balanceCtx.fillStyle = colorTextLight;
+     balanceCtx.font = `bold ${fontSize}px Arial`;
+     balanceCtx.textAlign = 'center';
+     balanceCtx.textBaseline = 'middle';
+     balanceCtx.fillText(valueStr, drawX, drawY + 1);
+ }
+
+ function arrangeItems(balanceCtx, panCenterX, panTopY, coeffValue, itemType, colorPositive, colorNegative, displayValue = null) {
+     const valueToDraw = (itemType === 'constant') ? displayValue : coeffValue;
+     if (Math.abs(valueToDraw) < 0.01) return 0;
+
+     if (itemType === 'constant') {
+         const color = valueToDraw > 0 ? colorPositive : colorNegative;
+         drawConstantCircle(balanceCtx, panCenterX, panTopY - constantRadius - itemPadding, valueToDraw, color);
+         return constantRadius * 2 + itemPadding * 2;
+     } else if (itemType === 'x') {
+         const numBoxes = Math.round(Math.abs(valueToDraw));
+         if (numBoxes === 0) return 0;
+         const boxColor = valueToDraw > 0 ? colorXPositive : colorXNegative;
+         const itemsPerRowX = Math.floor(panWidth / (itemSize + itemPadding * 2)) || 1;
+         const totalRowsX = Math.ceil(numBoxes / itemsPerRowX);
+         const startY = panTopY - (itemSize / 2) - itemPadding;
+         let itemsDrawn = 0;
+         let totalHeight = 0;
+
+         for (let r = 0; r < totalRowsX; r++) {
+             const itemsInThisRow = Math.min(numBoxes - itemsDrawn, itemsPerRowX);
+             if (itemsInThisRow <= 0) break;
+
+             const thisRowWidth = itemsInThisRow * itemSize + Math.max(0, itemsInThisRow - 1) * itemPadding;
+             let currentX = panCenterX - thisRowWidth / 2 + itemSize / 2;
+             const currentY = startY - r * (itemSize + itemPadding);
+             for (let i = 0; i < itemsInThisRow; i++) {
+                 if (itemsDrawn < numBoxes) {
+                     drawXBox(balanceCtx, currentX, currentY, boxColor);
+                     currentX += (itemSize + itemPadding);
+                     itemsDrawn++;
+                 }
+             }
+             totalHeight = (r + 1) * itemSize + r * itemPadding;
+         }
+         return totalHeight + itemPadding * 2;
+     }
+     return 0;
+ }
+
+// --- Main Update Function ---
+ function updateVisualizationBalance(sourceSlider = null) {
+     const a = parseFloat(BalsliderA.value);
+     const x = parseFloat(BalsliderX.value);
+     const b = parseFloat(BalsliderB.value);
+     const d = parseFloat(BalsliderD.value);
+     const c = parseFloat(BalsliderC.value);
+
+     BalvalueA.textContent = a.toFixed(1);
+     BalvalueX.textContent = x.toFixed(1);
+     BalvalueB.textContent = b.toFixed(1);
+     BalvalueD.textContent = d.toFixed(1);
+     BalvalueC.textContent = c.toFixed(1);
+     BalvalKConst.textContent = parseFloat(kConstSlider.value).toFixed(1); 
+     BalvalKX.textContent = parseFloat(kX.value).toFixed(1);
+
+     const formatNum = (num) => {
+         const fixed = num.toFixed(1);
+         return fixed.endsWith('.0') ? fixed.slice(0, -2) : fixed;
+     };
+     const bSign = b >= 0 ? '+' : '-';
+     const bAbsStr = formatNum(Math.abs(b));
+     const aNum = a;
+     const dNum = d;
+     const cNum = c;
+     let aStr = '';
+     if (Math.abs(aNum - 1) < 0.01) aStr = '';
+     else if (Math.abs(aNum + 1) < 0.01) aStr = '-';
+     else if (Math.abs(aNum) > 0.01) aStr = formatNum(aNum);
+     const aTerm = Math.abs(aNum) < 0.01 ? '' : `${aStr}x`;
+     let dStr = '';
+     if (Math.abs(dNum - 1) < 0.01) dStr = 'x';
+     else if (Math.abs(dNum + 1) < 0.01) dStr = '-x';
+     else if (Math.abs(dNum) > 0.01) dStr = `${formatNum(dNum)}x`;
+     let cStr = '';
+     let cSign = '';
+     if (Math.abs(cNum) > 0.01) {
+         cSign = cNum >= 0 ? '+' : '-';
+         cStr = formatNum(Math.abs(cNum));
+     }
+     let rightSideStr = "";
+     if (dStr) {
+         rightSideStr += dStr;
+         if (cStr) { rightSideStr += ` ${cSign} ${cStr}`; }
+     } else if (cStr) {
+         rightSideStr = `${cNum >= 0 ? '' : '-'}${cStr}`;
+     } else {
+         rightSideStr = "0";
+     }
+     let leftSideStr = "";
+     if (aTerm) {
+         leftSideStr += aTerm;
+         if (Math.abs(b) > 0.01) {
+             leftSideStr += ` ${bSign} ${bAbsStr}`;
+         }
+     } else if (Math.abs(b) > 0.01) {
+          leftSideStr = `${b >= 0 ? '' : '-'}${bAbsStr}`;
+     } else {
+         leftSideStr = "0";
+     }
+     equationDisplay.textContent = `${leftSideStr} = ${rightSideStr}`;
+
+     const leftValue = a * x + b;
+     const rightValue = d * x + c;
+     const tolerance = 0.01;
+     const isBalanced = Math.abs(leftValue - rightValue) < tolerance;
+     if (isBalanced) {
+         equationDisplay.classList.remove('unbalanced'); equationDisplay.classList.add('balanced');
+     } else {
+         equationDisplay.classList.remove('balanced'); equationDisplay.classList.add('unbalanced');
+     }
+
+     const valueDifference = leftValue - rightValue;
+     let tiltAngle = Math.max(-maxTiltAngle, Math.min(maxTiltAngle, valueDifference * -tiltMultiplier));
+
+     balanceCtx.clearRect(0, 0, balanceCanvas.width, balanceCanvas.height);
+     drawScaleBase(balanceCtx);
+
+     const leftAttachGlobal = rotatePoint(-scaleBeamLength / 2 + 30, 0, tiltAngle, scalePillarX, scaleBeamY);
+     const rightAttachGlobal = rotatePoint(scaleBeamLength / 2 - 30, 0, tiltAngle, scalePillarX, scaleBeamY);
+     const leftPanDrawY = leftAttachGlobal.y + panStringLength + panHeight;
+     const rightPanDrawY = rightAttachGlobal.y + panStringLength + panHeight;
+
+     drawScaleBeamAndPans(balanceCtx, tiltAngle);
+
+     let yLeft = leftPanDrawY;
+     let heightB = arrangeItems(balanceCtx, leftAttachGlobal.x, yLeft, b, 'constant', colorPositive, colorNegative, b);
+     let heightAX = arrangeItems(balanceCtx, leftAttachGlobal.x, yLeft - heightB, a, 'x', colorXPositive, colorXNegative);
+
+     let yRight = rightPanDrawY;
+     let heightC = arrangeItems(balanceCtx, rightAttachGlobal.x, yRight, c, 'constant', colorPositive, colorNegative, c);
+     let heightDX = arrangeItems(balanceCtx, rightAttachGlobal.x, yRight - heightC, d, 'x', colorXPositive, colorXNegative);
+ }
+
+ function rotatePoint(xRel, yRel, angle, pivotX, pivotY) {
+     const cosA = Math.cos(angle);
+     const sinA = Math.sin(angle);
+     const xRot = xRel * cosA - yRel * sinA;
+     const yRot = xRel * sinA + yRel * cosA;
+     return { x: xRot + pivotX, y: yRot + pivotY };
+ }
+
+ function roundTo(num, places) {
+     const factor = 10 ** places;
+     return Math.round((num + Number.EPSILON) * factor) / factor;
+ }
+  
+
+// --- Action Handlers ---
+
+ btnAddConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     BalsliderB.value = roundTo(parseFloat(BalsliderB.value) + k, 2);
+     BalsliderC.value = roundTo(parseFloat(BalsliderC.value) + k, 2);
+     updateVisualizationBalance('action');
+ });
+ btnSubConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     BalsliderB.value = roundTo(parseFloat(BalsliderB.value) - k, 2);
+     BalsliderC.value = roundTo(parseFloat(BalsliderC.value) - k, 2);
+     updateVisualizationBalance('action');
+ });
+ btnMultiplyConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     if (Math.abs(k) < 0.01) {
+         console.warn("Multiplication by zero. Resetting equation to 0 = 0.");
+         BalsliderA.value = 0; BalsliderB.value = 0; BalsliderD.value = 0; BalsliderC.value = 0;
+     } else {
+         BalsliderA.value = roundTo(parseFloat(BalsliderA.value) * k, 2);
+         BalsliderB.value = roundTo(parseFloat(BalsliderB.value) * k, 2);
+         BalsliderD.value = roundTo(parseFloat(BalsliderD.value) * k, 2);
+         BalsliderC.value = roundTo(parseFloat(BalsliderC.value) * k, 2);
+     }
+     updateVisualizationBalance('action');
+ });
+ btnDivideConst.addEventListener('click', () => {
+     const k = parseFloat(kConstSlider.value);
+     if (Math.abs(k) < 0.01) {
+         alert("Error: Cannot divide by zero!");
+         kConstSlider.value = (k >= 0 ? 0.1 : -0.1);
+         valKConst.textContent = parseFloat(kConstSlider.value).toFixed(1);
+         return;
+     }
+     BalsliderA.value = roundTo(parseFloat(BalsliderA.value) / k, 2);
+     BalsliderB.value = roundTo(parseFloat(BalsliderB.value) / k, 2);
+     BalsliderD.value = roundTo(parseFloat(BalsliderD.value) / k, 2);
+     BalsliderC.value = roundTo(parseFloat(BalsliderC.value) / k, 2);
+     updateVisualizationBalance('action');
+ });
+
+
+ btnAddX.addEventListener('click', () => {
+     const k = parseFloat(kX.value);
+     BalsliderA.value = roundTo(parseFloat(BalsliderA.value) + k, 2);
+     BalsliderD.value = roundTo(parseFloat(BalsliderD.value) + k, 2);
+     updateVisualizationBalance('action');
+ });
+ btnSubX.addEventListener('click', () => {
+     const k = parseFloat(kX.value);
+     BalsliderA.value = roundTo(parseFloat(BalsliderA.value) - k, 2);
+     BalsliderD.value = roundTo(parseFloat(BalsliderD.value) - k, 2);
+     updateVisualizationBalance('action');
+ });
+
+
+
+// --- Event Listeners for value displays (Action Sliders) ---
+ kConstSlider.addEventListener('input', () => {
+     let currentVal = parseFloat(kConstSlider.value);
+     if (Math.abs(currentVal) < 0.01 && (event?.target === btnDivideConst)) {
+         currentVal = 0.1 * Math.sign(currentVal || 1);
+         kConstSlider.value = currentVal;
+     }
+     BalvalKConst.textContent = parseFloat(kConstSlider.value).toFixed(1);
+ });
+ kX.addEventListener('input', () => {
+      let currentVal = parseFloat(kX.value);
+      if (Math.abs(currentVal) < 0.01 && (event?.target === btnDivideX)) {
+         currentVal = 0.1 * Math.sign(currentVal || 1);
+         kX.value = currentVal;
+     }
+     BalvalKX.textContent = parseFloat(kX.value).toFixed(1);
+ });
+
+// --- Event Listeners for main sliders ---
+ BalsliderA.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderX.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderB.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderD.addEventListener('input', () => { updateVisualizationBalance(); });
+ BalsliderC.addEventListener('input', () => { updateVisualizationBalance(); });
+  
+
+function displayVisualBalance(card){
+	
+	OngoingOp = 8 ;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");	
+//document.getElementById("game-algebra-balance-container").classList.add("hidden");
+
+document.getElementById("game-algebra-balance-container").classList.remove("hidden");
+	
+ 
+ 
+// --- Initial Draw ---
+ updateVisualizationBalance();
+ 
+}
+
+
+function displayLinearEq(card){
+	
+	OngoingOp = 9;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");	
+//document.getElementById("game-algebra-balance-container").classList.add("hidden");
+
+document.getElementById("game-algebra-balance-container").classList.remove("hidden");
+	
+  let BalSliderA = document.getElementById("BalSliderA");
+    let BalSliderB = document.getElementById("BalSliderB"); 
+		let BalSliderC = document.getElementById("BalSliderC"); 
+	let BalSliderD = document.getElementById("BalSliderD");
+
+  
+	
+
+	
+	if (card.a){
+	BalSliderA.value = card.a;
+	} else {
+		BalSliderA.value = 0;
+	}
+	
+	if (card.b){
+	BalSliderB.value = card.b;
+	} else {
+		BalSliderB.value = 0;
+	}	
+
+	if (card.c){
+	BalSliderC.value = card.c;
+	} else {
+		BalSliderC.value = 0;
+	}
+	
+	if (card.d){
+	BalSliderD.value = card.d;
+	} else {
+		BalSliderD.value = 0;
+	}
+	
+	 updateVisualizationBalance();
+ 
+}		
 
         function showFlashcard() {
 		    
@@ -664,13 +2008,13 @@ function displayDivision(card) {
 			
             let card = currentFlashcards[currentIndex];
 			
-			console.log(card);
+			//console.log(card);
 			
 			if (settings.voice){
 				
-				console.log(card.question);
+				//console.log(card.question);
 				speakText(card.question);
-				console.log(card.q_english);
+				//console.log(card.q_english);
 				speakText(card.q_english);
 				
 			}
@@ -679,7 +2023,7 @@ function displayDivision(card) {
 			
 			//displayFormattedQuestion();
 		/*	if (card.visual){
-				console.log (card.visual);
+				//console.log (card.visual);
 				document.getElementById("question-text").innerText = card.question + card.visual ;
 			} else
 			{
@@ -703,11 +2047,33 @@ function displayDivision(card) {
             optionsDiv.innerHTML = "";
 			
 			
-			 if (currenttopLevelCategoryName === "Division") {
+			 if (currenttopLevelCategoryName == "Division Steps") {
 					displayDivision(card); // Use displayDivision for division
 			}else if ((currenttopLevelCategoryName == "Fraction 1") || (currenttopLevelCategoryName == "Fraction 2")) {
 					displayFraction(card); // Use displayDivision for division
-			}			
+			}else if (currenttopLevelCategoryName == "Visual Fraction"){
+				displayVisualFraction(card); 
+			}else if (currenttopLevelCategoryName == "Visual Add, Sub, Mul, Div, Rem"){
+				displayVisualAdd(card); 
+			}else if ((currenttopLevelCategoryName == "Addition") || (currenttopLevelCategoryName == "Multiplcation") || (currenttopLevelCategoryName == "Subtraction") || (currenttopLevelCategoryName == "Division") || (currenttopLevelCategoryName == "Remainder")) {
+				displayOp(card); 
+
+			}else if ((currenttopLevelCategoryName == "Visual Algebra Balancing Equation")) {
+				displayVisualBalance(card); 
+			}
+			else if ((currenttopLevelCategoryName == "Algebra Linear Equation")) {
+				displayLinearEq(card); 
+			}
+
+			
+			else if ((currenttopLevelCategoryName == "Angle") || (currenttopLevelCategoryName == "Triangle") || (currenttopLevelCategoryName == "Quadrilateral") || (currenttopLevelCategoryName == "Perimeter") || (currenttopLevelCategoryName == "Area") ) {
+				displayAngleTriangleQuad(card); 
+			} 		
+			
+			
+			else if (currenttopLevelCategoryName == "Visual Angle, Triangle, Quad"){
+				displayVisualAngle(card); 
+			}		
 			else {
 				displayMultiplication(card); // Use displayMultiplication for multiplication
 			}
@@ -868,7 +2234,7 @@ function clear() {
 
     function openSuggestFlashcardModal() {
 	
-        //console.log( openSuggestFlashcardModal )
+        ////console.log( openSuggestFlashcardModal )
 		if (!currentCard) return;  // Exit if no card
 
         
@@ -877,7 +2243,7 @@ function clear() {
     }
 
     function closeSuggestFlashcardModal() {
-	//console.log( closeSuggestFlashcardModal )
+	////console.log( closeSuggestFlashcardModal )
         document.getElementById("suggest-flashcard-modal").style.display = "none";
     }
 
@@ -913,15 +2279,18 @@ function clear() {
 //    this.action = `mailto:<span class="math-inline">\{recipient\}?subject\=</span>{encodeURIComponent(emailTitle)}&body=${encodeURIComponent(emailBody)}`;
 this.action = `mailto:${recipient}?subject=${emailTitle}&body=${encodeURIComponent(emailBody)}`;
 
-console.log( this.action )
+//console.log( this.action )
      // Programmatically trigger the <a> link
      window.location.href = this.action;
-	 //console.log( this.action )
+	 ////console.log( this.action )
     closeSuggestFlashcardModal();
 });
 
 
 function ans_fraction(selected){
+}
+
+function ans_visual(selected){
 }
 
 function ans_div(selected){
@@ -935,7 +2304,7 @@ function ans_div(selected){
                 Quot = Quot *10 + parseInt(card.stepValue);
 				}
 				let expectedQuote = card.num1 / card.num2;
-				//console.log(totalSum);
+				////console.log(totalSum);
 				
 				expectedQuote = expectedQuote.toFixed(2);
 				  // Ensure inputs are strings
@@ -943,7 +2312,7 @@ function ans_div(selected){
 
 				let newRow = `<td>=</td><td colspan="3"  >Quotient ${expectedQuote}</td><td   class="correct">${in_ans[0]}</td><td  class="correct">${in_ans[1]}</td><td   class="correct">${in_ans[2]}</td><td colspan="5" class="correct">✔ Step ${currentIndex + 1} Rem = ${card.remainder}</td>`;
                // let newRow = `<tr><td>+</td><td></td><td></td><td></td> <td>${selected}</td><td colspan="3" class="correct">${card.step}</td><td colspan="2" class="correct">✔ Step ${currentIndex + 1} </td></tr>`;
-                //console.log(newRow);
+                ////console.log(newRow);
 				document.getElementById("steps").innerHTML = newRow;
 				
 								  // Ensure inputs are strings
@@ -970,7 +2339,7 @@ function ans_div(selected){
 				  }
 				  
 				  document.getElementById("Remainder").innerHTML += `<tr></tr><tr><td>=</td>${extra_shift}<td></td><td></td>${rem_color}${in_ans[0]}</td>${rem_color}${in_ans[1]}</td>${rem_color}${in_ans[2]}</td> <td></td><td colspan="6" class="table_head">${card.ans_english}</tr>`;
-				//console.log(newRow);
+				////console.log(newRow);
                // document.getElementById("totalRow").innerHTML = `<td></td><td></td><td></td><td></td><td  class="table_head">${totalSum}</td><td colspan="5" class="table_head">Product ${expectedSum}</td>`;
              
                 clearHighlight();
@@ -982,21 +2351,21 @@ function ans_mult(selected){
 	//fix me
                 totalSum += parseInt(selected);
 				let expectedSum = card.num1 * card.num2;
-				//console.log(totalSum);
+				////console.log(totalSum);
 				
 				  // Ensure inputs are strings
 			  in_ans = String(selected).padStart(6, ' ');
 
 				let newRow = `<tr><td>+</td><td>${in_ans[0]}</td><td>${in_ans[1]}</td><td>${in_ans[2]}</td> <td>${in_ans[3]}</td><td>${in_ans[4]}</td> <td>${in_ans[5]}</td><td colspan="3" class="correct">${card.step}</td><td colspan="2" class="correct">✔ Step ${currentIndex + 1} </td></tr>`;
                // let newRow = `<tr><td>+</td><td></td><td></td><td></td> <td>${selected}</td><td colspan="3" class="correct">${card.step}</td><td colspan="2" class="correct">✔ Step ${currentIndex + 1} </td></tr>`;
-                //console.log(newRow);
+                ////console.log(newRow);
 				document.getElementById("steps").innerHTML += newRow;
 				
 								  // Ensure inputs are strings
 			  in_ans = String(totalSum).padStart(6, ' ');
 				 
 				 document.getElementById("totalRow").innerHTML = `<td>=</td><td>${in_ans[0]}</td><td>${in_ans[1]}</td><td>${in_ans[2]}</td> <td>${in_ans[3]}</td><td>${in_ans[4]}</td> <td>${in_ans[5]}</td><td colspan="5" class="table_head">${card.num1} X ${card.num2} = ${expectedSum}</td>`;
-				//console.log(newRow);
+				////console.log(newRow);
                // document.getElementById("totalRow").innerHTML = `<td></td><td></td><td></td><td></td><td  class="table_head">${totalSum}</td><td colspan="5" class="table_head">Product ${expectedSum}</td>`;
              
                 clearHighlight();
@@ -1028,16 +2397,18 @@ function ans_mult(selected){
                 document.getElementById("message").innerText = "Correct!!!";
                 triggerConfetti();
 				
-				console.log(OngoingOp);
+				//console.log(OngoingOp);
 				
 				if (OngoingOp == 0){
 					ans_mult(selected);
 				} else if (OngoingOp == 1){
 					ans_div(selected);
-				}
-				else if (OngoingOp == 2){
+				} else if (OngoingOp == 2){
 					ans_fraction(selected);
-				}				
+				}	
+				else if (OngoingOp >= 3 && OngoingOp <= 8 ){
+					ans_visual(selected);
+				}	
 				
                 
 				
@@ -1058,7 +2429,7 @@ function ans_mult(selected){
 		
 		
 		currentIndex =  - 1; //repeat
-		console.log("currentIndex:", currentIndex);
+		//console.log("currentIndex:", currentIndex);
 		
             }
 			
@@ -1095,7 +2466,7 @@ document.getElementById('charts').innerHTML = "";
 document.getElementById('myTableContainer').innerHTML = "";
 			
 			currentIndex = 0;	
-			console.log("currentIndex:", currentIndex);			
+			//console.log("currentIndex:", currentIndex);			
 }
 
 
@@ -1103,9 +2474,9 @@ function nextFlashcard() {
 	
 
 	
-	console.log("Cuurent Subcategory:", currentsubCategoryName);
-	console.log("flashcard:", currentFlashcards);
-	console.log("currentIndex:", currentIndex);
+	//console.log("Cuurent Subcategory:", currentsubCategoryName);
+	//console.log("flashcard:", currentFlashcards);
+	//console.log("currentIndex:", currentIndex);
 	
 	if(currentIndex == -1) //repeat same currentsubCategoryName
 	{
@@ -1127,7 +2498,7 @@ function nextFlashcard() {
 
     // Find the current index of the subcategory
     currentIndex = subCategories.indexOf(currentsubCategoryName); 
-	console.log("currentIndex:", currentIndex);
+	//console.log("currentIndex:", currentIndex);
  
 		//last item in subcategory?
 	    if ((currentIndex + 1) === subCategories.length) {
@@ -1141,15 +2512,15 @@ function nextFlashcard() {
     // Update to the new subcategory
     currentsubCategoryName = subCategories[nextIndex];
 
-    console.log("Next Subcategory:", currentsubCategoryName);
+    //console.log("Next Subcategory:", currentsubCategoryName);
 
     // Reset flashcard index
     currentIndex = 0;
-	console.log("currentIndex:", currentIndex);
+	//console.log("currentIndex:", currentIndex);
 
     // Get the flashcards for the new subcategory 
     currentFlashcards = categories[currenttopLevelCategoryName][currentsubCategoryName];
-	console.log("flashcard:", currentFlashcards);
+	//console.log("flashcard:", currentFlashcards);
     // If no flashcards found, show the summary
     if (!currentFlashcards || currentFlashcards.length === 0) {
         summaryGame();
@@ -1313,7 +2684,7 @@ function toggleBackgroundInputs() {
         document.body.style.background = bgColorPicker.value;
     } else if (bgGradientRadio.checked) {
         let gradientString = `linear-gradient(${bgGradientDirection.value}, ${bgGradientStart.value}, ${bgGradientEnd.value})`;
-        //console.log("Gradient CSS:", gradientString); // Debugging
+        ////console.log("Gradient CSS:", gradientString); // Debugging
         document.body.style.background = gradientString;
     }			
 
@@ -1511,12 +2882,12 @@ function speakText(text) {
 			return; 
 			/*
             
-			console.log(text);
+			//console.log(text);
 			const sanitizedtext = text.replace(/=/g, '').replace(/_/g, '');
 			
 			
             // Create a new SpeechSynthesisUtterance object
-			console.log(sanitizedtext);
+			//console.log(sanitizedtext);
             var utterance = new SpeechSynthesisUtterance( sanitizedtext);
 
             // Set properties for the speech (optional)
