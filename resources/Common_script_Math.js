@@ -33,7 +33,7 @@
 		let totalSum = 0;
 		let Quot = 0;
 		let extra_shift = '';
-		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 7 angle, 8 algebra balance, 9 linear eq
+		let OngoingOp = 0; // 0 mult, 1 div, 2 fraction, 3 visual_fract, 4 visual_add, 5 add sub mul div rem, 6 angle, triangle & quad, 7 angle, 8 algebra balance, 9 linear eq , 10 hcf, lcm
 		const fraction_piechart_height = 200; // height and width of pie charts
 		
    const bgColorRadio = document.getElementById("bg-color-radio");
@@ -709,6 +709,7 @@ function displayVisualFraction(card){
 	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");	
 document.getElementById("game-algebra-balance-container").classList.add("hidden");	
+document.getElementById("game-hcf-lcm-container").classList.add("hidden");
  
 			
 				
@@ -1167,6 +1168,7 @@ function displayVisualAdd(card){
 	document.getElementById("game-angle-container").classList.add("hidden");
 	//document.getElementById("game-op-container").classList.add("hidden");
 	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 	
 	
 	
@@ -1185,6 +1187,7 @@ function displayFraction(card){
 	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
 	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 	
     if (card.denominator2)	{
 		drawCharts(card.num1, card.num2, card.denominator , card.denominator2);	
@@ -1203,6 +1206,7 @@ function displayMultiplication(card){
 			document.getElementById("game-angle-container").classList.add("hidden");
 			document.getElementById("game-op-container").classList.add("hidden");
 			document.getElementById("game-algebra-balance-container").classList.add("hidden");
+			document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 			
 			if (table_init == 0){
 			let myTableHTML = makeTable(card.num1, card.num2);
@@ -1223,6 +1227,7 @@ function displayDivision(card) {
 	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.add("hidden");
 	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 	
 			if (table_init == 0){
 			let myTableHTML = makeTable_div(card.num1, card.num2);
@@ -1452,6 +1457,7 @@ function displayVisualAngle(card){
 	
 	document.getElementById("game-angle-container").classList.remove("hidden");
 	document.getElementById("game-algebra-balance-container").classList.add("hidden");
+	document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 	
 	
    updateVisualization();
@@ -1466,6 +1472,7 @@ function displayOp(card){
 	document.getElementById("game-angle-container").classList.add("hidden");
 	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	document.getElementById("game-op-container").classList.remove("hidden");
+	document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 	
    setSliderValues(card.num1 ,card.num2 , card.operator )
 }
@@ -1536,6 +1543,7 @@ function displayAngleTriangleQuad(card){
 	document.getElementById("game-op-container").classList.add("hidden");
 	document.getElementById("game-algebra-balance-container").classList.add("hidden");
 	document.getElementById("game-angle-container").classList.remove("hidden");
+	document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 	
    setAngleSliderValues(card )
 }
@@ -1942,6 +1950,7 @@ function displayVisualBalance(card){
 	document.getElementById("game-op-container").classList.add("hidden");	
 	document.getElementById("game-angle-container").classList.add("hidden");	
 //document.getElementById("game-algebra-balance-container").classList.add("hidden");
+document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 
 document.getElementById("game-algebra-balance-container").classList.remove("hidden");
 	
@@ -1951,6 +1960,465 @@ document.getElementById("game-algebra-balance-container").classList.remove("hidd
  updateVisualizationBalance();
  
 }
+
+  function hcfCalcGenerateTree() {
+            const num1 = parseInt(document.getElementById('hcflcm_num1').value);
+            const num2 = parseInt(document.getElementById('hcflcm_num2').value);
+            if (isNaN(num1) || isNaN(num2)) return;
+
+            function isPrime(num) {
+                if (num < 2) return false;
+                for (let i = 2; i * i <= num; i++) {
+                    if (num % i === 0) return false;
+                }
+                return true;
+            }
+
+            const hcfSvg = document.getElementById('hcfCalcTree');
+            const lcmSvg = document.getElementById('lcmCalcTree');
+            hcfSvg.innerHTML = '';
+            lcmSvg.innerHTML = '';
+
+            function drawNode(svg, x, y, value) {
+                let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", x);
+                circle.setAttribute("cy", y);
+                circle.setAttribute("r", 20);
+                circle.classList.add("hcfCalcCircle");
+
+                if (isPrime(value)) {
+                    circle.setAttribute("style", "fill: #ffcc00;"); // Highlight prime numbers
+                }
+
+                svg.appendChild(circle);
+
+                let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                text.setAttribute("x", x);
+                text.setAttribute("y", y);
+                text.classList.add("hcfCalcText");
+                text.textContent = value;
+                svg.appendChild(text);
+
+                return {
+                    x,
+                    y
+                };
+            }
+
+            function drawLine(svg, x1, y1, x2, y2, color = "#777", width = "2") {
+                let line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", x1);
+                line.setAttribute("y1", y1);
+                line.setAttribute("x2", x2);
+                line.setAttribute("y2", y2);
+                line.setAttribute("stroke", color);
+                line.setAttribute("stroke-width", width);
+                svg.appendChild(line);
+            }
+
+            function factorize(svg, number, x, y, level = 0, dx = 100, dy = 60) {
+                if (number <= 1) {
+                    drawNode(svg, x, y, number);
+                    return;
+                }
+
+                let node = drawNode(svg, x, y, number);
+
+                // **Stop recursion if the number is prime**
+                if (isPrime(number)) return;
+
+                let foundFactor = false;
+
+                for (let i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i === 0) {
+                        let factor1 = i;
+                        let factor2 = number / i;
+
+                        let xLeft = x - dx; // Left for prime factor
+                        let yLeft = y + dy;
+                        let xRight = x + dx; // Right for composite factor
+                        let yRight = y + dy;
+
+                        drawLine(svg, node.x, node.y + 20, xLeft, yLeft - 20);
+                        drawLine(svg, node.x, node.y + 20, xRight, yRight - 20);
+
+                        factorize(svg, factor1, xLeft, yLeft, level + 1, dx * 0.7, dy);
+                        factorize(svg, factor2, xRight, yRight, level + 1, dx * 0.7, dy);
+                        foundFactor = true;
+                        break;
+                    }
+                }
+
+                if (!foundFactor) {
+                    drawNode(svg, x - dx, y + dy, number); // Keep prime numbers on left
+                    drawLine(svg, node.x, node.y + 20, x - dx, y + dy - 20);
+                }
+            }
+
+            factorize(hcfSvg, num1, 250, 50);
+            factorize(lcmSvg, num2, 250, 50);
+            document.getElementById('hcfCalcButton').style.display = 'inline-block';
+        }
+
+        function getPrimeFactorExponents(num) {
+            let factors = {};
+            for (let i = 2; i <= num; i++) {
+                while (num % i === 0) {
+                    factors[i] = (factors[i] || 0) + 1;
+                    num /= i;
+                }
+            }
+            return factors;
+        }
+
+        function formatExponentSVG(base, exponent) {
+            let textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            let tspanBase = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+            let tspanExp = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+
+            tspanBase.textContent = base;
+            textElement.appendChild(tspanBase);
+
+            if (exponent > 1) {
+                tspanExp.textContent = exponent;
+                tspanExp.setAttribute("dy", "-5");
+                tspanExp.setAttribute("font-size", "12");
+                textElement.appendChild(tspanExp);
+            }
+            return textElement;
+        }
+
+        function drawVennDiagram(a, b) {
+            let factorsA = getPrimeFactorExponents(a);
+            let factorsB = getPrimeFactorExponents(b);
+            let commonFactors = {};
+            let uniqueA = {};
+            let uniqueB = {};
+
+            for (let factor in factorsA) {
+                if (factor in factorsB) {
+                    commonFactors[factor] = Math.min(factorsA[factor], factorsB[factor]);
+                } else {
+                    uniqueA[factor] = factorsA[factor];
+                }
+            }
+            for (let factor in factorsB) {
+                if (!(factor in factorsA)) {
+                    uniqueB[factor] = factorsB[factor];
+                }
+            }
+
+            let svg = document.getElementById("hcfCalcCircles");
+            svg.innerHTML = "";
+
+            let leftCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            leftCircle.setAttribute("cx", "150");
+            leftCircle.setAttribute("cy", "100");
+            leftCircle.setAttribute("r", "100"); // Make the circles bigger
+            leftCircle.setAttribute("fill", "blue");
+            leftCircle.setAttribute("opacity", "0.5");
+            svg.appendChild(leftCircle);
+
+            let rightCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            rightCircle.setAttribute("cx", "300");
+            rightCircle.setAttribute("cy", "100");
+            rightCircle.setAttribute("r", "100"); // Make the circles bigger
+            rightCircle.setAttribute("fill", "red");
+            rightCircle.setAttribute("opacity", "0.5");
+            svg.appendChild(rightCircle);
+
+            let xOffset = 150,
+                yOffset = 100;
+            let i = 0;
+            for (let factor in uniqueA) {
+                let g = document.createElementNS("http://www.w3.org/2000/svg", "g"); // Group to hold circle and text
+                let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", xOffset - 80); // Position the circle
+                circle.setAttribute("cy", yOffset + i * 20);
+                circle.setAttribute("r", 12); // Radius of the small circle
+                circle.setAttribute("fill", "white");
+                circle.setAttribute("stroke", "black");
+                g.appendChild(circle);
+
+                let text = formatExponentSVG(factor, uniqueA[factor]);
+                text.setAttribute("x", xOffset - 80); // Position the text
+                text.setAttribute("y", yOffset + i * 20 + 5); // Adjust for vertical centering
+                text.setAttribute("text-anchor", "middle");
+                g.appendChild(text);
+                svg.appendChild(g);
+                i++;
+            }
+
+            i = 0;
+            for (let factor in commonFactors) {
+                let g = document.createElementNS("http://www.w3.org/2000/svg", "g"); // Group to hold circle and text
+                let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", xOffset + 70); // Position the circle
+                circle.setAttribute("cy", yOffset + i * 20);
+                circle.setAttribute("r", 12); // Radius of the small circle
+                circle.setAttribute("fill", "white");
+                circle.setAttribute("stroke", "black");
+                g.appendChild(circle);
+
+                let text = formatExponentSVG(factor, commonFactors[factor]);
+                text.setAttribute("x", xOffset + 70); // Position the text
+                text.setAttribute("y", yOffset + i * 20 + 5); // Adjust for vertical centering
+                g.appendChild(text);
+                svg.appendChild(g);
+                i++;
+            }
+
+            i = 0;
+            for (let factor in uniqueB) {
+                let g = document.createElementNS("http://www.w3.org/2000/svg", "g"); // Group to hold circle and text
+                let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", xOffset + 220); // Position the circle
+                circle.setAttribute("cy", yOffset + i * 20);
+                circle.setAttribute("r", 12); // Radius of the small circle
+                circle.setAttribute("fill", "white");
+                circle.setAttribute("stroke", "black");
+                g.appendChild(circle);
+
+                let text = formatExponentSVG(factor, uniqueB[factor]);
+                text.setAttribute("x", xOffset + 220); // Position the text
+                text.setAttribute("y", yOffset + i * 20 + 5); // Adjust for vertical centering
+                g.appendChild(text);
+                svg.appendChild(g);
+                i++;
+            }
+        }
+
+        function hcfCalcDisplayHCF() {
+            const num1 = parseInt(document.getElementById('hcflcm_num1').value);
+            const num2 = parseInt(document.getElementById('hcflcm_num2').value);
+            if (isNaN(num1) || isNaN(num2)) return;
+
+            hcfCalcGenerateTree();
+            hcfCalcCalculateHCF_LCM();
+
+            const factors1 = hcfCalcPrimeFactorization(num1);
+            const factors2 = hcfCalcPrimeFactorization(num2);
+
+            let commonFactors = {};
+            let uniqueFactors1 = {
+                ...factors1
+            };
+            let uniqueFactors2 = {
+                ...factors2
+            };
+
+            for (let prime in factors1) {
+                if (factors2[prime]) {
+                    commonFactors[prime] = Math.min(factors1[prime], factors2[prime]);
+                    uniqueFactors1[prime] -= commonFactors[prime];
+                    uniqueFactors2[prime] -= commonFactors[prime];
+                    if (uniqueFactors1[prime] === 0) delete uniqueFactors1[prime];
+                    if (uniqueFactors2[prime] === 0) delete uniqueFactors2[prime];
+                }
+            }
+
+            hcfCalcDrawHCFVennDiagram(uniqueFactors1, uniqueFactors2, commonFactors);
+        }
+
+        function hcfCalcCalculateHCF_LCM() {
+            const num1 = parseInt(document.getElementById('hcflcm_num1').value);
+            const num2 = parseInt(document.getElementById('hcflcm_num2').value);
+            if (isNaN(num1) || isNaN(num2)) return;
+
+            const factors1 = hcfCalcPrimeFactorization(num1);
+            const factors2 = hcfCalcPrimeFactorization(num2);
+            let commonFactors = {};
+            let lcmFactors = {};
+            let allPrimes = new Set([...Object.keys(factors1), ...Object.keys(factors2)].map(Number));
+
+            let hcfValue = 1,
+                lcmValue = 1;
+            for (let prime of allPrimes) {
+                let exp1 = factors1[prime] || 0;
+                let exp2 = factors2[prime] || 0;
+                commonFactors[prime] = Math.min(exp1, exp2);
+                lcmFactors[prime] = Math.max(exp1, exp2);
+
+                hcfValue *= prime ** commonFactors[prime];
+                lcmValue *= prime ** lcmFactors[prime];
+            }
+
+            hcfCalcUpdateTable(num1, num2, factors1, factors2, commonFactors, lcmFactors, allPrimes, hcfValue, lcmValue);
+        }
+
+        function hcfCalcUpdateTable(num1, num2, factors1, factors2, commonFactors, lcmFactors, allPrimes, hcfValue, lcmValue) {
+            const tableBody = document.getElementById("hcflcm_resultTable").querySelector("tbody");
+            tableBody.innerHTML = "";
+
+            let rows = {
+                [`${num1}`]: factors1,
+                [`${num2}`]: factors2,
+                [`HCF = ${hcfValue}`]: commonFactors,
+                [`LCM = ${lcmValue}`]: lcmFactors
+            };
+
+            for (let category in rows) {
+                const row = document.createElement("tr");
+                const categoryCell = document.createElement("td");
+                categoryCell.textContent = category;
+                row.appendChild(categoryCell);
+
+                allPrimes.forEach(prime => {
+                    const cell = document.createElement("td");
+                    let exponent = rows[category][prime] || 0;
+                    cell.textContent = `${prime}^${exponent}`;
+
+                    if (category === `${num1}` || category === `${num2}`) {
+                        let otherExponent = category === `${num1}` ? (factors2[prime] || 0) : (factors1[prime] || 0);
+                        if (exponent < otherExponent) {
+                            cell.classList.add("smaller-exp");
+                        } else if (category === `${num1}`) {
+                            cell.classList.add("larger-exp-num1");
+                        } else {
+                            cell.classList.add("larger-exp-num2");
+                        }
+                    }
+                    row.appendChild(cell);
+                });
+
+                const combinedFactors = Object.entries(rows[category])
+                    .map(([prime, exp]) => `${prime}^${exp}`).join(" × ");
+                const combinedCell = document.createElement("td");
+                combinedCell.textContent = combinedFactors;
+                row.appendChild(combinedCell);
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function hcfCalcPrimeFactorization(n) {
+            let factors = {};
+            for (let i = 2; i <= n; i++) {
+                while (n % i === 0) {
+                    factors[i] = (factors[i] || 0) + 1;
+                    n /= i;
+                }
+            }
+            return factors;
+        }
+
+        function hcfCalcDrawHCFVennDiagram(uniqueFactors1, uniqueFactors2, commonFactors) {
+            const hcfCirclesDiv = document.getElementById('hcfCalcCircles');
+            hcfCirclesDiv.innerHTML = '';
+
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('width', '400');
+            svg.setAttribute('height', '400');
+            hcfCirclesDiv.appendChild(svg);
+
+            // Draw main Venn circles
+            svg.innerHTML += `
+        <circle cx='140' cy='120' r='100' stroke='black' fill='none' />
+        <circle cx='260' cy='120' r='100' stroke='black' fill='none' />
+    `;
+
+            function addCircle(cx, cy, text, fillColor) {
+                let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', cx);
+                circle.setAttribute('cy', cy);
+                circle.setAttribute('r', '25');
+                circle.setAttribute('fill', fillColor);
+                circle.setAttribute('stroke', 'black');
+                svg.appendChild(circle);
+
+                let txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                txt.setAttribute('x', cx);
+                txt.setAttribute('y', cy + 5);
+                txt.setAttribute('font-size', '14');
+                txt.setAttribute('text-anchor', 'middle');
+                txt.setAttribute('dominant-baseline', 'middle');
+                txt.textContent = text;
+                svg.appendChild(txt);
+            }
+
+            let i = 0;
+            Object.entries(uniqueFactors1).forEach(([prime, exp]) => {
+                addCircle(100, 80 + i * 50, `${prime}^${exp}`, "#4fc3f7"); // Blue for unique factors of num1
+                i++;
+            });
+
+            i = 0;
+            Object.entries(uniqueFactors2).forEach(([prime, exp]) => {
+                addCircle(300, 80 + i * 50, `${prime}^${exp}`, "#81c784"); // Green for unique factors of num2
+                i++;
+            });
+
+            i = 0;
+            Object.entries(commonFactors).forEach(([prime, exp]) => {
+                addCircle(200, 90 + i * 50, `${prime}^${exp}`, "#ffcc00"); // Orange for common factors
+                i++;
+            });
+        }
+
+
+function displayVisualHcfLcm(card){
+	
+	OngoingOp = 10 ;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");	
+    document.getElementById("game-algebra-balance-container").classList.add("hidden");
+    //document.getElementById("game-hcf-lcm-container").classList.add("hidden");
+
+   document.getElementById("game-hcf-lcm-container").classList.remove("hidden");
+	
+ 
+ 
+// --- Initial Draw ---
+ hcfCalcDisplayHCF();
+ 
+}
+
+
+function displayHcfLcm(card){
+	
+	OngoingOp = 11 ;
+	
+	document.getElementById('myTableContainer').innerHTML = ""; // clear any table
+	document.getElementById("game-chart-container").classList.add("hidden");
+	document.getElementById("game-op-container").classList.add("hidden");	
+	document.getElementById("game-angle-container").classList.add("hidden");	
+    document.getElementById("game-algebra-balance-container").classList.add("hidden");
+    //document.getElementById("game-hcf-lcm-container").classList.add("hidden");
+
+   document.getElementById("game-hcf-lcm-container").classList.remove("hidden");
+	
+  let hcflcm_num1 = document.getElementById("hcflcm_num1");
+    let hcflcm_num2 = document.getElementById("hcflcm_num2"); 
+	
+
+  
+	
+
+	
+	if (card.num1){
+	hcflcm_num1.value = card.num1;
+	} else {
+		hcflcm_num1.value = 0;
+	}
+	
+	if (card.num2){
+	hcflcm_num2.value = card.num2;
+	} else {
+		hcflcm_num2.value = 0;
+	}	
+
+	
+ 
+// --- Initial Draw ---
+ hcfCalcDisplayHCF();
+ 
+}
+
+
+
 
 
 function displayLinearEq(card){
@@ -1962,6 +2430,7 @@ function displayLinearEq(card){
 	document.getElementById("game-op-container").classList.add("hidden");	
 	document.getElementById("game-angle-container").classList.add("hidden");	
 //document.getElementById("game-algebra-balance-container").classList.add("hidden");
+document.getElementById("game-hcf-lcm-container").classList.add("hidden");
 
 document.getElementById("game-algebra-balance-container").classList.remove("hidden");
 	
@@ -2032,6 +2501,10 @@ document.getElementById("game-algebra-balance-container").classList.remove("hidd
 
             document.getElementById("question-text").innerText = currentCategory  ;
 			
+			if (card.question){
+			document.getElementById("question-text").innerText += "\n " +  card.question ;
+			}
+			
 			
 			
 
@@ -2060,7 +2533,12 @@ document.getElementById("game-algebra-balance-container").classList.remove("hidd
 
 			}else if ((currenttopLevelCategoryName == "Visual Algebra Balancing Equation")) {
 				displayVisualBalance(card); 
-			}
+			
+			}else if ((currenttopLevelCategoryName == "Visual HCF LCM")) {
+				displayVisualHcfLcm(card); 
+			}else if ((currenttopLevelCategoryName == "HCF LCM")) {
+				displayHcfLcm(card); 
+			}	
 			else if ((currenttopLevelCategoryName == "Algebra Linear Equation")) {
 				displayLinearEq(card); 
 			}
@@ -2406,7 +2884,7 @@ function ans_mult(selected){
 				} else if (OngoingOp == 2){
 					ans_fraction(selected);
 				}	
-				else if (OngoingOp >= 3 && OngoingOp <= 8 ){
+				else if (OngoingOp >= 3 && OngoingOp <= 11 ){
 					ans_visual(selected);
 				}	
 				

@@ -814,3 +814,69 @@ body {
     max-width: 1500px;
     max-height: 400px;
 } 
+
+   #hcfCalcTree,
+        #lcmCalcTree {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .hcfCalcCircle {
+            fill: #f0f4c3;
+            stroke: #4CAF50;
+            stroke-width: 2px;
+        }
+
+        .hcfCalcText {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            fill: #333;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        #hcfCalcCircles {
+            margin-top: 20px;
+        }
+
+        .circle {
+            fill: none;
+            stroke: black;
+        }
+
+        .intersect {
+            fill: rgba(255, 0, 0, 0.2);
+        }
+
+        .hcfCalcText {
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            fill: #333;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 80%;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .smaller-exp {
+            background-color: #ffcc00;
+        }
+
+        .larger-exp-num1 {
+            background-color: #64b5f6;
+        }
+
+        .larger-exp-num2 {
+            background-color: #81c784;
+        }   
