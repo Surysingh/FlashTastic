@@ -2856,13 +2856,7 @@ window.categories = {
     "topic": "Isotopes",
     "grade": "11"
   },
-  {
-    "question": "What is the use of isotopes?",
-    "Translation": "समस्थानिकों का उपयोग क्या है?",
-    "options": ["Dating, medicine", "Building, cleaning", "Cooking, eating", "Traveling, flying"],
-    "topic": "Isotopes",
-    "grade": "10"
-  },
+
   {
     "question": "How are isotopes separated?",
     "Translation": "समस्थानिकों को कैसे अलग किया जाता है?",

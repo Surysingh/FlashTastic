@@ -3407,3 +3407,84 @@ function speakText(text) {
             // Open the specified URL in a new tab when the button is clicked
             window.open('https://www.youtube.com/@flashtasticapp', '_blank');
         });
+	
+
+
+function checkFlashCards(data) {
+  let errorCount = 0;
+  let totalCount = 0;
+
+  for (const category in data) {
+    // Check if the category is an object and has nested flashcards
+    if (typeof data[category] === 'object' && data[category] !== null) {
+      for (const subcategory in data[category]) {
+        const flashcards = data[category][subcategory];
+
+        if (Array.isArray(flashcards)) {
+          for (const flashcard of flashcards) {
+            totalCount++;
+            const { correct, options, question } = flashcard;
+
+            let matchFound = false;
+            if (options && Array.isArray(options)) { // Check if options exist and is an array
+              for (const option of options) {
+                if (option === correct) {
+                  matchFound = true;
+                  break;
+                }
+              }
+            } else {
+              errorCount++;
+              console.error(`Error in: ${question} - Options are missing or not an array.`);
+              continue; // Skip the rest of the checks for this flashcard
+            }
+
+            if (!matchFound) {
+              errorCount++;
+              console.error(`Error in: ${question} - Correct answer "${correct}" not found in options.`);
+            }
+          }
+        } else {
+          console.warn(`Warning: ${category} - ${subcategory} is not an array of flashcards.`);
+        }
+      }
+    } else if (Array.isArray(data[category])) {
+      // Handle the case where the category itself is an array (like before)
+      const flashcards = data[category];
+      for (const flashcard of flashcards) {
+        totalCount++;
+        const { correct, options, question } = flashcard;
+
+        let matchFound = false;
+        if (options && Array.isArray(options)) { // Check if options exist and is an array
+          for (const option of options) {
+            if (option === correct) {
+              matchFound = true;
+              break;
+            }
+          }
+        } else {
+          errorCount++;
+          console.error(`Error in: ${question} - Options are missing or not an array.`);
+          continue; // Skip the rest of the checks for this flashcard
+        }
+
+        if (!matchFound) {
+          errorCount++;
+          console.error(`Error in: ${question} - Correct answer "${correct}" not found in options.`);
+        }
+      }
+    } else {
+      console.warn(`Warning: ${category} is not a valid category.`);
+    }
+  }
+
+  if (errorCount === 0) {
+    console.log("All flashcards are valid.");
+  } else {
+    console.warn(`${errorCount} errors found in ${totalCount} flashcards.`);
+  }
+}
+
+// Assuming the data is in the `categories` object
+checkFlashCards(window.categories);
