@@ -781,6 +781,98 @@ window.categories = {
 "सर्वनाम  Pronouns": 
 [
   {"question": "सर्वनाम किं?", "Translation": "What is a pronoun?", "correct": "नामस्य स्थानम्", "options": ["नामस्य स्थानम्", "क्रियायाः नाम", "गुणस्य नाम", "विशेषणस्य स्थानम्"], "topic": "सर्वनाम", "grade": "5"},
+  
+{
+"question":"किम् सर्वनामस्य पुंलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Kim' in masculine gender?",
+"correct":"कः, कौ, के",
+"options":["कः, कौ, के","का, के, काः","किम्, के, कानि","सः, तौ, ते"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"किम् सर्वनामस्य स्त्रीलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Kim' in feminine gender?",
+"correct":"का, के, काः",
+"options":["का, के, काः","कः, कौ, के","किम्, के, कानि","सा, ते, ताः"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"किम् सर्वनामस्य नपुंसकलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Kim' in neuter gender?",
+"correct":"किम्, के, कानि",
+"options":["किम्, के, कानि","कः, कौ, के","का, के, काः","तत्, ते, तानि"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"तद् सर्वनामस्य पुंलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Tad' in masculine gender?",
+"correct":"सः, तौ, ते",
+"options":["सः, तौ, ते","सा, ते, ताः","तत्, ते, तानि","एषः, एतौ, एते"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"तद् सर्वनामस्य स्त्रीलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Tad' in feminine gender?",
+"correct":"सा, ते, ताः",
+"options":["सा, ते, ताः","सः, तौ, ते","तत्, ते, तानि","एषा, एते, एताः"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"तद् सर्वनामस्य नपुंसकलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Tad' in neuter gender?",
+"correct":"तत्, ते, तानि",
+"options":["तत्, ते, तानि","सः, तौ, ते","सा, ते, ताः","एतत्, एते, एतानि"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"एतद् सर्वनामस्य पुंलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Etat' in masculine gender?",
+"correct":"एषः, एतौ, एते",
+"options":["एषः, एतौ, एते","एषा, एते, एताः","एतत्, एते, एतानि","सः, तौ, ते"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"एतद् सर्वनामस्य स्त्रीलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Etat' in feminine gender?",
+"correct":"एषा, एते, एताः",
+"options":["एषा, एते, एताः","एषः, एतौ, एते","एतत्, एते, एतानि","सा, ते, ताः"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+{
+"question":"एतद् सर्वनामस्य नपुंसकलिङ्गे प्रथमा विभक्तौ रूपाणि कानि?",
+"Translation":"What are the nominative forms of 'Etat' in neuter gender?",
+"correct":"एतत्, एते, एतानि",
+"options":["एतत्, एते, एतानि","एषः, एतौ, एते","एषा, एते, एताः","तत्, ते, तानि"],
+"topic":"सर्वनाम",
+"grade":"5"
+},
+
+  
+{"question":"अस्मद् सर्वनामस्य प्रथमा विभक्तौ रूपे कानि?","Translation":"What are the nominative (prathama vibhakti) forms of 'Asmad' (I/we)?","correct":"अहम्, वयम्","options":["अहम्, वयम्","त्वम्, यूयम्","सः, सा, तत्","एषः, एषा, एतत्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"युष्मद् सर्वनामस्य प्रथमा विभक्तौ रूपे कानि?","Translation":"What are the nominative forms of 'Yushmad' (you singular/plural)?","correct":"त्वम्, यूयम्","options":["त्वम्, यूयम्","अहम्, वयम्","कः, का, किम्","सः, सा, तत्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"तद् सर्वनामस्य प्रथमा विभक्तौ रूपाणि कानि?","Translation":"What are the nominative forms of 'Tad' (that) in three genders?","correct":"सः, सा, तत्","options":["सः, सा, तत्","एषः, एषा, एतत्","कः, का, किम्","अहम्, वयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एतद् सर्वनामस्य प्रथमा विभक्तौ रूपाणि कानि?","Translation":"What are the nominative forms of 'Etat' (this) in three genders?","correct":"एषः, एषा, एतत्","options":["एषः, एषा, एतत्","सः, सा, तत्","कः, का, किम्","त्वम्, यूयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"किम् सर्वनामस्य प्रथमा विभक्तौ रूपाणि कानि?","Translation":"What are the nominative forms of 'Kim' (who/what) in three genders?","correct":"कः, का, किम्","options":["कः, का, किम्","सः, सा, तत्","एषः, एषा, एतत्","अहम्, वयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अस्मद् सर्वनामस्य प्रथमा विभक्तौ रूपे कानि?","Translation":"What are the nominative (prathama vibhakti) forms of 'Asmad' (I/we)?","correct":"अहम्, वयम्","options":["अहम्, वयम्","त्वम्, यूयम्","सः, सा, तत्","एषः, एषा, एतत्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"युष्मद् सर्वनामस्य प्रथमा विभक्तौ रूपे कानि?","Translation":"What are the nominative forms of 'Yushmad' (you singular/plural)?","correct":"त्वम्, यूयम्","options":["त्वम्, यूयम्","अहम्, वयम्","कः, का, किम्","सः, सा, तत्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"तद् सर्वनामस्य प्रथमा विभक्तौ रूपाणि कानि?","Translation":"What are the nominative forms of 'Tad' (that) in three genders?","correct":"सः, सा, तत्","options":["सः, सा, तत्","एषः, एषा, एतत्","कः, का, किम्","अहम्, वयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एतद् सर्वनामस्य प्रथमा विभक्तौ रूपाणि कानि?","Translation":"What are the nominative forms of 'Etat' (this) in three genders?","correct":"एषः, एषा, एतत्","options":["एषः, एषा, एतत्","सः, सा, तत्","कः, का, किम्","त्वम्, यूयम्"],"topic":"सर्वनाम","grade":"5"},
   {"question": "अहम् कः सर्वनामः?", "Translation": "Which type of pronoun is 'Aham'?", "correct": "उत्तम पुरुष", "options": ["उत्तम पुरुष", "मध्यम पुरुष", "अन्य पुरुष", "न कश्चित्"], "topic": "सर्वनाम", "grade": "5"},
   {"question": "त्वम् इत्यस्य सर्वनाम प्रकारः कः?", "Translation": "What type of pronoun is 'Tvam'?", "correct": "मध्यम पुरुष", "options": ["मध्यम पुरुष", "उत्तम पुरुष", "अन्य पुरुष", "न कश्चित्"], "topic": "सर्वनाम", "grade": "6"},
   {"question": "सः इत्यस्य सर्वनाम प्रकारः कः?", "Translation": "What type of pronoun is 'Sah'?", "correct": "अन्य पुरुष", "options": ["अन्य पुरुष", "उत्तम पुरुष", "मध्यम पुरुष", "न कश्चित्"], "topic": "सर्वनाम", "grade": "6"},
@@ -793,7 +885,67 @@ window.categories = {
   {"question": "यः, या, यत् इत्यस्य सर्वनाम प्रकारः?", "Translation": "What type of pronoun are 'Yah, Ya, Yat'?", "correct": "संबंधवाचक", "options": ["संबंधवाचक", "प्रश्नवाचक", "निजवाचक", "निश्चयवाचक"], "topic": "सर्वनाम", "grade": "10"},
   {"question": "तस्मै इत्यस्य सर्वनाम प्रकारः?", "Translation": "What type of pronoun is 'Tasmai'?", "correct": "अन्य पुरुष", "options": ["अन्य पुरुष", "उत्तम पुरुष", "मध्यम पुरुष", "न कश्चित्"], "topic": "सर्वनाम", "grade": "10"},
   {"question": "येन इत्यस्य सर्वनाम प्रकारः?", "Translation": "What type of pronoun is 'Yena'?", "correct": "संबंधवाचक", "options": ["संबंधवाचक", "प्रश्नवाचक", "निजवाचक", "निश्चयवाचक"], "topic": "सर्वनाम", "grade": "11"},
-  {"question": "स्वस्य इत्यस्य सर्वनाम प्रकारः?", "Translation": "What type of pronoun is 'Swasya'?", "correct": "निजवाचक", "options": ["निजवाचक", "संबंधवाचक", "प्रश्नवाचक", "निश्चयवाचक"], "topic": "सर्वनाम", "grade": "11"}
+  {"question": "स्वस्य इत्यस्य सर्वनाम प्रकारः?", "Translation": "What type of pronoun is 'Swasya'?", "correct": "निजवाचक", "options": ["निजवाचक", "संबंधवाचक", "प्रश्नवाचक", "निश्चयवाचक"], "topic": "सर्वनाम", "grade": "11"},
+{"question":"सर्वनाम किं?","Translation":"What is a pronoun?","correct":"नामस्य स्थानम्","options":["नामस्य स्थानम्","क्रियायाः नाम","गुणस्य नाम","विशेषणस्य स्थानम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अहम् कः सर्वनामः?","Translation":"Which type of pronoun is 'Aham'?","correct":"उत्तम पुरुष","options":["उत्तम पुरुष","मध्यम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"वयम् कः सर्वनामः?","Translation":"Which type of pronoun is 'Vayam' (we)?","correct":"उत्तम पुरुष","options":["उत्तम पुरुष","मध्यम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"त्वम् कः सर्वनामः?","Translation":"Which type of pronoun is 'Tvam' (you singular)?","correct":"मध्यम पुरुष","options":["मध्यम पुरुष","उत्तम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"यूयम् कः सर्वनामः?","Translation":"Which type of pronoun is 'Yuyam' (you plural)?","correct":"मध्यम पुरुष","options":["मध्यम पुरुष","उत्तम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सः कः सर्वनामः?","Translation":"Which type of pronoun is 'Sah' (he)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सा कः सर्वनामः?","Translation":"Which type of pronoun is 'Sa' (she)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"तत् कः सर्वनामः?","Translation":"Which type of pronoun is 'Tat' (that)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एषः कः सर्वनामः?","Translation":"Which type of pronoun is 'Eshah' (this - masculine)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एषा कः सर्वनामः?","Translation":"Which type of pronoun is 'Esha' (this - feminine)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एतत् कः सर्वनामः?","Translation":"Which type of pronoun is 'Etat' (this - neuter)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अहम् उत्तमपुरुषः वा मध्यमपुरुषः?","Translation":"Is 'Aham' first person or second person?","correct":"उत्तम पुरुष","options":["उत्तम पुरुष","मध्यम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"त्वम् मध्यमपुरुषः वा अन्यपुरुषः?","Translation":"Is 'Tvam' second person or third person?","correct":"मध्यम पुरुष","options":["मध्यम पुरुष","उत्तम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सः उत्तमपुरुषः वा अन्यपुरुषः?","Translation":"Is 'Sah' first person or third person?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"वयम् कस्य पुरुषस्य सर्वनामः?","Translation":"'Vayam' belongs to which person?","correct":"उत्तम पुरुष","options":["उत्तम पुरुष","मध्यम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"यूयम् कस्य पुरुषस्य सर्वनामः?","Translation":"'Yuyam' belongs to which person?","correct":"मध्यम पुरुष","options":["मध्यम पुरुष","उत्तम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"तत् उत्तमपुरुषः वा अन्यपुरुषः?","Translation":"Is 'Tat' first or third person?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सर्वनामं कस्य स्थाने प्रयुज्यते?","Translation":"A pronoun is used in place of what?","correct":"नाम","options":["नाम","क्रिया","विशेषण","गुण"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अहम् तथा वयम् कस्य पुरुषस्य?","Translation":"'Aham' and 'Vayam' belong to which person?","correct":"उत्तम पुरुष","options":["उत्तम पुरुष","मध्यम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"त्वम् तथा यूयम् कस्य पुरुषस्य?","Translation":"'Tvam' and 'Yuyam' belong to which person?","correct":"मध्यम पुरुष","options":["मध्यम पुरुष","उत्तम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अहम् एकवचनं वा बहुवचनं?","Translation":"Is 'Aham' singular or plural?","correct":"एकवचनं","options":["एकवचनं","बहुवचनं","द्विवचनं","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"वयम् एकवचनं वा बहुवचनं?","Translation":"Is 'Vayam' singular or plural?","correct":"बहुवचनं","options":["बहुवचनं","एकवचनं","द्विवचनं","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"त्वम् एकवचनं वा बहुवचनं?","Translation":"Is 'Tvam' singular or plural?","correct":"एकवचनं","options":["एकवचनं","बहुवचनं","द्विवचनं","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"यूयम् एकवचनं वा बहुवचनं?","Translation":"Is 'Yuyam' singular or plural?","correct":"बहुवचनं","options":["बहुवचनं","एकवचनं","द्विवचनं","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सः पुंलिङ्गस्य सर्वनामः वा स्त्रीलिङ्गस्य?","Translation":"Is 'Sah' masculine or feminine pronoun?","correct":"पुंलिङ्गस्य","options":["पुंलिङ्गस्य","स्त्रीलिङ्गस्य","नपुंसकलिङ्गस्य","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सा स्त्रीलिङ्गस्य सर्वनामः वा पुंलिङ्गस्य?","Translation":"Is 'Sa' feminine or masculine pronoun?","correct":"स्त्रीलिङ्गस्य","options":["स्त्रीलिङ्गस्य","पुंलिङ्गस्य","नपुंसकलिङ्गस्य","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"तत् नपुंसकलिङ्गस्य सर्वनामः वा पुंलिङ्गस्य?","Translation":"Is 'Tat' neuter or masculine pronoun?","correct":"नपुंसकलिङ्गस्य","options":["नपुंसकलिङ्गस्य","पुंलिङ्गस्य","स्त्रीलिङ्गस्य","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एषः पुंलिङ्गे प्रयुज्यते वा स्त्रीलिङ्गे?","Translation":"Is 'Eshah' used for masculine or feminine?","correct":"पुंलिङ्गे","options":["पुंलिङ्गे","स्त्रीलिङ्गे","नपुंसकलिङ्गे","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एषा स्त्रीलिङ्गे प्रयुज्यते वा नपुंसके?","Translation":"Is 'Esha' used for feminine or neuter?","correct":"स्त्रीलिङ्गे","options":["स्त्रीलिङ्गे","पुंलिङ्गे","नपुंसकलिङ्गे","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एतत् नपुंसकलिङ्गे प्रयुज्यते वा स्त्रीलिङ्गे?","Translation":"Is 'Etat' used for neuter or feminine?","correct":"नपुंसकलिङ्गे","options":["नपुंसकलिङ्गे","स्त्रीलिङ्गे","पुंलिङ्गे","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अहम् कस्य स्थाने प्रयुज्यते?","Translation":"'Aham' is used in place of what?","correct":"वक्ता","options":["वक्ता","श्रोता","अन्यः","वस्तु"],"topic":"सर्वनाम","grade":"5"},
+{"question":"त्वम् कस्य स्थाने प्रयुज्यते?","Translation":"'Tvam' is used in place of whom?","correct":"श्रोता","options":["श्रोता","वक्ता","अन्यः","वस्तु"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सः कस्य स्थाने प्रयुज्यते?","Translation":"'Sah' is used in place of whom?","correct":"अन्यः","options":["अन्यः","वक्ता","श्रोता","वस्तु"],"topic":"सर्वनाम","grade":"5"},
+{"question":"वयम् उत्तमपुरुषः वा मध्यमपुरुषः?","Translation":"Is 'Vayam' first or second person?","correct":"उत्तम पुरुष","options":["उत्तम पुरुष","मध्यम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"यूयम् मध्यमपुरुषः वा अन्यपुरुषः?","Translation":"Is 'Yuyam' second or third person?","correct":"मध्यम पुरुष","options":["मध्यम पुरुष","उत्तम पुरुष","अन्य पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सा अन्यपुरुषः वा उत्तमपुरुषः?","Translation":"Is 'Sa' third person or first person?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एषः अन्यपुरुषः वा मध्यमपुरुषः?","Translation":"Is 'Eshah' third or second person?","correct":"अन्य पुरुष","options":["अन्य पुरुष","मध्यम पुरुष","उत्तम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"अहम् तथा त्वम् समानपुरुषौ वा भिन्नपुरुषौ?","Translation":"Are 'Aham' and 'Tvam' same person or different?","correct":"भिन्नपुरुषौ","options":["भिन्नपुरुषौ","समानपुरुषौ","न कश्चित्","उभयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"त्वम् तथा यूयम् समानार्थकौ वा भिन्नार्थकौ?","Translation":"Are 'Tvam' and 'Yuyam' same meaning or different?","correct":"भिन्नार्थकौ","options":["भिन्नार्थकौ","समानार्थकौ","न कश्चित्","उभयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सः तथा सा समानलिङ्गे वा भिन्नलिङ्गे?","Translation":"Are 'Sah' and 'Sa' same gender or different?","correct":"भिन्नलिङ्गे","options":["भिन्नलिङ्गे","समानलिङ्गे","न कश्चित्","उभयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"एषः तथा एषा समानलिङ्गे वा भिन्नलिङ्गे?","Translation":"Are 'Eshah' and 'Esha' same or different gender?","correct":"भिन्नलिङ्गे","options":["भिन्नलिङ्गे","समानलिङ्गे","न कश्चित्","उभयम्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"तत् कस्य लिङ्गस्य संकेतं करोति?","Translation":"'Tat' indicates which gender?","correct":"नपुंसकलिङ्ग","options":["नपुंसकलिङ्ग","पुंलिङ्ग","स्त्रीलिङ्ग","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सा कस्य लिङ्गस्य संकेतं करोति?","Translation":"'Sa' indicates which gender?","correct":"स्त्रीलिङ्ग","options":["स्त्रीलिङ्ग","पुंलिङ्ग","नपुंसकलिङ्ग","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"सः कस्य लिङ्गस्य संकेतं करोति?","Translation":"'Sah' indicates which gender?","correct":"पुंलिङ्ग","options":["पुंलिङ्ग","स्त्रीलिङ्ग","नपुंसकलिङ्ग","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+
+{"question":"कः कः सर्वनामः?","Translation":"Which type of pronoun is 'Kah' (who – masculine)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"का कः सर्वनामः?","Translation":"Which type of pronoun is 'Ka' (who – feminine)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"किम् कः सर्वनामः?","Translation":"Which type of pronoun is 'Kim' (what – neuter)?","correct":"अन्य पुरुष","options":["अन्य पुरुष","उत्तम पुरुष","मध्यम पुरुष","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"कः पुंलिङ्गे प्रयुज्यते वा स्त्रीलिङ्गे?","Translation":"Is 'Kah' used for masculine or feminine?","correct":"पुंलिङ्गे","options":["पुंलिङ्गे","स्त्रीलिङ्गे","नपुंसकलिङ्गे","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"का स्त्रीलिङ्गे प्रयुज्यते वा नपुंसके?","Translation":"Is 'Ka' used for feminine or neuter?","correct":"स्त्रीलिङ्गे","options":["स्त्रीलिङ्गे","पुंलिङ्गे","नपुंसकलिङ्गे","न कश्चित्"],"topic":"सर्वनाम","grade":"5"},
+{"question":"किम् नपुंसकलिङ्गे प्रयुज्यते वा पुंलिङ्गे?","Translation":"Is 'Kim' used for neuter or masculine?","correct":"नपुंसकलिङ्गे","options":["नपुंसकलिङ्गे","पुंलिङ्गे","स्त्रीलिङ्गे","न कश्चित्"],"topic":"सर्वनाम","grade":"5"} ,
+
+
+{"question":"किम् सर्वनामस्य प्रथमा विभक्तौ रूपाणि कानि?","Translation":"What are the nominative forms of 'Kim' (who/what) in three genders?","correct":"कः, का, किम्","options":["कः, का, किम्","सः, सा, तत्","एषः, एषा, एतत्","अहम्, वयम्"],"topic":"सर्वनाम","grade":"5"}
+
+
+
+
+  
+  
 ]
 
  , 
