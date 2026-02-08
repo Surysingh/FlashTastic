@@ -878,7 +878,7 @@ window.categories = {
 {"question":"लोचनम् इत्यस्य लिङ्गं किम्?","Translation":"What is the gender of eye (alternate word)?","correct":"नपुंसकलिङ्ग","options":["नपुंसकलिङ्ग","पुंलिङ्ग","स्त्रीलिङ्ग","न कश्चित्"],"topic":"लिङ्ग","grade":"5"},
 {"question":"पुंलिङ्गस्य उदाहरणं किम्?","Translation":"Which is an example of masculine gender?","correct":"कुक्कुरः","options":["कुक्कुरः","अजा","पुष्पम्","नदी"],"topic":"लिङ्ग","grade":"5"},
 {"question":"स्त्रीलिङ्गस्य उदाहरणं किम्?","Translation":"Which is an example of feminine gender?","correct":"गौः","options":["गौः","रामः","पुष्पम्","पत्रम्"],"topic":"लिङ्ग","grade":"5"},
-{"question":"नपुंसकलिङ्गस्य उदाहरणं किम्?","Translation":"Which is an example of neuter gender?","correct":"पुष्पम्","options":["पुष्पम्","कपोतः","गौः","रामः"],"topic":"लिङ्ग","grade":"5"}
+{"question":"नपुंसकलिङ्गस्य उदाहरणं किम्?","Translation":"Which is an example of neuter gender?","correct":"पुष्पम्","options":["पुष्पम्","कपोतः","गौः","रामः"],"topic":"लिङ्ग","grade":"5"},
 {"question":"पुंलिङ्गं कस्य उदाहरणम् अस्ति?","Translation":"Which is an example of masculine gender?","correct":"वृक्षः","options":["वृक्षः","लता","पुस्तकम्","नौका"],"topic":"लिङ्ग","grade":"5"},
 {"question":"स्त्रीलिङ्गं कस्य उदाहरणम् अस्ति?","Translation":"Which is an example of feminine gender?","correct":"बालिका","options":["बालिका","गजः","फलम्","चक्रम्"],"topic":"लिङ्ग","grade":"5"},
 {"question":"नपुंसकलिङ्गं कस्य उदाहरणम् अस्ति?","Translation":"Which is an example of neuter gender?","correct":"पुस्तकम्","options":["पुस्तकम्","सिंहः","लता","कन्या"],"topic":"लिङ्ग","grade":"5"},
