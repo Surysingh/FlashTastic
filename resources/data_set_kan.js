@@ -3385,11 +3385,11 @@ window.categories = {
 },
 		{"question": "ರೂಢನಾಮದ ಉಪಯೋಗವನ್ನು ವಿವರಿಸಿ.", "Translation": "Explain the use of common nouns.", "correct": "ಸಾಮಾನ್ಯ ವಸ್ತುಗಳನ್ನು ಗುರುತಿಸಲು", "options": ["ನಿರ್ದಿಷ್ಟ ವ್ಯಕ್ತಿಗಳನ್ನು ಗುರುತಿಸಲು", "ಭಾವನೆಗಳನ್ನು ತಿಳಿಸಲು", "ಕ್ರಿಯೆಗಳನ್ನು ಸೂಚಿಸಲು", "ಸಾಮಾನ್ಯ ವಸ್ತುಗಳನ್ನು ಗುರುತಿಸಲು"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "10", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%A8%E0%B2%BE%E0%B2%AE%E0%B2%AA%E0%B2%A6"
 },
-		{"question": "ಕೆಲಸದ ಆಧಾರದ ಮೇಲೆ ಬರುವ ನಾಮಪದವನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?", "Translation": "What is a noun called that is based on work?", "correct": "ಅನ್ವರ್ಥನಾಮ", "options": ["ರೂಢನಾಮ", "ಅಂಕಿತನಾಮ", "ಭಾವನಾಮ", "ಕ್ರಿಯಾನಾಮ"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "5", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
+		{"question": "ಕೆಲಸದ ಆಧಾರದ ಮೇಲೆ ಬರುವ ನಾಮಪದವನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?", "Translation": "What is a noun called that is based on work?", "correct": "ಅನ್ವರ್ಥನಾಮ", "options": ["ರೂಢನಾಮ", "ಅಂಕಿತನಾಮ", "ಅನ್ವರ್ಥನಾಮ", "ಕ್ರಿಯಾನಾಮ"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "5", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 		{"question": "ಅನ್ವರ್ಥನಾಮಕ್ಕೆ ಒಂದು ಉದಾಹರಣೆ ಕೊಡಿ.", "Translation": "Give an example of an Anvarthanama.", "correct": "ಅಡುಗೆಭಟ್ಟ", "options": ["ರಾಮ", "ಗಂಗಾ", "ಅಡುಗೆಭಟ್ಟ", "ಹಿಮಾಲಯ"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "6", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/6th/6_Kannada_FL_Part_1.pdf"
 },
-		{"question": "ಕೆಲಸ ಅಥವಾ ಗುಣದ ಆಧಾರದಲ್ಲಿ ವ್ಯಕ್ತಿಗೆ ಬರುವ ಹೆಸರುಗಳು ಯಾವ ನಾಮಪದಕ್ಕೆ ಸೇರುತ್ತವೆ?", "Translation": "Which type of noun includes names given to a person based on work or quality?", "correct": "ಅನ್ವರ್ಥನಾಮ", "options": ["ರೂಢನಾಮ", "ಅಂಕಿತನಾಮ", "ಭಾವನಾಮ", "ಕ್ರಿಯಾನಾಮ"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "7", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
+		{"question": "ಕೆಲಸ ಅಥವಾ ಗುಣದ ಆಧಾರದಲ್ಲಿ ವ್ಯಕ್ತಿಗೆ ಬರುವ ಹೆಸರುಗಳು ಯಾವ ನಾಮಪದಕ್ಕೆ ಸೇರುತ್ತವೆ?", "Translation": "Which type of noun includes names given to a person based on work or quality?", "correct": "ಅನ್ವರ್ಥನಾಮ", "options": ["ರೂಢನಾಮ", "ಅಂಕಿತನಾಮ", "ಅನ್ವರ್ಥನಾಮ", "ಕ್ರಿಯಾನಾಮ"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "7", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 		{"question": "ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಅನ್ವರ್ಥನಾಮವನ್ನು ಗುರುತಿಸಿ.", "Translation": "Identify the Anvarthanama from the following.", "correct": "ಬಡಗಿ", "options": ["ಪುಸ್ತಕ", "ರಾಮ", "ಬಡಗಿ", "ಮನೆ"], "topic": "ರೂಢನಾಮ , ಅನ್ವರ್ಥನಾಮ , ಅಂಕಿತನಾಮ , ಸರ್ವನಾಮ , ಕ್ರಿಯಾಪದ", "grade": "8", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
@@ -5704,7 +5704,7 @@ window.categories = {
     {
      "question":"ಪ್ರತ್ಯಕ್ಷ ವಾಕ್ಯದಲ್ಲಿ ಯಾವ ಚಿಹ್ನೆ ಬಳಸುವುದಿಲ್ಲ?",
      "Translation":"Which symbol is not used in direct speech?",
-     "correct":"ಪೂರ್ಣ ವಿರಾಮ",
+     "correct":"ಪೂರ್ಣವಿರಾಮ",
      "options": ["ಪೂರ್ಣವಿರಾಮ","ಉದ್ಧರಣ ಚಿಹ್ನೆ","ಪ್ರಶ್ನಾರ್ಥಕ ಚಿಹ್ನೆ","ಆಶ್ಚರ್ಯ ಸೂಚಕ ಚಿಹ್ನೆ"],
      "topic":"ಪ್ರತ್ಯಕ್ಷ ವಾಕ್ಯ",
      "grade":"10"
@@ -7173,318 +7173,8 @@ window.categories = {
     }
 ]	
 
-,
 
-"ಸರಣಪದ":
 
-[
-  {
-    "question": "ಸರಣಪದ ಎಂದರೇನು?",
-    "Translation": "What is a saranapada (series word)?",
-    "correct": "ಸಂಬಂಧ ತೋರಿಸುವ ಪದ",
-    "options": ["ನಾಮಪದ", "ಕ್ರಿಯಾಪದ", "ಸಂಬಂಧ ತೋರಿಸುವ ಪದ", "ವಿಶೇಷಣ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "8"
-  },
-  {
-    "question": "ಹಾಗೂ ಯಾವ ಸರಣಪದ?",
-    "Translation": "Which saranapada is 'ಹಾಗೂ' (and)?",
-    "correct": "ಸಮುಚ್ಚಯ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "8"
-  },
-  {
-    "question": "ಅಥವಾ ಯಾವ ಸರಣಪದ?",
-    "Translation": "Which saranapada is 'ಅಥವಾ' (or)?",
-    "correct": "ವಿಕಲ್ಪ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "8"
-  },
-  {
-    "question": "ಸರಣಪದದ ಉಪಯೋಗವೇನು?",
-    "Translation": "What is the use of saranapada?",
-    "correct": "ಸಂಬಂಧ ತಿಳಿಸುವುದು",
-    "options": ["ನಾಮಪದ ತಿಳಿಸುವುದು", "ಕ್ರಿಯಾಪದ ತಿಳಿಸುವುದು", "ಸಂಬಂಧ ತಿಳಿಸುವುದು", "ವಿಶೇಷಣ ತಿಳಿಸುವುದು"],
-    "topic": "ಸರಣಪದ",
-    "grade": "9"
-  },
-  {
-    "question": "ಏಕೆಂದರೆ ಯಾವ ಸರಣಪದ?",
-    "Translation": "Which saranapada is 'ಏಕೆಂದರೆ' (because)?",
-    "correct": "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "9"
-  },
-  {
-    "question": "ಯಾವಾಗ ಯಾವ ಸರಣಪದ?",
-    "Translation": "Which saranapada is 'ಯಾವಾಗ' (when)?",
-    "correct": "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "9"
-  },
-  {
-    "question": "ಸರಣಪದ ಯಾವ ಸಂಬಂಧ ತೋರಿಸುತ್ತದೆ?",
-    "Translation": "What relationship does saranapada show?",
-    "correct": "ಪದ/ವಾಕ್ಯ ಸಂಬಂಧ",
-    "options": ["ವಿಶೇಷಣ ಸಂಬಂಧ", "ಕ್ರಿಯಾಪದ ಸಂಬಂಧ", "ಪದ/ವಾಕ್ಯ ಸಂಬಂಧ", "ನಾಮಪದ ಸಂಬಂಧ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "10"
-  },
-  {
-    "question": "ಆದರೆ ಯಾವ ಸರಣಪದ?",
-    "Translation": "Which saranapada is 'ಆದರೆ' (but)?",
-    "correct": "ವಿರೋಧಾರ್ಥಕ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿರೋಧಾರ್ಥಕ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "10"
-  },
-  {
-    "question": "ಇದರಿಂದ ಯಾವ ಸರಣಪದ?",
-    "Translation": "Which saranapada is 'ಇದರಿಂದ' (therefore)?",
-    "correct": "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "10"
-  },
-  {
-    "question": "ಸರಣಪದದ ಮುಖ್ಯ ಪಾತ್ರವೇನು?",
-    "Translation": "What is the main role of saranapada?",
-    "correct": "ಸಂಬಂಧ ತಿಳಿಸುವುದು",
-    "options": ["ನಾಮಪದ ತಿಳಿಸುವುದು", "ಕ್ರಿಯಾಪದ ತಿಳಿಸುವುದು", "ಸಂಬಂಧ ತಿಳಿಸುವುದು", "ವಿಶೇಷಣ ತಿಳಿಸುವುದು"],
-    "topic": "ಸರಣಪದ",
-    "grade": "11"
-  },
-  {
-    "question": "ಹಾಗಾಗಿ ಪದದ ಉಪಯೋಗವೇನು?",
-    "Translation": "What is the use of 'ಹಾಗಾಗಿ' word?",
-    "correct": "ಕಾರಣ ತಿಳಿಸುವುದು",
-    "options": ["ವಿರೋಧ ತಿಳಿಸುವುದು", "ಕಾರಣ ತಿಳಿಸುವುದು", "ವಿಕಲ್ಪ ತಿಳಿಸುವುದು", "ಸಂಬಂಧ ತಿಳಿಸುವುದು"],
-    "topic": "ಸರಣಪದ",
-    "grade": "11"
-  },
-  {
-    "question": "ಆದ್ದರಿಂದ ಪದದ ಉಪಯೋಗವೇನು?",
-    "Translation": "What is the use of 'ಆದ್ದರಿಂದ' word?",
-    "correct": "ಕಾರಣ ತಿಳಿಸುವುದು",
-    "options": ["ವಿರೋಧ ತಿಳಿಸುವುದು", "ಕಾರಣ ತಿಳಿಸುವುದು", "ವಿಕಲ್ಪ ತಿಳಿಸುವುದು", "ಸಂಬಂಧ ತಿಳಿಸುವುದು"],
-    "topic": "ಸರಣಪದ",
-    "grade": "11"
-  },
-    {
-    "question": "ಸರಣಪದದ ವಿಧಗಳು ಯಾವುವು?",
-    "Translation": "What are the types of saranapada?",
-    "correct": "ಸಮುಚ್ಚಯ, ವಿಕಲ್ಪ, ಕಾರಣಾರ್ಥಕ",
-    "options": ["ನಾಮಪದ, ಕ್ರಿಯಾಪದ, ವಿಶೇಷಣ", "ಸಮುಚ್ಚಯ, ವಿಕಲ್ಪ, ಕಾರಣಾರ್ಥಕ", "ಲಿಂಗ, ವಚನ, ವಿಭಕ್ತಿ", "ಸಂಧಿ, ಸಮಾಸ, ಅವ್ಯಯ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "11"
-  },
-  {
-    "question": "ಯಾವ ಸರಣಪದವು ಎರಡು ಆಯ್ಕೆ ತಿಳಿಸುತ್ತದೆ?",
-    "Translation": "Which saranapada indicates two options?",
-    "correct": "ವಿಕಲ್ಪ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "10"
-  },
-  {
-    "question": "ಯಾವ ಸರಣಪದವು ಕಾರಣ ತಿಳಿಸುತ್ತದೆ?",
-    "Translation": "Which saranapada indicates reason?",
-    "correct": "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "10"
-  },
-  {
-    "question": "ಯಾವ ಸರಣಪದವು ಸೇರಿಸಲು ಉಪಯೋಗವಾಗುತ್ತದೆ?",
-    "Translation": "Which saranapada is used for adding?",
-    "correct": "ಸಮುಚ್ಚಯ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "9"
-  },
-  {
-    "question": "ಯಾವ ಸರಣಪದವು ಸಂಬಂಧ ತೋರಿಸುತ್ತದೆ?",
-    "Translation": "Which saranapada shows relationship?",
-    "correct": "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ",
-    "options": ["ಸಮುಚ್ಚಯ ಸರಣಪದ", "ವಿಕಲ್ಪ ಸರಣಪದ", "ಕಾರಣಾರ್ಥಕ ಸರಣಪದ", "ಸಂಬಂಧಾರ್ಥಕ ಸರಣಪದ"],
-    "topic": "ಸರಣಪದ",
-    "grade": "9"
-  },
-  {
-        "question": "ಸರಣಪದ ಎಂದರೆ ಏನು?",
-        "Translation": "What is a preposition?",
-        "correct": "ಪದ ಮತ್ತು ಸರ್ವನಾಮಕ್ಕೆ ಸಂಬಂಧ",
-        "options": [
-            "ಪದ ಮತ್ತು ಸರ್ವನಾಮಕ್ಕೆ ಸಂಬಂಧ",
-            "ಅಧಿಕರಣೆ",
-            "ಕ್ರಿಯಾಪದ",
-            "ವಿಶೇಷಣ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "5"
-    },
-    {
-        "question": "ನಾನು ಮನೆಗೆ ಹೋಗುವೆನು. ಇಲ್ಲಿ ಯಾವ ಪದ?",
-        "Translation": "I am going to home. Which is the word?",
-        "correct": "ಗೆ",
-        "options": [
-            "ಗೆ",
-            "ಅಂತು",
-            "ಅವರಿಗೆ",
-            "ಇಲ್ಲಿ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "6"
-    },
-    {
-        "question": "ಅವನೊಂದಿಗೆ ನಾನು ಬಾಳುತ್ತೇನೆ. ಯಾವ ಪದ?",
-        "Translation": "I will walk with him. Which word?",
-        "correct": "ಒಂದಿಗೆ",
-        "options": [
-            "ಒಂದಿಗೆ",
-            "ಪರವಾನಿಗೆ",
-            "ಹೆಚ್ಚು",
-            "ಹೇಗೆ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "6"
-    },
-    {
-        "question": "ಅವರು ಮಾರುಕಟ್ಟೆಗೆ ಹೋಗಿದ್ದಾರೆ. ಯಾವ ಪದ?",
-        "Translation": "They have gone to market. Which word?",
-        "correct": "ಗೆ",
-        "options": [
-            "ಗೆ",
-            "ಅವರೆಗೆ",
-            "ಅದರ",
-            "ಒಂದಿಗೂ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "7"
-    },
-    {
-        "question": "ನಾನು ಗುಚ್ಛದಲ್ಲಿದ್ದೇನೆ. ಯಾವ ಪದ?",
-        "Translation": "I am in the group. Which word?",
-        "correct": "ದಲ್ಲಿ",
-        "options": [
-            "ನಲ್ಲಿ",
-            "ನಲ್ಲಿ",
-            "ಮೇಲೆ",
-            "ಕೆಳಗೆ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "7"
-    },
-    {
-        "question": "ಅವರು ಸಮುದ್ರದ ಕಡೆಯಿಂದ ಬಂದಿದ್ದಾರೆ. ಯಾವ ಪದ?",
-        "Translation": "They have come from the sea side. Which word?",
-        "correct": "ರಿಂದ",
-        "options": [
-            "ದಿಂದ",
-            "ಮೇಲೆ",
-            "ಅವರು",
-            "ಗೆ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "8"
-    },
-    {
-        "question": "ಅವನು ಟಿವಿಯ ಮುಂದೆಯೇ ಇದ್ದಾನೆ. ಯಾವ ಪದ?",
-        "Translation": "He is in front of the TV. Which word?",
-        "correct": "ಮుందೆ",
-        "options": [
-            "ಹೆಚ್ಚು",
-            "ಮుందೆ",
-            "ಮೇಲೆ",
-            "ಕೆಳಗೆ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "8"
-    },
-    {
-        "question": "ನಾವು ಶಾಲೆಗೆ ಹಾರುವೆವು. ಯಾವ ಪದ?",
-        "Translation": "We will fly to school. Which word?",
-        "correct": "ಗೆ",
-        "options": [
-            "ಗೆ",
-            "ಅವರೆಗೆ",
-            "ಹೀಗೆ",
-            "ನೀವು"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "9"
-    },
-    {
-        "question": "ಅವರು ರಸ್ತೆ ಮೇಲೆ ನಡೆಯುತ್ತಿದ್ದಾರೆ. ಯಾವ ಪದ?",
-        "Translation": "They are walking on the road. Which word?",
-        "correct": "ಮೇಲೆ",
-        "options": [
-            "ಮೇಲೆ",
-            "ಕೆಳಗೆ",
-            "ಒಂದಿಗೆ",
-            "ಅವರ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "9"
-    },
-    {
-        "question": "ನಾನು ಶಾಲೆಗೆ ಹೋಗಿ ಬಂದೆ. ಯಾವ ಪದ?",
-        "Translation": "I went and returned from school. Which word?",
-        "correct": "ಹಿಂದೆ",
-        "options": [
-            "ಹಿಂದೆ",
-            "ಹರಿದು",
-            "ಮೇಲೆ",
-            "ಕೆಳಗೆ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "10"
-    },
-    {
-        "question": "ಅವರು ಪರ್ಯಾಯವಾಗಿ ನಡೆಯುತ್ತಾರೆ. ಯಾವ ಪದ?",
-        "Translation": "They walk alternatively. Which word?",
-        "correct": "ಅದರ",
-        "options": [
-            "ಅದರ",
-            "ಸೇರಿಸಿ",
-            "ಒಂದಾಗಿ",
-            "ಅವರ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "10"
-    },
-    {
-        "question": "ನಾನು ಅವನೊಂದಿಗೆ ಹಾರುತ್ತೇನೆ. ಯಾವ ಪದ?",
-        "Translation": "I fly with him. Which word?",
-        "correct": "ಒಂದಿಗೆ",
-        "options": [
-            "ಒಂದಿಗೆ",
-            "ಹೀಗೆ",
-            "ಕೆಳಗೆ",
-            "ಹರಿದು"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "11"
-    },
-    {
-        "question": "ಅವರು ನೀರಿನ ಮೂಲಕ ಹಾರುತ್ತಾರೆ. ಯಾವ ಪದ?",
-        "Translation": "They fly through water. Which word?",
-        "correct": "ಮೂಲಕ",
-        "options": [
-            "ಮೂಲಕ",
-            "ಹಿಂದೆ",
-            "ಅವರ",
-            "ಗಮನ"
-        ],
-        "topic": "ಸರಣಪದ",
-        "grade": "11"
-    }
-]
-  
 
 ,
 
@@ -8894,21 +8584,21 @@ window.categories = {
 },
 {"question": "ಪ್ರಕೃತಿಭಾವ ಎಂದರೇನು?", "Translation": "What is Prakrutibhava?", "correct": "ಸಂಧಿ ಕಾರ್ಯ ನಡೆಯದಿರುವುದು", "options": ["ಒಂದು ಸ್ವರ ಲೋಪವಾಗುವುದು", "ಎರಡು ಸ್ವರಗಳು ಒಂದಾಗುವುದು", "ಸಂಧಿ ಕಾರ್ಯ ನಡೆಯದಿರುವುದು", "ಎರಡು ವ್ಯಂಜನಗಳು ಒಂದಾಗುವುದು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "5", "difficulty": "Easy", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
-{"question": "‘ಅದು + ಉಂಟು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Adu + untu’.", "correct": "ಅದು ಉಂಟು", "options": ["ಅದುಉಂಟು", "ಅದುಂಟು", "ಅದಂಟು", "ಅದುವಂಟು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "6", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
+{"question": "‘ಅದು + ಉಂಟು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Adu + untu’.", "correct": "ಅದುಂಟು", "options": ["ಅದುಉಂಟು", "ಅದುಂಟು", "ಅದಂಟು", "ಅದುವಂಟು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "6", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
-{"question": "‘ಇಲ್ಲಿ + ಇರು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Illi + iru’.", "correct": "ಇಲ್ಲಿ ಇರು", "options": ["ಇಲ್ಲಿಇರು", "ಇಲ್ಲಿರು", "ಇಲ್ಲಿಯಿರು", "ಇಲ್ಲೀರು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "7", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
+{"question": "‘ಇಲ್ಲಿ + ಇರು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Illi + iru’.", "correct": "ಇಲ್ಲಿರು", "options": ["ಇಲ್ಲಿಇರು", "ಇಲ್ಲಿರು", "ಇಲ್ಲಿಯಿರು", "ಇಲ್ಲೀರು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "7", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
-{"question": "‘ಏನು + ಆಯಿತು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Enu + ayitu’.", "correct": "ಏನು ಆಯಿತು", "options": ["ಏನುಆಯಿತು", "ಏನಾಯ್ತು", "ಏನುವಾಯ್ತು", "ಏನಾತು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "8", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
+{"question": "‘ಏನು + ಆಯಿತು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Enu + ayitu’.", "correct": "ಏನಾಯ್ತು", "options": ["ಏನುಆಯಿತು", "ಏನಾಯ್ತು", "ಏನುವಾಯ್ತು", "ಏನಾತು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "8", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
-{"question": "‘ಹೋಗಿ + ಅಲ್ಲಿ’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Hogi + alli’.", "correct": "ಹೋಗಿ ಅಲ್ಲಿ", "options": ["ಹೋಗಿಅಲ್ಲಿ", "ಹೋಗಲ್ಲಿ", "ಹೋಗಿಯಲ್ಲಿ", "ಹೋಗಲಾಲ್ಲಿ"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "9", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
+{"question": "‘ಹೋಗಿ + ಅಲ್ಲಿ’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Hogi + alli’.", "correct": "ಹೋಗಲ್ಲಿ", "options": ["ಹೋಗಿಅಲ್ಲಿ", "ಹೋಗಲ್ಲಿ", "ಹೋಗಿಯಲ್ಲಿ", "ಹೋಗಲಾಲ್ಲಿ"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "9", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
 {"question": "ಪ್ರಕೃತಿಭಾವದಲ್ಲಿ ಯಾವ ಕಾರ್ಯ ನಡೆಯುವುದಿಲ್ಲ?", "Translation": "What action does not take place in Prakrutibhava?", "correct": "ಸಂಧಿ ಕಾರ್ಯ", "options": ["ವಿಭಕ್ತಿ ಕಾರ್ಯ", "ಸಮಾಸ ಕಾರ್ಯ", "ಸಂಧಿ ಕಾರ್ಯ", "ನುಡಿಗಟ್ಟು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "10", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
 {"question": "ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಪ್ರಕೃತಿಭಾವಕ್ಕೆ ಉದಾಹರಣೆ ಯಾವುದು?", "Translation": "Which of the following is an example of Prakrutibhava?", "correct": "ಹೋಗಿ ಅಲ್ಲಿ", "options": ["ಹೋಗಿಲ್ಲಿ", "ಹೋಗದಲಿ", "ಹೋಗಿ ಅಲ್ಲಿ", "ಹೋಗುವುದರಲ್ಲಿ"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "7", "difficulty": "Hard", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
-{"question": "‘ಅಲ್ಲಿ + ಇದು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Alli + idu’.", "correct": "ಅಲ್ಲಿ ಇದು", "options": ["ಅಲ್ಲಿಇದು", "ಅಲ್ಲಿದು", "ಅಲ್ಲಿಯಿದು", "ಅಲ್ಲಿದು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "8", "difficulty": "Easy", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
+{"question": "‘ಅಲ್ಲಿ + ಇದು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Alli + idu’.", "correct": "ಅಲ್ಲಿದು", "options": ["ಅಲ್ಲಿಇದು", "ಅಲ್ಲಿ ದು", "ಅಲ್ಲಿಯಿದು", "ಅಲ್ಲಿದು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "8", "difficulty": "Easy", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
-{"question": "‘ಮನೆ + ಉಂಟು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Mane + untu’.", "correct": "ಮನೆ ಉಂಟು", "options": ["ಮನೆಉಂಟು", "ಮನೆಂಟು", "ಮನೆಯುಂಟು", "ಮನೇಂಟು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "9", "difficulty": "Hard", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
+{"question": "‘ಮನೆ + ಉಂಟು’ ಸೇರಿಸಿ ಬರೆಯಿರಿ.", "Translation": "Combine ‘Mane + untu’.", "correct": "ಮನೆಯುಂಟು", "options": ["ಮನೆಉಂಟು", "ಮನೆಂಟು", "ಮನೆಯುಂಟು", "ಮನೇಂಟು"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "9", "difficulty": "Hard", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 },
 {"question": "ಪ್ರಕೃತಿಭಾವವನ್ನು ಕಲಿಯುವುದರಿಂದ ಏನು ಪ್ರಯೋಜನ?", "Translation": "What is the benefit of learning Prakrutibhava?", "correct": "ಪದಗಳನ್ನು ಸರಿಯಾಗಿ ಉಚ್ಛರಿಸಲು ಮತ್ತು ಬರೆಯಲು ಸಹಾಯಕ", "options": ["ವಿರುದ್ಧ ಪದಗಳ ಬಳಕೆ ಸುಲಭವಾಗುತ್ತದೆ", "ಸಮಾನಾರ್ಥಕ ಪದಗಳ ಬಳಕೆ ಹೆಚ್ಚುತ್ತದೆ", "ಪದಗಳನ್ನು ಸರಿಯಾಗಿ ಉಚ್ಛರಿಸಲು ಮತ್ತು ಬರೆಯಲು ಸಹಾಯಕ", "ಏಕಾರ್ಥ ಪದಗಳ ಬಳಕೆ ಹೆಚ್ಚುತ್ತದೆ"], "topic": "ಪ್ರಕೃತಿಭಾವ", "grade": "10", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%95%E0%B3%83%E0%B2%A4%E0%B2%BF%E0%B2%AD%E0%B2%BE%E0%B2%B5"
 }
@@ -9800,7 +9490,7 @@ window.categories = {
   {
     "question": "ತಂದೆ-ತಾಯಿ ಪದದ ದ್ವಂದ್ವ ಸಮಾಸ ಯಾವುದು?",
     "Translation": "Which dvandva samasa is in the word 'ತಂದೆ-ತಾಯಿ'?",
-    "correct": "ಇতরেತರ ದ್ವಂದ್ವ",
+    "correct": "ಇತರೇತರ ದ್ವಂದ್ವ",
     "options": ["ಇತರೇತರ ದ್ವಂದ್ವ", "ಸಮಾಹಾರ ದ್ವಂದ್ವ", "ಏಕಶೇಷ ದ್ವಂದ್ವ", "ಮಧ್ಯಮಪದಲೋಪಿ ದ್ವಂದ್ವ"],
     "topic": "ದ್ವಂದ್ವ ಸಮಾಸ",
     "grade": "8"
@@ -12156,7 +11846,7 @@ window.categories = {
     "question": "ಅರ್ಥಾಲಂಕಾರದ ವಿಧ ಯಾವುದು?",
     "Translation": "Which is a type of Arthalankara?",
     "correct": "ಉತ್ಪ್ರೇಕ್ಷೆ",
-    "options": ["ಶ್ಲೇಷ", "ಅನುಪ್ರಾಸ", "ಯಮಕ", "ಚಿತ್ರಕ"],
+    "options": ["ಶ್ಲೇಷ", "ಅನುಪ್ರಾಸ", "ಯಮಕ", "ಉತ್ಪ್ರೇಕ್ಷೆ"],
     "topic": "ಅಲಂಕಾರ",
     "grade": "9"
   },
@@ -13823,7 +13513,7 @@ window.categories = {
 },
 {"question": "‘ಓದುತ್ತಿರಬಹುದು’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Oduttirabahudu’ indicates which tense?", "correct": "ಸಂಭಾವ್ಯ ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯ ವರ್ತಮಾನಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "8", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-{"question": "‘ಹೋಗುತ್ತಾನೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Hoguttane’ indicates which tense?", "correct": "ಸಾಮಾನ್ಯ ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "9", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
+{"question": "‘ಹೋಗುತ್ತಾನೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Hoguttane’ indicates which tense?", "correct": "ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "9", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 {"question": "‘ಮಾಡುತ್ತಿದ್ದೇನೆ’ ಎಂಬ ಕ್ರಿಯಾಪದದಲ್ಲಿ ಯಾವ ಕಾಲ ಸೂಚಿತವಾಗಿದೆ?", "Translation": "Which tense is indicated in the verb ‘Maduttiddene’?", "correct": "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "options": ["ಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "10", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1_%E0%B2%B5%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%95%E0%B2%B0%E0%B2%A3"
 },
@@ -13837,11 +13527,11 @@ window.categories = {
 },
 {"question": "‘ಅವಳು ಹಾಡನ್ನು ಹಾಡುತ್ತಿದ್ದಾಳೆ’ ಈ ವಾಕ್ಯದಲ್ಲಿ ‘ಹಾಡುತ್ತಿದ್ದಾಳೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "In the sentence ‘Avalu haadannu haaduttiddale’, ‘haaduttiddale’ indicates which tense?", "correct": "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "options": ["ಸಾಮಾನ್ಯ ವರ್ತಮಾನಕಾಲ", "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "ಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "ಯಾವುದೂ ಅಲ್ಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "6", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/6th/6_Kannada_FL_Part_1.pdf"
 },
-{"question": "‘ನಾವು ಚಿತ್ರ ನೋಡುತ್ತಿದ್ದೇವೆ’ ಈ ವಾಕ್ಯವು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Navu chitra noduttiddeve’ sentence indicates which tense?", "correct": "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯ ವರ್ತಮಾನಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "7", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
+{"question": "‘ನಾವು ಚಿತ್ರ ನೋಡುತ್ತಿದ್ದೇವೆ’ ಈ ವಾಕ್ಯವು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Navu chitra noduttiddeve’ sentence indicates which tense?", "correct": "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ಅಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯ ವರ್ತಮಾನಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "7", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/7th/7%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 {"question": "‘ಅವರು ಕೆಲಸ ಮಾಡುತ್ತಿರಬಹುದು’ ಈ ವಾಕ್ಯವು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Avaru kelasa maduttirabahudu’ sentence indicates which tense?", "correct": "ಸಂಭಾವ್ಯ ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯ ವರ್ತಮಾನಕಾಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "8", "difficulty": "Hard", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-{"question": "‘ನಾನು ಪ್ರತಿದಿನ ಶಾಲೆಗೆ ಹೋಗುತ್ತೇನೆ’ ಈ ವಾಕ್ಯದಲ್ಲಿ ‘ಹೋಗುತ್ತೇನೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "In the sentence ‘Naanu pratidina shalege hoguttene’, ‘hoguttene’ indicates which tense?", "correct": "ಸಾಮಾನ್ಯ ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಯಾವುದೂ ಅಲ್ಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "9", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
+{"question": "‘ನಾನು ಪ್ರತಿದಿನ ಶಾಲೆಗೆ ಹೋಗುತ್ತೇನೆ’ ಈ ವಾಕ್ಯದಲ್ಲಿ ‘ಹೋಗುತ್ತೇನೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "In the sentence ‘Naanu pratidina shalege hoguttene’, ‘hoguttene’ indicates which tense?", "correct": "ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಯಾವುದೂ ಅಲ್ಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "9", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 {"question": "‘ನಾನು ಪಾಠವನ್ನು ಓದುತ್ತಿದ್ದೇನೆ’ ಈ ವಾಕ್ಯದ ಕಾಲವನ್ನು ಗುರುತಿಸಿ.", "Translation": "Identify the tense of the sentence ‘Nanu pathavannu oduttiddene’.", "correct": "ವರ್ತಮಾನಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಯಾವುದೂ ಅಲ್ಲ"], "topic": "ವರ್ತಮಾನಕಾಲ", "grade": "5", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/5th/5%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
@@ -13853,7 +13543,7 @@ window.categories = {
 },
 {"question": "‘ಓದಬಹುದು’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Odabahudu’ indicates which tense?", "correct": "ಸಂಭಾವ್ಯ ಭವಿಷ್ಯತ್ಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯ ಭವಿಷ್ಯತ್ಕಾಲ"], "topic": "ಭವಿಷ್ಯತ್ಕಾಲ", "grade": "8", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/8th/8%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
-{"question": "‘ಹೋಗುವೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Hoguva’ indicates which tense?", "correct": "ಸಾಮಾನ್ಯ ಭವಿಷ್ಯತ್ಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯಕಾಲ"], "topic": "ಭವಿಷ್ಯತ್ಕಾಲ", "grade": "9", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
+{"question": "‘ಹೋಗುವೆ’ ಎಂಬುದು ಯಾವ ಕಾಲವನ್ನು ಸೂಚಿಸುತ್ತದೆ?", "Translation": "‘Hoguva’ indicates which tense?", "correct": "ಭವಿಷ್ಯತ್ಕಾಲ", "options": ["ಭೂತಕಾಲ", "ವರ್ತಮಾನಕಾಲ", "ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯಕಾಲ"], "topic": "ಭವಿಷ್ಯತ್ಕಾಲ", "grade": "9", "difficulty": "Medium", "reference": "https://textbooks.karnataka.gov.in/uploads/pdf-files/2024-25%20Textbooks%20data/9th/9%20KANNADA%20FL%202024-25%20Part%201.pdf"
 },
 {"question": "‘ಬರೆಯಲಿರುವೆನು’ ಎಂಬ ಕ್ರಿಯಾಪದದಲ್ಲಿ ಯಾವ ಕಾಲ ಸೂಚಿತವಾಗಿದೆ?", "Translation": "Which tense is indicated in the verb ‘Bariyaliruvenu’?", "correct": "ಪೂರ್ಣ ಭವಿಷ್ಯತ್ಕಾಲ", "options": ["ಪೂರ್ಣ ಭೂತಕಾಲ", "ಪೂರ್ಣ ವರ್ತಮಾನಕಾಲ", "ಪೂರ್ಣ ಭವಿಷ್ಯತ್ಕಾಲ", "ಸಂಭಾವ್ಯ ಭವಿಷ್ಯತ್ಕಾಲ"], "topic": "ಭವಿಷ್ಯತ್ಕಾಲ", "grade": "10", "difficulty": "Medium", "reference": "https://kn.wikipedia.org/wiki/%E0%B2%95%E0%B2%A8%E0%B3%8D%E0%B2%A8%E0%B2%A1_%E0%B2%B5%E0%B3%8D%E0%B2%AF%E0%B2%BE%E0%B2%95%E0%B2%B0%E0%B2%A3"
 },

@@ -30,6 +30,20 @@ window.categories = {
 
 },
 
+"Visual HCF LCM": {	
+	
+	  
+	"HCF LCM": [
+      {
+		"question": "2",
+		"options": ["Done"] ,
+		"correct": "Done"
+	  }
+	  ] ,	  
+	  
+
+},
+
 "Visual Angle, Triangle, Quad": {	
 	
 	  
@@ -3927,6 +3941,753 @@ window.categories = {
   
  
 
+
+ "HCF LCM": {
+"12 + 15": [
+      {
+        "question": "Two friends are making friendship bracelets. Sarah has 12 red beads and Emily has 15 blue beads. They want to make the longest possible identical sections of the bracelet. How many beads will be in each section, and if they make the bracelets end-to-end, how many total beads long will that be?",
+        "correct": "3 beads and 60 beads",
+        "options": ["3 beads and 60 beads", "4 beads and 30 beads", "6 beads and 60 beads", "3 beads and 30 beads"],
+        "num1": 12,
+        "num2": 15,
+        "operation": "HCF LCM"
+      }
+    ],
+    "8 + 12": [
+      {
+        "question": "A pattern is made of squares and circles. Squares are placed every 8cm and circles every 12cm. How often do a square and a circle line up, and how long until they line up again?",
+        "correct": "4cm and 24cm",
+        "options": ["4cm and 24cm", "2cm and 12cm", "4cm and 48cm", "8cm and 12cm"],
+        "num1": 8,
+        "num2": 12,
+        "operation": "HCF LCM"
+      }
+    ],
+    "6 + 9": [
+      {
+        "question": "You have 6 cookies and 9 brownies. You want to make identical plates with an equal number of cookies and brownies on each. What is the greatest number of plates you can make, and how many total items will be on each plate?",
+        "correct": "3 plates and 5 items",
+        "options": ["3 plates and 5 items", "2 plates and 18 items", "3 plates and 15 items", "1 plate and 54 items"],
+        "num1": 6,
+        "num2": 9,
+        "operation": "HCF LCM"
+      }
+    ],
+    "10 + 15": [
+      {
+        "question": "A red light flashes every 10 seconds, and a blue light flashes every 15 seconds. If they flash together now, how often will they flash at the same time, and how long until they flash together again?",
+        "correct": "5 seconds and 30 seconds",
+        "options": ["5 seconds and 30 seconds", "10 seconds and 15 seconds", "5 seconds and 15 seconds", "10 seconds and 30 seconds"],
+        "num1": 10,
+        "num2": 15,
+        "operation": "HCF LCM"
+      }
+    ],
+    "4 + 8": [
+      {
+        "question": "A piece of wood is 4 meters long, and another is 8 meters long. You want to cut them into equal-length pieces for a project. What is the longest each piece can be, and if you put the pieces end to end, how long would that be?",
+        "correct": "4 meters and 8 meters",
+        "options": ["4 meters and 8 meters", "2 meters and 16 meters", "4 meters and 16 meters", "8 meters and 8 meters"],
+        "num1": 4,
+        "num2": 8,
+        "operation": "HCF LCM"
+      }
+    ],	 
+ "4 + 6": [
+      {
+        "question": "What is the HCF and LCM of 4 and 6?",
+        "correct": "2 and 12",
+        "options": ["2 and 12", "4 and 6", "2 and 6", "4 and 12"],
+        "num1": 4,
+        "num2": 6,
+        "operation": "HCF LCM"
+      }
+    ],
+    "6 + 9": [
+      {
+        "question": "What is the HCF and LCM of 6 and 9?",
+        "correct": "3 and 18",
+        "options": ["3 and 18", "6 and 9", "3 and 9", "6 and 18"],
+        "num1": 6,
+        "num2": 9,
+        "operation": "HCF LCM"
+      }
+    ],
+    "2 + 8": [
+      {
+        "question": "What is the HCF and LCM of 2 and 8?",
+        "correct": "2 and 8",
+        "options": ["2 and 8", "2 and 16", "4 and 8", "4 and 16"],
+        "num1": 2,
+        "num2": 8,
+        "operation": "HCF LCM"
+      }
+    ],
+    "3 + 9": [
+      {
+        "question": "What is the HCF and LCM of 3 and 9?",
+        "correct": "3 and 9",
+        "options": ["3 and 9", "3 and 27", "9 and 9", "9 and 27"],
+        "num1": 3,
+        "num2": 9,
+        "operation": "HCF LCM"
+      }
+    ],
+    "4 + 8": [
+      {
+        "question": "What is the HCF and LCM of 4 and 8?",
+        "correct": "4 and 8",
+        "options": ["4 and 8", "4 and 16", "8 and 8", "8 and 16"],
+        "num1": 4,
+        "num2": 8,
+        "operation": "HCF LCM"
+      }
+    ],
+    "5 + 10": [
+      {
+        "question": "What is the HCF and LCM of 5 and 10?",
+        "correct": "5 and 10",
+        "options": ["5 and 10", "5 and 20", "10 and 10", "10 and 20"],
+        "num1": 5,
+        "num2": 10,
+        "operation": "HCF LCM"
+      }
+    ],
+    "6 + 8": [
+      {
+        "question": "What is the HCF and LCM of 6 and 8?",
+        "correct": "2 and 24",
+        "options": ["2 and 24", "6 and 8", "2 and 8", "6 and 24"],
+        "num1": 6,
+        "num2": 8,
+        "operation": "HCF LCM"
+      }
+    ],
+    "8 + 9": [
+      {
+        "question": "What is the HCF and LCM of 8 and 9?",
+        "correct": "1 and 72",
+        "options": ["1 and 72", "8 and 9", "1 and 9", "8 and 72"],
+        "num1": 8,
+        "num2": 9,
+        "operation": "HCF LCM"
+      }
+    ],
+    "4 + 5": [
+      {
+        "question": "What is the HCF and LCM of 4 and 5?",
+        "correct": "1 and 20",
+        "options": ["1 and 20", "4 and 5", "1 and 5", "4 and 20"],
+        "num1": 4,
+        "num2": 5,
+        "operation": "HCF LCM"
+      }
+    ],	 
+"12 + 18": [
+    {
+      "question": "What is HCF & LCM",
+      "correct": "6 & 36",
+      "options": ["6 & 36", "12 & 18", "6 & 18", "12 & 36"],
+      "num1": 12,
+      "num2": 18,
+      "operation": "HCF LCM"
+    }
+  ],
+  
+"8 + 10": [
+      {
+        "question": "What is the HCF and LCM of 8 and 10?",
+        "correct": "2 and 40",
+        "options": ["2 and 40", "8 and 10", "2 and 80", "4 and 20"],
+        "num1": 8,
+        "num2": 10,
+        "operation": "HCF LCM"
+      }
+    ],
+    "6 + 15": [
+      {
+        "question": "What is the HCF and LCM of 6 and 15?",
+        "correct": "3 and 30",
+        "options": ["3 and 30", "6 and 15", "3 and 15", "6 and 30"],
+        "num1": 6,
+        "num2": 15,
+        "operation": "HCF LCM"
+      }
+    ],
+    "4 + 14": [
+      {
+        "question": "What is the HCF and LCM of 4 and 14?",
+        "correct": "2 and 28",
+        "options": ["2 and 28", "4 and 14", "2 and 14", "4 and 28"],
+        "num1": 4,
+        "num2": 14,
+        "operation": "HCF LCM"
+      }
+    ],
+    "9 + 12": [
+      {
+        "question": "What is the HCF and LCM of 9 and 12?",
+        "correct": "3 and 36",
+        "options": ["3 and 36", "9 and 12", "3 and 12", "9 and 36"],
+        "num1": 9,
+        "num2": 12,
+        "operation": "HCF LCM"
+      }
+    ],
+    "10 + 15": [
+      {
+        "question": "What is the HCF and LCM of 10 and 15?",
+        "correct": "5 and 30",
+        "options": ["5 and 30", "10 and 15", "5 and 15", "10 and 30"],
+        "num1": 10,
+        "num2": 15,
+        "operation": "HCF LCM"
+      }
+    ],
+    "16 + 20": [
+      {
+        "question": "What is the HCF and LCM of 16 and 20?",
+        "correct": "4 and 80",
+        "options": ["4 and 80", "16 and 20", "4 and 20", "16 and 80"],
+        "num1": 16,
+        "num2": 20,
+        "operation": "HCF LCM"
+      }
+    ],
+    "12 + 16": [
+      {
+        "question": "What is the HCF and LCM of 12 and 16?",
+        "correct": "4 and 48",
+        "options": ["4 and 48", "12 and 16", "4 and 16", "12 and 48"],
+        "num1": 12,
+        "num2": 16,
+        "operation": "HCF LCM"
+      }
+    ],
+    "14 + 18": [
+      {
+        "question": "What is the HCF and LCM of 14 and 18?",
+        "correct": "2 and 126",
+        "options": ["2 and 126", "14 and 18", "2 and 18", "14 and 126"],
+        "num1": 14,
+        "num2": 18,
+        "operation": "HCF LCM"
+      }
+    ],
+    "15 + 20": [
+      {
+        "question": "What is the HCF and LCM of 15 and 20?",
+        "correct": "5 and 60",
+        "options": ["5 and 60", "15 and 20", "5 and 20", "15 and 60"],
+        "num1": 15,
+        "num2": 20,
+        "operation": "HCF LCM"
+      }
+    ],
+	 "18 + 24": [
+      {
+        "question": "You have two strings, one 18 cm long and the other 24 cm long. You want to cut them into equal-length pieces. What is the longest length you can cut each piece, and what is the shortest length you could have if you joined one piece of each string?",
+        "correct": "6 cm and 72 cm",
+        "options": ["6 cm and 72 cm", "3 cm and 48 cm", "6 cm and 12 cm", "3 cm and 72 cm"],
+        "num1": 18,
+        "num2": 24,
+        "operation": "HCF LCM"
+      }
+    ],
+    "20 + 30": [
+      {
+        "question": "A bus arrives at a station every 20 minutes, and a train arrives every 30 minutes. If they both arrive at the station now, how often will they arrive together, and how long until they arrive together again?",
+        "correct": "10 minutes and 60 minutes",
+        "options": ["10 minutes and 60 minutes", "5 minutes and 90 minutes", "10 minutes and 30 minutes", "20 minutes and 30 minutes"],
+        "num1": 20,
+        "num2": 30,
+        "operation": "HCF LCM"
+      }
+    ],
+    "14 + 21": [
+      {
+        "question": "You have 14 pencils and 21 erasers. You want to make identical packs for students. What is the largest number of packs you can make, and how many items will be in each pack?",
+        "correct": "7 packs and 42 items",
+        "options": ["7 packs and 42 items", "14 packs and 21 items", "7 packs and 35 items", "1 pack and 35 items"],
+        "num1": 14,
+        "num2": 21,
+        "operation": "HCF LCM"
+      }
+    ],
+    "12 + 20": [
+      {
+        "question": "You want to tile a rectangular floor using square tiles. The floor is 12 feet wide and 20 feet long. What is the largest tile size you can use, and if you laid a row of each tile end to end, how long would that row be?",
+        "correct": "4 feet and 60 feet",
+        "options": ["4 feet and 60 feet", "2 feet and 40 feet", "4 feet and 240 feet", "1 foot and 240 feet"],
+        "num1": 12,
+        "num2": 20,
+        "operation": "HCF LCM"
+      }
+    ],
+    "16 + 24": [
+      {
+        "question": "A baker has two cakes, one 16 inches long and the other 24 inches long. They want to cut them into equal-sized pieces. What is the longest piece they can cut, and how long would a combined line of one piece of each be?",
+        "correct": "8 inches and 48 inches",
+        "options": ["8 inches and 48 inches", "4 inches and 24 inches", "8 inches and 96 inches", "2 inches and 96 inches"],
+        "num1": 16,
+        "num2": 24,
+        "operation": "HCF LCM"
+      }
+    ],
+    "15 + 25": [
+      {
+        "question": "A machine makes a sound every 15 seconds, and another machine makes a sound every 25 seconds. If they sound together now, how often will they sound together, and how long until they sound together again?",
+        "correct": "5 seconds and 75 seconds",
+        "options": ["5 seconds and 75 seconds", "15 seconds and 25 seconds", "5 seconds and 25 seconds", "15 seconds and 75 seconds"],
+        "num1": 15,
+        "num2": 25,
+        "operation": "HCF LCM"
+      }
+    ],
+    "18 + 27": [
+      {
+        "question": "There are 18 students who want to play basketball and 27 who want to play soccer. You want to divide them into teams with the same number of basketball players and soccer players on each team. What is the largest number of teams, and how many total players on each team?",
+        "correct": "9 teams and 54 players",
+        "options": ["9 teams and 54 players", "3 teams and 45 players", "9 teams and 5 players", "1 team and 45 players"],
+        "num1": 18,
+        "num2": 27,
+        "operation": "HCF LCM"
+      }
+    ],
+    "24 + 30": [
+      {
+        "question": "A factory produces 24 red toys and 30 blue toys. They want to pack them into boxes with the same number of red and blue toys in each. What is the greatest number of boxes they can fill, and how many total toys in each box?",
+        "correct": "6 boxes and 120 toys",
+        "options": ["6 boxes and 9 toys", "2 boxes and 120 toys", "6 boxes and 120 toys", "1 box and 120 toys"],
+        "num1": 24,
+        "num2": 30,
+        "operation": "HCF LCM"
+      }
+    ],
+    "20 + 28": [
+      {
+        "question": "You have two pieces of ribbon, one 20 cm long and the other 28 cm long. You want to cut them into equal-length pieces for crafts. What is the longest length you can cut each piece, and how long would a combined line of one piece of each be?",
+        "correct": "4 cm and 140 cm",
+        "options": ["4 cm and 140 cm", "2 cm and 56 cm", "4 cm and 56 cm", "2 cm and 140 cm"],
+        "num1": 20,
+        "num2": 28,
+        "operation": "HCF LCM"
+      }
+    ],
+    "25 + 30": [
+      {
+        "question": "You do push-ups every 25 seconds and sit-ups every 30 seconds. If you do both at the same time now, how often will you do them together, and how long until you do them together again?",
+        "correct": "5 seconds and 150 seconds",
+        "options": ["5 seconds and 150 seconds", "25 seconds and 30 seconds", "5 seconds and 30 seconds", "25 seconds and 150 seconds"],
+        "num1": 25,
+        "num2": 30,
+        "operation": "HCF LCM"
+      }
+    ], 
+	"24 + 36": [
+      {
+        "question": "What is the HCF and LCM of 24 and 36?",
+        "correct": "12 and 72",
+        "options": ["12 and 72", "6 and 144", "24 and 36", "12 and 36"],
+        "num1": 24,
+        "num2": 36,
+        "operation": "HCF LCM"
+      }
+    ],
+    "15 + 30": [
+      {
+        "question": "What is the HCF and LCM of 15 and 30?",
+        "correct": "15 and 30",
+        "options": ["15 and 30", "5 and 90", "30 and 15", "5 and 30"],
+        "num1": 15,
+        "num2": 30,
+        "operation": "HCF LCM"
+      }
+    ],
+    "16 + 28": [
+      {
+        "question": "What is the HCF and LCM of 16 and 28?",
+        "correct": "4 and 112",
+        "options": ["4 and 112", "2 and 224", "16 and 28", "4 and 28"],
+        "num1": 16,
+        "num2": 28,
+        "operation": "HCF LCM"
+      }
+    ],
+    "18 + 30": [
+      {
+        "question": "What is the HCF and LCM of 18 and 30?",
+        "correct": "6 and 90",
+        "options": ["6 and 90", "3 and 180", "18 and 30", "6 and 30"],
+        "num1": 18,
+        "num2": 30,
+        "operation": "HCF LCM"
+      }
+    ],
+    "20 + 35": [
+      {
+        "question": "What is the HCF and LCM of 20 and 35?",
+        "correct": "5 and 140",
+        "options": ["5 and 140", "1 and 700", "20 and 35", "5 and 35"],
+        "num1": 20,
+        "num2": 35,
+        "operation": "HCF LCM"
+      }
+    ],
+    "22 + 33": [
+      {
+        "question": "What is the HCF and LCM of 22 and 33?",
+        "correct": "11 and 66",
+        "options": ["11 and 66", "1 and 726", "22 and 33", "11 and 33"],
+        "num1": 22,
+        "num2": 33,
+        "operation": "HCF LCM"
+      }
+    ],
+    "24 + 40": [
+      {
+        "question": "What is the HCF and LCM of 24 and 40?",
+        "correct": "8 and 120",
+        "options": ["8 and 120", "4 and 240", "24 and 40", "8 and 40"],
+        "num1": 24,
+        "num2": 40,
+        "operation": "HCF LCM"
+      }
+    ],
+    "25 + 35": [
+      {
+        "question": "What is the HCF and LCM of 25 and 35?",
+        "correct": "5 and 175",
+        "options": ["5 and 175", "1 and 875", "25 and 35", "5 and 35"],
+        "num1": 25,
+        "num2": 35,
+        "operation": "HCF LCM"
+      }
+    ],
+    "26 + 39": [
+      {
+        "question": "What is the HCF and LCM of 26 and 39?",
+        "correct": "13 and 78",
+        "options": ["13 and 78", "1 and 1014", "26 and 39", "13 and 39"],
+        "num1": 26,
+        "num2": 39,
+        "operation": "HCF LCM"
+      }
+    ],
+    "28 + 40": [
+      {
+        "question": "What is the HCF and LCM of 28 and 40?",
+        "correct": "4 and 280",
+        "options": ["4 and 280", "2 and 560", "28 and 40", "4 and 40"],
+        "num1": 28,
+        "num2": 40,
+        "operation": "HCF LCM"
+      }
+    ],
+ "28 + 32": [
+      {
+        "question": "What is the HCF and LCM of 28 and 32?",
+        "correct": "4 and 224",
+        "options": ["4 and 224", "2 and 448", "28 and 32", "4 and 32"],
+        "num1": 28,
+        "num2": 32,
+        "operation": "HCF LCM"
+      }
+    ],
+    "30 + 36": [
+      {
+        "question": "What is the HCF and LCM of 30 and 36?",
+        "correct": "6 and 180",
+        "options": ["6 and 180", "2 and 540", "30 and 36", "6 and 36"],
+        "num1": 30,
+        "num2": 36,
+        "operation": "HCF LCM"
+      }
+    ],
+    "32 + 40": [
+      {
+        "question": "What is the HCF and LCM of 32 and 40?",
+        "correct": "8 and 160",
+        "options": ["8 and 160", "4 and 320", "32 and 40", "8 and 40"],
+        "num1": 32,
+        "num2": 40,
+        "operation": "HCF LCM"
+      }
+    ],
+    "1 + 40": [
+      {
+        "question": "What is the HCF and LCM of 1 and 40?",
+        "correct": "1 and 40",
+        "options": ["1 and 40", "1 and 80", "40 and 1", "40 and 40"],
+        "num1": 1,
+        "num2": 40,
+        "operation": "HCF LCM"
+      }
+    ],
+    "17 + 23": [
+      {
+        "question": "What is the HCF and LCM of 17 and 23?",
+        "correct": "1 and 391",
+        "options": ["1 and 391", "17 and 23", "1 and 23", "17 and 391"],
+        "num1": 17,
+        "num2": 23,
+        "operation": "HCF LCM"
+      }
+    ],
+    "34 + 38": [
+      {
+        "question": "What is the HCF and LCM of 34 and 38?",
+        "correct": "2 and 646",
+        "options": ["2 and 646", "1 and 1292", "34 and 38", "2 and 38"],
+        "num1": 34,
+        "num2": 38,
+        "operation": "HCF LCM"
+      }
+    ],
+    "35 + 40": [
+      {
+        "question": "What is the HCF and LCM of 35 and 40?",
+        "correct": "5 and 280",
+        "options": ["5 and 280", "1 and 1400", "35 and 40", "5 and 40"],
+        "num1": 35,
+        "num2": 40,
+        "operation": "HCF LCM"
+      }
+    ],
+    "13 + 39": [
+      {
+        "question": "What is the HCF and LCM of 13 and 39?",
+        "correct": "13 and 39",
+        "options": ["13 and 39", "1 and 507", "39 and 13", "13 and 52"],
+        "num1": 13,
+        "num2": 39,
+        "operation": "HCF LCM"
+      }
+    ],
+    "21 + 35": [
+      {
+        "question": "What is the HCF and LCM of 21 and 35?",
+        "correct": "7 and 105",
+        "options": ["7 and 105", "1 and 735", "21 and 35", "7 and 35"],
+        "num1": 21,
+        "num2": 35,
+        "operation": "HCF LCM"
+      }
+    ],
+    "26 + 34": [
+      {
+        "question": "What is the HCF and LCM of 26 and 34?",
+        "correct": "2 and 442",
+        "options": ["2 and 442", "1 and 884", "26 and 34", "2 and 34"],
+        "num1": 26,
+        "num2": 34,
+        "operation": "HCF LCM"
+      }
+    ] , 
+ "36 + 48": [
+      {
+        "question": "What is the HCF and LCM of 36 and 48?",
+        "correct": "12 and 144",
+        "options": ["12 and 144", "6 and 288", "36 and 48", "12 and 48"],
+        "num1": 36,
+        "num2": 48,
+        "operation": "HCF LCM"
+      }
+    ],
+    "40 + 50": [
+      {
+        "question": "What is the HCF and LCM of 40 and 50?",
+        "correct": "10 and 200",
+        "options": ["10 and 200", "5 and 400", "40 and 50", "10 and 50"],
+        "num1": 40,
+        "num2": 50,
+        "operation": "HCF LCM"
+      }
+    ],
+    "42 + 56": [
+      {
+        "question": "What is the HCF and LCM of 42 and 56?",
+        "correct": "14 and 168",
+        "options": ["14 and 168", "7 and 336", "42 and 56", "14 and 56"],
+        "num1": 42,
+        "num2": 56,
+        "operation": "HCF LCM"
+      }
+    ],
+    "50 + 75": [
+      {
+        "question": "What is the HCF and LCM of 50 and 75?",
+        "correct": "25 and 150",
+        "options": ["25 and 150", "5 and 375", "50 and 75", "25 and 75"],
+        "num1": 50,
+        "num2": 75,
+        "operation": "HCF LCM"
+      }
+    ],
+    "60 + 80": [
+      {
+        "question": "What is the HCF and LCM of 60 and 80?",
+        "correct": "20 and 240",
+        "options": ["20 and 240", "10 and 480", "60 and 80", "20 and 80"],
+        "num1": 60,
+        "num2": 80,
+        "operation": "HCF LCM"
+      }
+    ],
+    "70 + 100": [
+      {
+        "question": "What is the HCF and LCM of 70 and 100?",
+        "correct": "10 and 700",
+        "options": ["10 and 700", "5 and 1400", "70 and 100", "10 and 100"],
+        "num1": 70,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "27 + 81": [
+      {
+        "question": "What is the HCF and LCM of 27 and 81?",
+        "correct": "27 and 81",
+        "options": ["27 and 81", "9 and 243", "81 and 27", "27 and 108"],
+        "num1": 27,
+        "num2": 81,
+        "operation": "HCF LCM"
+      }
+    ],
+    "32 + 96": [
+      {
+        "question": "What is the HCF and LCM of 32 and 96?",
+        "correct": "32 and 96",
+        "options": ["32 and 96", "16 and 192", "96 and 32", "32 and 128"],
+        "num1": 32,
+        "num2": 96,
+        "operation": "HCF LCM"
+      }
+    ],
+    "45 + 90": [
+      {
+        "question": "What is the HCF and LCM of 45 and 90?",
+        "correct": "45 and 90",
+        "options": ["45 and 90", "15 and 270", "90 and 45", "45 and 135"],
+        "num1": 45,
+        "num2": 90,
+        "operation": "HCF LCM"
+      }
+    ],
+    "1 + 99": [
+      {
+        "question": "What is the HCF and LCM of 1 and 99?",
+        "correct": "1 and 99",
+        "options": ["1 and 99", "1 and 198", "99 and 1", "99 and 99"],
+        "num1": 1,
+        "num2": 99,
+        "operation": "HCF LCM"
+      }
+    ] , 
+ "64 + 80": [
+      {
+        "question": "What is the HCF and LCM of 64 and 80?",
+        "correct": "16 and 320",
+        "options": ["16 and 320", "8 and 640", "64 and 80", "16 and 80"],
+        "num1": 64,
+        "num2": 80,
+        "operation": "HCF LCM"
+      }
+    ],
+    "72 + 96": [
+      {
+        "question": "What is the HCF and LCM of 72 and 96?",
+        "correct": "24 and 288",
+        "options": ["24 and 288", "12 and 576", "72 and 96", "24 and 96"],
+        "num1": 72,
+        "num2": 96,
+        "operation": "HCF LCM"
+      }
+    ],
+    "84 + 90": [
+      {
+        "question": "What is the HCF and LCM of 84 and 90?",
+        "correct": "6 and 1260",
+        "options": ["6 and 1260", "2 and 3780", "84 and 90", "6 and 90"],
+        "num1": 84,
+        "num2": 90,
+        "operation": "HCF LCM"
+      }
+    ],
+    "10 + 100": [
+      {
+        "question": "What is the HCF and LCM of 10 and 100?",
+        "correct": "10 and 100",
+        "options": ["10 and 100", "5 and 200", "100 and 10", "10 and 50"],
+        "num1": 10,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "12 + 100": [
+      {
+        "question": "What is the HCF and LCM of 12 and 100?",
+        "correct": "4 and 300",
+        "options": ["4 and 300", "2 and 600", "12 and 100", "4 and 100"],
+        "num1": 12,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "15 + 100": [
+      {
+        "question": "What is the HCF and LCM of 15 and 100?",
+        "correct": "5 and 300",
+        "options": ["5 and 300", "1 and 1500", "15 and 100", "5 and 100"],
+        "num1": 15,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "18 + 100": [
+      {
+        "question": "What is the HCF and LCM of 18 and 100?",
+        "correct": "2 and 900",
+        "options": ["2 and 900", "1 and 1800", "18 and 100", "2 and 100"],
+        "num1": 18,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "20 + 100": [
+      {
+        "question": "What is the HCF and LCM of 20 and 100?",
+        "correct": "20 and 100",
+        "options": ["20 and 100", "10 and 200", "100 and 20", "20 and 200"],
+        "num1": 20,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "25 + 100": [
+      {
+        "question": "What is the HCF and LCM of 25 and 100?",
+        "correct": "25 and 100",
+        "options": ["25 and 100", "5 and 500", "100 and 25", "25 and 125"],
+        "num1": 25,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ],
+    "30 + 100": [
+      {
+        "question": "What is the HCF and LCM of 30 and 100?",
+        "correct": "10 and 300",
+        "options": ["10 and 300", "5 and 600", "30 and 100", "10 and 100"],
+        "num1": 30,
+        "num2": 100,
+        "operation": "HCF LCM"
+      }
+    ]	
+	
+    
+ },
+  
 "Angle":   
  {
 	 
@@ -5841,8 +6602,8 @@ window.categories = {
    "4x = 20": [
   {
   "question": "ax + b = dx + c. Find x",
-  "correct": "5",
-  "options": ["5", "80", "16", "24"],
+  "correct": "2.5",
+  "options": ["2.5", "80", "16", "24"],
   "a": 4,
   "b": 0,
   "c": 20,
@@ -6007,7 +6768,7 @@ window.categories = {
   {
   "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
   "correct": "-1",
-  "options": ["-1", "1", "-7/7", "7/8"],
+  "options": ["-1", "1", "-7/6", "7/8"],
   "a": 1,
   "b": 0,
   "c": 7,
@@ -6018,7 +6779,7 @@ window.categories = {
    {
   "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
   "correct": "2",
-  "options": ["2", "-2", "10/5", "10"],
+  "options": ["2", "-2", "10/6", "10"],
   "a": -2,
   "b": 4,
   "c": -6,
@@ -6029,7 +6790,7 @@ window.categories = {
    {
   "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
   "correct": "-2",
-  "options": ["-2", "2", "-4/2", "4"],
+  "options": ["-2", "2", "-4/3", "4"],
   "a": 1,
   "b": 5,
   "c": 1,
@@ -6057,7 +6818,203 @@ window.categories = {
   "c": 9,
   "d": 0
   }
-  ]
+  ],
+  "2x + 5 = 9": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "2",
+        "options": ["2", "-3", "6", "8"],
+        "a": 2,
+        "b": 5,
+        "c": 9
+      }
+    ],
+    "3x - 7 = 8": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "5",
+        "options": ["5", "-5", "1", "15"],
+        "a": 3,
+        "b": -7,
+        "c": 8
+      }
+    ],
+    "-4x + 9 = 1": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "2",
+        "options": ["2", "-2", "8", "-8"],
+        "a": -4,
+        "b": 9,
+        "c": 1
+      }
+    ],
+    "5x - 3 = 12": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "3",
+        "options": ["3", "-3", "9", "15"],
+        "a": 5,
+        "b": -3,
+        "c": 12
+      }
+    ],
+    "-2x - 6 = -4": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-1",
+        "options": ["-1", "1", "-5", "5"],
+        "a": -2,
+        "b": -6,
+        "c": -4
+      }
+    ],
+    "6x + 2 = -10": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-2",
+        "options": ["-2", "2", "-8/3", "8/3"],
+        "a": 6,
+        "b": 2,
+        "c": -10
+      }
+    ],
+    "-7x + 4 = -10": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "2",
+        "options": ["2", "-2", "14/7", "-14/7"],
+        "a": -7,
+        "b": 4,
+        "c": -10
+      }
+    ],
+    "8x - 1 = 15": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "2",
+        "options": ["2", "-2", "16/8", "-16/8"],
+        "a": 8,
+        "b": -1,
+        "c": 15
+      }
+    ],
+    "-9x - 5 = 4": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-1",
+        "options": ["-1", "1", "-9/9", "9/9"],
+        "a": -9,
+        "b": -5,
+        "c": 4
+      }
+    ],
+    "4 - 2x = 3x - 6": [
+      {
+        "question": "ax + b = dx + c. Find x. Coefficients are between -9 and 9.",
+        "correct": "2",
+        "options": ["2", "-2", "10/5", "10"],
+        "a": -2,
+        "b": 4,
+        "c": -6,
+        "d": 3
+      }
+    ] ,
+	
+	
+    "-5x - 8 = 2": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-2",
+        "options": ["-2", "2", "-10", "10"],
+        "a": -5,
+        "b": -8,
+        "c": 2
+      }
+    ],
+    "9x + 10 = 6": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-4/9",
+        "options": ["-1", "1", "-4/9", "-16/9"],
+        "a": 9,
+        "b": 10,
+        "c": 6
+      }
+    ],
+    "-2x - 10 = -2": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-4",
+        "options": ["-4", "4", "-9", "9"],
+        "a": -3,
+        "b": -11,
+        "c": -2
+      }
+    ],
+    "8x + 7 = -9": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "-2",
+        "options": ["-2", "2", "-16/8", "16/8"],
+        "a": 8,
+        "b": 7,
+        "c": -9
+      }
+    ],
+    "-6x + 10 = 4": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "1",
+        "options": ["1", "-1", "6/6", "-6/6"],
+        "a": -6,
+        "b": 10,
+        "c": 4
+      }
+    ],
+    "2x - 9 = -1": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "4",
+        "options": ["4", "-4", "8/2", "-8/2"],
+        "a": 2,
+        "b": -9,
+        "c": -1
+      }
+    ],
+    "-7x - 3 = -7": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "4/7",
+        "options": ["2", "-2", "4/7", "-4/7"],
+        "a": -7,
+        "b": -3,
+        "c": -7
+      }
+    ],
+    "9x - 6 = 10": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "2",
+        "options": ["2", "-2", "10/9", "-10/9"],
+        "a": 9,
+        "b": -6,
+        "c": 10
+      }
+    ],
+    "-4x + 5 = -7": [
+      {
+        "question": "ax + b = c. Find x. Coefficients are between -9 and 9.",
+        "correct": "3",
+        "options": ["3", "-3", "12/4", "-12/4"],
+        "a": -4,
+        "b": 5,
+        "c": -7
+      }
+    ]
+  
+  
+  
   }
   
   

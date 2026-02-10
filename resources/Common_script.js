@@ -927,3 +927,41 @@ function speakText(text) {
             // Open the specified URL in a new tab when the button is clicked
             window.open('https://www.youtube.com/@flashtasticapp', '_blank');
         });
+		
+
+
+function checkFlashCards(data) {
+  let errorCount = 0;
+  let totalCount = 0;
+
+  for (const category in data) {
+    const flashcards = data[category];
+
+    for (const flashcard of flashcards) {
+      totalCount++;
+      const { correct, options, question } = flashcard;
+      
+      let matchFound = false;
+      for (const option of options) {
+        if (option === correct) {
+          matchFound = true;
+          break;
+        }
+      }
+
+      if (!matchFound) {
+        errorCount++;
+        console.error(`Error in: ${question} - Correct answer "${correct}" not found in options.`);
+      }
+    }
+  }
+
+  if (errorCount === 0) {
+    console.log("All flashcards are valid.");
+  } else {
+    console.warn(`${errorCount} errors found in ${totalCount} flashcards.`);
+  }
+}
+
+// Assuming the data is in the `categories` object
+checkFlashCards(window.categories);		
